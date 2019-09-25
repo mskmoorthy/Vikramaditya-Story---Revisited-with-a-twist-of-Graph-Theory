@@ -47,7 +47,7 @@ Rishnak decided to take on the oldest problem on Graph Theory Euler walk and clo
 \vspace{2cm}
 Rishnak then asked Ajur whether you can start a walk from vertex 1 to vertex 9 and visit all edges once and only once (Eulerian walk from vertex 1 to vertex 9) in connected graph in Figure \ref{4g2}.
 Ajur was perplexed. Then he tried to reason - he can break them into cycles. (2,3,7),(7,6,5,4), (3,4,8)  - None of these cycles had any edge in common. So he constructed a 
-walk as (1,(1,2),2,(2,3),3,(3,4),4,(4,8),8,(8,3),3,(3,7),7, (7,6),6,(6,5),5,(5,4).4,(4,7),7,(7,2),2,(2,8),8,(8,9),9). Ajur further explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in \ref{4g25}. Ajur responded that there is no closed Eulerian walk in this graph \ref{4g2} as all the vertices are not of even degree.
+walk as (1,(1,2),2,(2,3),3,(3,4),4,(4,8),8,(8,3),3,(3,7),7, (7,6),6,(6,5),5,(5,4).4,(4,7),7,(7,2),2,(2,8),8,(8,9),9). Ajur further explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in \ref{4g25}. Ajur responded that there is no closed Eulerian walk in this graph \ref{4g2} as all the vertices are not of even degree. An Eulerian walk startes from a vertex with odd degree and ends at a vertex with odd degree (There has tyo be exactly two vertices .
 
 \begin{figure}
 \begin{center}
@@ -149,7 +149,7 @@ Ajur added that if a graph is not connected, there is neither Eulerian walk nor 
 \end{figure}
 
 \vspace{3in}
-Rishnak asked Ajur whether he knew about multi graphs and directed graphs. Ajur realized he essentially learnt about multigraphs  by doing Eulerian walks and completion  example. Ajur added that in a direct an edge $(x,y)$ goes from vertex $x$ to $y$ and he drew an example graph to show Rishnak that he knows See Figure \ref{4g5}. Ajur added that instead of degree of a vertex, we have in-degree and out-degree of a vertex. The number of edges coming to a vertex is the in-degree of that vertex and the number of edges going out of a vertex is the out-degree of a vertex,
+Rishnak asked Ajur whether he knew about multi graphs and directed graphs. Ajur realized he essentially learnt about multigraphs  by doing Eulerian walks and completion  example. Ajur added that in a direct an edge $(x,y)$ goes from vertex $x$ to $y$ and he drew an example graph to show Rishnak that he knows See Figure \ref{4g5}. Ajur mentioned that instead of degree of a vertex, we have in-degree and out-degree of a vertex. The number of edges coming to a vertex is the in-degree of that vertex and the number of edges going out of a vertex is the out-degree of a vertex. For example, in the directed graph shown in Figure \ref{4g5}, vertex 1 has in-degree 2 and out-degree 1, Each of Vertex 3 and 4 has in-degree  and out-degree 1. A directed graph is strongly connected if there is a directed path from every vertex to every other vertex. For example, directed graph shown in Figure \ref{4g5} is strongly connected. 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -170,4 +170,4 @@ Rishnak asked Ajur whether he knew about multi graphs and directed graphs. Ajur 
 \end{center}
 \end{figure}
 
-Anticipating what Rishnak is going to ask, 
+Anticipating what Rishnak is going to ask, Ajur responded by saying that there is no closed Eulerian walk in this directed graph. Rishnak reminded that he wanted whether Ajur knew an Euler walk from vertex 2 to vertex 1. Ajur reasoned in a  manner similar to what he did before. Ajur saw a directed cycle (1,(1,2),2,(2,3),3,(3,1),1) or simply (1,2,3,1). So AJur was able to write the Eulerian walk as 2-3-1-2-4-1. Ajur said to have a closed Eulerian walk, you should have a collection of edge disjoint cycles (no edge is common between these cycles). In such a case, the in-degree of each vertex should be the same as its out-degree (this is similar to the degree of every vertex has to be even number as in the case of undirected graphs). for an Eulerian walk, it has start from a vertex which one more out-degree than in-degree and end in a vertex which has one more in-degree thanout-degree (For all other vertices, in-degree should be equal to out-degree).
