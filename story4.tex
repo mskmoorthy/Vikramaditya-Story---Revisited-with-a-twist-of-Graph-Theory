@@ -194,11 +194,11 @@ Each vertex has an in-degree of 2 and an out-degree if 2. Hence it has a closed 
           edge [loop below] node {1} ();
    
 \end{tikzpicture}
-\caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence to obtain all substrings of length 2 over a binary alphabet 0 and 1}\label{4g55}
+\caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence that contains  all substrings of length 2 over a binary alphabet 0 and 1}\label{4g55}
 \end{center}
 \end{figure}
-
-Suppose the question is to obtain a string 0's and 1's such that all eight three bit strings occur as a substring (there are 8 three bit strings consisting of 0'1 and 1's namely 000,001,010,011,100,101,110,111). Such a string is known as deBruijn string!  Consider a directed graph with 4 vertices (labeled 00, 01, 10 and 11).
+Rishnak then asked Ajur to get a DeBruijn Sequence that contains all substrings of length 3.
+Ajur thought that the question is to obtain a string 0's and 1's such that all eight three bit strings occur as a substring (there are 8 three bit strings consisting of 0'1 and 1's namely 000, 001, 010, 011, 100, 101, 110, 111). Such a string is known as deBruijn string!  Consider a directed graph with 4 vertices (labeled 00, 01, 10 and 11).
 There is an edge from vertex labeled 00 to itself with a label 0 (if you get a 0, you append 0 to the vertex label (00) and drop the first character). There is an edge with label 1 from
 vertex labeled 00 to a vertex labeled 01. Vertex labeled 00 has an out-degree of 2. Similarly draw an edge with label 0 from vertex labeled 01 to vertex with label 10. Draw an edge with label 1 from vertex labeled 01 to vertex with label 11. 
 Draw an edge with label 0 from a  vertex labeled 10 to a vertex labeled 00. Draw an edge with label 1 from a vertex labeled 10 to a vertex labeled 01.
@@ -223,7 +223,9 @@ From the walk, we get all the strings of length 3 (over 0 and 1) as substrings i
     (q_3) edge [bend left=15] node [swap] {0} (q_0) 
           edge  node [swap] {1} (q_2);
 \end{tikzpicture}
-\caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence to obtain all substrings of length 3 over a binary alphabet 0 and 1}\label{4g6}
+\caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence that contains all substrings of length 3 over a binary alphabet 0 and 1}\label{4g6}
 \end{center}
 \end{figure}
+
+Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (Greece) or bhul bulaiyah (India).  
 
