@@ -46,10 +46,10 @@ Rishnak decided to take on the oldest problem on Graph Theory: Euler walk and cl
 \end{center}
 \end{figure}
 \vspace{2cm}
-Rishnak then asked Ajur whether you can start a walk from vertex 1 and end ar vertex 9 and visit all edges once and only once (Eulerian walk from vertex 1 to vertex 9) in connected graph in Figure \ref{4g2}.
+Rishnak then asked Ajur whether you can start a walk from vertex 1 and end at vertex 9 and visit all edges once and only once (Eulerian walk from vertex 1 to vertex 9) in connected graph in Figure \ref{4g2}.
 Ajur was perplexed. Then he tried to reason - he can break them into cycles. (2,3,7),(7,6,5,4), (3,4,8)  - None of these cycles had any edge in common. So he constructed a walk as (1, (1,2), 2, (2,3),
 3, (3,4), 4, (4,8), 8, (8,3), 3, (3,7), 7, (7,6), 6, (6,5), 5, (5,4), 4, (4,7) ,7,
-(7,2), 2, (2,8), 8, (8,9), 9). Ajur further explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in Figure \ref{4g25}. Ajur added that there is no closed Eulerian walk in this graph Figure \ref{4g2} as all the vertices are not of even degree. An Eulerian walk starts from a vertex with odd degree and ends at a vertex with odd degree (There have to be exactly two such vertices and all other vertices have odd degrees).
+(7,2), 2, (2,8), 8, (8,9), 9). Ajur further explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in Figure \ref{4g25}. Ajur added that there is no closed Eulerian walk in this graph Figure \ref{4g2} as all the vertices are not of even degree. An Eulerian walk starts from a vertex with odd degree and ends at a vertex with odd degree (There have to be exactly two such vertices and all other vertices have odd degrees - All other vertices have been intermediate vertices in a walk meaning there is an edge coming into the vertex and an edge going out of that vertex).
 
 \begin{figure}
 \begin{center}
@@ -107,8 +107,8 @@ Ajur was perplexed. Then he tried to reason - he can break them into cycles. (2,
 \end{figure}
 
 \vspace{3in}
-Rishnak asked Ajur how would you make the graph shown in Figure \ref{4g2} to have a closed Eulerian Walk. Ajur reasoned that there are exactly two vertices of odd degrees, namely, vertices 1 and 9. If we join an edge between 1 and 9,  every vertex will have an even degree and hence a closed Eulerian Walk and that walk will be 1-2-3-4--8--7-6-5-4-7-2-8-9-1. Ajur also drew a graph.
-as in Figure \ref{4g255}
+Rishnak asked Ajur how would you make the graph shown in Figure \ref{4g2} to have a closed Eulerian Walk. Ajur reasoned that there are exactly two vertices of odd degrees, namely, vertices 1 and 9. If we join an edge between 1 and 9,  every vertex will have an even degree and hence a closed Eulerian Walk and that walk will be 1-2-3-4-8-3-7-6-5-4-7-2-8-9-1. Ajur also drew a graph.
+as in Figure \ref{4g255}.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -132,7 +132,7 @@ as in Figure \ref{4g255}
 \end{figure}
 
 Rishnak asked how will you make graph shown in Figure \ref{4g1} to have a closed Eulerian walk. Ajur now had a problem. The two vertices which have odd degrees 2 and 4, already have an edge between them. However, he remembered the definition of a multigraph, where in between any two vertices, there can be more than one edge. So he added another edge between 2 and 4 and there is a closed Eulerian walk 2-3-4-1-2-4-2. Ajur again drew a graph as shown in Figure \ref{4g155}
-Ajur added that if a graph is not connected, there is neither Eulerian walk nor a closed Eulerian walk.
+%Ajur added that if a graph is not connected, there is neither Eulerian walk nor a closed Eulerian walk (as there is no walk from some vertex to some other vertex - In an Eulerian walk,.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -229,11 +229,11 @@ From the walk, we get all the strings of length 3 (over 0 and 1) as substrings i
 \end{figure}
 \vspace{0.3in}
 \noindent
-Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (as known in Greece) or bhul bulaiyah (as known in India).  Rishnak mentioned that it is easy to enter into a maze but it is difficult to get out of it. There are large walls which prevent one from seeing where the corridors lead to. Rishnak further mentioned that he has seen persons die unable to get out of maze. One was the angel Kinaja who was trapped in the maze and died. ust before she died, she had figured out how to get out of the maze. But it was too late. Kinaja told Rishnak had the persons known about Graph Theory and paid more attention to Eulerian walks they would have survived. Ajur replied that he had seen rats running around a maze during a visit to a laboratory in an exclusive private school. Ajur was eager to show of his knowledge in Poetry and quoted Robert Frost's line from his poem the road not taken which is sort of related to traversing a maze: \quote {Two roads diverged in a wood, and I--\\ 
+Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (as known in Greece) or bhul bulaiyah (as known in India).  Rishnak mentioned that it is easy to enter into a maze but it is difficult to get out of it. There are large walls which prevent one from seeing where the corridors lead to. Rishnak further mentioned that he has seen persons die, unable to get out of maze. One was the angel Kinaja who was trapped in the maze and died. Just before she died, she had figured out how to get out of the maze. But it was too late. Kinaja told Rishnak had the persons known about Graph Theory and paid more attention to Eulerian walks they would have survived. Ajur replied that he had seen rats running around a maze during a visit to a laboratory in an exclusive private school. Ajur was eager to show off his knowledge in Poetry and quoted Robert Frost's line from his poem the road not taken which is sort of related to traversing a maze: \quote {Two roads diverged in a wood, and I--\\ 
 I took the one less traveled by,\\ And that has made all the difference}. 
 \\
 \\
-\noindent Rishnak was getting impatient and he wanted to stay focused on the maze. Rishnak showed a picture of maze Figure \ref{4g7}.
+\noindent Rishnak was getting impatient and he wanted to stay focused on the maze. Rishnak showed a picture of the maze Figure \ref{4g7}.
 \begin{figure}
 \begin{center}
 \includegraphics{maze1.JPG}
@@ -241,9 +241,9 @@ I took the one less traveled by,\\ And that has made all the difference}.
 \end{center}
 \end{figure}
 
-He said that you can create a graph by putting a vertex at each place where there an open space in the wall or where you have choices to make it. Join the vertices if there is a corridor connecting them (and there are no vertices between them). This will result in a tree (no cycle will be present). Now you can make this graph Eulerian by going over each edge twice. One uses bread crumbs to mark the edge traversed. If an edge has two bread crumbs, that means you don't traverse that edge any more.
+He said that you can create a graph by putting a vertex at each place where there is an open space in the wall or where you have choices to make it. Join the vertices if there is a corridor connecting them (and there are no vertices between them). This will result in a tree (no cycle will be present). Now you can make this graph Eulerian by going over each edge twice. One uses bread crumbs to mark the edge traversed. If an edge has two bread crumbs, that means you don't traverse that edge any more.
 
-That is precisely the strategy Kinaja told that one uses to get out of the maze.  In the beginning all the paths are free of bread crumbs. When ever one takes a path ( if there are bread crumb free paths available), you put bread crumbs along that edge; and if there are no bread crumb free paths are available, take the path in which there are only one bread crumb is present and walk through that path putting bread crumbs. Eventually you will reach the end goal as there is an Eulerian walk present in the maze.
+That is precisely the strategy Kinaja told that one uses to get out of the maze.  In the beginning all the paths are free of bread crumbs. When ever one takes a path (if there are bread crumb free paths available), you put bread crumbs along that edge; and if there are no bread crumb free paths are available, take the path in which there is only one bread crumb present and walk through that path putting bread crumbs. Eventually you will reach the end goal as there is an Eulerian walk present in the maze.
 
 \begin{figure}
 \begin{center}
