@@ -1,10 +1,11 @@
 \chapter{Euler Paths/Cycles}
 
-Ajur was tired after listening to a lot of definitions and examples. He complained to Jura that it looked too much like a Math class and he preferred fun Math problems instead. As Ajur was mentioning, Rishnak was overhearing this conversation. Rishnak too felt that the previous day's conversation was very cut and dry. His ghost friends were accusing of making the beautiful subject of Graph Theory dull and monotonous.
+Ajur was tired after listening to a lot of definitions and examples. He complained to Jura that it looked too much like a Math class and he preferred fun Math problems instead. As Ajur was mentioning to Jura, Rishnak was overhearing this conversation. Rishnak too felt that the previous day's conversation was very cut and dry. His ghost friends were accusing of making the beautiful subject of Graph Theory dull and monotonous.
 
+To make today's topic more interesting he thought he would talk about Eulerian walk. 
 
-An Euler walk of a connected graph is a walk that includes every edge exactly once. If the starting vertex and the ending vertex are the same then it is called a closed Euler walk. Of course the name Euler comes from Leonhard Euler.
-Rishnak decided to take on the oldest problem on Graph Theory: Euler walk and closed Euler walk. Rishnak caught up with Ajur and Jura walking along a desolate road. Rishnak asked Ajur in  Figure \ref{4g1} whether there is a walk starting from vertex 2 to vertex 4 passing all the edges exactly once [This is what is known as an Eulerian walk]. Ajur saw there is a cycle (2,3,4,1,2). After this cycle, there is just one edge (2,4) left. Hence Ajur constructed an Eulerian walk by combining the two as (2,(2,3),3,(3,4),4,(4,1),1,(1,2),2,(2,4),4) or written simply as (2,3,4,1,2,3) by omitting the edges. Ajur illustrated this Figure \ref{4g15} Ajur further added that there is no closed Eulerian walk as that would imply that the edges have to be split into cycles (with no edges in common among the cycles). This will mean that the degrees of every vertex has to be even. Rishnak was much impressed with Ajur's reasoning. 
+An Euler walk of a connected graph (a graph where there is a path between every pair of vertices) is a walk that includes every edge exactly once. If the starting vertex and the ending vertex are the same then it is called a closed Euler walk. Of course the name Euler comes from Leonhard Euler.
+Rishnak decided to take on the oldest problem on Graph Theory: Euler walk and closed Euler walk. Rishnak caught up with Ajur and Jura walking along a desolate road. Rishnak asked Ajur in  Figure \ref{4g1} whether there is a walk starting from vertex 2 and ending at vertex 4 passing all the edges exactly once [This is what is known as an Eulerian walk]. Ajur saw there is a cycle (2,3,4,1,2). After this cycle, there is just one edge (2,4) left. Hence Ajur constructed an Eulerian walk by combining the two as (2,(2,3),3,(3,4),4,(4,1),1,(1,2),2,(2,4),4) or written simply as (2,3,4,1,2,3) by omitting the edges. Ajur illustrated this Figure \ref{4g15} Ajur further added that there is no closed Eulerian walk as that would imply that the edges have to be split into cycles (with no edges in common among the cycles). This will mean that the degrees of every vertex has to be even. Rishnak was much impressed with Ajur's reasoning. 
 
 
 \begin{figure}
@@ -45,10 +46,10 @@ Rishnak decided to take on the oldest problem on Graph Theory: Euler walk and cl
 \end{center}
 \end{figure}
 \vspace{2cm}
-Rishnak then asked Ajur whether you can start a walk from vertex 1 to vertex 9 and visit all edges once and only once (Eulerian walk from vertex 1 to vertex 9) in connected graph in Figure \ref{4g2}.
+Rishnak then asked Ajur whether you can start a walk from vertex 1 and end ar vertex 9 and visit all edges once and only once (Eulerian walk from vertex 1 to vertex 9) in connected graph in Figure \ref{4g2}.
 Ajur was perplexed. Then he tried to reason - he can break them into cycles. (2,3,7),(7,6,5,4), (3,4,8)  - None of these cycles had any edge in common. So he constructed a walk as (1,(1,2),2,(2,3),
 3,(3,4),4,(4,8),8,(8,3),3,(3,7),7, (7,6),6,(6,5),5,(5,4).4,(4,7),7,
-(7,2),2,(2,8),8,(8,9),9). Ajur further explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in Figure \ref{4g25}. Ajur responded that there is no closed Eulerian walk in this graph \ref{4g2} as all the vertices are not of even degree. An Eulerian walk starts from a vertex with odd degree and ends at a vertex with odd degree (There have to be exactly two such vertices).
+(7,2),2,(2,8),8,(8,9),9). Ajur further explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in Figure \ref{4g25}. Ajur added that there is no closed Eulerian walk in this graph Figure \ref{4g2} as all the vertices are not of even degree. An Eulerian walk starts from a vertex with odd degree and ends at a vertex with odd degree (There have to be exactly two such vertices and all other vertices have odd degrees).
 
 \begin{figure}
 \begin{center}
@@ -107,7 +108,7 @@ Ajur was perplexed. Then he tried to reason - he can break them into cycles. (2,
 
 \vspace{3in}
 Rishnak asked Ajur how would you make the graph shown in Figure \ref{4g2} to have a closed Eulerian Walk. Ajur reasoned that there are exactly two vertices of odd degrees, namely, vertices 1 and 9. If we join an edge between 1 and 9,  every vertex will have an even degree and hence a closed Eulerian Walk and that walk will be 1-2-3-4--8--7-6-5-4-7-2-8-9-1. Ajur also drew a graph.
-
+as in Figure \ref{4g255}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -171,10 +172,10 @@ Rishnak asked Ajur whether he knew about multi graphs and directed graphs. Ajur 
 \end{center}
 \end{figure}
 
-Anticipating what Rishnak is going to ask, Ajur responded by saying that there is no closed Eulerian walk in this directed graph. Rishnak reminded that he wanted whether Ajur knew an Euler walk from vertex 2 to vertex 1. Ajur reasoned in a  manner similar to what he did before. Ajur saw a directed cycle (1,(1,2),2,(2,3),3,(3,1),1) or simply (1,2,3,1). So Ajur was able to write the Eulerian walk as 2-3-1-2-4-1. Ajur said to have a closed Eulerian walk, you should have a collection of edge disjoint cycles (no edge is common between these cycles). In such a case, the in-degree of each vertex should be the same as its out-degree (this is similar to the degree of every vertex has to be even number as in the case of undirected graphs). For an Eulerian walk, it has to start from a vertex which has one more out-degree than in-degree and end in a vertex which has one more in-degree than out-degree (For all other vertices, in-degree should be equal to out-degree).
+Anticipating what Rishnak is going to ask, Ajur responded by saying that there is no closed Eulerian walk in this directed graph. Rishnak reminded that he wanted whether Ajur knew an Euler walk from vertex 2 to vertex 1. Ajur reasoned in a  manner similar to what he did before. Ajur saw a directed cycle (1,(1,2),2,(2,3),3,(3,1),1) or simply (1,2,3,1). So Ajur was able to write the Eulerian walk as 2-3-1-2-4-1. Ajur said to have a closed Eulerian walk, you should have a collection of edge disjoint cycles (no edge is common between these cycles). In such a case, the in-degree of each vertex should be the same as its out-degree (this is similar to the degree of every vertex has to be an even number as in the case of undirected graphs). For an Eulerian walk, it has to start from a vertex which has one more out-degree than in-degree and end in a vertex which has one more in-degree than out-degree (For all other vertices, in-degree should be equal to out-degree).
 
 Rishnak saw it is getting late - but wanted to share some exciting applications of Eulerian walks. 
-Suppose the question is to obtain a string 0's and 1's such that all four two bit strings occur as a substring (there are 4 two bit strings consisting of 0's and 1's namely 00,01,10 and 11). For example if you have 0011 - all two bit strings occur as a substring namely 00, 01, 11 and 10. If it were a circular string then 0011 will suffice to get all 4 two bit strings. Rishnak added that this problem is closely related to closed Eulerian walk. If we construct an Eulerian walk on this directed graph \ref{4g55}, we will get that string.
+Suppose the question is to obtain a string 0's and 1's such that all four two bit strings occur as a substring (there are 4 two bit strings consisting of 0's and 1's namely 00,01,10 and 11). For example if you have 0011 - all two bit strings occur as a substring namely 00, 01, 11 and 10. If it were a circular string then 0011 will suffice to get all 4 two bit strings (Such a string is known as DeBruijn sequence). Rishnak added that this problem is closely related to closed Eulerian walk. If we construct an Eulerian walk on this directed graph Figure \ref{4g55}, we will get that string.
 
 For this directed graph, there are two verticee with labels 0 and 1 . There is a directed edge with label 0 from vertex labeled 0 to itself. There is a directed edge with a label 1 from vertex labeled 0 to a vertex labeled 1. (The idea behind the first edge is to consider appending 0 (edge label) to 0 (the starting vertex label) get 00. Then omit the first character 0. The result is 0 which is the vertex labeled 0 - hence a self loop). Similarly there is an edge with a label 1 from a vertex labeled 1 to itself and there is a vertex an edge with 
 a label 0 from vertex labeled 1 to a vertex labeled 0.
@@ -198,7 +199,7 @@ Each vertex has an in-degree of 2 and an out-degree if 2. Hence it has a closed 
 \end{center}
 \end{figure}
 Rishnak then asked Ajur to get a DeBruijn Sequence that contains all substrings of length 3.
-Ajur thought that the question is to obtain a string 0's and 1's such that all eight three bit strings occur as a substring (there are 8 three bit strings consisting of 0'1 and 1's namely 000, 001, 010, 011, 100, 101, 110, 111). Such a string is known as deBruijn string!  Consider a directed graph with 4 vertices (labeled 00, 01, 10 and 11).
+Ajur thought that the question is to obtain a string 0's and 1's such that all eight three bit strings occur as a substring (there are 8 three bit strings consisting of 0'1 and 1's namely 000, 001, 010, 011, 100, 101, 110, 111). Ajur wanted to construct a graph from where an Eulerian walk will result in such a sequence.  Consider a directed graph with 4 vertices (labeled 00, 01, 10 and 11).
 There is an edge from vertex labeled 00 to itself with a label 0 (if you get a 0, you append 0 to the vertex label (00) and drop the first character). There is an edge with label 1 from
 vertex labeled 00 to a vertex labeled 01. Vertex labeled 00 has an out-degree of 2. Similarly draw an edge with label 0 from vertex labeled 01 to vertex with label 10. Draw an edge with label 1 from vertex labeled 01 to vertex with label 11. 
 Draw an edge with label 0 from a  vertex labeled 10 to a vertex labeled 00. Draw an edge with label 1 from a vertex labeled 10 to a vertex labeled 01.
@@ -226,9 +227,10 @@ From the walk, we get all the strings of length 3 (over 0 and 1) as substrings i
 \caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence that contains all substrings of length 3 over a binary alphabet 0 and 1}\label{4g6}
 \end{center}
 \end{figure}
+\vspace{0.3in}
 \noindent
-Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (Greece) or bhul bulaiyah (India).  Rishnak mentioned that it is easy to enter into maze but it is difficult to get out of it. There are large walls which prevent one from seeing where the paths lead to. Rishnak further mentioned that he has seen persons die unable to get out of maze. Had they known about Graph Theory and paid more attention to Eulerian walks they would have survived. Ajur replied that he had seen rats running in a maze during a visit to a laboratory in an exclusive private school. Ajur was eager to show of his knowledge in Poetry and quoted Robert Frost's line from his poem the road not taken which is sort of related to traversing a maze: {\quote Two roads diverged in a wood, and I--\\ 
-I took the one less traveled by,\\ And that has made all the difference} . 
+Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (as known in Greece) or bhul bulaiyah (as known in India).  Rishnak mentioned that it is easy to enter into a maze but it is difficult to get out of it. There are large walls which prevent one from seeing where the corridors lead to. Rishnak further mentioned that he has seen persons die unable to get out of maze. One was the angel Kinaja who was trapped in the maze and died. ust before she died, she had figured out how to get out of the maze. But it was too late. Kinaja told Rishnak had the persons known about Graph Theory and paid more attention to Eulerian walks they would have survived. Ajur replied that he had seen rats running around a maze during a visit to a laboratory in an exclusive private school. Ajur was eager to show of his knowledge in Poetry and quoted Robert Frost's line from his poem the road not taken which is sort of related to traversing a maze: \quote {Two roads diverged in a wood, and I--\\ 
+I took the one less traveled by,\\ And that has made all the difference}. 
 \\
 \\
 \noindent Rishnak was getting impatient and he wanted to stay focused on the maze. Rishnak showed a picture of maze Figure \ref{4g7}.
@@ -239,8 +241,9 @@ I took the one less traveled by,\\ And that has made all the difference} .
 \end{center}
 \end{figure}
 
-He said that you can create a graph by putting a vertex at each place where there an open space in the wall or where you have choices to make it. Now you can make this Eulerian by going over each edge twice.
-That is precisely the strategy one uses to get out of the maze.  In the beginning all the paths are free. When ever one takes a path ( if there are bread crumb free paths available), you put bread crumbs; and if there are no bread crumb free paths are available, take the path in which there are only one bread crumb is present and walk through that path putting bread crumbs. Eventually you will the end goal as there is an Eulerian walk present in the maze.
+He said that you can create a graph by putting a vertex at each place where there an open space in the wall or where you have choices to make it. Join the vertices if there is a corridor connecting them (and there are no vertices between them). This will result in a tree (no cycle will be present). Now you can make this graph Eulerian by going over each edge twice. One uses bread crumbs to mark the edge traversed. If an edge has two bread crumbs, that means you don't traverse that edge any more.
+
+That is precisely the strategy Kinaja told that one uses to get out of the maze.  In the beginning all the paths are free of bread crumbs. When ever one takes a path ( if there are bread crumb free paths available), you put bread crumbs along that edge; and if there are no bread crumb free paths are available, take the path in which there are only one bread crumb is present and walk through that path putting bread crumbs. Eventually you will reach the end goal as there is an Eulerian walk present in the maze.
 
 \begin{figure}
 \begin{center}
