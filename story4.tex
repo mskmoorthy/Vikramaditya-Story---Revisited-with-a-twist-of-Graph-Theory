@@ -208,7 +208,8 @@ Draw an edge with label 0 from a  vertex labeled 10 to a vertex labeled 00. Draw
 Draw an edge with label 0 from a vertex labeled 11 to a vertex labeled 10. Draw an edge with label 1 from a vertex labeled 11 to itself.
 The resulting directed graph is as shown in Figure \ref{4g6}. An Eulerian walk starting from a vertex labeled 00 is $0 1 0 1 1 1 0 0$  (We start with a vertex labeled 00 and the label of the edges traversed in an Eulerian Walk). This walk is also a closed Eulerian Walk as we start and end with the same vertex (labeled $00$).
 From the walk, we get all the strings of length 3 (over 0 and 1) as substrings in the Eulerian Walk.
-001, 010,101,011,111,110,100 and 000 (000 by knowing this is a closed Eulerian walk and we get 000, by taking two characters and the first character of the Eulerian Walk.).
+001, 010,101,011,111,110,100 and 000 (000 by knowing this is a closed Eulerian walk and we get 000, by taking two characters and the first character of the Eulerian Walk.).\\
+\vspace{0.2in}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}[shorten >=1pt,node distance=4cm,on grid,auto] 
@@ -229,8 +230,9 @@ From the walk, we get all the strings of length 3 (over 0 and 1) as substrings i
 \caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence that contains all substrings of length 3 over a binary alphabet 0 and 1}\label{4g6}
 \end{center}
 \end{figure}
-\vspace{0.3in}
-\noindent
+%\vspace{0.1in}
+%\noindent
+
 Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (as known in Greece) or bhul bulaiyah (as known in India).  It is easy to enter a maze but it is difficult to get out of one. There are large walls which prevent one from seeing where the corridors lead to. Rishnak told Ajur that there were reports of perople  dieing in a maze becaue they were unable to find their way out. One was the angel Kinaja who was a human trapped in the maze. She had figured out how to get out but was too exhausted to walk and died. Kinaja had told Rishnak people who studied graph Theory understood Eulerian walks could find their way out of a maze. Jura said he knew about maze having seen a YouTube video of a psychology lab experiment with mice running in a maze and he had been in one as child when his parents took him to the corn field maze in the fall in a nearby town. Ajur was also eager to show off his knowledge in Poetry and quoted Robert Frost's line from his poem 'the road not taken' which is sort of related to traversing a maze: \quote {Two roads diverged in a wood, and I--\\ 
 I took the one less traveled by,\\ And that has made all the difference}. 
 \\
@@ -238,8 +240,8 @@ I took the one less traveled by,\\ And that has made all the difference}.
 \noindent Rishnak was getting impatient and he wanted to stay focused on the maze. Rishnak showed a picture of the maze Figure \ref{4g7}.
 \begin{figure}
 \begin{center}
-\includegraphics{maze1.JPG}
-\caption{A Maze with a start and end}\label{4g7}
+\includegraphics{maze11.jpg}
+\caption{A Maze with a start and goal and intermediate vertices marked for clarity}\label{4g7}
 \end{center}
 \end{figure}
 
@@ -251,7 +253,7 @@ That was precisely the strategy Kinaja had told Rishank for one to get out of th
 \begin{center}
 \begin{tikzpicture}
 [scale=.8,auto=left,every node/.style={circle,fill=red!5}]
-   \node (q_0)   at (1,7) {start}; 
+   \node (q_0)   at (1,7) {Start}; 
    \node (q_1) at  (3,7) {1}; 
    \node (q_2) at (5, 7) {2}; 
    \node(q_3) at (3,3) {3};
@@ -259,7 +261,7 @@ That was precisely the strategy Kinaja had told Rishank for one to get out of th
    \node (q_5) at (1,5) {5};
    \node(q_6) at (5,3) {6};
    \node(q_7) at (5,5) {7};
-   \node(q_8) at (5,1) {end};
+   \node(q_8) at (5,1) {Goal};
     \path[-,draw,thick] 
     (q_0) edge   (q_1)
     (q_1) edge (q_2)
