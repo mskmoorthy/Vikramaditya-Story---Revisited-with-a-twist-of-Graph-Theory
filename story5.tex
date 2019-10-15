@@ -59,7 +59,7 @@ Rishnak asked Ajur whether there is a Hamiltonian Cycle in this graph Figure \re
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
-  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  [scale=.5,auto=left,every node/.style={circle,fill=red!20}]
   \node (n1) at (1,7) {1};
   \node (n2) at (5,11)  {2};
   \node (n3) at (9,7)  {3};
@@ -77,5 +77,42 @@ Rishnak asked Ajur whether there is a Hamiltonian Cycle in this graph Figure \re
 
 \end{tikzpicture}
 \caption{ Petersen Graph with 10 vertices and 15 edges }\label{5g3}
+\end{center}
+\end{figure}
+Ajur thought for a while and he was not able to construct a Hamiltonian cycle. He however, was able to find a 
+Hamiltonian Path. So he drew the following Figure \ref{5g4}
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.5,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,7) {1};
+  \node (n2) at (5,11)  {2};
+  \node (n3) at (9,7)  {3};
+  \node (n4) at (9,3) {4};
+  \node (n5) at (1,3) {5};
+  \node (n6) at (3,7)  {6};
+  \node (n7) at (5,8) {7};
+  \node (n8)  at (7,7) {8};
+  \node (n9) at (7,5) {9};
+  \node (n10) at  (3,5) {10};
+ 
+  \foreach \from/\to in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n1,n1/n6,
+  n2/n7, n3/n8, n4/n9, n5/n10, n6/n8, n8/n10, n10/n7,n7/n9,n9/n6}
+    \draw (\from) -- (\to);
+\path[thick]
+(n1) edge (n2)
+(n2) edge (n3)
+(n3) edge (n4)
+(n4) edge (n5)
+(n5) edge (n10)
+(n10) edge (n8)
+(n8) edge (n6)
+(n6) edge (n9)
+(n9) edge (n7);
+
+\end{tikzpicture}
+\caption{ Petersen Graph with a Hamiltonian Path}\label{5g4}
 \end{center}
 \end{figure}
