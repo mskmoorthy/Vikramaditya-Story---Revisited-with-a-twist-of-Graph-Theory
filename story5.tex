@@ -118,7 +118,7 @@ Hamiltonian Path. So he drew the following Figure \ref{5g4}
 \end{center}
 \end{figure}
 Rishnak assured Ajur that Petersen Graph does not have a Hamiltonian Cycle. For testing whether a graph has an Eulerian Cycle or not can easily be tested (the degree of every vertex has to be even), there is no easy method for testing whether a given graph has a Hamiltonian cycle. 
-Rishnak continued that there is a special class of graphs called bipartite graphs where every cycle is of even length. The vertex set can be partitioned into two sets $A$ and $B$, such that every edge in such a graph has one end vertex in $A$ and the other end vertex in $B$. Rishnak showed an example Figure \ref{5g5}. Ajur immediately said that all the cycles oare of even lengths (4 and 6). Rishnak asked Ajur what the two vertex partitions are (all the edges go from one partition to the other). Ajur thought about it for a few seconds and said one partition contains 1, 3, 5 and the other partition contains the vertices 2, 4 and 6. Ajur also mentioned that this graph has a Hamiltonian cycle. Ajur exclaimed that every tree is a bipartite graph too , as tree contains no cycles (or cycles of length 0 - we know that 0 is an even number!). Rishnak reminded Ajur that since tree does not have cycles and hence Hamiltonian cycles. 
+Rishnak continued that there is a special class of graphs called bipartite graphs where every cycle is of even length. The vertex set can be partitioned into two sets $A$ and $B$, such that every edge in such a graph has one end vertex in $A$ and the other end vertex in $B$. Rishnak showed an example Figure \ref{5g5}. Ajur immediately said that all the cycles are of even lengths (4 and 6). Rishnak asked Ajur what the two vertex partitions are (all the edges go from one partition to the other). Ajur thought about it for a few seconds and said one partition contains 1, 3, 5 and the other partition contains the vertices 2, 4 and 6. Ajur drew a graph see Figure \ref{5g55} to illustarte what he meant. Ajur also mentioned that this graph has a Hamiltonian cycle. Ajur exclaimed that every tree is a bipartite graph too , as tree contains no cycles (or cycles of length 0 - we know that 0 is an even number!). Rishnak reminded Ajur that since tree does not have cycles and hence Hamiltonian cycles. 
 Ajur wanted to show that he has understood the concept of bipartite graphs. So he drew a graph - see Figure \ref{5g6} that does not a Hamiltonian cycle. Ajur explained why this graph does not have a Hamiltonian cycle. If there were a Hamiltonian cycle, the vertices in the cycle have to alternate between the two vertex partitions. But one vertex partition has two vertices and the other vertex partition has three vertices. Rishnak smiled and appreciated Ajur's logical thinking.
 
 \begin{figure}
@@ -144,6 +144,24 @@ Ajur wanted to show that he has understood the concept of bipartite graphs. So h
 \begin{tikzpicture}
   [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
   \node (n1) at (1,7) {1};
+  \node (n3) at (5,7)  {3};
+  \node (n5) at (9,7) {5};
+  \node (n2) at (1,2)  {2};
+  \node (n4) at (5,2) {4};
+  \node (n6) at (9,2)  {6};
+ 
+  
+   \foreach \from/\to in {n1/n2,n1/n4,n1/n6,n3/n4,n3/n6,n5/n2,n5/n4,n5/n6}
+    \draw (\from) -- (\to);
+    \end{tikzpicture}
+\caption{ Graph in \ref{5g5} drawn with vertex partition}\label{5g55}
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,7) {1};
   \node (n2) at (5,7)  {2};
   \node (n3) at (1,2)  {3};
   \node (n4) at (5,2) {4};
@@ -156,3 +174,51 @@ Ajur wanted to show that he has understood the concept of bipartite graphs. So h
 \caption{ A Bipartite Graph with 5 vertices and 6 edges}\label{5g6}
 \end{center}
 \end{figure}
+
+Rishnak asked Ajur about a problem he had heard in a radio program called Car Talk broadcast from Rishnak's favorite station NPR. Here is a simplified puzzle
+\footnote{ Car Talk attributed to Bruce Robinson, a professor of civil and environmental engineering at the University of Tennessee} There are 9 jealous people who live in the squares of a three-by-three grid (see Figure \ref{5g7}. We're gonna number the squares, starting in the upper left-hand corner, 1 through 9. Each person is jealous of his adjacent neighbor. Not his diagonal neighbor, but the person up or down or left or right of him. Each aspires to move into the apartment of his adjacent neighbor.
+The question is very simple: What is the fewest number of total moves that can accomplish this?
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,11) {1};
+  \node (n2) at (5,11)  {2};
+  \node (n3) at (9,11) {3};
+  \node (n4) at (1,7)  {5};
+  \node (n5) at (5,7) {5};
+  \node (n6) at (9,7)  {6};
+  \node (n7) at (1,3)  {7};
+  \node (n8) at (5,3) {8};
+  \node (n9) at (9,3)  {9};
+  
+  
+   \foreach \from/\to in {n1/n2,n1/n4,n2/n3,n2/n5,n3/n6,n4/n5,n4/n7,n5/n6,n5/n8,n6/n9,n7/n8,
+   n8/n9}
+    \draw (\from) -- (\to);
+    \end{tikzpicture}
+\caption{ A three by three grid with nine apartments. Apartments are modeled as vertices and an edge denotes adjacency relation between apartments (up, down, two sides - not all apartments have all of the adjacenct apartments} \label{5g7}
+\end{center}
+\end{figure}
+
+Ajur immediately that this is a bipratite graph and the partitions are not of equal size. Hence immediately he responded that this is not possible. Rishnak asked Ajur to write it so that his argument is solid. Ajur promised that he will do it by next day. This graph has a Hamiltonian path but not a Hamiltonian cycle. Ajur mentioned that instead of three by three grid of apartments, if we had a four by three grid (or three by four grid) of apartments, it is easy for all of them to transfer to the adjacent apartments. Such a graph has a Hamiltonian Cycle.
+
+Euler proposed a Knight's tour problem in a chessboard. As you know, chessboard is eight by eight by square. Place a knight in any square. From that square, knight has to move \footnote{knight moves either two squares vertically up/down and one square horizontally left or right or one square vertically up or down and two squares horizontally left or right} visiting all squares once and only once and return to the starting square. You can think of this as finding a Hamiltonian cycle in a 64 vertex graph with two vertices being adjacent if there is a knight move from one vertex to the other. There is no easy method of finding a knight's tour other than exhaustive search \footnote{Usual method of exhaustive search is through backtracking - a systematic method of exploring all possibilities}. Here is a solution Table \ref{5t1} for a five by five chess board with the knights tour starting from bottom left.
+\begin{table}
+\centering
+\begin{tabular}{|c |c |c| c| c|} 
+ \hline
+3&10&21&16& 5\\
+\hline
+20&15& 4&11&22\\
+\hline
+ 9& 2&23& 6&17\\
+ \hline
+14&19& 8&25&12\\
+\hline
+ 1&24&13&18& 7\\
+ \hline
+\end{tabular}
+\caption{Knights Tour on five by five chess board starts at the bottom left}
+\label{5t1}
+\end{table}
