@@ -1,6 +1,6 @@
 \chapter{Subgraphs}
 Rishnak found Ajur sleeping with his dog Jura near the cemetery and saw a headstone nearby with the name Schossow. Rishnak recognized the name  from Instant Insanity Puzzle{\footnote{It is also known as Katzenjammer, (Great) Tantalizer, Face-4, Cube-4, Bognar Balls, Taktikolor, Frantic, Diabolical, Damblocks,
-Symington's Puzzle. A patent was awarded to  Schossow in 1990}}. Even as Rishnak was thinking it would be an interesting topic to discuss with Ajur. Jura, the dog, eager to explore, nudged Ajur. Before long, Ajur and Jura were strolling along a path where Rishnak startled Ajur. 
+Symington's Puzzle. A patent was awarded to  Schossow in 1990}}. Just as Rishnak was thinking it would be an interesting topic to discuss with Ajur, Jura the dog, eager to explore, nudged Ajur. Before long, Ajur and Jura were strolling along a path where Rishnak startled Ajur (as ghosts tend to do). 
 
 Rishnak asked Ajur what he knew about subgraphs. Ajur said that he was familiar with subsets. Since a graph has both a vertex set and edge set, he can deduce what a subgraph is. If a graph $G=(V,E)$ with a vertex set $V$ and an edge set $E$, then take any subset $X$ of $V$ and consider all the edges in E, which has both its end vertices in $X$. Ajur drew this.
 \vspace{0.2in}
@@ -46,7 +46,7 @@ If one took a vertex subset $\{1,2,3,5\}$ of Figure \ref{3g} the subgraph could 
 \end{figure}
 \\
 \noindent
-Rishnak laughed and said that the subgraph Ajur drew was called an \textit {induced subgraph} --- that is, all the edges are included in the vertex subset. You have the flexibility of choosing only a subset of these edges. But for all the chosen subset of edges, end vertices should be in the chosen vertex subset. 
+Rishnak laughed and said that the subgraph Ajur drew was called an \textit {induced subgraph} --- that is, all the edges are included in the vertex subset. You have the flexibility of choosing only a subset of these edges. But there is one extra condition: for each edge in the chosen subset of edges, the end vertices should be in the chosen vertex subset. 
 \\
 \begin{figure}
 \begin{center}
@@ -74,8 +74,8 @@ Rishnak illustrated this with the following subgraph example as shown in Figure 
 %Rishnak said that in a graph having $n$ vertices where the vertices are labeled (have a number/name associated with them), then there are at least $2^n$ subgraphs and exactly $2^n$ induced subgraphs.  There are ${n \choose i}$ ways of choosing $i$ vertices from a given set of $n$ vertices. Once the vertices are chosen, the edges are fixed for an induced subgraph. Since $i$ can vary from 0 to $n$, we get $2^n$ induced subgraphs. Since every induced subgraph is a subgraph (and not every subgraph is not an induced subgraph), we have at least $2^n$ subgraphs.  
 
 A walk from a vertex $i$ to a vertex $j$ is an alternating sequence of vertices and edges. Every edge in that walk is incident between vertices preceding and succeeding that edge. For example in Figure \ref{3g},
-a walk from vertex 6 to vertex 1 could be 6 (6,4), 4, (4,3), 3, (3,2), 2, (2,1) and 1. The edges are represented as a vertex pair. If those edges are labelled with a name, that label could be used instead. Another walk in Figure \ref{3g} from vertex 6 to vertex 1 could be 6, (6,4), 4, (4,5), 5 (5,1), 1.  The only other condition that the walk has (besides an edge being incident on a preceding and a succeeding vertex), all the edges have to be distinct. However the vertices in a walk can be repeated. 
-Here is another example Figure \ref{3g3}. A walk from vertex 1 and vertex 8 could be 1, (1,2), 2, (2,4), 4, (4,6), 6, (6,8) and 8. (8,2), 2, (2,3), 3, (3,4), 4, (4,5), 5, (5,6), 6, (6,7), 7, (7,8) and 8. Ajur was getting bored. He interjected that in your walk you have visited all the edges in the graph (shown in Figure \ref{3g3}). Ajur further added that this was similar to the K\"{o}nigsberg Bridge Problem (Figure \ref{kon} mentioned earlier in Chapter 3!).  
+a walk from vertex 6 to vertex 1 could be 6 (6,4), 4, (4,3), 3, (3,2), 2, (2,1) and 1. The edges are represented as a vertex pair. If those edges are labelled with a name, that label could be used instead. Another walk in Figure \ref{3g} from vertex 6 to vertex 1 could be 6, (6,4), 4, (4,5), 5 (5,1), 1.  The only other condition that the walk has (besides an edge being incident on a preceding and a succeeding vertex) is that all the edges have to be distinct. However the vertices in a walk can be repeated. 
+Here is another example Figure \ref{3g3}. A walk from vertex 1 and vertex 8 could be 1, (1,2), 2, (2,4), 4, (4,6), 6, (6,8) and 8. (8,2), 2, (2,3), 3, (3,4), 4, (4,5), 5, (5,6), 6, (6,7), 7, (7,8) and 8. Ajur was naturally getting bored. He interjected that in your walk you have visited all the edges in the graph (shown in Figure \ref{3g3}). Ajur further added that this was similar to the K\"{o}nigsberg Bridge Problem (Figure \ref{kon} mentioned earlier in Chapter 3!).  
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
