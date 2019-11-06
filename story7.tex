@@ -74,4 +74,45 @@ Ajur thought for a while and found it a bit challenging. Then he thought of movi
 \end{center}
 \end{figure}
 
-Rishnak was impressed. Rishnak asked Ajur if two graphs $G$ and $H$ are isomorphic and if $G$ is planar, can you say $H$ is planar. Ajur said if $H$ is isomorphic to $G$, then each vertex corresponds to some vertex of $G$. By just relabeling the vertices of $G$ in its planar drawing, we get a planar drawing of $H$.
+Rishnak was impressed. Rishnak then asked Ajur to find out whether this graph \ref{9g5} has a plane representation. Ajur struggled and tried to get a drawing - with one edge crossing \ref{9g6}. 
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,7) {1};
+  \node (n2) at (5,7)  {2};
+  \node (n3) at (9,7) {3};
+  \node (n4) at (1,2)  {4};
+  \node (n5) at (5,2) {5};
+  \node (n6) at (9,2)  {6};
+ 
+  
+   \foreach \from/\to in {n1/n6,n1/n4,n1/n5,n2/n6,n2/n4,n2/n5,n3/n4,n3/n5,n3/n6}
+    \draw (\from) -- (\to);
+    \end{tikzpicture}
+\caption{ A Bipartite Graph with 6 vertices and 9 edges, denoted by $K_{3,3}$ where the edges cross}\label{9g5}
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle,fill=red!10}]
+  \node (n1) at (1,7) {1};
+  \node (n2) at (5,-2)  {2};
+  \node (n3) at (7,3) {3};
+  \node (n4) at (1,2)  {4};
+  \node (n5) at (4,1) {5};
+  \node (n6) at (11,3)  {6};
+ 
+  
+   \foreach \from/\to in {n1/n6,n1/n4,n1/n5,n2/n6,n2/n4,n2/n5,n3/n4,n3/n5,n3/n6}
+    \draw (\from) -- (\to);
+    \end{tikzpicture}
+\caption{ A  drawing of Bipartite Graph with 6 vertices and 9 edges, denoted by $K_{3,3}$ where just two edges edges cross}\label{9g6}
+\end{center}
+\end{figure}
+Rishnak told Ajur that this graph does not have a planar representation. He added that this is a well known puzzle due to Sam Loyd\footnote{Sam Lloyd is a famous American Recreational Mathematician who has contributed a lot of puzzles}. There are three houses (represented as circles) drawn on paper and below them three smaller circles representing gas, water, and electricity suppliers. The aim of the puzzle is to draw lines to get each utility into every house, without crossing over any line. Ajur reminded himself that he should read up on Loyd's puzzle books from his local library.
+
+ Rishnak asked Ajur if two graphs $G$ and $H$ are isomorphic and if $G$ is planar, can you say $H$ is planar. Ajur said if $H$ is isomorphic to $G$, then each vertex corresponds to some vertex of $G$. By just relabeling the vertices of $G$ in its planar drawing, we get a planar drawing of $H$.
+
