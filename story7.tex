@@ -14,8 +14,8 @@ For example here are two drawings of a complete graph on Four vertices $K_4$. Si
   \node (n3) at (5,7)  {3};
   \node (n4) at (3,11)  {4};
 
-  \foreach \from/\to in {n1/n2,n2/n3,n2/n4,n1/n4,n3/n4,n1/n3}
-    \draw (\from) -- (\to);
+  \foreach \from/\to in {n1/n2,n2/n3,n2/n4,n1/n4,n3/n4,n1/n3} 
+  \draw (\from) -- (\to);
 
 \end{tikzpicture}
 \caption{ Drawing of $K_4$ in which edges cross}\label{9g1}
@@ -138,7 +138,7 @@ Each region in a planar representation is also called a face. Euler discovered a
 
  
 
-Rishnak gave an intuitive explanation of this formula \ref{eqn:euler}. Since each region is a cycle and the external region (sometimes called an infinite region) is also a cycle. There are \ref{eqn:cycles} $n-1$ edges in a tree, the rest of $e-(n-1)$ edges will form a cycle. Each of these cycles correspond to an internal region or internal face, and there is one external face. Hence from \ref{eqn:cycles}, Euler's equation \ref{eqn:euler} folows.
+Rishnak gave an intuitive explanation of this formula \ref{eqn:euler}. Since each region is a cycle and the external region (sometimes called an infinite region) is also a cycle. There are \ref{eqn:cycles} $n-1$ edges in a tree, the rest of $e-(n-1)$ edges will form a cycle. Each of these cycles correspond to an internal region or internal face, and there is one external face. Hence from \ref{eqn:cycles}, Euler's equation \ref{eqn:euler} follows.
 \begin{eqnarray*}
     \label{eqn:cycles}
     internal faces&=&e-(n-1)\\
@@ -147,7 +147,7 @@ Rishnak gave an intuitive explanation of this formula \ref{eqn:euler}. Since eac
     &=&e-n+2
 \end{eqnarray*}
 
-Ajur told Rishnak that he has done Platonic solids with Zometools \footnote{Zometool is a commercial kit to make polyhedrons}. Rishnak then explained Euler's equation applied for the five platonic solids by the following table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planara representation.
+Ajur told Rishnak that he has done Platonic solids with Zometools \footnote{Zometool is a commercial kit to make polyhedrons}. Rishnak then explained Euler's equation applied for the five platonic solids by the following table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planar representations as shown in Figures \ref{fig:tetra}, \ref{fig:octa},\ref{fig:cube}.\ref{fig:dod} and \ref{fig:ico}.
 \begin{table}[]
     \centering
     \begin{tabular}{||c|c|c|c||}
@@ -207,4 +207,35 @@ Ajur told Rishnak that he has done Platonic solids with Zometools \footnote{Zome
 \caption{Icosahedron}\label{fig:ico}
 \end{figure}
 
-that  Rishnak said another interesting fact (without further details) that any planar graph has not only a plane representation but also a representation in which
+Rishnak told Ajur that each edge appears in exactly two faces. If each face is a triangle (cycle of length 3), it is called a maximal planar graph. Hence the number of edges, $e=\frac{3 \times f}{2}$ or $f=\frac{2 \times e}{3}$ . Substituting for $f$ in Euler equation \ref{eqn:euler}, we get
+
+\begin{eqnarray*}
+    \label{eqn:maxplanar}
+    \frac{2\times e}{3}&=&e-n+2\\
+    -\frac{e}{3} &=&-n+2\\
+    \frac{e}{3}&=&n-2\\
+    e&=& 3 \times n - 6
+\end{eqnarray*}
+
+Rishnak added another interesting fact (without further details) that any planar graph has not only a plane representation but also a representation in which each edge is drawn as a straight line.
+
+Ajur told Rishnak that every subraph of a planar graph is also a planar graph. Rishnak was happy that Ajur is still following the concepts. Rishnak mentioned that the operation of dividing an edge, i.e, introducing vertices of degree 2 will not change the embedding. If a graph is planar and if we subdivide an edge, it is still planar. Similarly if a graph is nonplanar, and if e subdivide any edge, the graph is still nonplanar. An example of subdivision of an edge is shown in Figure \ref{9g9}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.8,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (-1,7) {1};
+  \node (n2) at (3,9)  {2};
+  \node (n3) at (7,7)  {3};
+  \node (n4) at (3,13)  {4};
+  \node (n5) at (2,7) {5};
+  \node (n6) at (4,7) {6};
+
+  \foreach \from/\to in {n1/n2,n2/n3,n2/n4,n1/n4,n3/n4,n1/n5,n5/n6,n6/n3}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+\caption{ Subdivision of edge (1,3) by adding two new vertices 5 and 6 in Figure \ref{9g2}}\label{9g9}
+\end{center}
+\end{figure}
