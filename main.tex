@@ -10,6 +10,20 @@
 \usepackage{hyperref}
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning}
+\usetikzlibrary{decorations.fractals}
+\pgfdeclaredecoration{H-tree}{init}
+{
+  \state{init}[width=\pgfdecoratedinputsegmentremainingdistance]
+  {
+    \pgfpathmoveto{\pgfpoint{0pt}{0.35355\pgfdecoratedinputsegmentremainingdistance}}
+    \pgfpathlineto{\pgfpoint{0pt}{-0.35355\pgfdecoratedinputsegmentremainingdistance}}
+    \pgfpathmoveto{\pgfpoint{0pt}{0pt}}
+	\pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+    \pgfpathmoveto{\pgfpoint{\pgfdecoratedinputsegmentremainingdistance}{0.35355\pgfdecoratedinputsegmentremainingdistance}}
+    \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentremainingdistance}{-0.35355\pgfdecoratedinputsegmentremainingdistance}}
+    \pgfpathmoveto{\pgfpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+  }
+}
 %
 %\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
 %\tikzset{

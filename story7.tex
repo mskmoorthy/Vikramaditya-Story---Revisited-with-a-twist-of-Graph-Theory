@@ -115,4 +115,59 @@ Rishnak was impressed. Rishnak then asked Ajur to find out whether this graph \r
 Rishnak told Ajur that this graph does not have a planar representation. He added that this is a well known puzzle due to Sam Loyd\footnote{Sam Lloyd is a famous American Recreational Mathematician who has contributed a lot of puzzles}. There are three houses (represented as circles) drawn on paper and below them three smaller circles representing gas, water, and electricity suppliers. The aim of the puzzle is to draw lines to get each utility into every house, without crossing over any line. Ajur reminded himself that he should read up on Loyd's puzzle books from his local library.
 
  Rishnak asked Ajur if two graphs $G$ and $H$ are isomorphic and if $G$ is planar, can you say $H$ is planar. Ajur said if $H$ is isomorphic to $G$, then each vertex corresponds to some vertex of $G$. By just relabeling the vertices of $G$ in its planar drawing, we get a planar drawing of $H$.
+ 
+ Ajur then excitedly told Risnak that all trees have a planar representation\footnote{Ajur liked monkeys and monkeys liked trees.}. Rishnak answered that trees are easy to embed in a plane as there are
+ no cycles. He added that there is a nice space filling planar representation of a tree shown in Figure \ref{9g7}.
+\begin{figure}
+\begin{center}    
 
+ \begin{tikzpicture}[decoration=H-tree, very thick]
+    \draw decorate { decorate { decorate { decorate { decorate { decorate { (0,0) -- (3,0) }}}}}};
+  \end{tikzpicture}
+  \caption{ A planar drawing of a tree (which is self similar)}\label{9g7}
+  \end{center}
+\end{figure}
+
+One way to get a planar drawing is to embed the longest cycle in a planar and then try to place the rest of the vertices so that there are no edges cross each other. This cycle will divide the plane into two region inner region (inside the cycle) or outer region (outside the cycle). So the edges have to go either inside or outside. By trying out the possibilities, you can get a planar representation of a graph (if it exists). It is easier than done. One can do an efficient method of placing the edges (without any backtracking) - Rishnak said some details are more complicated. 
+
+Each region in a planar representation is also called a face. Euler discovered a remarkable formula concerning the number of edges, e, the number of vertices,n, and the number of faces, f as,
+\begin{equation}
+\label{eqn:euler}
+  f-e+v=2 
+\end{equation}
+
+ 
+
+Rishnak gave an intuitive explanation of this formula \ref{eqn:euler}. Since each region is a cycle and the external region (sometimes called an infinite region) is also a cycle. There are \ref{eqn:cycles} $n-1$ edges in a tree, the rest of $e-(n-1)$ edges will form a cycle. Each of these cycles correspond to an internal region or internal face, and there is one external face. Hence from \ref{eqn:cycles}, Euler's equation \ref{eqn:euler} folows.
+\begin{eqnarray*}
+    \label{eqn:cycles}
+    internal faces&=&e-(n-1)\\
+    external face&=&1\\
+    total faces&=& internal faces~+~external face\\
+    &=&e-n+2
+\end{eqnarray*}
+
+Ajur told Rishnak that he has done Platonic solids with Zometools \footnote{Zometool is a commercial kit to make polyhedrons}. Rishnak then explained Euler's equation applied for the five platonic solids by the following table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planara representation.
+\begin{table}[]
+    \centering
+    \begin{tabular}{||c|c|c|c||}
+    \hline
+    Solid & n & e& f \\ [0.5ex] 
+ \hline\hline
+ Tetrahedron& 4 & 6 & 4 \\ 
+ \hline
+ Octohedron & 6 & 12& 8 \\
+ \hline
+ Cube & 8 & 12 & 6 \\
+ \hline
+ Dodecahedron & 20 & 30 & 12 \\
+ \hline
+ Icosahedron & 12 & 30 & 20 \\ [1ex] 
+ \hline
+ \end{tabular}
+    \caption{Euler Equation for Platonic Solids}
+    \label{tab:platonic}
+\end{table}
+
+
+that  Rishnak said another interesting fact (without further details) that any planar graph has not only a plane representation but also a representation in which
