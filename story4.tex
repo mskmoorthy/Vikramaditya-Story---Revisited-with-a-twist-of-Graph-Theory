@@ -1,6 +1,6 @@
 \chapter{Euler Paths/Cycles}
 
-Ajur was tired after listening to a lot of definitions and examples. He complained to Jura that it looked too much like a math class and he preferred to solve fun problems based on math concepts instead.  Rishnak overheard this conversation. Rishnak had to agree that that the previous day's exchange was dry. His ghoulish ghost friends were right. He was making the beautiful subject of Graph Theory dull and monotonous.
+Ajur was tired after listening to a lot of definitions and examples. He complained to Jura that it looked too much like a math class and he preferred to solve fun problems based on math concepts instead.  Rishnak overheard this conversation. Rishnak had to agree that that the previous day's exchange was dry. His ghoulish friends were right -- he was making the beautiful subject of Graph Theory dull and monotonous.
 
 So, for the next session, Rishank chose a topic what he believed was a more interesting problem - the Eulerian walk. 
 
@@ -153,7 +153,7 @@ Rishnak asked how he would make graph shown in Figure \ref{4g1} to have a closed
 
 \vspace{3in}
 Rishnak then asked Ajur whether he knew about multi graphs and directed graphs. Ajur realized he essentially learnt about multigraphs  by doing \textbf{the?} Eulerian walks and completion  example. Ajur added that in a directed graph an edge $(x,y)$ goes from vertex $x$ to $y$ and he drew an example graph to show Rishnak that he understood. See Figure \ref{4g5}. 
-Ajur mentioned that instead of degree of a vertex, we have in-degree and out-degree of a vertex. The number of edges coming to a vertex is the in-degree of that vertex and the number of edges going out of a vertex is the out-degree of a vertex. For example, in the directed graph shown in Figure \ref{4g5}, vertex 1 has in-degree 2 and out-degree 1. Each of Vertex 3 and 4 has in-degree  and out-degree 1. A directed graph is strongly connected if there is a directed path from every vertex to every other vertex. For example, the directed graph shown in Figure \ref{4g5} is strongly connected. Rishnak said that the Eulerian walk will only be on strongly connected directed graphs.
+Ajur mentioned that instead of \emph{the} degree of a vertex, there is an in-degree and an out-degree of a vertex. The number of edges coming to a vertex is the in-degree of that vertex and the number of edges going out of a vertex is the out-degree of a vertex. For example, in the directed graph shown in Figure \ref{4g5}, vertex 1 has in-degree 2 and out-degree 1. Each of Vertex 3 and 4 has in-degree  and out-degree 1. A directed graph is strongly connected if there is a directed path from every vertex to every other vertex. For example, the directed graph shown in Figure \ref{4g5} is strongly connected. Rishnak said that an Eulerian walk will only exist on strongly connected directed graphs.
 
 \begin{figure}
 \begin{center}
@@ -176,14 +176,15 @@ Ajur mentioned that instead of degree of a vertex, we have in-degree and out-deg
 \end{figure}
 
 
-Anticipating Rishnak's question, Ajur responded that there was no closed Eulerian walk in this directed graph. Rishnak reminded Ajur that he wanted to know whether there was an Eulerian walk from vertex 2 to vertex 1. Ajur reasoned in a  manner similar to what he did before. Ajur saw a directed cycle (1,(1,2),2,(2,3),3,(3,1),1) or simply (1,2,3,1). So Ajur was able to write the Eulerian walk as 2-3-1-2-4-1. Ajur said to have a closed Eulerian walk, you should have a collection of edge disjoint cycles (no edge is common between these cycles). In such a case, the in-degree of each vertex should be the same as its out-degree (this is similar to the degree of every vertex has to be an even number as in the case of undirected graphs). For an Eulerian walk, it has to start from a vertex which has one more out-degree than in-degree and end in a vertex which has one more in-degree than out-degree (For all other vertices, in-degree should be equal to out-degree).
+Anticipating Rishnak's question, Ajur responded that there was no closed Eulerian walk in this directed graph. Rishnak reminded Ajur that he wanted to know whether there was an Eulerian walk from vertex 2 to vertex 1. Ajur reasoned in a  manner similar to before. Ajur saw a directed cycle (1,(1,2),2,(2,3),3,(3,1),1) or simply (1,2,3,1). So Ajur was able to write the Eulerian walk as 2-3-1-2-4-1. Ajur said to have a closed Eulerian walk, you should have a collection of edge disjoint cycles (no edge is common between these cycles). In such a case, the in-degree of each vertex should be the same as its out-degree (this is related to the condition for an undirected graph to admit an Eulerian cycle: the degree of every vertex has to be an even number). For an Eulerian walk, it has to start from a vertex which has one more out-degree than in-degree and end in a vertex which has one more in-degree than out-degree (For all other vertices, the in-degree should be equal to the out-degree).
 
-It was getting late - but Rishank wanted to share some exciting applications of Eulerian walks. 
-Suppose the question is to obtain a string 0's and 1's such that all four two bit strings occur as a substring (there are 4 two bit strings consisting of 0's and 1's namely 00,01,10 and 11). For example if you have 0011 - all two bit strings occur as a substring namely 00, 01, 11 and 10. If it were a circular string then 0011 will suffice to get all 4 two bit strings (Such a string is known as DeBruijn sequence.) Rishnak added that this problem is closely related to closed Eulerian walk. If we construct an Eulerian walk on this directed graph Figure \ref{4g55}, we will get that string.
+It was getting late - but Rishank wanted to share several exciting applications of Eulerian walks. 
 
-For this directed graph, there are two verticee with labels 0 and 1 . There is a directed edge with label 0 from vertex labeled 0 to itself. There is a directed edge with a label 1 from vertex labeled 0 to a vertex labeled 1. (The idea behind the first edge is to consider appending 0 (edge label) to 0 (the starting vertex label) get 00. Then omit the first character 0. The result is 0 which is the vertex labeled 0 - hence a self loop). Similarly there is an edge with a label 1 from a vertex labeled 1 to itself and there is a vertex an edge with 
+Consider the following problem: construct a string of 0's and 1's such that all four two-bit strings occur as a substring (there are 4 two-bit strings consisting of 0's and 1's: 00,01,10 and 11). For example in the string 00110, all two-bit strings occur. If we instead wanted to build a \emph{circular} string that contained all two-bit substrings. Such a string is known as DeBruijn sequence. Rishnak added that this problem is closely related to constructing a closed Eulerian walk. If we construct an Eulerian walk on this directed graph Figure \ref{4g55}, we will get that string.
+
+For this directed graph, there are two vertices with labels 0 and 1 . There is a directed edge with label 0 from vertex labeled 0 to itself. There is a directed edge with a label 1 from the vertex labeled 0 to the vertex labeled 1. (The idea behind the first edge is to consider appending 0 (edge label) to 0 (the starting vertex label) to get 00. Then omit the first character 0. The result is 0 which is the vertex labeled 0 - hence a self loop). \textbf{This last part is somewhat unclear...} Similarly there is an edge with a label 1 from a vertex labeled 1 to itself and there is a vertex an edge with 
 a label 0 from vertex labeled 1 to a vertex labeled 0.
-Each vertex has an in-degree of 2 and an out-degree if 2. Hence it has a closed Eulerian walk from a vertex labeled 0 to itself and that walk is 0110 (all of them are edge labels). From this, we get all the four substrings of length 2, namely 01,11,10,00 (the last one is taking the last character and the first character as it is a closed walk).
+Each vertex has an in-degree of 2 and an out-degree if 2. Hence it has a closed Eulerian walk from the vertex labeled 0 to itself and that walk is 0110 (here, each character is an \emph{edge label}!) From this, we get all the four substrings of length 2, namely 01,11,10,00 (the last one is taking the last character and the first character as it is a closed walk).
 
 \begin{figure}
 \begin{center}
@@ -202,11 +203,16 @@ Each vertex has an in-degree of 2 and an out-degree if 2. Hence it has a closed 
 \caption{ An Eulerian walk on this directed graph will yield a DeBruijn sequence that contains  all substrings of length 2 over a binary alphabet 0 and 1}\label{4g55}
 \end{center}
 \end{figure}
-Rishnak then asked Ajur to get a DeBruijn Sequence that contains all substrings of length 3.
-Ajur thought that the question was to obtain a string 0's and 1's such that all eight three bit strings occur as a substring (there are 8 three bit strings consisting of 0'1 and 1's namely 000, 001, 010, 011, 100, 101, 110, 111). Ajur wanted to construct a graph from where an Eulerian walk will result in such a sequence.  Consider a directed graph with 4 vertices (labeled 00, 01, 10 and 11).
+Rishnak then asked Ajur to construct a DeBruijn Sequence that contains all substrings of length 3.
+Ajur thought that the question was to obtain a string 0's and 1's such that all eight three-bit strings occur as a substring; the 8 three bit strings consisting of 0's and 1's are 
+$$000, 001, 010, 011, 100, 101, 110, 111.$$ Ajur wanted to construct a graph from which an Eulerian walk would naturally yield such a sequence. 
+
+Consider a directed graph with 4 vertices, labeled 00, 01, 10 and 11.
 There is an edge from vertex labeled 00 to itself with a label 0 (if you get a 0, you append 0 to the vertex label (00) and drop the first character). There is an edge with label 1 from
-vertex labeled 00 to a vertex labeled 01. Vertex labeled 00 has an out-degree of 2. Similarly draw an edge with label 0 from vertex labeled 01 to vertex with label 10. Draw an edge with label 1 from vertex labeled 01 to vertex with label 11. 
-Draw an edge with label 0 from a  vertex labeled 10 to a vertex labeled 00. Draw an edge with label 1 from a vertex labeled 10 to a vertex labeled 01.
+vertex labeled 00 to a vertex labeled 01. Vertex labeled 00 has an out-degree of 2. Similarly there is an edge with label 0 from vertex labeled 01 to vertex with label 10. There is an edge with label 1 from vertex labeled 01 to vertex with label 11. 
+
+
+We continue to build the graph following the natural pattern. Draw an edge with label 0 from a  vertex labeled 10 to a vertex labeled 00. Draw an edge with label 1 from a vertex labeled 10 to a vertex labeled 01.
 Draw an edge with label 0 from a vertex labeled 11 to a vertex labeled 10. Draw an edge with label 1 from a vertex labeled 11 to itself.
 The resulting directed graph is as shown in Figure \ref{4g6}. An Eulerian walk starting from a vertex labeled 00 is $0 1 0 1 1 1 0 0$  (We start with a vertex labeled 00 and the label of the edges traversed in an Eulerian Walk). This walk is also a closed Eulerian Walk as we start and end with the same vertex (labeled $00$).
 From the walk, we get all the strings of length 3 (over 0 and 1) as substrings in the Eulerian Walk.
@@ -235,11 +241,11 @@ From the walk, we get all the strings of length 3 (over 0 and 1) as substrings i
 %\vspace{0.1in}
 %\noindent
 
-Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (as known in Greece) or bhul bulaiyah (as known in India).  It is easy to enter a maze but it is difficult to get out of one. There are large walls which prevent one from seeing where the corridors lead to. Rishnak told Ajur that there were reports of people  dying in a maze because they were unable to find their way out. One was the angel Kinaja who was a human trapped in the maze. She had figured out how to get out but was too exhausted to walk and died. Kinaja had told Rishnak people who studied graph Theory understood Eulerian walks could find their way out of a maze. Jura said he knew about maze having seen a YouTube video of a psychology lab experiment with mice running in a maze and he had been in one as a child when his parents took him to the corn field maze in the fall in a nearby town. Ajur was also eager to show off his knowledge in Poetry and quoted Robert Frost's line from his poem 'the road not taken' which is sort of related to traversing a maze: \quote {Two roads diverged in a wood, and I--\\ 
-I took the one less traveled by,\\ And that has made all the difference}. 
+Rishnak said that another application of Eulerian Walk is in the creation of mazes or labyrinths (as known in Greece) or bhul bulaiyah (as known in India).  It is easy to enter a maze but it is difficult to get out of one. There are large walls which prevent one from seeing where the corridors lead to. Rishnak told Ajur that there were reports of people dying in a maze because they were unable to find their way out. One was the angel Kinaja who was a human trapped in the maze. She had figured out how to get out but was too exhausted to walk and died. Kinaja had told Rishnak people who studied graph theory and understood Eulerian walks could find their way out of a maze. Jura said he knew about maze having seen a YouTube video of a psychology lab experiment with mice running in a maze. He had also been in one as a child when his parents took him to a corn field mazen. Ajur was also eager to show off his knowledge in poetry and quoted Robert Frost's line from the poem \emph{The Road not Taken} which is related to traversing a maze: \begin{quotation}\noindent Two roads diverged in a wood, and I--\\ 
+I took the one less traveled by,\\ And that has made all the difference.
+\end{quotation}
 \\
-\\
-\noindent Rishnak was getting impatient and he wanted to stay focused on the maze. Rishnak showed a picture of the maze Figure \ref{4g7}.
+\noindent Rishnak was getting impatient, as poltergeists tend to, and he wanted to stay focused on the maze. Rishnak showed a picture of the maze Figure \ref{4g7}.
 \begin{figure}
 \begin{center}
 \includegraphics{maze11.jpg}
