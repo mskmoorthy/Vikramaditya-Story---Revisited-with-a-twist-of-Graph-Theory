@@ -138,17 +138,17 @@ Each region in a planar representation is also called a face. Euler discovered a
  
 
 Rishnak gave an intuitive explanation of this formula \ref{eqn:euler}. Since each region is a cycle and the external region (sometimes called an infinite region) is also a cycle. 
-There are $n-1$ edges in a tree, the rest of $e-(n-1)$ edges will form a cycle (\ref{eqn:cycles}). Each of these cycles correspond to an internal region or internal face, and there is one external face. Hence from \ref{eqn:cycles}, Euler's equation \ref{eqn:euler} follows.
-\begin{eqnarray*}
+There are $n-1$ edges in a tree, the rest of $e-(n-1)$ edges will form a cycle. Each of these cycles correspond to an internal region or internal face, and there is one external face. Using this, Euler's equation \ref{eqn:euler} follows.
+\begin{eqnarray}
     \label{eqn:cycles}
-    internal faces&=&e-(n-1)\\
-    external face&=&1\\
-    total faces&=& internal faces~+~external face\\
+    internal faces&=&e-(n-1)\nonumber\\
+    external face&=&1 \nonumber \\
+    total faces&=& internal faces~+~external face \nonumber \\
     &=&e-n+2
-\end{eqnarray*}
+\end{eqnarray}
 
 Ajur said that he has done Platonic solids with Zometools \footnote{Zometool is a commercial kit to make polyhedrons}. Rishnak then explained Euler's equation applied for the five platonic solids by the following table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planar representations as shown in Figures \ref{fig:tetra}, \ref{fig:octa}, \ref{fig:cube}, \ref{fig:dod}, and \ref{fig:ico}.
-\begin{table}[h]
+\begin{table}[ht]
     \centering
     \begin{tabular}{||c|c|c|c||}
     \hline
@@ -194,6 +194,7 @@ Ajur said that he has done Platonic solids with Zometools \footnote{Zometool is 
 \end{figure}
 \begin{figure}
     \begin{tikzpicture}
+    [scale=0.8]
 
         \grDodecahedral[form=2] 
     \end{tikzpicture}
@@ -209,17 +210,17 @@ Ajur said that he has done Platonic solids with Zometools \footnote{Zometool is 
 
 Rishnak said each edge appears in exactly two faces. If each face is a triangle (cycle of length 3), it is called a maximal planar graph. Hence the number of edges, $e=\frac{3 \times f}{2}$ or $f=\frac{2 \times e}{3}$ . Substituting for $f$ in Euler equation \ref{eqn:euler}, we get
 
-\begin{eqnarray*}
-    \label{eqn:maxplanar}
-    \frac{2\times e}{3}&=&e-n+2\\
-    -\frac{e}{3} &=&-n+2\\
-    \frac{e}{3}&=&n-2\\
+\begin{eqnarray}
+  \label{eqn:maxplanar}  
+    \frac{2\times e}{3}&=&e-n+2\nonumber\\
+    -\frac{e}{3} &=&-n+2\nonumber \\
+    \frac{e}{3}&=&n-2 \nonumber \\
     e&=& 3 \times n - 6
-\end{eqnarray*}
+\end{eqnarray}
 
 Using this fact \ref{eqn:maxplanar}, it can be shown that the complete graph on 5 vertices, $K_5$ shown in Figure \ref{9g10} is nonplanar. That graph has $n$=5, $e$=10. If it were planar the number of edges has to be at most $9$. 
 Rishnak asked Ajur how do you use Euler's equation to show that $K_{3,3}$, a complete bipartite graph on 6 vertices (discussed in Figure \ref{9g5}), is nonplanar. 
-Ajur was alert and he knew that the bipratite graph has only even cycle lengths and to have maximum number of edges each face has to be of a cycle length 4. Hence $2\times e =4*f$ or $f=\frac{e}{2}$. Substituting for $f$ in Euler's equation \ref{eqn:euler}
+Ajur was alert and he knew that the bipratite graph has only even cycle lengths and to have maximum number of edges each face has to be of a cycle length 4. Hence $2\times e =4 \times f$ or $f=\frac{e}{2}$. Substituting for $f$ in Euler's equation \ref{eqn:euler}
 $f=e-n+2$, one gets $-\frac{e}{2}=n-2$ or $e=2\times n -4$. Substituting for $n=6$, we get $e=8$. That is the maximum number possible. However, $K_{3,3}$ has 9 edges which is more than 8. Hence Ajur said $K_{3,3}$ is nonplanar.
 \begin{figure}
 \begin{center}
