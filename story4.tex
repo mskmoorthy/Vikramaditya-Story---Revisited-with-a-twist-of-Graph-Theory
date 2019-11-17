@@ -47,7 +47,7 @@ The question of whether or not a given connected graph has an Eulerian walk or a
 \end{center}
 \end{figure}
 \vspace{2cm}
-Rishnak decided to make the problem more challenging and asked Ajur the following: in the graph of Figure \ref{4gs}, is there a walk from vertex 1 and end at vertex 9 and that traverses every edges exactly once? (This is also known as an Eulerian walk from vertex 1 to vertex 9).
+Rishnak decided to make the problem more challenging and asked Ajur the following: in the graph of Figure \ref{4g2}, is there a walk from vertex 1 and end at vertex 9 and that traverses every edges exactly once? (This is also known as an Eulerian walk from vertex 1 to vertex 9).
 Ajur was perplexed. Then he tried to reason - he can break them into cycles. (2,3,7),(7,6,5,4), (3,4,8)  - None of these cycles had any edge in common. So he constructed a walk as (1, (1,2), 2, (2,3),
 3, (3,4), 4, (4,8), 8, (8,3), 3, (3,7), 7, (7,6), 6, (6,5), 5, (5,4), 4, (4,7) ,7,
 (7,2), 2, (2,8), 8, (8,9), 9). Ajur explained that he obtained this Eulerian walk by essentially by combining these cycles. He illustrated his walk in Figure \ref{4g25}. Ajur added that there is no closed Eulerian walk in this graph Figure \ref{4g2} as \textbf{not} all the vertices have even degree. An Eulerian walk starts from a vertex with odd degree and ends at a vertex with odd degree (There have to be exactly two such vertices and all other vertices have even degrees - all other vertices have been intermediate vertices in a walk meaning that for every edge coming into the vertex there is a corresponding edge leaving that vertex).

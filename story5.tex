@@ -241,5 +241,27 @@ Rishnak added that there are poems from different cultures (including India and 
 There are many methods to check whether a given graph has a Hamiltonian cycle. Unfortunately these conditions are \textbf{not} exhaustive. Rishnak taught Ajur a simple test to know whether a graph has a Hamiltonian cycle.
 
 Rishnak stated a well-known theorem that if the degree of every vertex in a graph with $n$ vertices is at least$\frac{n}{2}$, then the graph has a Hamiltonian cycle. First the graph has to be connected - Otherwise there will be at least two connected components, one of which will have size at most $\frac{n}{2}$, violating the degree condition. In this connected graph, find the longest path. Let it be $v_0,v_1,\cdots, v_k$. Since this is the longest path, all the neighbors of the starting vertex $x_0$ and the ending vertex $x_k$ have  to be in this path. Otherwise we could have extended that path and hence it is not the longest path. Hence at least $\frac{n}{2}$ vertices in the path $x_1,x_2,\cdots,x_k$ are adjacent to $x_0$ and at least $\frac{n}{2}$
- vertices in the path $x_0,x_1,\cdots,x_{k-1}$ are adjacent to $x_k$.  Convince yourself \footnote{Remember Pigeon hole Principle} that there are two adjacent vertices, $x_i$ and $x_{i+1}$ in the path, such that $x_i$ is adjacent to $x_k$ and $x_{i+1}$ is adjacent to $x_0$. This creates a cycle. Clain is that is is Hamiltonian Cycle. If not there is at least one vertex in this cycle whose adjacent vertex is not in the cycle. Then we can increase the path - contradicting the maximum path that we chise in the beginning.
+ vertices in the path $x_0,x_1,\cdots,x_{k-1}$ are adjacent to $x_k$. \ref{5g100}
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.5,auto=left,every node/.style={circle,fill=red!10}]
+  \node (n1) at (-1,11) {$x_0$};
+  \node (n2) at (5,11)  {$x_i$};
+  \node (n3) at (9,11) {$x_{i+1}$};
+  \node (n4) at (13,11) {$x_k$};
+  
+  
+   \foreach \from/\to in {n1/n2,n2/n3,n3/n4}
+    \draw (\from) -- (\to);
+   \path (n1) edge[bend left=30] (n3);
+    \path (n2) edge[bend right=30] (n4);
+    \end{tikzpicture}
+\caption{ Pictorial Description of the argument} \label{5g100}
+\end{center}
+\end{figure}
+ 
+ 
+ 
+ Convince yourself \footnote{Remember Pigeon hole Principle} that there are two adjacent vertices, $x_i$ and $x_{i+1}$ in the path, such that $x_i$ is adjacent to $x_k$ and $x_{i+1}$ is adjacent to $x_0$. This creates a cycle. Claim is that this is Hamiltonian Cycle. If not there is at least one vertex in this cycle whose adjacent vertex is not in the cycle. Then we can increase the path - contradicting the maximum path that we chise in the beginning.
 Ajur was able to follow along and loved the subtle and the clever arguments used in the proof. But Jura who was patiently waiting was beginning to get restless so Ajur called it a day.
