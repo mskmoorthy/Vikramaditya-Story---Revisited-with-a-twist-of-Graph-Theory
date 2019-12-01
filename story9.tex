@@ -79,4 +79,24 @@ The edge (4,6) has to be present in every spanning tree. The eight spanning tree
 
 Ajur asked what is the maximum number of labeled spanning trees in a graph with $n$ vertices. Ajur further added that the maximum number of spanning trees will be present in a complete graph as there have the maximum number of edges in a $n$ vertex graph. Rishnak agreed that the complete trees have the largest number of spanning trees. We can find the number of spanning trees in a complete graph using Pr{\"u}fer code (which we talked about a couple of days ago) in Chapter 8. Ajur remembered that and interjected for a $n$ vertex tree, you need only a Pr{\"u}fer code of length $n-2$. Rishnak said that is correct that the Pr{\"u}fer code is of length $n-2$ for a $n$ vertex graph. Each of the $n-2$ characters in a code to be any of the $n$ vertices. Hence the number of (labeled) spanning trees in a complete graph with $n$ vertices is $n^{n-2}$.
 
-Since there are $n-1$ edges in a spanning tree, each of the remaining $e-n+1$ edges when taken with a spanning tree will create a cycle. Thus there will be $s-n+1$ cycles.\footnote{Euler's equation \ref{eqn:euler} in chapter 9 uses this fact}. Rishnak showed a 
+Since there are $n-1$ edges in a spanning tree, each of the remaining $e-n+1$ edges when taken with a spanning tree will create a cycle. Thus there will be $s-n+1$ cycles. These cycles are called Fundamental cycles. Each fundamental cycle has exactly one non spanning tree edge. \footnote{Euler's equation \ref{eqn:euler} in chapter 9 uses this fact}. Rishnak showed with an example Figure \ref{11g4}.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n6) at (1,10) {6};
+  \node (n4) at (4,8)  {4};
+  \node (n5) at (8,9)  {5};
+  \node (n1) at (11,8) {1};
+  \node (n2) at (9,6)  {2};
+  \node (n3) at (5,5)  {3};
+
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n3/n4}
+    \draw [thick] (\from) -- (\to);
+  \foreach \from/\to in {n5/n2,n2/n3}
+   \draw [color=red] (\from) -- (\to);
+\end{tikzpicture}
+\caption{ Two fundamental cycles of \ref{11g1} with respect to a spanning tree of \ref{11g2} - Spanning tree edges are shown as thick lines and nonspanning tree edges are shown in red color. Fundamental Cycles are (1,2,5) and (4,5,1,2,3)}\label{11g4}
+\end{center}
+\end{figure}
