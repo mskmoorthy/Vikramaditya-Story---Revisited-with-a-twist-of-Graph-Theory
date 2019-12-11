@@ -1,9 +1,9 @@
 \chapter{Planar Graphs}
-Ajur was so enamored by Hamiltonian cycles, he was eager to meet Rishnak and hear more about them. Rishnak was eager to talk to Ajur about the drawing of graphs.
-A planar drawing is one in which no edges cross other than at
-the vertices. For a planar graph there exists at least one drawing in which the edges do not cross.
-If there is no such drawing available for a graph, then it is a non-planar graph.
-For example here are two drawings of a complete graph on four vertices $K_4$. Since Figure \ref{9g2} has no edge crossing, we can call $K_4$ a planar graph.
+Ajur was so enamored by Hamiltonian cycles, he was eager to meet Rishnak and hear more about them. Rishnak wanted to introduce a different concept: drawing graphs.
+A planar drawing of a graph is one in which no edges cross each other (except at
+the vertices). By definition, a \emph{planar graph} is a graph for which there exists at least one planar drawing.
+If a graph does not admit any planar drawings, we call it a \emph{non-planar graph}.
+For example here are two drawings of a complete graph on four vertices $K_4$. Since Figure \ref{9g2} has no edges crossing, we can call $K_4$ a planar graph.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -36,7 +36,7 @@ For example here are two drawings of a complete graph on four vertices $K_4$. Si
 \caption{ Planar drawing of $K_4$}\label{9g2}
 \end{center}
 \end{figure}
- Rishnak showed another graph \ref{9g3} and asked Ajur whether he can draw it with no edges crossing.
+ Rishnak asked Ajur whether he could draw the graph in Figure \ref{9g3} with no edges crossing.
  \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -73,7 +73,7 @@ Ajur thought for a while and found it a bit challenging. Then he thought of movi
 \end{center}
 \end{figure}
 
-Impressed, Rishnak then asked Ajur whether the graph in \ref{9g5} has a planar representation. Ajur struggled and tried to get a planar drawing --- but ended up with one edge crossing, \ref{9g6}. 
+Impressed, Rishnak then asked Ajur whether the graph in Figure \ref{9g5} has a planar representation. Ajur struggled and tried to get a planar drawing --- but ended up with one edge crossing, see Figure \ref{9g6}. 
 
 \begin{figure}
 \begin{center}
@@ -111,12 +111,12 @@ Impressed, Rishnak then asked Ajur whether the graph in \ref{9g5} has a planar r
 \caption{ A  drawing of a bipartite graph with 6 vertices and 9 edges, denoted by $K_{3,3}$, where just two edges edges cross}\label{9g6}
 \end{center}
 \end{figure}
-Rishnak then told Ajur that this graph does not have a planar representation. He added that this is a well known puzzle credited to Sam Loyd\footnote{Sam Loyd is a famous American recreational mathematician who has created a lot of puzzles}. There are three houses (represented as circles) drawn on paper and below them three smaller circles representing gas, water, and electricity suppliers. The aim of the puzzle is to draw lines to get each utility into every house, without crossing over any line. Ajur reminded himself that he should read up on Loyd's puzzle books from his local library.
+Rishnak then told Ajur that this graph does not have a planar representation. He added that there is a well-known related puzzle credited to Sam Loyd\footnote{Sam Loyd is a famous American recreational mathematician and puzzler.}. There are three houses (represented as circles) drawn on paper and below them three smaller circles representing gas, water, and electricity suppliers. The aim of the puzzle is to draw lines to get each utility into every house, without crossing over any line. Ajur reminded himself that he should read up on Loyd's puzzle books from his local library.
 
  Rishnak asked Ajur if two graphs $G$ and $H$ are isomorphic and if $G$ is planar, can you say $H$ is planar. Ajur said if $H$ is isomorphic to $G$, then each vertex corresponds to some vertex of $G$. By just relabeling the vertices of $G$ in its planar drawing, we get a planar drawing of $H$.
  
- Ajur then excitedly told Risnak that all trees have a planar representation\footnote{Ajur liked monkeys and monkeys liked trees.}. Rishnak answered that trees are easy to embed in a plane as there are
- no cycles. He added that there is a nice space filling planar representation of a tree shown in Figure \ref{9g7}.
+ Ajur then excitedly told Risnak that all trees have a planar representation\footnote{Ajur liked monkeys and monkeys liked trees. It followed by transitivity that Ajur liked trees.}. Rishnak answered that trees are indeed easy to embed in a plane as there are
+ no cycles. He added that there are interesting space-filling planar representations of trees, for example in Figure \ref{9g7}.
 \begin{figure}
 \begin{center}    
 
@@ -127,9 +127,9 @@ Rishnak then told Ajur that this graph does not have a planar representation. He
   \end{center}
 \end{figure}
 
-One way to get a planar drawing is to embed the longest cycle in a plane and then try to place the rest of the vertices so that no edges cross each other. This cycle will divide the plane into two regions --- the inner region (inside the cycle) and the outer region (outside the cycle). So the edges have to go either inside or outside. By trying out the possibilities, you can get a planar representation of a graph (if it exists). It is easier said than done. One can use an efficient method of placing the edges, without any backtracking --- Rishnak said some details are more complicated. 
+One way to get a planar drawing is to embed the longest cycle in a plane and then try to place the rest of the vertices so that no edges cross each other. This cycle will divide the plane into two regions --- the inner region (inside the cycle) and the outer region (outside the cycle). So the edges have to go either inside or outside. By trying out the possibilities, you can get a planar representation of a graph (if one exists). Of course, this process is easier said than done. There is in fact an efficient method of placing the edges, without any backtracking, but Rishnak added that details are rather complicated. 
 
-Each region in a planar representation is also referred to as a face. Euler discovered a remarkable formula concerning the number of edges, e, the number of vertices, n, and the number of faces, f:
+Each region in a planar representation is also referred to as a face. Euler discovered a remarkable formula concerning the number of edges, $e$, the number of vertices, $n$, and the number of faces, $f$ of a planar graph:
 \begin{equation}
 \label{eqn:euler}
   f-e+n=2 
@@ -137,17 +137,17 @@ Each region in a planar representation is also referred to as a face. Euler disc
 
  
 
-Rishnak gave an intuitive explanation of this formula \ref{eqn:euler}. Each region is a cycle and the external region (sometimes called an infinite region) is also a cycle. 
-There are $n-1$ edges in a tree, and the rest of the $e-(n-1)$ edges in a graph will form part of a cycle. Each of these cycles correspond to an internal region or internal face, and there is one external face. From this, Euler's equation \ref{eqn:euler} follows.
+Rishnak proceeded to give an intuitive explanation of this formula \ref{eqn:euler}. Each region corresponds to a cycle and the external region (sometimes called an infinite region) also comes from a cycle. 
+There are $n-1$ edges in a tree, and the rest of the $e-(n-1)$ edges in a graph will form part of a cycle. \textbf{You implicitly pick a spanning tree, which you have not yet discussed! Consider saying: it turns out, as we'll learn in Chapter ***, that there exists a ``maximal tree" of any graph.} Each of these cycles correspond to an internal region or internal face, and there is one external face. From this, Euler's equation \ref{eqn:euler} follows.
 \begin{eqnarray}
     \label{eqn:cycles}
-    internal faces&=&e-(n-1)\nonumber\\
-    external face&=&1 \nonumber \\
-    total faces&=& internal faces~+~external face \nonumber \\
+    \text{internal faces}&=&e-(n-1)\nonumber\\
+    \text{external face}&=&1 \nonumber \\
+    \text{total faces}&=& \text{internal faces}~+~\text{external face} \nonumber \\
     &=&e-n+2
 \end{eqnarray}
 
-Ajur said that he has done Platonic solids with Zometools \footnote{Zometool is a commercial kit to make polyhedrons}. Rishnak then explained Euler's equation applied for the five platonic solids by the following table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planar representation as shown in Figures \ref{fig:tetra}, \ref{fig:octa}, \ref{fig:cube}, \ref{fig:dod}, and \ref{fig:ico}.
+Ajur said that he has constructed Platonic solids with Zometools\footnote{Zometool is a commercial kit to make general polyhedra.}. Rishnak then explained Euler's equation applied for the five platonic solids; the graph theory in Euler's formula can be used to relate vertices, edges, and faces of the platonic solids! See Table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planar representation as shown in Figures \ref{fig:tetra}, \ref{fig:octa}, \ref{fig:cube}, \ref{fig:dod}, and \ref{fig:ico}\footnote{The reason is that every platonic solid embeds in sphere, and can be chosen such that no point or vertex passes the North pole. Then one may stereographically project the graph to the plane.}.
 \begin{table}[ht]
     \centering
     \begin{tabular}{||c|c|c|c||}
@@ -208,7 +208,7 @@ Ajur said that he has done Platonic solids with Zometools \footnote{Zometool is 
 \caption{Icosahedron}\label{fig:ico}
 \end{figure}
 
-Rishnak said each edge appears in exactly two faces. If each face is a triangle (cycle of length 3), it is called a maximal planar graph. Hence the number of edges, $e=\frac{3 \times f}{2}$ or $f=\frac{2 \times e}{3}$ . Substituting for $f$ in Euler equation \ref{eqn:euler}, we get
+Rishnak said each edge appears in exactly two faces. If each face is a triangle (cycle of length 3), it is called a maximal planar graph. Hence we deduce $e=\frac{3 \times f}{2}$ or $f=\frac{2 \times e}{3}$ . Substituting for $f$ in Euler's equation \ref{eqn:euler}, we get
 
 \begin{eqnarray}
   \label{eqn:maxplanar}  
@@ -218,10 +218,10 @@ Rishnak said each edge appears in exactly two faces. If each face is a triangle 
     e&=& 3 \times n - 6
 \end{eqnarray}
 
-Using this fact \ref{eqn:maxplanar}, it can be shown that the complete graph on 5 vertices, $K_5$ shown in Figure \ref{9g10}, is nonplanar. That graph has $n$=5, $e$=10. If it were planar then the number of edges would have to be at most $9$. 
-Rishnak asked Ajur how do you use Euler's equation to show that $K_{3,3}$, a complete bipartite graph on 6 vertices (discussed in Figure \ref{9g5}), is nonplanar. 
-Ajur was alert and he knew that the bipartite graph has only even cycle lengths and to have the maximum number of edges each face has to be of a cycle length 4. Hence $2\times e =4 \times f$ or $f=\frac{e}{2}$. Substituting for $f$ in Euler's equation \ref{eqn:euler}
-$f=e-n+2$, one gets $-\frac{e}{2}=n-2$ or $e=2\times n -4$. Substituting for $n=6$, we get $e=8$. That is the maximum number possible. However, $K_{3,3}$ has 9 edges which is more than 8. Hence Ajur said $K_{3,3}$ is nonplanar.
+Using Equation \ref{eqn:maxplanar}, it can be shown that the complete graph on 5 vertices, $K_5$ shown in Figure \ref{9g10}, is nonplanar. That graph has $n$=5, $e$=10. If it were planar then the number of edges would have to be at most $9$. 
+Rishnak asked Ajur: can you use Euler's equation to show that $K_{3,3}$, a complete bipartite graph on 6 vertices (discussed in Figure \ref{9g5}), is nonplanar? 
+Ajur was alert and he knew that the bipartite graph has only even cycle lengths. To have the maximum number of edges each face has to be of a cycle length 4. Hence $2\times e =4 \times f$ or $f=\frac{e}{2}$. Substituting for $f$ in Euler's equation \ref{eqn:euler}
+$f=e-n+2$, one gets $-\frac{e}{2}=n-2$ or $e=2\times n -4$. Substituting for $n=6$, we get $e=8$. That is the maximum number possible. However, $K_{3,3}$ has 9 edges which is more than 8. Hence Ajur had proven that $K_{3,3}$ is nonplanar.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}

@@ -1,8 +1,8 @@
 \chapter{Coloring}
-Rishnak  was impressed with Ajur's logical reasoning ability and went looking for him. He found Ajur walking along with Jura and caught up with them. Rishnak asked Ajur if he likes coloring. The immediate response was an enthusiastic yes. Ajur did like to color and enjoyed its calming effect.
+Rishnak  was impressed with Ajur's logical reasoning ability and went looking for him. He found Ajur ambling along with Jura and caught up with them. (Ghosts can move rather quickly.) Rishnak asked Ajur if he likes coloring.  Ajur enthusiastically responded that he did indeed like to color and enjoyed its calming effect.
 
-Rishnak was pleased with this resposne and introduced the next topic.  There is also a way to color the vertices of a graph. Rishnak added that a proper vertex coloring is a coloring of vertices such that no adjacent vertices (i.e., vertices connected by an edge) can get the same color. An interesting problem is to determine the smallest number of colors to properly vertex color a graph. 
-Then Rishnak showed an example of proper coloring of a graph \ref{10g1} with 4 colors. Ajur jumped up and down and said that he could color it with three colors and showed his coloring in \ref{10g2}.
+Rishnak was pleased with this response and introduced the next topic: graph colorings. A proper \emph{vertex coloring} of a graph is a coloring of vertices such that no adjacent vertices (i.e., vertices connected by an edge) have the same color. An interesting problem is to determine the smallest number of colors to properly vertex color a graph. 
+Then Rishnak showed an example of proper coloring of a graph in Figure \ref{10g1} with 4 colors. Ajur jumped up and down and said that he could color it with three colors and showed his coloring in Figure \ref{10g2}.
 \begin{figure}[h]
 \begin{center}
 \begin{tikzpicture}
@@ -58,7 +58,7 @@ Rishnak asked Ajur to properly color the graph $K_{3,3}$, a complete bipartite g
 \end{center}
 \end{figure}
 
-Ajur continued, saying that in a bipartite graph vertices are partitioned into two sets $A$ and $B$ and the edges always go from one set, $A$, to the other set, $B$. Ajur further stated that all the vertices in $A$ can be colored with one color, say, red and all the vertices in $B$ can be colored with another color, say blue. Since all trees are also bipartite graphs (contains cycles of even length (=0)), trees can be colored with just two colors. He showed an example \ref{10g4}. Coloring of trees reminded Ajur of the beautiful fall colors one sees in the trees!
+Ajur explained: in a bipartite graph the vertices are partitioned into two sets $A$ and $B$ and the edges always go from $A$ to $B$. Ajur further stated that all the vertices in $A$ can be colored with one color, say red, and all the vertices in $B$ can be colored with another color, say blue. Since all trees are also bipartite graphs, trees can be colored with just two colors, exactly as in Figure \ref{10g4}. Coloring trees reminded Ajur of the beautiful fall colors one sees in the trees!
 \begin{figure}
 \begin{center}
 
@@ -80,8 +80,8 @@ Ajur continued, saying that in a bipartite graph vertices are partitioned into t
 \end{center}
 \end{figure}
 
-Ajur was getting curious and asked "Can one color edges too? How are adjacent edges defined?"  Rishnak always believed that asking the right questions is important because it is a signal that one's understanding is deepening and here is Ajur, asking the right questions. Rishnak responded to  Ajur saying two edges are adjacent if they are incident on the same vertex. For example consider the graph shown in Figure \ref{10g5},
-edge $e1$ is adjacent to $e2$ (both are incident at vertex 1) and to $e3$, $e4$ and $e5$ as all these edges are incident at vertex 2. A Four edge coloring of this graph is shown in Figure \ref{10g5}. 
+Ajur was getting curious and asked "can one color edges too? How are adjacent edges defined?"  Rishnak always believed that asking the right questions is important because it is a signal that one's understanding is deepening. Rishnak responded: two edges are adjacent if they are incident to the same vertex. For example consider the graph shown in Figure \ref{10g5},
+edge $e_1$ is adjacent to $e_2$ (both are incident at vertex 1) and to $e_3$, $e_4$ and $e_5$ as all these edges are incident at vertex 2. A four edge coloring of this graph is shown in Figure \ref{10g5}. 
 
 \begin{figure}
 \begin{center}
@@ -95,22 +95,22 @@ edge $e1$ is adjacent to $e2$ (both are incident at vertex 1) and to $e3$, $e4$ 
   \node (n5) at (10,1)  {5};
 
 \path[-,draw,thick]
-    (n1) edge [color=red] node {$e1$} (n2)
-    (n1) edge [color=purple] node {$e2$} (n3)
-    (n2) edge [color=blue] node {$e3$} (n3)
-    (n2) edge [color=black] node {$e4$} (n4)
-    (n2) edge [color=purple] node {$e5$}  (n5)
-    (n4) edge [color=red]node {$e6$}  (n5)
+    (n1) edge [color=red] node {$e_1$} (n2)
+    (n1) edge [color=purple] node {$e_2$} (n3)
+    (n2) edge [color=blue] node {$e_3$} (n3)
+    (n2) edge [color=black] node {$e_4$} (n4)
+    (n2) edge [color=purple] node {$e_5$}  (n5)
+    (n4) edge [color=red]node {$e_6$}  (n5)
     ;
 
 \end{tikzpicture}
 
-\caption{Four Edge Coloring of a Graph, edge $e1$ is adjacent to $e2$, $e3$,
-$e4$ and $e5$}\label{10g5}
+\caption{Four Edge Coloring of a Graph, edge $e_1$ is adjacent to $e_2$, $e_3$,
+$e_4$ and $e_5$}\label{10g5}
 \end{center}
 \end{figure}
 
-Ajur exclaimed that the maximum degree in this graph is 4 and that is why it needs 4 colors and 4 colors seem to be sufficient. Rishnak smiled and said Ajur's observation relating to maximum degree of a graph is good. But it is not true. Rishnak showed a cycle of length 5, maximum degree is 2, but it needs 3 colors to color its edges.
+Ajur exclaimed that the maximum degree in this graph is 4 and that is why it needs 4 colors and 4 colors seem to be sufficient. Rishnak smiled and said Ajur's observation relating to maximum degree of a graph is good. However, the maximum degree of graph being $\Delta$ does not imply that the graph has a $\Delta$-coloring. Rishnak explained that in a cycle of length 5, the maximum degree is 2 but it needs 3 colors to color its edges.
 
 \begin{figure}
 \begin{center}
@@ -136,10 +136,9 @@ Ajur exclaimed that the maximum degree in this graph is 4 and that is why it nee
 \end{center}
 \end{figure}
 
-Rishnak told Ajur that a graph with maximum degree $\Delta$ can be edge colored with either $\Delta$ or $\Delta+1$ colors. The graphs with regular
-graph of degree 3 which needs 4 edge colors are known as Snarks. Ajur exclaimed I have heard of Snarks from a poem by my dad's favorite author Lewis Carroll
-\textbf{The Hunting of the Snarks}. Rishnak smiled and said that Graph Theorists have a whimsical sense of humor and since these 4 edge colorable graphs are elusive, they named these classes of graphs as Snarks.
-Ajur became curious to find one himself and asked if Petersen Graph is a snark. Surprised that Ajur remembered the Petersen Graph, Rishank replied that the Petersen Graph, a regular graph of degree 3, indeed needs 4 colors to color the edges of that graph, see Figure \ref{10g7}
+Rishnak told Ajur that a graph with maximum degree $\Delta$ can be edge colored with either $\Delta$ or $\Delta+1$ colors. A regular graph with degree three that needs four edge colors for a proper edge coloring is known as a \emph{Snark}. Ajur had heard of Snarks from a poem by his dad's favorite author Lewis Carroll
+\textbf{The Hunting of the Snarks}. Rishnak smiled and said that graph theorists have a whimsical sense of humor and since four-edge-colorable trivalent graphs are elusive, they named these graphs Snarks.
+Ajur became curious to find one himself and asked if the Petersen graph is a snark. Surprised that Ajur remembered, Rishank replied that the Petersen graph, a regular graph of degree 3, indeed needs 4 colors to color the edges of that graph, see Figure \ref{10g7}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -177,8 +176,8 @@ Ajur became curious to find one himself and asked if Petersen Graph is a snark. 
 \end{center}
 \end{figure}
 
-One can convert an edge coloring problem to a vertex coloring problem. From a graph , G< where you want to color the edges, construct a new graph, H, in which edges of the original graph (G) become vertices of the new graph (H) and two vertices in the new graph(H) are adjacent if the corresponding edges in the original graph (G) are incident on the same vertex of original graph (G).
-For example edge coloring of \ref{10g4} can be converted into a vertex coloring of \ref{10g45}.
+One can convert an edge coloring problem to a vertex coloring problem. From a graph , $G$, where you want to color the edges, construct a new graph, $H$, in which edges of the original graph $G$ become vertices of the new graph $H$ and two vertices in $H$ are adjacent if the corresponding edges in $G$ are incident on the same vertex of $G$.
+For example, an edge coloring of \ref{10g4} can be converted into a vertex coloring of \ref{10g45}.
 \begin{figure}
 \begin{center}
 
@@ -204,8 +203,8 @@ For example edge coloring of \ref{10g4} can be converted into a vertex coloring 
 Rishnak then talked about an interesting puzzle, somewhat related to the edge coloring problem. In a group of 6 people, say Alexis, Baily, Charles, Danny, Elaine and Frances, every pair could be friends or enemies. For example, Charles is friends with Alexis and Baily and Charles and the other three are enemies. Rishnak asked Ajur to prove that in a group of 6 people, there will be at least three people who are mutually friends to each other or who are mutually enemies to each other. Ajur said that he could model this problem as a complete graph on 6 vertices. Color the 15 edges either red or blue. Color red denotes they are enemies and blue means they are friends. Ajur rephrased Rishank's question as no matter how you color the edges, there will always be a red triangle or a blue triangle. Rishnak was impressed with Ajur's ability to translate the given problem into a graph theoretic problem even if he could not solve it.\footnote{Please work out the full solution}
 
 
-Map Coloring problem is to color the regions or faces of a planar graph (maps are usually drawn on a plane) so that no two adjacent faces or regions are colored the same. Here is an example of a map coloring
-of a graph \ref{10g8}. The four faces are (1,2,4,6), (1,3,4,5), (2,3,5,6) and (4,5,6). Each of these regions share a border (or an edge) with other region. Hence all these four regions are mutually adjacent. Often the outside region is also colored. In this example \ref{10g8} the outside region could be colored with yellow (as it does share a border with the region (4,5,6). and we still need four colors.
+The map coloring problem is to color the regions or faces of a \emph{planar} graph (maps are usually drawn on a plane) so that no two adjacent faces or regions are colored the same. Here is an example of a map coloring
+of the graph in Figure \ref{10g8}. The four faces are (1,2,4,6), (1,3,4,5), (2,3,5,6) and (4,5,6). Each of these regions share a border (or an edge) with other region. Hence all these four regions are mutually adjacent. Often the outside region is also colored. In Figure \ref{10g8} the outside region could be colored with yellow (as it does share a border with the region (4,5,6). and we still need four colors.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{mapcolor.JPG}
@@ -213,7 +212,7 @@ of a graph \ref{10g8}. The four faces are (1,2,4,6), (1,3,4,5), (2,3,5,6) and (4
 \caption{A graph with 4 regions or faces and each region or face is colored differently}\label{10g8}
 \end{figure}
 
-One of the famous theorems about Map Coloring problem states that every planar graph can be map colored with 4 colors. That is we need only 4 colors to color every region so that no two adjacent regions are colored the same. Here is an example of the map of USA colored with 4 colors. Of course, the region or face in this map are the states of USA. It is not like the normal USA map you see in an atlas. But this map of USA preserves the adjacent relationships. Rishnak asked Ajur can you spot the state of Maine in this Figure \ref{10g9}
+One of the most famous theorems about map coloring states that every planar graph can be map colored with 4 colors. That is, we need only 4 colors to color every region so that no two adjacent regions are colored the same. Here is an example of the map of USA colored with 4 colors. Of course, the region or face in this map are the states of USA. It is not like the normal USA map you see in an atlas; the states are not to-scale. But this map of USA preserves the adjacency relationships. Rishnak asked Ajur can you spot the state of Maine in this Figure \ref{10g9}
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{usamap.png}
@@ -223,7 +222,7 @@ One of the famous theorems about Map Coloring problem states that every planar g
 
 Ajur thought for a while. Ajur knew that the state of Maine borders with only one adjacent state that of New Hampshire. So he immediately replied that the region colored yellow in the north east corner is the state of Maine.
 
-Rishnak showed Ajur the map of India with state names given \ref{10g10}. Rishnak asked Ajur whether the state of Andhra Pradesh and Kerala could be colored the same color?
+Rishnak showed Ajur the map of India with state names given in Figure \ref{10g10}. Rishnak asked Ajur whether the state of Andhra Pradesh and Kerala could be colored the same color?
 
 \begin{figure}
 \begin{center}
@@ -232,4 +231,4 @@ Rishnak showed Ajur the map of India with state names given \ref{10g10}. Rishnak
 \caption{India Map with faces/states adjacency preserved}\label{10g10}
 \end{figure}
 
-Ajur had no hesitation in saying that they could be colored the same color as they share no boundaries or edges. Rishnak asked how about whether Goa and Kerala can be colored the same color. Ajur replied instantaneously with a resounding yes. Ajur asked Rishnak whether Map coloring problem can be converted to a vertex coloring (similar to conversion of edge coloring problem to vertex coloring problem). Ajur further explained that each region/face of the original map will become vertex of the new graph and two vertices in the new graph are adjacent if the corresponding faces in the old graph will share an edge. For example in the continental US map, all the states (faces of the original graph) will become vertices of the new graph and two vertices are adjacent, if the corresponding states share a border in the original graph. For example the vertex corresponding to Maine will be just adjacent to the vertex corresponding to the state of New Hampshire. Similarly, the vertex corresponding to the state of Washington will be adjacent to the vertices corresponding to Oregon and Idaho. Rishnak was very pleased with the way Ajur was absorbing the material. Rishnak did not want to push further and called it a day. Ajur and Jura were very happy to be left alone. 
+Ajur had no hesitation in saying that they could be colored the same color as they share no boundaries or edges. Rishnak asked how about whether Goa and Kerala can be colored the same color. Ajur replied instantaneously with a resounding yes. Ajur asked Rishnak whether the map coloring problem can be converted to a vertex coloring (similar to conversion of edge coloring problem to vertex coloring problem). Ajur further explained that each region/face of the original map would have to become a vertex of the new graph and two vertices in the new graph are adjacent if the corresponding faces in the old graph will share an edge. For example in the continental US map, all the states (faces of the original graph) will become vertices of the new graph and two vertices are adjacent, if the corresponding states share a border in the original graph. For example the vertex corresponding to Maine will be just adjacent to the vertex corresponding to the state of New Hampshire. Similarly, the vertex corresponding to the state of Washington will be adjacent to the vertices corresponding to Oregon and Idaho. Rishnak was very pleased with the way Ajur was absorbing the material. Rishnak did not want to push further and called it a day. Ajur and Jura were very happy to be left alone. 
