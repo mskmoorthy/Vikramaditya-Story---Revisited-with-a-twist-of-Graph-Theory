@@ -44,4 +44,15 @@ Ajur jumped up and down with excitement and said he could draw the shortest path
 \end{center}
 \end{figure}
 
-Rishnak admired Ajur's enthusiasm but wanted to find out whether one can find a general methof of finding the shortest path from a source vertex to a destination vertex.
+Rishnak admired Ajur's enthusiasm but wanted to find out whether Ajur can find a general method of finding the shortest path from a source vertex to a destination vertex.
+
+Rishnak suggested the following method similar to that of finding any spanning tree \ref{12a1}
+
+\begin{figure} 
+\begin{enumerate}
+\item Iniitally label all the vertieces as $\infty$. Label of a vertex,$y$ gives the distance from the source vertex to the vertex $y$.  Label the source vertex as 0. The distance from the source vertex to itself is 0. Start from the source vertex. Include that vertex in a queue. \footnote{ In a queue, you can only put in the rear and take from the front.} 
+\item Remove the vertex from the front of the queue. find all vertices $v$, (not yet labeled) that is adjacent to the removed vertex ($w$) in the queue. Label all these vertices as one more than the label of $w$ . Include that edge, $(v,w)$ in the spanning tree.
+\item Repeat the above step till all the vertices are in the bag.
+\end{enumerate}
+\caption{Finding a shortest Path from source vertex to a sink vertex.}\label{12a1}
+\end{figure}
