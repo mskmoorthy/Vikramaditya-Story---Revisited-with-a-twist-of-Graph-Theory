@@ -1,7 +1,7 @@
 \chapter{Shortest Paths}
-Ajur was looking at a map of the cemetery map. He was trying to find a way to go to the water fountain. Then he remembered all the discussions he had been having with Rishnak. Ajur told Jura that there may be a method using Graph Theory to find a path and also the shortest path. Rishnak was watching Ajur looking at the map and realized that discussion of path and shortest path (length of the path from source vertex to the destination vertex) would be an ideal topic to pursue next.
+Ajur picked up a map of the cemetery,  trying to find a way to go to the water fountain. Then he remembered his recent discussions with Rishnak and excitedly told Jura that using Graph Theory methods, they may be able to find a path and even the shortest path. Rishnak was watching Ajur looking at the map and realized that discussion of path and shortest path (length of the path from source vertex to the destination vertex) would be an ideal topic to pursue next.
 
-Consider a graph\footnote{In the case of spanning trees, we consider only undirected graphs; however shortest paths, we can consider both undirected and directed graphs.}. Rishnak asked Ajur to find the shortest path from a specified source vertex to a specified destination vertex. Consider the following Graph shown in Figure \ref{12g1}
+Consider a graph\footnote{In the case of spanning trees, we consider only undirected graphs; however, for shortest paths we can consider both undirected and directed graphs.}. Rishnak asked Ajur to find the shortest path from a specified source vertex to a specified destination vertex. Consider the following Graph shown in Figure \ref{12g1}.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -21,7 +21,7 @@ Consider a graph\footnote{In the case of spanning trees, we consider only undire
 \end{center}
 \end{figure}
 
-Ajur jumped up and down with excitement and said he could draw the shortest path from source vertex (1) to destination vertex (6). Rishnak asked him to draw the graph. Ajur drew the following graph \ref{12g2}
+Ajur jumped up and down with excitement and said he could draw the shortest path from source vertex (1) to destination vertex (6) and drew the following graph \ref{12g2}.
 
 \begin{figure}
 \begin{center}
@@ -44,22 +44,22 @@ Ajur jumped up and down with excitement and said he could draw the shortest path
 \end{center}
 \end{figure}
 
-Rishnak admired Ajur's enthusiasm but wanted to find out whether Ajur can find a general method of finding the shortest path from a source vertex to a destination vertex.
+Pleased with Ajur's enthusiasm, Rishank wanted to make sure Ajur could find a general method for finding the shortest path from a source vertex to a destination vertex.
 
-Rishnak suggested the following method similar to that of finding any spanning tree \ref{12a1}
+Rishnak suggested the following method, similar to that of finding any spanning tree \ref{12a1}.
 
 \begin{figure} 
 \begin{enumerate}
-\item  Label of a vertex,$y$ gives the distance from the source vertex to the vertex $y$.  Let the label \textbf{dist} of the source vertex as 0. The distance from the source vertex to itself is 0. Set label all the other vertices as unlabeled. Start from the source vertex. Include that vertex in a queue. \footnote{ In a queue, you can only insert in the rear and delete from the front.} 
-\item Remove the vertex from the front of the queue. find all vertices $v$, (not yet labeled) that is adjacent to the removed vertex ($w$) in the queue. Let the label \textbf{dist} of all these vertices as one more than the label \textbf{dist} of $w$ . For each of the newly labeled vertices, set its parent vertex to be $w$ and insert all these vertices in the queue.
-\item Repeat the above step till all the destination vertex gets labeled with a \textbf{dist} label. We can trace the shortest path starting from the destination vertex and its parent vertex, till we reach the source vertex.
+\item  Label of a vertex, $y$ gives the distance from the source vertex to the vertex $y$.  Let the label \textbf{dist} of the source vertex be 0. The distance from the source vertex to itself is 0. Set label of all the other vertices as unlabeled. Start from the source vertex. Include that vertex in a queue.\footnote{ In a queue, you can only insert in the rear and delete from the front.} 
+\item Remove the vertex from the front of the queue. Find all vertices $v$, (not yet labeled) that are adjacent to the removed vertex ($w$) in the queue. Let the label \textbf{dist} of all these vertices be one more than the label \textbf{dist} of $w$ . For each of the newly labeled vertices, set its parent vertex to be $w$ and insert all these vertices in the queue.
+\item Repeat the above step till the destination vertex gets labeled with a \textbf{dist} label. We can trace the shortest path starting from the destination vertex and its parent vertex, till we reach the source vertex.
 \end{enumerate}
 \caption{Finding a shortest Path from source vertex to a sink vertex.}\label{12a1}
 \end{figure}
 
-Following the example in Figure \ref{12g1}, Let the \textbf{dist} of 1 be 0. Insert 1 in the queue. Delete 1 from the queue. Its (vertex 1) adjacent vertices are 2 and 5. Label the \textbf{dist} of 2 and 5 to be 2. Insert 2 and 5 in the queue. Parent of 2 and 5 are set  to 1. Delete 5 from the queue. Insert the only unlabeled vertex 4 in the queue. Let the label \textbf{dist} of vertex 4 be 2 and let the parent of 4 be 5. The first element in the queue is 2. Delete 2 from the queue. Insert the only unlabeled vertex 3 in the queue.  Let the label \textbf{dist} pf vertex 3 be 2 (one more than the \textbf(dist) of 2) and the parent of 3 to be 2. The first element in the queue is 4. Delete 4 from the queue. Insert the only unlabeled vertex 6 in the queue. Let the label \textbf{dist} of 6 be 3 and the parent of 6 be 4. Since 6 is the destination vertex the algorithm stops. The distance from 1 to 6 is 3 and the path is 6, parent(6)=4, parent(4)=5, parent(5)=1 the source vertex.
+Following the example in Figure \ref{12g1}, let the \textbf{dist} of 1 be 0. Insert 1 in the queue. Delete 1 from the queue. Its (vertex 1) adjacent vertices are 2 and 5. Label the \textbf{dist} of 2 and 5 to be 2. Insert 2 and 5 in the queue. Parent of 2 and 5 are set  to 1. Delete 5 from the queue. Insert the only unlabeled vertex 4 in the queue. Let the label \textbf{dist} of vertex 4 be 2 and let the parent of 4 be 5. The first element in the queue is 2. Delete 2 from the queue. Insert the only unlabeled vertex 3 in the queue.  Let the label \textbf{dist} of vertex 3 be 2 (one more than the \textbf(dist) of 2) and the parent of 3 to be 2. The first element in the queue is 4. Delete 4 from the queue. Insert the only unlabeled vertex 6 in the queue. Let the label \textbf{dist} of 6 be 3 and the parent of 6 be 4. Since 6 is the destination vertex the algorithm stops. The distance from 1 to 6 is 3 and the path is 6, parent(6)=4, parent(4)=5, parent(5)=1 the source vertex.
 
-Ajur was taken by the systematic procedure that can apply to any graph. Ajur also realized that the above procedure can be used to find the shortest path from a single source to all other vertices in a graph and also shortest path between every pair of vertices. Rihnak said that there is a graph parameter called \textbf{diameter} which is the longest path of the shortest path between every pair of vertices. For the example graph shown in \ref{12g2}, the diameter is 3 (as the shortest paths are of lengths 1, 2 and 3). Rishnak found Ajur's eyes glazed. So he asked Ajur to find the diameter for the following graph \ref{12g3}  
+Ajur marveled at the systematic procedure that could be applied to any graph. He also realized that this procedure could be used to find the shortest path from a single source to all other vertices in a graph and also shortest path between every pair of vertices. Rishnak added that there is a graph parameter called \textbf{diameter} which is the longest path of the shortest path between every pair of vertices. For the example graph shown in \ref{12g2}, the diameter is 3 (as the shortest paths are of lengths 1, 2 and 3). Finding Ajur's eyes glazed, Rishnak asked him to find the diameter for the following graph \ref{12g3}.  
 
 \begin{figure}
 \begin{center}
@@ -80,7 +80,7 @@ Ajur was taken by the systematic procedure that can apply to any graph. Ajur als
 \end{center}
 \end{figure}
 
-Ajur said that this is the graph \ref{12g1} but with two edges (1,5) and (2,5) are removed. Further, Ajur mentioned it is a tree (as there are no cycles in the graph. The longest path among the shortest paths is from vertex 1 to vertex 5 or from vertex 1 to vertex 6. Both of them are of lengths 4. Diameter of this graph \ref{12g3} is 4. Ajur mentioned that a simple path with $n$ vertices as shown in Figure \ref{12g4}, the diameter is $n$-1.
+Ajur said that this is the graph \ref{12g1} but with two edges (1,5) and (2,5) are removed. Further, Ajur mentioned it is a tree (as there are no cycles in the graph. The longest path among the shortest paths is from vertex 1 to vertex 5 or from vertex 1 to vertex 6. Both of them are of length 4. Diameter of this graph \ref{12g3} is 4. Ajur mentioned that a simple path with $n$ vertices as shown in Figure \ref{12g4}, the diameter is $n$-1.
 
 \begin{figure}
 \begin{center}
@@ -103,7 +103,7 @@ Ajur said that this is the graph \ref{12g1} but with two edges (1,5) and (2,5) a
 
 For a complete graph with $n$ vertices the diameter is 1, as the shortest path between every pair of vertices is 1 (as there is an edge between every pair of vertices in a complete graph). 
 
-Rishnak aksed Ajur whether he can construct graphs with diameters $n-1, n-1, \cdots, 2, 1$. Ajur said that it is not hard ; he added that he would show two graphs one with diameter $n-2$ and the other with diameter 2. From there you could infer that he knew. all the answers and drew two figures \ref{12g5} and \ref{12g6}
+Rishnak aksed Ajur if he knew how to construct graphs with diameters $n-1, n-1, \cdots, 2, 1$. Ajur repliiied that it was not hard and added that he would show two graphs one with diameter $n-2$ and the other with diameter 2. From there you could infer that he knew all the answers and drew two figures \ref{12g5} and \ref{12g6}.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -141,7 +141,7 @@ Rishnak aksed Ajur whether he can construct graphs with diameters $n-1, n-1, \cd
 \end{center}
 \end{figure}
 
-Rishnak told Ajur that an interesting problem is to construct regular graphs with a given diameter. $k$, $d$ with a number of vertices = $$1+\Sigma_{i=1}^{i=k-1} (d-1)^i$$.  Rishnak told Ajur that such graphs are called Moore graphs. That formula can be understood by taking a rooted tree of depth $k-1$. with a root vertex has $d$ children and every other vertex has $d-1$ children. All the leaf vertices (vertices of degree 1 in the rooted tree) are connected in such a way that every vertex has degree $d$ and diameter is $k$. (It is no longer tree). An example of a Moore graph is the Petersen Graph \ref{5g4} and is drawn as a rooted tree with leaf vertices connected Figure \ref{12g7}.
+Rishnak told Ajur about an interesting problem, that is to construct regular graphs with a given diameter. $k$, $d$ with a number of vertices = $$1+\Sigma_{i=1}^{i=k-1} (d-1)^i$$  Such graphs are called Moore graphs. That formula can be understood by taking a rooted tree of depth $k-1$ with a root vertex has $d$ children and every other vertex has $d-1$ children. All the leaf vertices (vertices of degree 1 in the rooted tree) are connected in such a way that every vertex has degree $d$ and diameter is $k$. (It is no longer a tree). An example of a Moore graph is the Petersen Graph \ref{5g4} and is drawn as a rooted tree with leaf vertices connected Figure \ref{12g7}.
 \begin{figure}
 \begin{tikzpicture}[scale=0.7, every node/.style={circle,fill=red!10},level/.style={sibling distance=60mm/#1}]
 \node [circle,draw] (z){$1$}
@@ -168,14 +168,14 @@ Rishnak told Ajur that an interesting problem is to construct regular graphs wit
 
 
 
-Ajur asked Rishnak whether there is an algorithm to find the shortest path in a weighted graph. \footnote{Recollect a weighted graph is a graph with weights on edges.} An example weighted graph is shown in Figure \ref{12g8}.
+Ajur then wanted to know there was an algorithm to find the shortest path in a weighted graph.\footnote{Recollect a weighted graph is a graph with weights on edges.} An example weighted graph is shown in Figure \ref{12g8}.
 We can modify the algorithm \ref{12a1} for weighted graphs.
 
 \begin{figure} 
 \begin{enumerate}
 \item  Label of a vertex,$y$ gives the distance from the source vertex to the vertex $y$.  Let the label \textbf{dist} of the source vertex as 0. The distance from the source vertex to itself is 0. Set label \textbf{dist} all the other vertices as $\infty$. Start from the source vertex. Include that vertex in a queue. \footnote{ In a queue, you can only insert in the rear and delete from the front.} Set label \textbf{explored} of the source as 1 and set the \textbf{explored} of other vertices as 0.
-\item Remove the vertex from the front of the queue. find all vertices $v$, (for which \textbf{explored} label is 0) that is adjacent to the removed vertex ($w$) in. Let the label \textbf{dist} of all these vertices as minimum of the \textbf{dist} label of $v$ and weight of the edge(w,v)+label \textbf{dist} of $w$ .  Set the parent label of $v$ to $w$ if coming from $w$ is shorter.Among all vertices whose \textbf{explored} label is 0, choose a vertex $w$ whose \textbf{dist} label is the smallest. Set \textbf{explored} of $w$ 1 and insert $w$ in the queue.
-\item Repeat the above step till all the destination vertex gets labeled with a \textbf{dist} label. We can trace the shortest path starting from the destination vertex and its parent vertex, till we reach the source vertex.
+\item Remove the vertex from the front of the queue. find all vertices $v$, (for which \textbf{explored} label is 0) that is adjacent to the removed vertex ($w$) in. Let the label \textbf{dist} of all these vertices be minimum of the \textbf{dist} label of $v$ and weight of the edge(w,v)+label \textbf{dist} of $w$ .  Set the parent label of $v$ to $w$ if coming from $w$ is shorter.Among all vertices whose \textbf{explored} label is 0, choose a vertex $w$ whose \textbf{dist} label is the smallest. Set \textbf{explored} of $w$ to 1 and insert $w$ in the queue.
+\item Repeat the above step till the destination vertex gets labeled with a \textbf{dist} label. We can trace the shortest path starting from the destination vertex and its parent vertex, till we reach the source vertex.
 \end{enumerate}
 \caption{Finding a shortest Path from source vertex to a sink vertex.}\label{12a2}
 \end{figure}
@@ -225,4 +225,4 @@ Rishnak drew the following figure \ref{12g9} to illustrate the path.
 \end{center}
 \end{figure}
 
-Ajur appreciated the power of the algorithm, as he had seen many people using routes to go from one place to the other. This algorithm may have been used to compute the shortest routes. However, Ajur was getting tired and he wanted to find a shortest path to a bench where he can lie down. Ajur and Jura drifted off in that direction.
+Ajur appreciated the power of the algorithm, He had seen people using different routes to go from one place to the other. This algorithm may have been used to compute the shortest routes. However, he was getting tired and now wanted to find a shortest path to a bench so he could lie down so along with Jura, drifted off in that direction.
