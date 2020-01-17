@@ -1,0 +1,54 @@
+\chapter{Bridges, Cut Vertices, Cutsets, Strongly Connected digraphs}
+
+Rishnak remembered that he missed telling Ajur about some concepts related to connectedness of graphs and directed graphs. Rishnak was anxious to tell Ajur about this and he was frantically searching for Ajur. Finally he found Ajur and Jura walking on a bridge over a small brook. Rishnak gently tapped Ajur and said that 
+he wanted to discuss about connectedness. Ajur said that he remembered the definition of connectedness - which means that there is a path between every pair of vertices. Rishnak smiled and said that it is correct.
+
+A bridge is an edge in a connected graph that when that edge is deleted from that graph, it becomes disconnected. For the graph shown in Figure \ref{14g1}, every edge is bridge.
+\begin{figure}
+\begin{center}
+
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (5.5,7) {1};
+  \node (n2) at (3,5)  {2};
+  \node (n3) at (8,5)  {3};
+  \node (n4) at (2,3) {4};
+  \node (n5) at (4,3)  {5};
+  \node (n6) at (7,3)  {6};
+  \node (n7) at (9,3)  {7};
+
+  \foreach \from/\to in {n1/n2,n1/n3,n2/n4,n2/n5,n3/n6,n3/n7}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+\caption{ Every edge in this graph is a bridge. In a tree, every edge is bridge!}\label{14g1}
+\end{center}
+\end{figure}
+
+In the graph shown in Figure \ref{14g2}, just one edge is a bridge.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n6) at (1,10) {6};
+  \node (n4) at (4,8)  {4};
+  \node (n5) at (8,9)  {5};
+  \node (n1) at (11,8) {1};
+  \node (n2) at (9,6)  {2};
+  \node (n3) at (5,5)  {3};
+
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+\caption{Edge (4,6) is the bridge}\label{14g2}
+\end{center}
+\end{figure}
+
+Bridge is an important edge in a graph. If the bridge is deleted (if it fails), the graph becomes disconnected. A graph may not contain any bridges. For example, in a complete graph there are no
+bridges. If there are no bridges, there is a less chance that a graph becomes disconnected when an edge is deleted.
+
+Ajur asked Rishnak whether there is a vertex analog of a bridge. Rishnak answered in the affirmative. A cut-vertex is a vertex which when deleted \footnote{deleting a vertex means removing that vertex and removing all edges incident on that vertex.} makes the graph disconnected. In the graph shown in \ref{14g2}, vertex 4 is a cut vertex. If you consider the map of continental united states (with states as vertices and there is an edge between two vertices (states), if they share a common border), New Hampshire is a cut-vertex, if you delete New Hampshire, it is not possible to go from Maine to other states through United States. Similarly in India, West Bengal is  a cut vertex, as from north eastern state (like Assam), you cannot go to Kerala!
+
+In a tree, all vertices other than leaf vertices are cut vertices. In a complete graph, there are no cut vertices. 

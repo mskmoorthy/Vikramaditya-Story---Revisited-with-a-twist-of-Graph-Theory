@@ -1,5 +1,5 @@
 \chapter{Cliques, Independent sets and Vertex covering }
-Rishnak was getting anxious to meet Ajur and discuss other interesting problems with Ajur. Finally Rishnak spotted Ajur and Jura walking along a pond. Rishnak asked Ajur whether there were cliques in his school. This brought in a pet peeve of Ajur. Ajur always felt that the school he was going to had distinct groups. So Ajur had no trouble telling Rishnak that there were distinct cliques in his high school. Rishnak told Ajur that a clique is also a graph theoretic term. A clique is a subgraph of a graph which is complete. Rishnak added that normally we only consider maximal complete subgraphs as cliques. Rishnak added that a maximal complete subgraph of $G$, $H$, means that there is no complete subgraph of $G$ that contains $H$ as a subgraph,
+Rishnak was eager to discuss other interesting problems with Ajur and  spotted Ajur and Jura walking along the shore of a pond. Rishnak asked Ajur about cliques in his school. Ajur readily shared his pet peeve with Rishank. Yes, students in his school belonged to distinct groups, essentially cliques. Then Rishnak told Ajur that a clique is also a graph theoretic term. A clique is a subgraph of a graph which is complete. Rishnak added that normally we only consider maximal complete subgraphs as cliques, that a maximal complete subgraph of $G$, $H$, means that there is no complete subgraph of $G$ that contains $H$ as a subgraph,
 
 Rishnak drew the following graph in Figure \ref{13g1} and asked Ajur to list the cliques(maximal complete subgraphs).
 \begin{figure}
@@ -21,14 +21,15 @@ Rishnak drew the following graph in Figure \ref{13g1} and asked Ajur to list the
 \end{center}
 \end{figure}
 
-Ajur was tentative in his answer - as he is struggling with all the definitions. Ajur said the three maximal cliques are: 
+Ajur was tentative in his answer - as he was struggling with all the definitions. then stated that the three maximal cliques are: 
 \begin{enumerate}
     \item Induced subgraph containing vertices 4 and 6.
     \item Induced subgraph containing the vertices 2,3 4 and 5
     \item Induced subgraph containing the vertices 1, 2 and 5
 \end{enumerate} 
 
-Rishnak was happy that Ajur understood the definition of maximal cliques. Still he wanted Ajur to find about maximal cliques on another graph shown in Figure \ref{13g21}.
+Rishnak was happy to note that Ajur understood the definition of maximal cliques. Still he wanted Ajur to find the
+maximal cliques on another graph shown in Figure \ref{13g21}.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -48,14 +49,14 @@ Rishnak was happy that Ajur understood the definition of maximal cliques. Still 
 \end{center}
 \end{figure}
 
-Ajur stared at the figure \ref{13g21} for a few seconds before he answered giving two maximal cliques. He listed them as: 
+Ajur stared at the figure \ref{13g21} for a few seconds, then answered, giving two maximal cliques. He listed them as: 
 \begin{enumerate}
     \item Induced subgraph containing vertices 3, 4, 5 and 6.
-    \item Induced subgraph containing the vertices 1, 2,3 4 and 5.
+    \item Induced subgraph containing the  some vvertices 1, 2,3 4 and 5.
 \end{enumerate} 
-Ajur was frustrated as he was getting some vague definitions and examples. Rishnak admitted that it was his mistake. Graphs are usually used as models for physical or social processes. For example, when we consider the cliques in a school, you can model the students as vertices and two students belong to the same group as an edge between the associated vertices\footnote{We have a binary relation here.}. Clusters in data science are closely related to cliques. Since graphs are models of social a
+Seeing Ajur  frustrated with vague definitions and examples, Rishnak admitted that it was his mistake. Graphs are usually used as models for physical or social processes. For example, when we consider the cliques in a school, one can model the students as vertices and two students belong to the same group as an edge between the associated vertices\footnote{We have a binary relation here.}. Clusters in data science are closely related to cliques. Since graphs are models of social a
 
-Rishnak wanted Ajur to know about Independent set in a graph, An independent set in a graph is a set of vertices that are mutually nonadjacent i.e., a subset of vertices that does not include any adjacent vertices. Ajur immediately said that Independent set and Clique seem to be related. Rishnak could not control his smile. Rishnak remembered that he had not told Ajur about complement of a graph. A complement of a graph $G=(V,E)$ is another graph $H=(V,E_1)$. Both of them have the same vertex set. But if two vertices are adjacent in G, they are not adjacent in H and if two vertices are not adjacent in G, then they are adjacent in H. Ajur drew the complement of the graph shown in Figure \ref{13g1} as shown in Figure \ref{13g21}
+Rishnak then wanted Ajur to learn about Independent set in a graph. An independent set in a graph is a set of vertices that are mutually nonadjacent i.e., a subset of vertices that does not include any adjacent vertices. Ajur immediately recognized that Independent set and Clique are related. Rishnak could not control his smile. Rishnak remembered that he had not told Ajur about complement of a graph. A complement of a graph $G=(V,E)$ is another graph $H=(V,E_1)$. Both of them have the same vertex set. But if two vertices are adjacent in G, they are not adjacent in H and if two vertices are not adjacent in G, then they are adjacent in H. Ajur drew the complement of the graph shown in Figure \ref{13g1} as shown in Figure \ref{13g21}
 
 \begin{figure}
 \begin{center}
@@ -156,7 +157,7 @@ A closely related to Independent set is Vertex Cover. A vertex cover of a graph 
 
 Ajur said that vertex cover and independent set seem to be related. Rishnak smiled ad replied if $X$ is a maximal independent set in a graph with $V$ as vertex set, then $V-X$ is a minimal vertex cover. Similarly if $Y$ is a maximum independent set and $V-Y$ is a minimum vertex cover. Ajur was impressed how all these seemingly unrelated sets are actually related. Ajur thought for a while and he said he understood how maximal independent set and minimal vertex cover are related. Maximal independent set,$X$, contains no edges as per definition. This implies that vertex set  $V-X$ covers all edges of the graph or every edge is incident in some vertex of $V-X$.
 
-Rishnak wanted to test Ajur's understanding. He said that in olden days temples are constructed in road junctions of a Royt village. He asked Ajur, what will be the smallest number of temples that had to be constructed in the following Figure \ref{13g6} which shows the road map of Royt so that there is at least temple at either end of each edge..
+Rishnak wanted to test Ajur's understanding. He said that in olden days temples were constructed at the junctions of roads in a village. He asked Ajur, for the smallest number of temples that had to be constructed in the following Figure \ref{13g6} which shows the road map of Royt so that there is at least temple at either end of each edge..
 \begin{figure}
 \begin{center}
 
@@ -182,6 +183,6 @@ Rishnak wanted to test Ajur's understanding. He said that in olden days temples 
 \end{center}
 \end{figure}
 
-Ajur was mesmerized by the beautiful layout of Royt village. It looked so symmetric. Ajur was tentative in his answer and he said that he would construct just 5 temples in vertices 11, 3, 7, 8 and 1.   asked by Rishnak asked Ajur how he found so quickly. Ajur responded by saying that he tried to find a minimum vertex cover for the Figure \ref{13g6} and he knew that will satisfy the temple eequirements.
+Ajur was mesmerized by the beautiful layout of Royt village. It looked so symmetric. He was tentative in his answer and he said that he would construct just 5 temples in vertices 11, 3, 7, 8 and 1.   When asked how he found so quickly. Ajur responded saying that he tried to find a minimum vertex cover for the Figure \ref{13g6} and he knew that would satisfy the temple requirements.
 
 Rishnak was impressed. It was getting dark and both of them called it a night.
