@@ -1,10 +1,9 @@
 \chapter{Strongly Connected Directed Graphs}
-Rishnak was anxious to meet Ajur as he remembered that he had not discussed about directed graphs that much. 
-Luckily Rishnak found Ajur walking near a lonely path with Jura. Rishnak asked Ajur whether Ajur remembered about relations. Ajur replied that the relation could be symmetric like a facebook friend (that is if A is a friend of B, then B is also a friend of A - resulting in a friendship
+Rishnak wanted to continue his discussion with Ajur on the topic of directed graphs and caught up with Ajur and jura on their stroll. Rishnak started with asking Ajur if Ajur remembered what relations are. Ajur replied that the relation could be symmetric like a facebook friend (that is if A is a friend of B, then B is also a friend of A - resulting in a friendship
 undirected graph.
 The relation can also be asymmetric -like a twitter follower (that is if X follows the twitter
 feed of Y, Y need not follow the twitter feed of X) - resulting in a twitter directed graph.
-Rishnak said that there are many relations which are asymmetric like less than or precedence relations or parent relation or winner relation. In each case, we get a directed graph representing the asymmetric relation.
+Rishnak added that there are many relations which are asymmetric like less than or precedence relations or parent relation or winner relation. In each case, we get a directed graph representing the asymmetric relation.
 Similar to path and walk in an undirected graph, we can define path and walk in directed graph (which we discussed in Chapter 6).
 
 An undirected graph is connected if there is a path between every pair of vertices. A directed graph is strongly connected, if there is directed path between every pair of vertices. Rishnak showed the following example Figure \ref{15g1}
@@ -29,7 +28,7 @@ An undirected graph is connected if there is a path between every pair of vertic
 \end{center}
 \end{figure}
 
-Ajur said that the above directed graph remains strongly connected with fewer number of edges and  drew the graph in Figure \ref{15g2}
+Ajur noted that the above directed graph remains strongly connected with fewer number of edges and  drew the graph in Figure \ref{15g2}
 
 \begin{figure}
 \begin{center}
@@ -50,7 +49,7 @@ Ajur said that the above directed graph remains strongly connected with fewer nu
 \end{center}
 \end{figure}
 
-Rishnak smiled and said that a strongly connected directed graph should have at least $n$ edges. But a directed graph may not be strongly connected even with $\frac{n \times (n-1)}{2}$ edges - an example is shown in Figure \ref{15g3}
+Pleased, Rishnak added that a strongly connected directed graph should have at least $n$ edges. But a directed graph may not be strongly connected even with $\frac{n \times (n-1)}{2}$ edges - an example is shown in Figure \ref{15g3}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -72,7 +71,7 @@ Rishnak smiled and said that a strongly connected directed graph should have at 
 \end{center}
 \end{figure}
 
-Rishnk asked Ajur how many edges one need to add to Figure \ref{15g3} to make it strongly connected. Ajur thought a bit and said if an edge from vertex 4 to vertex 1 is added then the digraph would become strongly connected. Rishnak was impressed with Ajur's immediate reponse. Rishnak wanted to probe further: He asked Ajur how many edges should be removed from Figure \ref{15g1} to make it not strongly connected. Ajur was up to task and answered that if edge from vertex 1 to 2 is deleted then the directed graph is not strongly connected (as no vertex is reachable from vertex 1.) \footnote{Edge deletion problems relate to edge failures and they have been well studied.}
+Rishnak then asked Ajur how many edges one needed to add to Figure \ref{15g3} to make it strongly connected. Ajur thought a bit and said if an edge from vertex 4 to vertex 1 is added then the digraph would become strongly connected. Rishnak was impressed with Ajur's immediate reponse. Probing further, Rishnak asked Ajur how many edges should be removed from Figure \ref{15g1} to make it not strongly connected. Ajur was up to task and answered that if edge from vertex 1 to 2 is deleted then the directed graph is not strongly connected (as no vertex is reachable from vertex 1.) \footnote{Edge deletion problems relate to edge failures and they have been well studied.}
 
 Transitive closure of a directed graph $G=(V,E)$ is a directed graph $H=(V,E_1)$ that there is a directed edge between two vertices $x$ and $y$, if there is a directed path from vertex $x$ to vertex $y$ in $G$. Ajur could not contain his excitement and said that the transitive closure of a strongly connected graph will be a complete directed graph. Ajur gave the following reasons of his observation:
 \begin{enumerate}
@@ -113,7 +112,7 @@ For example in a facebook page or a twitter feed, if some one posts a message, i
 by almost every one!
 
 
-Rishnak said that there is a famous book called Dudney 536 Puzzles and Curious Problems amd one of the problems may be of interest to Ajur and relevant to this topic. Problem number 452 says that there are four teams Scotland, England, Wales and Ireland. The following table \ref {14t1}shows the result of their matches. Rishnak asked Ajur can he draw a directed graph for this? 
+Rishnak then told Ajur about the book "Dudney 536 Puzzles and Curious Problems" and that one particular problem in that book may be of interest to Ajur and relevant to this topic. Problem number 452 says that there are four teams Scotland, England, Wales and Ireland. The following table \ref {14t1} shows the result of their matches. Rishnak asked Ajur can he draw a directed graph for this? 
 \begin{table}
 \begin{center}
 \begin{tabular}{ |p{3cm}||p{1.5cm}||p{1.5cm}||p{1.5cm}||p{1.5cm}||  }
@@ -133,7 +132,7 @@ Rishnak said that there is a famous book called Dudney 536 Puzzles and Curious P
 \end{center}
 \end{table}
 
-Ajur thought for a bit and he was able to draw the directed graph as Scotland won all matches and Ireland lost all matches and hence Wales and England must have drawn. His directed graph was shown in Figure \ref{15g33}
+Ajur thought for a bit and he was able to draw the directed graph as Scotland won all matches and Ireland lost all matches and hence Wales and England must have drawn. His directed graph is shown in Figure \ref{15g33}.
 
 \begin{figure}
 \begin{center}
@@ -178,7 +177,7 @@ shown below \ref{14t2} Rishank asked Ajur whether he can get all the scores of t
 \end{center}
 \end{table}
 
-Ajur was challenged. He could Get the scores of England immediately, England defeated Ireland by a score of 2-0 and drew with Wales 0-0. Now he reasoned Scotland defeated Wales by a score of 2-1 and defeated Ireland by a score 2-0. \footnote{Ajur tried various combinations and failed and finally got this.} These
+Ajur was challenged. He could get the scores of England immediately, England defeated Ireland by a score of 2-0 and drew with Wales 0-0. Now he reasoned Scotland defeated Wales by a score of 2-1 and defeated Ireland by a score 2-0.\footnote{Ajur tried various combinations and failed and finally got this.} These
 satisfied the goals for and Against Scotland and England. Finally Wales defeated Ireland by a score of 2-1
 and all things matched.
 Ajur drew the following table \ref{14t3}
@@ -247,6 +246,6 @@ Rishnak said that DAG may also contain an undirected cycle but not a directed cy
 \end{center}
 \end{figure}
 
-Rishnak asked Ajur how to make the digraph in Figure \ref{15g5} strongly connected. Ajur immediately responded that by adding a directed edge from vertex 4 to vertex 1 would make that digraph strongly connected.
+Rishnak asked Ajur how he would make the digraph in Figure \ref{15g5} strongly connected. Ajur responded immediately saying  addition of a directed edge from vertex 4 to vertex 1 would make that digraph strongly connected.
 
-It was getting dark and Jura and Ajur wanted to take a stroll. Rishnak bade them good night for the day.
+It was getting dark and Jura and Ajur wanted to continue on their a stroll. Rishnak bade them good night.
