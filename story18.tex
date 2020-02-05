@@ -11,8 +11,173 @@ operation associated with that vertex.
      \item Repeat steps 2 and 3 until the stack is empty.
 \end{enumerate}
 
-Here is a graph with vertices numbered the order it gets visited.
+Here is a graph with vertices numbered the order it gets visited. Please see Figures \ref{20g1}, \ref{20g2}, \ref{20g3}, \ref{20g4}, \ref{20g5} and \ref{20g6}. 
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1};
 
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\end{tikzpicture}
+\caption{ Depth First Traversal -starting vertex is 6}\label{20g1}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2};
+
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4);
+\end{tikzpicture}
+\caption{ Depth First Traversal step 1}\label{20g2}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2}
+    (n2.south) node[below] {3};
+
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4);
+  \draw[-,thick,red]
+  (n4) to (n2);
+\end{tikzpicture}
+\caption{ Depth First Traversal step 2}\label{20g3}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2}
+    (n2.south) node[below] {3}
+    (n1.north) node[above] {4};
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4);
+  \draw[-,thick,red]
+  (n4) to (n2);
+  \draw[-,thick,red]
+  (n2) to (n1);
+\end{tikzpicture}
+\caption{ Depth First Traversal step 3}\label{20g4}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2}
+    (n2.south) node[below] {3}
+    (n1.north) node[above] {4}
+    (n5.north) node[above]  {5};
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4);
+  \draw[-,thick,red]
+  (n4) to (n2);
+  \draw[-,thick,red]
+  (n2) to (n1);
+  \draw[-,thick,red]
+  (n1) to (n5);
+\end{tikzpicture}
+\caption{ Depth First Traversal step 4}\label{20g5}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2}
+    (n2.south) node[below] {3}
+    (n1.north) node[above] {4}
+    (n5.north) node[above]  {5}
+    (n3.south) node[below] {6};
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4);
+  \draw[-,thick,red]
+  (n4) to (n2);
+  \draw[-,thick,red]
+  (n2) to (n1);
+  \draw[-,thick,red]
+  (n1) to (n5);
+   \draw[-,thick,red]
+  (n5) to (n3);
+\end{tikzpicture}
+\caption{ Depth First Traversal step 5}\label{20g6}
+\end{center}
+\end{figure}
 
 There is one other search called breadth first search and it too classifies the vertices as visited or not visited.
 \begin{enumerate}
@@ -22,6 +187,120 @@ There is one other search called breadth first search and it too classifies the 
     \item Keep repeating steps 2 and 3 until the queue is empty.
 \end{enumerate}
 
-Here is a graph with vertices numbered the order it gets visited.
+Here is a graph with vertices numbered the order it gets visited. Please see Figures \ref{20g7}, \ref{20g8}, \ref{20g9} and \ref{20g10};
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1};
+
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\end{tikzpicture}
+\caption{ Breadth First Traversal -starting vertex is 6}\label{20g7}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2};
+
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4);
+\end{tikzpicture}
+\caption{ Breadth First Traversal step 1}\label{20g8}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2}
+    (n2.south) node[below] {3}
+    (n3.south) node[below] {4}
+    (n5.north) node[above] {5};
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4)
+  (n4) to (n2)
+  (n4) to (n3)
+  (n4) to (n5);
+\end{tikzpicture}
+\caption{ Breadth First Traversal step 2}\label{20g9}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.4,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (1,10) node[mynode] (n6) {6}
+    (4,8) node[mynode] (n4) {4}
+    (8,9) node[mynode] (n5) {5}
+    (11,8) node[mynode] (n1) {1}
+    (9,6) node[mynode] (n2) {2}
+    (5,5) node[mynode] (n3) {3}
+    (n6.north) node[above] {1}
+    (n4.north) node[above] {2}
+    (n2.south) node[below] {3}
+    (n3.south) node[below] {4}
+    (n5.north) node[above] {5}
+    (n1.north) node[above] {6};
+  \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n6) to (n4)
+  (n4) to (n2)
+  (n4) to (n3)
+  (n4) to (n5)
+  (n2) to (n1);
+\end{tikzpicture}
+\caption{ Breadth First Traversal step 3}\label{20g10}
+\end{center}
+\end{figure}
 
 Both depth first search and breadth first search can also be used for searching the state space of all solutions. If we can enumerate all possible states (in the case of Hamiltonian cycle problem and in the case of isomorphism all possible permutations constitute all possible states), then how we visit all possible states could be done either by depth first search or breadth first search.
+There are different methods of generating permutations, combinations; more importantly generate a permutation, test and then go to the next permutation- There are efficient methods of generating next permutation. Rishnak said Ajur that he would learn them during his college years.
+Generation of all permutations/combinations and testing is a brute force approach. Ajur confessed that is how he solved the problem in the previous chapter on Golomb rulers. Rishnak said that there is a more efficient technique, called backtracking, which does an efficient way of searching the solution space. Rishnak again assured Ajur that Ajur would learn this in collge.
+
+Ajur realized that there there are are so much more to learn and he was very excited. Ajur asked Rishnak whether backtracking could be used to solve Sudoku problem. Rishnak smiled and said that indeed one could use backtracking to solve Sudoku problem \footnote{sudoku can be thought of fully coloring all the vertices of a graph given a partial coloring of the vertices!}.
+
+Ajur and Jura were happy to leave and they called it a day.
+
+

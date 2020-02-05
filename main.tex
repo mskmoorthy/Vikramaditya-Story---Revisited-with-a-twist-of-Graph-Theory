@@ -11,6 +11,9 @@
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning}
 \usetikzlibrary{decorations.fractals}
+\usetikzlibrary{shapes}
+\tikzset{mynode/.style={ellipse,minimum height=20pt,minimum width=30pt,draw},}
+
 \pgfdeclaredecoration{H-tree}{init}
 {
   \state{init}[width=\pgfdecoratedinputsegmentremainingdistance]
