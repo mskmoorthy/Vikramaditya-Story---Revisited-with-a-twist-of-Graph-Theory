@@ -1,17 +1,17 @@
 \chapter{Brute Force Searches}
 
-Rishnak was searching for Ajur to tell him about Different Search Techniques. So Rishnak followed his own search methodology (depth first search - like the one used in Mazes) to locate Ajur. Finally Rishnak found Ajur under a tree. Rishnak mentioned to Ajur that there are many different search methods and searching is a trillion dollar business. Ajur was aware of the fast search results from many search engines. Rishnak said that most of the search engines use some kind of a table lookup. Interesting issues to consider are how the tables are stored and how look up is done. Two of the common techniques is using an index based look up and the other one is a hash based techniques. Hashing involves finding a randomized location based on the keywords.  Binary search on a sorted list works if the size of the list is not prohibitively large. But these search techniques work for unstructured data (like numbers or one dimensional). A graph is structured (i.e., two dimensional) so a different type of search technique is needed.
+Rishnak was searching for Ajur to tell him about Different Search Techniques. So Rishnak followed his own search methodology (depth first search - like the one used in Mazes) to locate Ajur. Finally Rishnak found Ajur under a tree. Rishnak mentioned to Ajur that there are many different search methods and searching is a trillion dollar business. Ajur was aware of the fast search results from many search engines. Rishnak said that most of the search engines use some kind of a table lookup. Interesting issues to consider are how the tables are stored and how look up is done. Two of the common techniques are using an index based look up and the other one is a hash based technique. Hashing involves finding a randomized location based on the keywords.  Binary search on a sorted list works if the size of the list is not prohibitively large. But these search techniques work for unstructured data (like numbers or one dimensional). A graph is structured (i.e., two dimensional) so a different type of search technique is needed.
 Rishnak added that in the maze search, we used a depth first search. It uses the following steps. It essentially divides the vertices into visited and nonvisited. When you visit a vertex, you can do any
 operation associated with that vertex.
 
 \begin{enumerate}
-    \item Place a starting vertex on top of a stack \footnote{stack is like a list we can access only the top element - like a stack of plates}
+    \item Place a starting vertex on top of a stack.\footnote{A stack is like a list where we can access only the top element - like a stack of plates}
      \item Remove the top vertex of the stack and mark the vertex visited.
-     \item Create a list of that vertex's adjacent vertices. Add the vertices which are not yet visited  to the top of stack.
+     \item Create a list of that vertex's adjacent vertices. Add the vertices which are not yet visited  to the top of the stack.
      \item Repeat steps 2 and 3 until the stack is empty.
 \end{enumerate}
 
-Here is a graph with vertices numbered the order it gets visited. Please see Figures \ref{20g1}, \ref{20g2}, \ref{20g3}, \ref{20g4}, \ref{20g5} and \ref{20g6}. 
+Here is a graph with vertices numbered in the order it gets visited. Please see Figures \ref{20g1}, \ref{20g2}, \ref{20g3}, \ref{20g4}, \ref{20g5} and \ref{20g6}. 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -187,7 +187,7 @@ There is one other search called breadth first search and it too classifies the 
     \item Keep repeating steps 2 and 3 until the queue is empty.
 \end{enumerate}
 
-Here is a graph with vertices numbered the order it gets visited. Please see Figures \ref{20g7}, \ref{20g8}, \ref{20g9} and \ref{20g10};
+Here is a graph with vertices numbered in the order it gets visited. Please see Figures \ref{20g7}, \ref{20g8}, \ref{20g9} and \ref{20g10}.
 
 \begin{figure}
 \begin{center}
@@ -296,10 +296,10 @@ Here is a graph with vertices numbered the order it gets visited. Please see Fig
 \end{figure}
 
 Both depth first search and breadth first search can also be used for searching the state space of all solutions. If we can enumerate all possible states (in the case of Hamiltonian cycle problem and in the case of isomorphism all possible permutations constitute all possible states), then how we visit all possible states could be done either by depth first search or breadth first search.
-There are different methods of generating permutations, combinations; more importantly generate a permutation, test and then go to the next permutation- There are efficient methods of generating next permutation. Rishnak said Ajur that he would learn them during his college years.
-Generation of all permutations/combinations and testing is a brute force approach. Ajur confessed that is how he solved the problem in the previous chapter on Golomb rulers. Rishnak said that there is a more efficient technique, called backtracking, which does an efficient way of searching the solution space. Rishnak again assured Ajur that Ajur would learn this in collge.
+There are different methods of generating permutations, combinations; more importantly generate a permutation, test and then go to the next permutation- There are efficient methods of generating next permutation. Rishnak told Ajur that he would learn them during his college years.
+Generation of all permutations/combinations and testing is a brute force approach. Ajur confessed that is how he solved the problem in the previous chapter on Golomb rulers. Rishnak said that there is a more efficient technique, called backtracking, which does an efficient way of searching the solution space. Rishnak again assured Ajur that he would learn this in college.
 
-Ajur realized that there there are are so much more to learn and he was very excited. Ajur asked Rishnak whether backtracking could be used to solve Sudoku problem. Rishnak smiled and said that indeed one could use backtracking to solve Sudoku problem \footnote{sudoku can be thought of fully coloring all the vertices of a graph given a partial coloring of the vertices!}.
+Ajur realized that there is so much more to learn and he was very excited. Ajur asked Rishnak whether backtracking could be used to solve Sudoku problem. Rishnak smiled and said that indeed one could use backtracking to solve a Sudoku problem.\footnote{Sudoku can be thought of as fully coloring all the vertices of a graph given a partial coloring of the vertices.}
 
 Ajur and Jura were happy to leave and they called it a day.
 
