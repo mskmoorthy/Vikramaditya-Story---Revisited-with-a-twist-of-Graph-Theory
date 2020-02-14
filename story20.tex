@@ -28,7 +28,7 @@ Rishnak thought that was a great puzzle to tell Ajur as this puzzle had a nice g
 \fill [green] (6.5,-0.5) rectangle (7.0,0.0);
 \fill [green] (6.5,0.5) rectangle (7.0,1.0);
 %Fourth Cube
-\fill [blue] (9.0,0.0) rectangle (9.5,0.5);
+\fill [green] (9.0,0.0) rectangle (9.5,0.5);
 \fill [yellow] (9.5,0.0) rectangle (10.0,0.5);
 \fill [red] (10.0,0.0) rectangle (10.5,0.5);
 \fill [green] (10.5,0.0) rectangle (11.0,0.5);
@@ -54,7 +54,7 @@ The problem is to stack the four cubes vertically (in a column) so that all the 
 
 \draw[black,fill=yellow] (O) -- (C) -- (G) -- (D) -- cycle;% Bottom Face
 \draw[black,fill=blue] (O) -- (A) -- (E) -- (D) -- cycle;% Back Face
-\draw[black,fill=blue] (O) -- (A) -- (B) -- (C) -- cycle;% Left Face
+\draw[black,fill=green] (O) -- (A) -- (B) -- (C) -- cycle;% Left Face
 \draw[black,fill=red,opacity=0.7] (D) -- (E) -- (F) -- (G) --cycle;% Right Face
 \draw[black,fill=yellow,opacity=0.7] (C) -- (B) -- (F) -- (G) --cycle;% Front Face
 \draw[black,fill=green,opacity=0.7] (A) -- (B) -- (F) -- (E) -- cycle;% Top Face
@@ -84,6 +84,10 @@ The problem is to stack the four cubes vertically (in a column) so that all the 
 \end{figure}
 
 We have illustrated with two cubes Cube number 4 sitting on top of Cube number 1 in Figure \ref{22p2}
+
+For a brute force solution (or exhaustive search technique), for each cube, we have to choose which face should be the bottom cube. There are 6 possibilities to choose the bottom face. Once the bottom face is chosen, there are 4 rotations for the sides. Hence for each cube there are 24 possibilities. There are four cubes to be stacked, giving rise to $24 \times 24 \times 24 \times 24= 331776$ possibilities. By searching these possibilities, we will get a solution. Ajur interjected and said the for the bottom cube, we need not consider the four rotations. Rishnak was impressed  with Ajur and felt sorry for himself as he did not notice it earlier!
+
+If we get one solution, then we also permute the cube positions with out altering the constrains.
 
 Rishnak said that we consider three opposite faces of each cube. There are four colors Red, Yellow, Green and Blue. They form the vertices. Two vertices (colors) are adjacent if they form the opposite sides of the same cube. For example the following graph represents the first cube Figure \ref{22g1}.  
 
@@ -131,8 +135,10 @@ Similarly we can draw the graphs for each of the cubes Figures \ref{22g2}, \ref{
   \node (n3)[fill=red!50] at (4,0)  {2};
   \node (n4)[fill=yellow!50] at (0,4)  {4};
 
- \foreach \from/\to in {n3/n1,n1/n4}
-    \draw[black,thick] (\from) -- (\to);
+ \path [line width=0.35mm,black] (n1) edge [bend right] (n3)
+(n1) edge [bend left] (n4);
+% \foreach \from/\to in {n3/n1,n1/n4}
+%    \draw[black,thick] (\from) -- (\to);
      \draw[black,thick]
   (n2) to[out=210,in=330,looseness=4] (n2);
 \end{tikzpicture}
@@ -148,9 +154,11 @@ Similarly we can draw the graphs for each of the cubes Figures \ref{22g2}, \ref{
   \node (n2)[fill=green!50] at (0,0)  {1};
   \node (n3)[fill=red!50] at (4,0)  {2};
   \node (n4)[fill=yellow!50] at (0,4)  {4};
- \foreach \from/\to in {n3/n1,n1/n4,n2/n4}
-    \draw[purple,thick] (\from) -- (\to);
-
+ %\foreach \from/\to in {n3/n1,n1/n4,n2/n4}
+ %   \draw[purple,thick] (\from) -- (\to);
+ \path [line width=0.35mm, purple] (n2) edge [bend left] (n3)
+(n1) edge [bend right] (n4)
+(n2) edge [bend left] (n4);
 \end{tikzpicture}
 \caption{ Graph for Cube 4}\label{22g4}
 \end{center}
@@ -173,10 +181,183 @@ Now combining all these graphs in a single graph, we get a graph (looks complica
   (n3) to[out=210,in=330,looseness=4] (n3);
  \foreach \from/\to in {n3/n1,n3/n4,n2/n4}
     \draw[orange,thick] (\from) -- (\to); 
-
-   
+ \path [line width=0.35mm,black] (n1) edge [bend right] (n3)
+(n1) edge [bend left] (n4);
+     \draw[black,thick]
+  (n2) to[out=210,in=330,looseness=4] (n2);  
+   \path [line width=0.35mm, purple] (n2) edge [bend left] (n3)
+(n1) edge [bend right] (n4)
+(n2) edge [bend left] (n4);
 \end{tikzpicture}
 \caption{ Graph for all the cubes}\label{22g5}
 \end{center}
 \end{figure}
 
+From this graph, we need to get which faces of the cubes are chosen as sides. Essentially there are four sides front and back, left and right (For this problem, top and bottom faces are not relevant.) The graph shown in Figure \ref{22g5} has this information as a subgraph. Let us try to get two subgraphs with orientation, so that we know the order of the sides. The first subgraph gives the front and back faces and the second subgraph gives the left and right faces.
+
+
+The constraints on the subgraphs are
+\begin{enumerate}
+    \item The two subgraphs should have no edge in common; as an edge represents front to back or left to right. We cannot use them for both,
+    \item Each subgraph should contain an edge from each cube (so that we use all the four cubes). In the graph this means all the edges should be different colors.
+    \item The degree of each vertex should be two in the subgraph - that is colors cannot be repeated as per the problem statement.
+    
+\end{enumerate}
+
+By examining the graph in Figure \ref{22g5}, we can get two subgraphs as follows Figures \ref{22g6} and  \ref{22g7}.
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+
+
+ \path [line width=0.35mm,cyan] (n4) edge [->] (n1);
+ 
+    \path [line width=0.35mm,orange] (n2) edge [->] (n4);
+ \path [line width=0.35mm,black] (n1) edge [->] (n3);
+ 
+   \path [line width=0.35mm, purple] (n3) edge [->] (n2);
+;
+\end{tikzpicture}
+\caption{ Subgraph depicting front and back faces}\label{22g6}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+
+
+ \path [line width=0.35mm,black] (n4) edge [->] (n1);
+ 
+    \path [line width=0.35mm,purple] (n2) edge [->] (n4);
+ \path [line width=0.35mm,orange] (n1) edge [->] (n3);
+ 
+   \path [line width=0.35mm, cyan] (n3) edge [->] (n2);
+;
+\end{tikzpicture}
+\caption{ Subgraph depicting left and right faces}\label{22g7}
+\end{center}
+\end{figure}
+
+From Figures \ref{22g6} and \ref{22g7}, we can find out what the four sides are. 
+The solution consists for each cube:
+\begin{enumerate}
+    \item Cube 1: front is yellow, back is blue, left is red, right is green (edge color is cyan in the subgraphs)
+    \item Cube 2: front is green, back is yellow, left is blue, right is red (edge color is orange in the subgraphs)
+    \item Cube 3: front is blue, back is red, left is yellow, right is blue (edge color is black in the subgraphs)
+    \item Cube 4: front is red m back is green, left is green, right is yellow (edge color is purple in the subgrapgs)
+    
+\end{enumerate}
+
+Ajur asked Rishnak how to find the subgraphs with the constraints you mentioned. Rishnak replied for the small case, one can do a visual inspection and get the decomposition. Otherwise it is a hard problem.
+
+Ajur said suppose we have four cubes each cube colored in all faces with the same color. First cube is all red. Second Cube is all yellow. Third Cube is all blue and the fourth cube is all green. Then the two subgraphs will be easy (and of course the solution is trivial).
+
+Graphs for all the four cubes is shown in Figure \ref{22g8}.
+\tikzset{every loop/.style={min distance=10mm,looseness=10}}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.9,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+ 
+ \path[line width=0.35mm, cyan] 
+   (n3) edge [in=70,out=100,loop] (n3)
+   (n3) edge  [in=0,out=30,loop] (n3)
+   (n3) edge  [loop below] (n3); 
+  \path[line width=0.35mm, orange] 
+   (n4) edge [in=70,out=100,loop] (n4)
+   (n4) edge  [in=0,out=30,loop] (n4)
+   (n4) edge  [loop below] (n4); 
+  \path[line width=0.35mm, black] 
+   (n1) edge [in=70,out=100,loop] (n1)
+   (n1) edge  [in=0,out=30,loop] (n1)
+   (n1) edge  [loop below] (n1); 
+  \path[line width=0.35mm, purple] 
+   (n2) edge [in=70,out=100,loop] (n2)
+   (n2) edge  [in=0,out=30,loop] (n2)
+   (n2) edge  [loop below] (n2); 
+   
+\end{tikzpicture}
+\caption{ Graph for all Cubes}\label{22g8}
+\end{center}
+\end{figure}
+
+The decomposition into two subgraphs is shown in Figures \ref{22g9} and \ref{22g10}.
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+ 
+ \path[line width=0.35mm, cyan] 
+   (n3) edge [in=70,out=100,loop] (n3);
+   
+  \path[line width=0.35mm, orange] 
+   (n4) edge [in=70,out=100,loop] (n4);
+  
+  \path[line width=0.35mm, black] 
+   (n1) edge [in=70,out=100,loop] (n1);
+  
+  \path[line width=0.35mm, purple] 
+   (n2) edge [in=70,out=100,loop] (n2);
+    
+   
+\end{tikzpicture}
+\caption{ Subgraph of front and back faces}\label{22g9}
+\end{center}
+\end{figure}
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+ 
+ \path[line width=0.35mm, cyan] 
+   (n3) edge [in=70,out=100,loop] (n3);
+   
+  \path[line width=0.35mm, orange] 
+   (n4) edge [in=70,out=100,loop] (n4);
+  
+  \path[line width=0.35mm, black] 
+   (n1) edge [in=70,out=100,loop] (n1);
+  
+  \path[line width=0.35mm, purple] 
+   (n2) edge [in=70,out=100,loop] (n2);
+    
+   
+\end{tikzpicture}
+\caption{ Subgraph of left and right faces}\label{22g10}
+\end{center}
+\end{figure}
+
+Ajur said that the solution is
+\begin{enumerate}
+    \item Cube 1: Front is red, back is red, left is red and right is red.
+    \item Cube 2: Front is yellow, back is yellow, left is yellow and right is yellow.
+    \item Cube 3: Front is blue, back is blue, left is blue and right is blue.
+    \item Cube 4: Front is green, back is green, left is green and right is green.
+\end{enumerate}
+
+Ajur had a clear understanding of all the concepts in graph theory. He profusely thanked Rishnak for giving such interesting problems. Ajur and Jura bade good bye to Rishnak.  Kinaja was looking all these from a distance. She smiled to herself that Ajur not only understood the concepts but also a good huma being to thank Rishnak!
