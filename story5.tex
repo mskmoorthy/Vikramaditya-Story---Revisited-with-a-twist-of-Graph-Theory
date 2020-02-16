@@ -274,6 +274,28 @@ First the graph has to be connected - Otherwise there will be at least two conne
  
 This creates a cycle $v_k,v_i,\cdots,v_1,v_{i+1}\cdots, v_k$ as shown in \ref{5g100}. The claim is that this is a Hamiltonian Cycle. If not there is at least one vertex in this cycle that will be adjacent to some other vertex. This will result in a path longer than the path we originally started - a contradiction.
 Ajur was able to follow along and loved the subtle and the clever arguments used in the proof. 
-
+ 
+ \textbf{Question for the fifth day:} Rishnak asked Ajur if there is a Hamiltonian path in a complete bi-partite graph $K_{2,4}$ i.e., Verices 1 and 2 are adjacent to all the vertices 3, 4, 5 and 6 and there are no other edge. 
+ 
+ \textbf{Answer:} Ajur drew the following graph Figure \ref {5q1}. In a Hamiltonian Path vertices have to alternate between the vertices in different partitions. If we start with a vertex in the larger set say B, then the Hamiltonian Path has to be B, A, B, A, B, A, B - This implies that there are three vertices in A partition - But there are only two vertices. Hence there cannot be a Hamiltonian Path in $K_{2,4}$.
+ 
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,7) {A};
+  \node (n2) at (5,7)  {A};
+  \node (n3) at (1,2)  {B};
+  \node (n4) at (5,2) {B};
+  \node (n5) at (9,2)  {B};
+  \node (n6) at (14, 2) {B};
+ 
+  
+   \foreach \from/\to in {n1/n3,n1/n4,n1/n5,n2/n3,n2/n4,n2/n5,n1/n6,n2/n6}
+    \draw (\from) -- (\to);
+    \end{tikzpicture}
+\caption{ A complete  Bipartite Graph $K_{2,4}$. Does it have a Hamiltonian Path?}\label{5q1}
+\end{center}
+\end{figure}
 
 But Jura who was patiently waiting was beginning to get restless so Ajur called it a day.

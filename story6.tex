@@ -131,11 +131,11 @@ We implement this procedure for the following tree, in Example \ref{8g5}. The sm
 
 \end{tikzpicture}
 
-\caption{Tree with 7 vertices and four leaf vertices at the ground. }\label{8g5}
+\caption{Tree with 7 vertices and four leaf vertices }\label{8g5}
 \end{center}
 \end{figure}
 
-Ajur then wanted to know if one could have a code for unlabeled trees. Rishnak replied with a resounding yes and explained the basic steps for a rooted tree. For any tree, one needs to choose an appropriate root vertex \footnote{Center of a tree is chosen as the root vertex \textbf{Raju: be careful, not every tree has a center which is a vertex!}} 
+Ajur then wanted to know if one could have a code for unlabeled trees. Rishnak replied with a resounding yes and explained the basic steps for a rooted tree. For any tree, one needs to choose an appropriate root vertex \footnote{Center of a tree is chosen as the root vertex}  %\textbf{Raju: be careful, not every tree has a center which is a vertex!}} 
 \begin{enumerate}
     \item  Label the leaf vertices as 01.
     \item Let $x$ be a non-leaf vertex. If all the children of $x$, sort these labels in alphabetical order. \footnote{0 comes before 1} The label of vertex $x$ is 0 followed by concatenation of the (sorted) labels of the children followed by 1.
@@ -146,3 +146,28 @@ For example for the tree in \ref{8g5} leaf vertices 4,5,6,7 are all labeled \tex
 
 Rishnak continued that closely related to Graph Isomorphism is a problem that has plenty of uses in real life - and not just in the ghoulish realm. Ajur chuckled at the bad joke but politely retrained from interrupting. Rishank continued with the statement of the next problem.  Instead of asking whether two graphs are structurally similar, given two graphs $G$ and $H$, the subgraph isomorphism problem asks if there is a subgraph of $G$ that is isomorphic to H. Ajur responded immediately saying this approach can be used to test if a graph $G$ with $n$ vertices has a Hamiltonian cycle by choosing $H$ to be a cycle of length $n$ and asking whether there is a subgraph of $G$ isomorphic to $H$. Rishnak nodded in agreement and said that is the reason the subgraph Isomorphism problem is hard. On the other hand, if both $G$ and $H$ are labeled graphs, there are heuristics to test whether $H$ occurs in $G$ as a subgraph. This type of labeled subgraph isomorphism problem has many applications in medical imaging and chemical structure identifications.
 
+\textbf{Question for the sixth day:} Rishnak asked Ajur to draw a tree whose Pr{\"u}fer code is 232.
+
+\textbf{Answer} Ajur realized this is a tree with five vertices and he drew the following Tree Figure \ref{6q1}.
+\begin{figure}
+\begin{center}
+
+\begin{tikzpicture}
+  [scale=.5,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (0,0) {1};
+  \node (n2) at (3,3)  {2};
+  \node (n3) at (6,3)  {3};
+  \node (n4) at (5,0) {4};
+  \node (n5) at (4,7)  {5};
+ 
+
+  \foreach \from/\to in {n1/n2,n4/n3,n2/n3,n2/n5}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+
+\caption{Tree with 5 vertices}\label{6q1}
+\end{center}
+\end{figure}
+
+Rishnak was happy with Ajur's answer and Ajur was eager to go with Jura.
