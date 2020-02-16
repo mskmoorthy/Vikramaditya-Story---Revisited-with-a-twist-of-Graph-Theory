@@ -70,4 +70,34 @@ Ajur took no time to respond and drew another graph as in Figure \ref{dg4}.
 
 Jura was waking up and wanted to play with Ajur. Rishnak was happy to see the answers that Ajur gave. He saw a ray of hope that his curse could be lifted. 
 
+\textbf{Question for the first day:} Rishnak asked Ajur is there a degree sequence that is the degree sequence of only one graph ? Rishnak added that you can ignore the labels on vertices.
+
+\textbf{Answer:} Ajur said that the degree sequence of all 0's have only one graphical realization!
+
+\textbf{Followup Question:}Rishnak said he agreed to Ajur's answer. Is there a degree sequence with only graph realizing it and having one or mode edges?
+
+\textbf{Answer:} Ajur responded for a sequence of even length, a degree sequence, of $1,1,\cdots, 1$ will be realized by an unique graph.
+
+He showed an example with $1,1,1,1,1,1,1,1$ in the following Figure \ref{daya1}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,7) {1};
+  \node (n2) at (3,7)  {2};
+  \node (n4) at (7,7) {4};
+  \node (n7) at (9,7)  {7};
+  \node (n6) at (5,11)  {6};
+   \node (n3) at (5,9) {3};
+   \node (n5) at (5,5) {5};
+   \node (n8)  at (5,3) {8};
+  \foreach \from/\to in {n1/n2,n3/n6,n4/n7,n5/n8}
+   \draw (\from) -- (\to);
+
+\end{tikzpicture}
+\caption{ Unique Graph with degree sequence 1,1,1,1,1,1,1,1 }\label{daya1}
+\end{center}
+\end{figure}
+
 Rishnak told Ajur to come back the next night, and he disappeared in a cold mist.

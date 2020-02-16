@@ -239,4 +239,33 @@ A graph is connected if there is a path between every pair of vertices in that g
 \end{center}
 \end{figure}
 \vspace{3in}
-Rishank noticed that Ajur was getting restless, and so was Jura, and so they called it a day.
+
+\textbf{Question for the third day:} Rishnak asked Ajur to list the cycles in the following graph Figure \ref{day3g1} 
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (1,7) {1};
+  \node (n2) at (3,9)  {2};
+  \node (n3) at (5,11)  {3};
+  \node (n4) at (7,9) {4};
+  \node (n5) at (7,5)  {5};
+  \node (n6) at (3,5)  {6};
+
+  \foreach \from/\to in {n1/n2,n1/n6,n2/n3,n2/n4,n2/n6,n3/n4,n4/n5,n5/n6}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+\caption{ How many Cycles are there in this Graph?}\label{day3g1}
+\end{center}
+\end{figure}
+
+\textbf{Answer:} Ajur listed the 6 cycles as follows:
+\begin{enumerate}
+    \item Cycle of length 3 (two namely  (1,2,6), (2,3,4)
+    \item Cycle of length 4 (one namely) (2,4,5,6)
+    \item Cycle of length 5 (two namely) (2,3,4,,5,6), (1,2,4,5,)
+    \item Cycle of length 6 (one namely) (1,2,3,4,5,6)
+\end{enumerate}
+Rishank  was pleased and noticed that Ajur was getting restless, and so was Jura, and so they called it a day.

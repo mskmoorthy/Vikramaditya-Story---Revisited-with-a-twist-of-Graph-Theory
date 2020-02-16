@@ -119,3 +119,10 @@ A tree is like a rooted tree but with no root vertex. A tree can be drawn in any
 
 Rishnak told Ajur that one important property of a tree is that there are no cycles in it. Ajur could easily understand it from a genealogy perspective - a person cannot be an ancestor as well as a descendant of himself/herself.  Ajur added that there is only one path between any two vertices in a tree (Of course, Ajur assumed that the edges are undirected --- which Rishnak knew). Rishnak asked ``how did you infer that there is a unique path between two vertices in a tree?" Ajur promptly replied that if there are two paths between any two vertices, there will be a cycle (which cannot exist in a tree). Since there is an unique path between two vertices, one can compute the distance between two vertices as the number of edges in that path. Ajur provided clarifications with examples.  As an example in Figure~\ref{t1}, the distance between the vertex labeled 1 and any other vertex is 1. The distance between the vertex labeled 2 and the vertex labeled 6 is 2. In Figure~\ref{t2}, the distance between the vertex labeled 1 and the vertex labeled 6 is 5 and the distance between the vertex labeled 2 and the vertex labeled 4 is 2.
 %(Dad: you could also add the fact that every finite tree has a center of mass! it's in this vein, and not especially well known (Boris hadn't realized it!))
+
+\textbf{Question for the second day:} Rishnak asked Ajur how to construct an infinite tree with resistance of $\frac{3}{5}$.
+
+\textbf{Answer:} Ajur said a way to think about this is to consider an inifinite tree in which vertex has 6 children and each edge is of resistance 3 ohms (We can add a series of three 1 ohm edges to get 3 ohms).
+With this we will get a recurrence equation $R=\frac{R+3}{6}$ - That is each child vertex will have a resistance of R ohms (by symmetry as they look like the original tree). Simplifying this, we will get a $\frac{5R}{6}=\frac{3}{6}$ which simplifies to a resistance of $\frac{3}{5}$ ohms.
+
+Krishnak was very pleased. They called it a day.

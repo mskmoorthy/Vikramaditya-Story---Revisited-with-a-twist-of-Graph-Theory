@@ -255,12 +255,12 @@ I took the one less traveled by,\\ And that has made all the difference.
 
 He said that one could construct a graph from the maze by putting a vertex at each place where there is an open space in the wall or where you have choices to make it. \textbf{Can you clarify construction of the maze in this text?} Join the vertices if there is a corridor connecting them (and there are no vertices between them). This will result in a tree (no cycle will be present). Now you can make this graph Eulerian by going over each edge twice. One uses bread crumbs to mark the edge traversed. If an edge has two bread crumbs, that means you don't traverse that edge any more.
 
-That was precisely the strategy Kinaja had told Rishank for one to get out of the maze.  In the beginning all the paths are free of bread crumbs. When ever one takes a path (if there are bread crumb free paths available), you put bread crumbs along that edge; and if there are no bread crumb free paths are available, take the path in which there is only one bread crumb present and walk through that path putting bread crumbs. Eventually you will reach the end goal as there is an Eulerian walk present in the underlying graph of the maze. \textbf{I don't exactly understand this: can you rewrite it?}
+That was precisely the strategy Kinaja had told Rishank for one to get out of the maze.  In the beginning all the paths are free of bread crumbs. When ever one takes a path (if there are bread crumb free paths available), you put bread crumbs along that edge; and if there are no bread crumb free paths are available, take the path in which there is only one bread crumb present and walk through that path putting bread crumbs. Eventually you will reach the end goal as there is an Eulerian walk present in the underlying graph of the maze. %\textbf{I don't exactly understand this: can you rewrite it?}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
-[scale=.8,auto=left,every node/.style={circle,fill=red!5}]
+[scale=.7,auto=left,every node/.style={circle,fill=red!5}]
    \node (q_0)   at (1,7) {Start}; 
    \node (q_1) at  (3,7) {1}; 
    \node (q_2) at (5, 7) {2}; 
@@ -289,8 +289,53 @@ Ajur took another maze and in that he drew the graph Figure \ref{4g9} to show Ri
 
 \begin{figure}
 \begin{center}
-\includegraphics{anothermaze.jpg}
+\includegraphics[width=0.7\textwidth]{anothermaze.jpg}
 \caption{A Maze with a Start and Goal and the graph drawn inside the maze}\label{4g9}
 \end{center}
 \end{figure}
+\vspace{3in}
+\textbf{Question for the fourth day:}
+Rishnak asked Ajur to write a string that contains all substrings of length 3 and 4?
+
+\textbf{Answer}: For length 3, Ajur got the Eulerian traversal of Figure \ref{4g6} and wrote it as
+$00010111$ which contains all substrings of length 3 (namely 000, 001, 010, 101, 011, 111, 110 and 100.
+
+For length 4, Ajur drew a nice graph Figure \ref{4a1}. Once the graph is drawn, he realized that the graph is Eulerian (in-degree=out-degree=2) and the sequence is $0000101001101111$ and it contains all the substrings of length 4, namely 0000, 0001, 0010, 0101, 1010, 0100, 1001, 0011,  0110, 1101, 1011, 0111, 1111, 1110, 1100 and 1000. 
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+[scale=.6,auto=left,every node/.style={circle}]
+   \node (n0)   at (0,0) {000}; 
+   \node (n1) at  (3,3) {001}; 
+   \node (n2) at (3, -3) {100}; 
+   \node (n3) at (6,0) {010};
+   \node (n4) at (9,0) {101};
+   \node (n5) at (12,3) {011};
+   \node(n6) at (12,-3) {110};
+   \node(n7) at (15,0) {111};
+    \path[->,draw,thick] 
+    (n0) edge [loop left] node {0} ()
+    (n0) edge  node {1} (n1)
+    (n1) edge node {0} (n3)
+    (n1) edge node {1} (n5)
+    (n2) edge node {1} (n1)
+    (n2) edge node {0} (n0)
+    (n3) edge node {1} (n4)
+    (n3) edge node{0} (n2)
+    (n4) edge [bend left] node {0} (n3)
+    (n4) edge node {1} (n5)
+    (n5) edge node {1}  (n7)
+    (n5) edge node {0}  (n6)
+    (n6) edge node [bend left] {1} (n4)
+    (n6) edge node {0} (n2)
+    (n7) edge node {0} (n6)
+    (n7) edge [loop right] node {1}()
+    ;
+  \end{tikzpicture}
+\caption{ De Bruijn Graph pf order 3}\label{4a1}
+\end{center}
+\end{figure}
+
+Rishnak was happy with Ajur's answers. 
 Ajur was truly impressed by the power of Eulerian walk and he wanted a walk named after himself too! The sun was setting and it was time to go to go home.
