@@ -231,4 +231,61 @@ Rishnak showed Ajur the map of India with state names given in Figure \ref{10g10
 \caption{India Map with faces/states adjacency preserved}\label{10g10}
 \end{figure}
 
-Ajur had no hesitation in saying that they could be colored the same color as they share no boundaries or edges. Rishnak asked how about whether Goa and Kerala can be colored the same color. Ajur replied instantaneously with a resounding yes. Ajur asked Rishnak whether the map coloring problem can be converted to a vertex coloring (similar to conversion of edge coloring problem to vertex coloring problem). Ajur further explained that each region/face of the original map would have to become a vertex of the new graph and two vertices in the new graph are adjacent if the corresponding faces in the old graph will share an edge. For example in the continental US map, all the states (faces of the original graph) will become vertices of the new graph and two vertices are adjacent, if the corresponding states share a border in the original graph. For example the vertex corresponding to Maine will be just adjacent to the vertex corresponding to the state of New Hampshire. Similarly, the vertex corresponding to the state of Washington will be adjacent to the vertices corresponding to Oregon and Idaho. Rishnak was very pleased with the way Ajur was absorbing the material. Rishnak did not want to push further and called it a day. Ajur and Jura were very happy to be left alone. 
+Ajur had no hesitation in saying that they could be colored the same color as they share no boundaries or edges. Rishnak asked how about whether Goa and Kerala can be colored the same color. Ajur replied instantaneously with a resounding yes. Ajur asked Rishnak whether the map coloring problem can be converted to a vertex coloring (similar to conversion of edge coloring problem to vertex coloring problem). Ajur further explained that each region/face of the original map would have to become a vertex of the new graph and two vertices in the new graph are adjacent if the corresponding faces in the old graph will share an edge. For example in the continental US map, all the states (faces of the original graph) will become vertices of the new graph and two vertices are adjacent, if the corresponding states share a border in the original graph. For example the vertex corresponding to Maine will be just adjacent to the vertex corresponding to the state of New Hampshire. Similarly, the vertex corresponding to the state of Washington will be adjacent to the vertices corresponding to Oregon and Idaho. Rishnak was very pleased with the way Ajur was absorbing the material. 
+
+\textbf{Question for the eighth day:} Rishnak asked Ajur to color the vertices of the following graph Figure \ref{colorgq1} with as few colors as possible.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle}]
+  \node (n1) at (0,0) {1};
+  \node (n2) at (2,3)  {2};
+  \node (n3) at (4,0)  {3};
+  \node (n4) at (2,-3) {4};
+  \node (n5) at (7,0) {5};
+  \node (n6) at (9,3)  {6};
+  \node (n7) at (11,0)  {7};
+  \node (n8) at (9,-3) {8};
+
+
+
+  \foreach \from/\to in {n1/n2,n1/n3,n1/n4,n2/n3,n2/n6, n3/n4, n3/n5, n4/n8, n5/n6,n5/n8,n5/n7,n6/n7,n7/n8}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+
+\caption{Color this graph }\label{colorgq1}
+\end{center}
+\end{figure}
+
+\textbf{Answer: } Ajur has no problem coloring this graph as follows Figure \ref{colorga1}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle}]
+  \node (n1) [fill=green] at (0,0) {1};
+  \node (n2) [fill=red] at (2,3)  {2};
+  \node (n3) [fill=blue] at (4,0)  {3};
+  \node (n4) [fill=red] at (2,-3) {4};
+  \node (n5) [fill=red] at (7,0) {5};
+  \node (n6) [fill= green] at (9,3)  {6};
+  \node (n7) [fill=blue]  at (11,0)  {7};
+  \node (n8) [fill=green] at (9,-3) {8};
+
+
+
+  \foreach \from/\to in {n1/n2,n1/n3,n1/n4,n2/n3,n2/n6, n3/n4, n3/n5, n4/n8, n5/n6,n5/n8,n5/n7,n6/n7,n7/n8}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+
+\caption{Vertex coloring of graph \ref{colorgq1}}\label{colorga1}
+\end{center}
+\end{figure}
+
+
+
+
+
+Rishnak did not want to push further and called it a day. Ajur and Jura were very happy to be left alone. 
