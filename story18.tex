@@ -301,6 +301,42 @@ Generation of all permutations/combinations and testing is a brute force approac
 
 Ajur realized that there is so much more to learn and he was very excited. Ajur asked Rishnak whether backtracking could be used to solve Sudoku problem. Rishnak smiled and said that indeed one could use backtracking to solve a Sudoku problem.\footnote{Sudoku can be thought of as fully coloring all the vertices of a graph given a partial coloring of the vertices.}
 
+\textbf{Question for eighteenth day:} Rishnak asked Ajur to draw graph for which depth first search and the breadth first search produces the same numbering or labelling?
+
+\textbf{Answer:}  Ajur drew the following graph Figure \ref{20ag1}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+ [scale=.6,auto=left]
+  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \draw
+    (-3,0) node[mynode] (n1) {1}
+    (0,0) node[mynode] (n2) {2}
+    (3,0) node[mynode] (n3) {3}
+    (6,0) node[mynode] (n4) {4}
+    (9,0) node[mynode] (n5) {5}
+    (12,0) node[mynode] (n6) {6}
+    (n1.north) node[above] {1}
+    (n2.north) node[above] {2}
+    (n3.north) node[above] {3}
+    (n4.north) node[above] {4}
+    (n5.north) node[above] {5}
+    (n6.north) node[above] {6};
+  \foreach \from/\to in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n6}
+    \draw (\from) -- (\to);
+\draw[-,thick,red]
+  (n1) to (n2)
+  (n2) to (n3)
+  (n3) to (n4)
+  (n4) to (n5)
+  (n5) to (n6);
+\end{tikzpicture}
+\caption{ Breadth First and Depth First Search produces the same labelling - starting from vertex 1}\label{20ag1}
+\end{center}
+\end{figure}
+
+
 After this interesting and exciting discussion, Ajur and Jura called it a day happily.
 
 

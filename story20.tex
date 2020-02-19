@@ -360,4 +360,78 @@ Ajur said that the solution is
     \item Cube 4: Front is green, back is green, left is green and right is green.
 \end{enumerate}
 
-By this time, Ajur felt he had a clear understanding of all the concepts in graph theory. He thanked Rishnak for presenting him such interesting problems. Ajur and Jura bade good bye to Rishnak.  Kinaja was watching them from a distance. She smiled to herself that Ajur not only understood the concepts but also had the decency to thank Rishnak!
+By this time, Ajur felt he had a clear understanding of all the concepts in graph theory. He thanked Rishnak for presenting him such interesting problems.
+
+\textbf{Question for the twentieth day:} Rishnak asked Ajur how will you decompose the following graph for all New sets of cubes (He just the color of one face of one of the cubes) Figure \ref{22gq1}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.8,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+
+ \foreach \from/\to in {n2/n1,n1/n4,n2/n3}
+    \draw[cyan,thick] (\from) -- (\to);
+ 
+ \foreach \from/\to in {n3/n1,n3/n4,n2/n4}
+    \draw[orange,thick] (\from) -- (\to); 
+ \path [line width=0.35mm,black] (n1) edge [bend right] (n3)
+(n1) edge [bend left] (n4);
+     \draw[black,thick]
+  (n2) to[out=210,in=330,looseness=4] (n2);  
+   \path [line width=0.35mm, purple] (n2) edge [bend left] (n3)
+(n1) edge [bend right] (n4)
+(n2) edge [bend left] (n4);
+\end{tikzpicture}
+\caption{ Graph for all the New cubes}\label{22gq1}
+\end{center}
+\end{figure}
+
+\textbf{Answer:} Ajur was able to decompose the graphs (same as before!) \ref{22ga2} and \ref{22ga3}
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+
+
+ \path [line width=0.35mm,cyan] (n4) edge [->] (n1);
+ 
+    \path [line width=0.35mm,orange] (n2) edge [->] (n4);
+ \path [line width=0.35mm,black] (n1) edge [->] (n3);
+ 
+   \path [line width=0.35mm, purple] (n3) edge [->] (n2);
+;
+\end{tikzpicture}
+\caption{ Subgraph depicting front and back faces}\label{22ga2}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}
+  [scale=.4,auto=left,every node/.style={circle}]
+\node (n1)[fill=blue!50] at (4,4) {3};
+  \node (n2)[fill=green!50] at (0,0)  {1};
+  \node (n3)[fill=red!50] at (4,0)  {2};
+  \node (n4)[fill=yellow!50] at (0,4)  {4};
+
+
+ \path [line width=0.35mm,black] (n4) edge [->] (n1);
+ 
+    \path [line width=0.35mm,purple] (n2) edge [->] (n4);
+ \path [line width=0.35mm,orange] (n1) edge [->] (n3);
+ 
+   \path [line width=0.35mm, cyan] (n3) edge [->] (n2);
+;
+\end{tikzpicture}
+\caption{ Subgraph depicting left and right faces}\label{22ga3}
+\end{center}
+\end{figure}
+Ajur and Jura bade good bye to Rishnak.  Kinaja was watching them from a distance. She smiled to herself that Ajur not only understood the concepts but also had the decency to thank Rishnak!
