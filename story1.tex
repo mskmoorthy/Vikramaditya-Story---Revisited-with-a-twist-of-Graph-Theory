@@ -63,7 +63,17 @@ Ajur took no time to respond and drew another graph as in Figure \ref{dg4}.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{graphstory1-3.JPG}
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \node (n1) at (0,0) {E};
+  \node (n2) at (3,0)  {D};
+  \node (n3) at (6,0)  {B};
+   \node (n4) at (9,0)  {A};
+  \node (n5) at (12,0)  {C};
+  \foreach \from/\to in { n1/n2,n2/n3,n3/n4,n4/n5}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture} %\includegraphics[width=0.6\textwidth]{graphstory1-3.JPG}
 \caption{Another Graph with 5 students having 2, 2, 2, 1 and 1 friends}\label{dg4}
 \end{center}
 \end{figure}
