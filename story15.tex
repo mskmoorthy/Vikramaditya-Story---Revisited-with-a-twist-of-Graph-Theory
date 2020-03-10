@@ -1,14 +1,14 @@
 \chapter{Operations on Graphs}
 
-Rishnak caught up with Ajur who was walking with Jura. Rishnak started the session saying it was about various graph operations.
-Ajur asked whether they were similar to arithmetical operations (like addition, subtraction, multiplication) on numbers or set operations (such as union, intersection, complement). Rishnak said that there are a number of binary operations and since graphs are represented as sets, many of the operations were similar to set operations. Rishnak added that with Graph operations one can generate more graphs and one can also see how graphs evolve.
+Rishnak caught up with Ajur, who was walking with Jura. Rishnak started the session, saying it was about various graph operations.
+Ajur asked whether they were similar to arithmetical operations (like addition, subtraction, multiplication) on numbers or set operations (such as union, intersection, complement). Rishnak said that there are a number of binary operations and since graphs are represented as sets, many of the operations were similar to set operations. Rishnak added that with graph operations one can generate more graphs and one can also see how graphs evolve.
 
 Rishnak listed the following binary graph operations:
 \begin{enumerate}
-    \item Graph Union: Union of two graphs $G_3=(V_3,E_3)$= $G_1=(V_1,E_1)$ and $G_2=(V_2,E_2)$ where $V_3= V_1 \cup V_2$ and
+    \item Graph Union: Let graph $G_3=(V_3,E_3)$ denote the union of two graphs $G_1=(V_1,E_1)$ and $G_2=(V_2,E_2)$. Then $V_3= V_1 \cup V_2$ and
     $E_3=E_1\cup E_2$. Naturally this graph $G_3$ is not connected.
     \item Graph Complement: Complement of a Graph $H=(V_2,E_2)$ of $G=(V_1,E_1)$, where $V_2$ = $V_1$ and $E_2$=$\{e| e \notin E_1\}$ Please see Figures \ref{17g1} \ref{17g2}.
-    \item Vertex Addition: Vertex Addition to a graph $G_1=V_1,E_1)$ is a graph $G_2=(V_2,E_2)$  where $V_2=V_1 \cup \{x| \notin V_1\}$ and $E_2=E_1 \cup \{(x,y)  |$ for some  $y  \in Y \subset~ of~ V_1\}$ Please see Figure \ref{17g3} of adding a vertex to \ref{17g1}. Barabassi - Albert used a version of this to generate graphs.\footnote {In Barabassi-Albert model the new vertex adds an edge to an existing vertex with a probability related to the degree of that vertex to generate graphs.}
+    \item Vertex Addition: Vertex Addition to a graph $G_1=V_1,E_1)$ is a graph $G_2=(V_2,E_2)$  where $V_2=V_1 \cup \{x| \notin V_1\}$ and $E_2=E_1 \cup \{(x,y)  |$ for some  $y  \in Y \subset~ of~ V_1\}$ Please see Figure \ref{17g3} of adding a vertex to \ref{17g1}. Barabassi-Albert used a version of this to generate graphs.\footnote {In Barabassi-Albert model the new vertex adds an edge to an existing vertex with a probability related to the degree of that vertex to generate graphs.}
     \item  The Cartesian product $G_1$ $ \square $  $G_2$ is a graph $G_3$ such that
 the vertex set of $G_3$  is the Cartesian product $V(G_1) × V(G_2)$; and
 two vertices $(u,u' )$ and $(v,v' )$ are adjacent in $G_3$ if and only if either
@@ -31,7 +31,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example Graph}\label{17g1}
+\caption{ Example graph}\label{17g1}
 \end{center}
 \end{figure}
 \begin{figure}
@@ -47,7 +47,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Complement of Graph \ref{17g1}}\label{17g2}
+\caption{ Complement of graph \ref{17g1}}\label{17g2}
 \end{center}
 \end{figure}
 \begin{figure}
@@ -78,7 +78,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example Graph $G_1$ for Cartesian Product}\label{17g4}
+\caption{ Example of a  Graph $G_1$ for Cartesian Product}\label{17g4}
 \end{center}
 \end{figure}
 
@@ -93,7 +93,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example Graph $G_2$ for Cartesian Product}\label{17g5}
+\caption{ Example of graph $G_2$ for Cartesian Product}\label{17g5}
 \end{center}
 \end{figure}
 
@@ -128,7 +128,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
    \draw (\source) --node[weight] {$\weight$}  (\dest);
  
   \end{tikzpicture}
-\caption { A Graph for line graph example}\label {17g7}
+\caption { Example of a graph for line graph example}\label {17g7}
 \end{center}
 \end{figure}
 
@@ -146,15 +146,16 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
    \draw (\source) -- (\dest);
  
   \end{tikzpicture}
-\caption { A Line Graph for a Graph in Figure \ref{17g7}}\label {17g8}
+\caption { A line graph for a graph in Figure \ref{17g7}}\label {17g8}
 \end{center}
 \end{figure}
 
 Then Rishnak pointed out that Petersen Graph they had discussed earlier was the complement of the line graph of $K_5$. Ajur knew $K_5$ has 10 edges and Petersen graph has 10 edges and mentally verified that they matched. Ajur calculated that the line graph of $K_5$ is regular graph of degree 6 and hence its complement will be regular graph of degree 3 and that matched. But still he had to verify Rishnak's assertion. He decided to work on it later.
 
-Rishnak realising that it was getting late, spent a few minutes talking about Paul Erd\H{o}s and Renyi construction of a graph. In this method for a graph with $n$ vertices and $e$ edges, for every unordered pair of vertices  an edge is present with a probability of $\frac{e}{\frac{n \times (n-1)}{2}}$. Ajur needed time to digest all the material. So Ajur and Jura drifted away and Rishnak proceeded to meet his ghost friends.
+Rishnak realising that it was getting late, spent a few minutes talking about Paul Erd\H{o}s and Renyi construction of a graph. In this method for a graph with $n$ vertices and $e$ edges, for every unordered pair of vertices  an edge is present with a probability of $\frac{e}{\frac{n \times (n-1)}{2}}$. 
 
-Rishnak showed a graph generated by Erd\H{o}s Renyi model with 5 vertices 5 edges (so edge probability is 0.5  =$ \frac{5}{10}$) shown in Figure \ref {17g9} \footnote{Generated using Sage Math (CoCALC) \url{https://cocalc.com/}}
+
+Rishnak showed a graph generated by Erd\H{o}s-Renyi model with 5 vertices 5 edges (so edge probability is 0.5  =$ \frac{5}{10}$) shown in Figure \ref {17g9} \footnote{Generated using Sage Math (CoCALC) \url{https://cocalc.com/}}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -168,13 +169,13 @@ Rishnak showed a graph generated by Erd\H{o}s Renyi model with 5 vertices 5 edge
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Randomly Generated Graph using Erd\H{o}s Renyi Model with 5 vertices and 5 edges(so edge probability is 0.5  =$ \frac{5}{10}$)  }\label{17g9}
+\caption{ Randomly Generated Graph using Erd\H{o}s-Renyi Model with 5 vertices and 5 edges (so edge probability is 0.5  =$ \frac{5}{10}$)  }\label{17g9}
 \end{center}
 \end{figure}
 
 \textbf{Question for fifteenth day:} Draw the complement of the line graph of a complete graph with 5 vertices ($K_5$).
 
-\textbf{Answer:} Ajur reasoned that there will be 10 vertices in the line graph (as $K_5$ has 10 edges). The complement will also have 10 vertices and it will be a regular graph of degree 3 (as the line graph will be a regular graph of degree 6!). Ajur was able to draw the graph Figure \ref{15ga1}
+\textbf{Answer:} Ajur reasoned that there would be 10 vertices in the line graph (as $K_5$ has 10 edges). The complement will also have 10 vertices and it will be a regular graph of degree 3 (as the line graph will be a regular graph of degree 6!). Ajur was able to draw the graph Figure \ref{15ga1}
 
 \begin{figure}
 \begin{center}
@@ -197,6 +198,8 @@ Rishnak showed a graph generated by Erd\H{o}s Renyi model with 5 vertices 5 edge
 
 
 \end{tikzpicture}
-\caption{ Petersen Graph - Complement of the line graph of $K_5$}\label{15ga1}
+\caption{ Petersen graph - Complement of the line graph of $K_5$}\label{15ga1}
 \end{center}
 \end{figure}
+
+Ajur needed time to digest all the material. So Ajur and Jura drifted away and Rishnak proceeded to meet his ghost friends.
