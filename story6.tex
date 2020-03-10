@@ -61,9 +61,8 @@ Rishnak continued rhetorically: ``When are two graphs the same"? Two graphs are 
 If two graphs are isomorphic, they should have the same number of vertices, the same number of edges, the same degree sequences, the same length of the longest cycle, and the same length of the shortest cycle.  These properties of graphs are called graph invariants. By no mean are these invariants are exhaustive. We do not know of a single easily computable invariant that can be used to test whether or not two given graphs are isomorphic. 
 
 Rishnak asked Ajur, to provide two graphs which have the same number of vertices and same number of edges but they are not isomorphic. Ajur thought a bit and he was able to produce the following two graphs which have 6 vertices and 9 edges. Ajur added that one graph, Figure \ref{8g3}, is bipartite (all cycles are of even length)  and the other one, Figure \ref{8g4}, is not bipartite (it has cycle of length 3) and hence these two graphs are not isomorphic.
-
 \begin{figure}
-
+\begin{center}
 \begin{tikzpicture}
   [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
   \node (n1) at (1,7) {1};
@@ -77,12 +76,12 @@ Rishnak asked Ajur, to provide two graphs which have the same number of vertices
   n2/n5, n6/n3,n1/n4}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A Bipartite Graph with 6 vertices and 9 edges same as graph in \ref{5g5}}\label{8g3}
-
+\caption{ A bipartite graph with 6 vertices and 9 edges}\label{8g3}
+\end{center}
 \end{figure}
 
 \begin{figure}
-
+\begin{center}
 \begin{tikzpicture}
   [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
   \node (n1) at (1,7) {1};
@@ -97,7 +96,7 @@ Rishnak asked Ajur, to provide two graphs which have the same number of vertices
     \draw (\from) -- (\to);
     \end{tikzpicture}
 \caption{ A non-bipartite graph with 6 vertices and 9 edges}\label{8g4}
-
+\end{center}
 \end{figure}
 
 Ajur thought for a while and said that partial solutions to the isomorphism problem would be very useful when you want to test whether a given graph is in a collection of graphs, a problem that comes up in chemistry. Rishnak was pleased to notice that Ajur was thinking about practical applications of graph theory. 

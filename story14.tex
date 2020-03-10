@@ -1,6 +1,6 @@
 \chapter{Matching and Assignment Problem}
 
-Hearing footsteps behind them, Ajur and Jura turned back and saw Rishnak, rushing to catch up with them and continue their discussion. Rishank wasted no time and started with saying that the edges analog of maximal independent set (set of non-adjacent vertices) is a maximal matching. Maximal matching is a set of edges that do not share any common end vertices. Rishnak showed a graph Figure \ref{16g1} and the maximal matching edges are colored red.
+Hearing footsteps behind them, Ajur and Jura turned back and saw Rishnak, rushing to catch up with them and continue their discussion. Rishank wasted no time and started with saying that the edges analog of maximal independent set (set of non-adjacent vertices) is a maximal matching. Maximal matching is a set of edges that do not share any common end vertices. Rishnak showed a graph, Figure \ref{16g1}, and the maximal matching edges are colored red.
 \begin{figure}
 \begin{center}
 
@@ -30,14 +30,14 @@ Hearing footsteps behind them, Ajur and Jura turned back and saw Rishnak, rushin
   \draw[-,thick,red]
   (n9) to (n10);
   \end{tikzpicture}
-\caption{Maximal Matching edges in this graph are colored red}\label{16g1}
+\caption{Maximal matching edges in this graph are colored red}\label{16g1}
 \end{center}
 \end{figure}
 
-Since this is a maximal matching - every edge is incident at one of the end vertices of the edges in the Maximal set. Hence the vertices $\{1,2,4,6,7,8,9,10\}$ form a vertex cover. However the minimum vertex cover is $\{1,6,7,10\}$. If we find a Maximal matching we know the bound on the size of the minimum vertex cover!.
+This is a maximal matching - every edge is incident at one of the end vertices of the edges in the maximal set. Hence the vertices $\{1,2,4,6,7,8,9,10\}$ form a vertex cover. However, the minimum vertex cover is $\{1,6,7,10\}$. If we find a Maximal matching we know the bound on the size of the minimum vertex cover!
 
 
-A perfect matching is a matching such that all the vertices are the end vertices of the edges in the matching. For example Figure \ref{16g1} does not have a perfect matching.  But consider the following graph Figure \ref{16g2}; this graph has a maximal matching and all the vertices are present as one of the end vertices of the edges in the maximal matching.
+A perfect matching is a matching such that all the vertices are the end vertices of the edges in the matching. For example, Figure \ref{16g1} does not have a perfect matching.  But consider the following graph Figure \ref{16g2}; this graph has a maximal matching and all the vertices are present as one of the end vertices of the edges in the maximal matching.
 
 \begin{figure}
 \begin{center}
@@ -61,8 +61,7 @@ A perfect matching is a matching such that all the vertices are the end vertices
 \end{figure}
 Rishnak then mentioned some interesting tidbits about Matching Problem.
 A problem related to Matching got the Nobel prize in Economics in 2012 for Prof. Llyod Shapely and 
-Prof. Alvin Roth.  Prof. David Gale and Prof. Shapely introduced a problem called Stable Marriage Problem (which we will describe next) and Prof. Alvin Roth applied this for variety of applications including medical resident assignment problem, kidney transplants, etc.
-
+Prof. Alvin Roth.  Prof. David Gale and Prof. Shapely introduced a problem called Stable Marriage Problem (which we will describe next) and Prof. Alvin Roth applied this for variety of applications.
 Stable Marriage Problem may be stated as follows:
 Given $n$ males and $n$ females and a list of preferences for each male and female, find a stable marriage for the whole group.
 A marriage is unstable if there are a male and female who are not married to each other but prefer each other to their respective spouses. Otherwise, the marriage is stable.
