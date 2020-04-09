@@ -1,6 +1,13 @@
-\chapter{Graph Isomorphism, Subgraph Isomorphism}
+\chapter{Graph and Subgraph Isomorphism}
 
-Rishnak was eagerly looking for Ajur because he wanted to share with him a new concepts and found Ajur and Jura walking along the bank of a (presumably haunted) pond in the cemetery. Rishnak started this session with a small variant on what they had been discussing. A graph, whose vertices are labeled, is called a labeled graph and one without labels for vertices is called an unlabeled graph. Two labeled graphs are equivalent if they are identical. The labeled graphs in Figures \ref{8g1} and \ref{8g11} are equivalent. The graph in Figure \ref{8g2} is not equivalent to the graph in Figures \ref{8g1} or \ref{8g11} or as there is no edge between vertices 1 and 2.
+Rishnak eagerly searched for Ajur because he wanted to share more new concepts with him. It did not take long for Rishnak to find Ajur and Jura walking along the bank of a (presumably haunted) pond in the cemetery. Rishnak immediately started the session with a small variant on what they had already been discussing.
+
+Rishnak said, ``A graph whose vertices are labeled is called a \textit{labeled graph}, while one without labels for vertices is called an \textit{unlabeled graph}. Two labeled graphs are equivalent if they are identical, for example these two graphs''---he flashed his hands to form a pair of labeled graphs in the air in front of Ajur [Figure~\ref{8g1}] [Figure~\ref{8g11}]---``are equivalent.''
+
+Ajur studied the two graphs for a moment, then nodded.
+
+Rishnak waved his hands again and a third graph appeared [Figure~\ref{8g2}].  ``This third graph is not equivalent to the other two graphs because there is no longer an edge between vertices~1 and~2 or between vertices~3 and~4. Or you could say that the vertex labels are different.''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -15,7 +22,7 @@ Rishnak was eagerly looking for Ajur because he wanted to share with him a new c
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{Labeled Graph}\label{8g1}
+\caption{A labeled graph with five vertices and five edges}\label{8g1}
 \end{center}
 
 \end{figure}
@@ -33,7 +40,7 @@ Rishnak was eagerly looking for Ajur because he wanted to share with him a new c
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Another labeled graph with five vertices equivalent to Figure \ref{8g1}}\label{8g11}
+\caption{A second labeled graph with five vertices and five edges that is equivalent to the graph shown in Figure~\ref{8g1}}\label{8g11}
 \end{center}
 \end{figure}
 
@@ -52,15 +59,30 @@ Rishnak was eagerly looking for Ajur because he wanted to share with him a new c
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Another labeled graph with five vertices which is not equivalent to Graphs \ref{8g1} and \ref{8g11} as the edge labels are distinct from either of the two graphs}\label{8g2}
+\caption{A third labeled graph with five vertices and five edges that is not equivalent to the graphs shown in Figure~\ref{8g1} and Figure~\ref{8g11} because the vertex labels are differ from that of either of the two other graphs}\label{8g2}
 \end{center}
 \end{figure}
 
-Rishnak continued rhetorically: ``When are two graphs the same"? Two graphs are isomorphic (\emph{structurally the same}), if they are equivalent under a vertex relabeling. For example, if in the graph of Figure \ref{8g2} vertex 2 is relabeled as 3 and vertex 3 is relabeled as 2, then two graphs in Figures \ref{8g2} and \ref{8g1} are equivalent. If a graph, $G$, is equivalent to a graph $H$ and $H$ is equivalent to another graph $P$, then $G$ is equivalent to graph $P$\footnote{In other words, the relation of being equivalent graphs is transitive.}. To test whether two graphs are isomorphic are not is a hard problem\footnote{Not as hard as finding a Hamiltonian cycle in a graph} .
+Ajur said ``I see the differences, but when are two graphs the same?''
 
-If two graphs are isomorphic, they should have the same number of vertices, the same number of edges, the same degree sequences, the same length of the longest cycle, and the same length of the shortest cycle.  These properties of graphs are called graph invariants. By no mean are these invariants are exhaustive. We do not know of a single easily computable invariant that can be used to test whether or not two given graphs are isomorphic. 
+Rishnak smiled and said, ``Good question. Two graphs are called \textit{isomorphic}---meaning structurally the same---if they are equivalent under a vertex relabeling. For example, if in the third graph [Figure~\ref{8g2}], vertex~2 is relabeled as vertex~3 and similarly vertex~3 is relabeled as vertex~2, then the third graph becomes equivalent or isomorphic to the other two graphs.''
 
-Rishnak asked Ajur, to provide two graphs which have the same number of vertices and same number of edges but they are not isomorphic. Ajur thought a bit and he was able to produce the following two graphs which have 6 vertices and 9 edges. Ajur added that one graph, Figure \ref{8g3}, is bipartite (all cycles are of even length)  and the other one, Figure \ref{8g4}, is not bipartite (it has cycle of length 3) and hence these two graphs are not isomorphic.
+Ajur studied the third graph again and said, ``Aha, I see.''
+
+Rishnak continued, ``We can also say that if a graph~$G$ is equivalent to a graph~$H$, and~$H$ is equivalent to another graph~$M$, then $G$ is equivalent to graph~$M$. In other words, the relation of graphs being  equivalent or isomorphic is \textit{transitive}. And to test whether two graphs are isomorphic is actually a very hard problem, though it is not as hard as finding a Hamiltonian cycle in a graph.''
+
+Ajur thought about this. If two graphs are isomorphic, they should have the same number of vertices, the same number of edges, the same degree sequences, the same length for the longest cycle, the same length for the shortest cycle, and so on. He repeated these to Rishnak, then asked, ``Can we use some of these properties to show to graphs are isomorphic?''
+
+Rishnak furled his brow and said, ``Unfortunately not. These properties of graphs are called \textit{graph invariants}, but by no mean are these invariants exhaustive. We do not know of a single easily computable invariant that can be used to test whether or not two given graphs are isomorphic.''
+
+Ajur frowned at this, frustrated that there were unsolved problems like this.
+
+Rishnak said, ``It is much easier to detect that two graphs are not isomorphic. Can you draw two graphs with the same number of vertices and the same number of edges that are not isomorphic?''
+
+Ajur thought a bit then grabbed a stick and drew two graphs in the dirt [Figure~\ref{8g3}] [Figure~\ref{8g4}]. He said, ``Both these graphs have six vertices and nine edges, but the first graph is bipartite---we know this because all cycles are of even length---while the other graph is not bipartite because it has a cycle of length~3. Therefore, these two graphs are not isomorphic.''
+
+Rishnak smiled.
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -76,7 +98,7 @@ Rishnak asked Ajur, to provide two graphs which have the same number of vertices
   n2/n5, n6/n3,n1/n4}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A bipartite graph with 6 vertices and 9 edges}\label{8g3}
+\caption{A bipartite graph with six vertices and nine edges}\label{8g3}
 \end{center}
 \end{figure}
 
@@ -95,23 +117,40 @@ Rishnak asked Ajur, to provide two graphs which have the same number of vertices
   n2/n5, n6/n4,n1/n3}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A non-bipartite graph with 6 vertices and 9 edges}\label{8g4}
+\caption{A non-bipartite graph with six vertices and nine edges}\label{8g4}
 \end{center}
 \end{figure}
 
-Ajur thought for a while and said that partial solutions to the isomorphism problem would be very useful when you want to test whether a given graph is in a collection of graphs, a problem that comes up in chemistry. Rishnak was pleased to notice that Ajur was thinking about practical applications of graph theory. 
+Ajur thought for awhile, then said that partial solutions to the graph isomorphism problem would be very useful if you wanted to test whether a given graph is in a collection of graphs, a problem that comes up in chemistry.
 
-Ajur wanted to know if there is an easier method for testing isomorphism between rooted trees. Rishnak smiled and said there is a faster method for rooted trees. First, Rishnak explained a certain canonical representation for a labeled tree, called a Pr\"ufer code. The construction is iterative, and the Pr\"ufer code of a labeled tree with $n$ vertices is a code of length $n-2$. First, we recall that a leaf of a tree is a vertex that is connected to only one other vertex.
+Rishnak was pleased that Ajur was thinking about some of the practical applications of graph theory. Rishnak said, ``There is an easier method to test for isomorphism between two rooted trees. Let's start with how we can encode a labeled tree. We'll use an approach called a Pr\"ufer code. The construction is iterative, and the Pr\"ufer code of a labeled tree with~$n$ vertices is a code of length~$n-2$. Here's the algorithm, but first, remember that a leaf of a tree is a vertex that is connected to only one other vertex.
 
 \begin{enumerate}
-\item Let Pr{\"u}fer code be an empty.
+\item Let Pr{\"u}fer code~$P_c$ be an empty string.
 
-\item Start with a leaf vertex of smallest label, say v. Find the vertex connecting it to the rest of tree say w.  Remove v from the tree and add w to the Pr{\"u}fer code.
- 
-\item Repeat the previous step until we are left with two vertices.
+\item Find leaf vertex~$v$ with the smallest label, then identify vertex~$w$ that connects vertex~$v$ to the rest of tree.
+
+\item Remove~$v$ from the tree and append~$w$ to Pr{\"u}fer code~$P_c$.
+
+\item Repeat from step~2 until we are left with only two vertices.''
 \end{enumerate}
 
-We execute this procedure for the tree in Example \ref{8g5}. The smallest leaf vertex is 4. Its adjacent vertex is labeled 2. So 2 is added to the Pr{\"u}fer code and vertex 4 is removed. Next smallest vertex is 5 and its adjacent vertex is 2. Hence 2 is added to the Pr{\"u}fer code and vertex labeled 5 is removed. Now 2 is the smallest leaf vertex and its adjacent vertex is 1 and  1 is added to Pr{\"u}fer code and vertex 2 is removed. Currently Pr{\"u}fer code is \textbf{221}. Now 1 is the smallest labeled vertex and its adjacent vertex is 3 and vertex 1 is removed. Hence 3 is added to Pr{\"u}fer code which becomes \textbf{2213}. The next smallest leaf vertex is 6 and its adjacent vertex is 3. 3 is added to Pr{\"u}fer code. There are only two vertices left and we are done. The Pr{\"u}fer code for tree in Example \ref{8g5} is \textbf{22133}. From this Pr{\"u}fer code, one can conclude that there are 7 vertices in the tree (as the Pr{\"u}fer code is of length $n-2$ for a tree with $n$ vertices). Further, we can also conclude that vertices labeled 4,5,6 and 7 are leaf vertices as they do not appear in the given Pr{\'u}fer code. 
+Ajur raised his eyebrows and said, ``Wow, that's a lot to take in.''
+
+Rishnak laughed and said, ``Try it on this rooted tree.''  He waved his hands and a new graph [Figure~\ref{8g5}] appeared in front of Ajur.
+
+Ajur took a deep breath and said, ``Okay, the smallest leaf is vertex~4. Its adjacent vertex is labeled~2, so we append~2 to Pr\"ufer code~$P_c$ and remove vertex~4. The next smallest leaf vertex is labeled~5 and is adjacent to vertex~2. Therefore, we append~2 to~$P_c$ and remove vertex~5. Now vertex~2 is the smallest leaf vertex and its adjacent vertex is vertex~1, so we append~1 to $P_c$ and remove vertex~2. At this point, $P_c$ is~$221$, but we're not done yet.''
+
+Rishnak smiled and said, ``Right, go on.''
+
+Ajur said, ``Wait, vertex~1 is now the smallest leaf vertex, but it was originally the root of the tree. Is that okay?''
+
+Rishnak said, ``Yes, that's part of the algorithm.''
+
+Ajur shrugged and continued, ``Okay, vertex~1 is next and its adjacent vertex is vertex~3, so vertex~1 is removed and we append~3 to $P_c$. The next smallest leaf is then vertex~6 and its adjacent vertex is vertex~3, so we again append~3 to~$P_c$. We stop when there are only two vertices left, so we are done. The Pr{\"u}fer code for the tree is $P_c=22133$.''
+
+Rishnak nodded and said, ``Good, since the length of~$P_c$ is~5, we can immediately conclude that there are seven vertices in the tree. Further, we can also conclude that vertices labeled~4, 5, 6, and~7 are the leaf vertices since they do not appear in the given Pr\"ufer code.''
+
 \begin{figure}
 \begin{center}
 
@@ -130,24 +169,47 @@ We execute this procedure for the tree in Example \ref{8g5}. The smallest leaf v
 
 \end{tikzpicture}
 
-\caption{Tree with 7 vertices and four leaf vertices }\label{8g5}
+\caption{A rooted tree with seven vertices, of which four vertices are leaf vertices}\label{8g5}
 \end{center}
 \end{figure}
 
-Ajur then wanted to know if one could have a code for unlabeled trees. Rishnak replied with a resounding yes and explained the basic steps for a rooted tree. For any tree, one needs to choose an appropriate root vertex: \footnote{Center of a tree is chosen as the root vertex}  %\textbf{Raju: be careful, not every tree has a center which is a vertex!}} 
+Ajur asked, ``What about unlabeled trees? Can we find a Pr\"ufer code for an unlabeled tree?''
+
+Rishnak replied with a resounding yes and explained the steps to follow for a rooted tree. He said, ``For any tree, one needs to first choose an appropriate root vertex, which we can call the \textit{center} of the tree. Here's the basic algorithm to follow.
+%\textbf{Raju: be careful, not every tree has a center which is a vertex!}} 
 \begin{enumerate}
-    \item  Label the leaf vertices as 01;
-    \item Let $x$ be a non-leaf vertex. If all the children of $x$, sort these labels in alphabetical order. \footnote{0 comes before 1} The label of vertex $x$ is 0 followed by concatenation of the (sorted) labels of the children followed by 1;
-    \item Stop after you label the root vertex.
+    \item Assign each leaf vertex a label of~01.
+    \item Let~$x$ be a non-leaf vertex. For all of the children of~$x$, sort these labels in order. Assign vertex~$x$ with a label that is a~0, followed by the concatenation of the sorted labels of its children, followed by a~1.
+    \item Repeat step 2 until you label the root vertex.''
 \end{enumerate}
 
-For example for the tree in \ref{8g5} leaf vertices 4,5,6,7 are all labeled \textbf{01}. Vertex 2 is labeled \textbf{001011} and vertex 3 has a similar label \textbf{001011}. Finally root vertex has the label \textbf{00101100101111}. This \textbf{00101100101111} becomes the code for the tree.
+Rishnak knew this was a lot to follow. He said, ``Have another look at this tree [Figure~\ref{8g5}]. If this was an unlabeled graph, then leaf vertices~4, 5, 6, and~7 would all be labeled~01. Then vertex~2 would be labeled~$001011$. Same with vertex~3. Finally, root vertex~1 would have the label~$000101100101111$, which would serve as the Pr\"ufer code for this tree.''
 
-Rishnak continued that closely related to Graph Isomorphism is a problem that has plenty of uses in real life - and not just in the ghoulish realm. Ajur chuckled at the bad joke but politely retrained from interrupting. Rishnak continued with the statement of the next problem.  Instead of asking whether two graphs are structurally similar, given two graphs $G$ and $H$, the subgraph isomorphism problem is if there is a sub-graph of $G$ that is isomorphic to H. Ajur responded immediately saying this approach can be used to test if a graph $G$ with $n$ vertices has a Hamiltonian cycle by choosing $H$ to be a cycle of length $n$ and asking whether there is a sub-graph of $G$ isomorphic to $H$. Rishnak nodded in agreement and said that is the reason the sub-graph Isomorphism problem is hard. On the other hand, if both $G$ and $H$ are labeled graphs, there are heuristics to test whether $H$ occurs in $G$ as a sub-graph. This type of labeled sub-graph isomorphism problem has many applications in medical imaging and chemical structure identifications.
+Ajur tried his best to follow. After some time, he said, ``I think I see. Using these Pr\"ufer codes, we could compare them to see if they match, which would show that the two rooted trees are the same---I mean, isomorphic.''
 
-\textbf{Question for the sixth day:} Draw a tree whose Pr{\"u}fer code is 232.
+Rishnak smiled and said, ``Precisely. And closely related to the problem of graph isomorphism is a problem that has plenty of uses in real life, not just in the ghoulish realm.''
 
-\textbf{Answer} Ajur realized that this is a tree with five vertices and he drew the following tree in Figure \ref{6q1}.
+Ajur chuckled at the bad joke.
+
+Rishnak continued, ``Instead of asking whether two graphs are structurally the same and therefore isomorphic, given two graphs~$G$ and~$H$, the \textit{subgraph isomorphism} problem is to determine whether there is a subgraph of~$G$ that is isomorphic to~$H$.''
+
+Ajur said, ``A subgraph of~$G$. I understand. This approach could be used to test whether graph~$G$ with~$n$ vertices has a Hamiltonian cycle by choosing graph~$H$ to be a cycle of length~$n$ and asking whether there is a subgraph of~$G$ isomorphic to~$H$.''
+
+Rishnak nodded and said, ``Yes, and that is the reason why the subgraph isomorphism problem is hard. On the other hand, if both~$G$ and~$H$ are labeled graphs, there are heuristics to test whether~$H$ occurs in~$G$ as a subgraph. This type of labeled subgraph isomorphism problem has many applications in medical imaging and chemical structure identification.''
+
+Ajur marveled at how connected and useful graphs and subgraphs were.
+
+\subsection*{Question for the sixth day}
+Rishnak said, ``Okay, Ajur, the time has come. Here is the question for the sixth day. Can you draw a tree with a Pr{\"u}fer code of~232?''
+
+\textit{Before you turn the page, try to come up with an answer of your own!}
+
+\newpage
+\subsection*{Answer for the sixth day}
+Ajur nodded and said, ``Yes, first of all, I know that this will be a tree with five vertices because the Pr\"ufer code has a length of~3.''
+
+Without hesitating, Ajur drew a tree in the dirt [Figure~\ref{6q1}].  He said, ``This is the tree.''
+
 \begin{figure}
 \begin{center}
 
@@ -165,8 +227,8 @@ Rishnak continued that closely related to Graph Isomorphism is a problem that ha
 
 \end{tikzpicture}
 
-\caption{Tree with 5 vertices}\label{6q1}
+\caption{Tree with 5 vertices with a Pr\"ufer code of~232}\label{6q1}
 \end{center}
 \end{figure}
 
-Rishnak was happy with Ajur's answer and Ajur was eager to go with Jura.
+Rishnak was happy with Ajur's answer, and Ajur was eager to go home, with Jura at his side, to think about all of the applications graphs and subgraphs might have in the world.

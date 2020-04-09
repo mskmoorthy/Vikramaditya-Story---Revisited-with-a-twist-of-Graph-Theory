@@ -1,7 +1,10 @@
 \chapter{Shortest Paths}
-Ajur picked up a map of the cemetery,  trying to find a way to go to the water fountain. Then he remembered his recent discussions with Rishnak and excitedly told Jura that using Graph Theory methods, they may be able to find a path and even the shortest path. Rishnak was watching Ajur looking at the map and realized that discussion of path and shortest path (length of the path from source vertex to the destination vertex) would be an ideal topic to pursue next.
+Ajur had found a map of the cemetery. He used it to try to find the best way to go to the water fountain. Then he remembered his recent discussions with Rishnak and excitedly told Jura that by using graph theory methods, they would be able to find a path and maybe even the shortest path to the water fountain.
 
-Consider a graph\footnote{In the case of spanning trees, we consider only undirected graphs; however, for shortest paths we can consider both undirected and directed graphs.}. Rishnak asked Ajur to find the shortest path from a specified source vertex to a specified destination vertex. Consider the following graph shown in Figure \ref{12g1}.
+Rishnak overheard Ajur and realized that a good discussion of paths and shortest paths would be an ideal topic to pursue next.
+
+Rishnak said, ``Consider a graph\footnote{For spanning trees, we consider only undirected graphs; however, for shortest paths we can consider both undirected and directed graphs.} in which you wish to find the shortest path from a specified source vertex to a specified destination vertex. Let's look at this familiar graph.''---Rishnak waved his hands and an undirected graph appeared in front of Ajur [Figure~\ref{12g1}]---``What's the shortest path from vertex~1 to vertex~6?''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -17,11 +20,11 @@ Consider a graph\footnote{In the case of spanning trees, we consider only undire
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example graph, We want to find the shortest path from vertex 1 to vertex 6}\label{12g1}
+\caption{Example undirected graph for which we want to find the shortest path from vertex~1 to vertex~6}\label{12g1}
 \end{center}
 \end{figure}
 
-Ajur jumped up and down with excitement and said he could draw the shortest path from source vertex (1) to destination vertex (6) and drew the following graph \ref{12g2}.
+Ajur jumped up and down with excitement and said he could easily draw the shortest path from source vertex~1 to destination vertex~6. He grabbed a stick and drew the graph in the dirt, then he showed the shortest path by thickening edges~$(1,5)$, $(5,4)$, and~$(4,6)$ [Figure~\ref{12g2}].
 
 \begin{figure}
 \begin{center}
@@ -40,24 +43,32 @@ Ajur jumped up and down with excitement and said he could draw the shortest path
     \draw  (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example graph, Shortest Path (of length 3) from vertex 1 to vertex 6 in Graph \ref{12g1} - shortest path is drawn in thick lines.}\label{12g2}
+\caption{The graph from Figure~\ref{12g1} with the shortest Path (of length~3) shown from vertex~1 to vertex~6 using thick lines}\label{12g2}
 \end{center}
 \end{figure}
 
-Pleased with Ajur's enthusiasm, Rishnak wanted to make sure Ajur could find a general method for finding the shortest path from a source vertex to a destination vertex.
+Pleased with Ajur's enthusiasm, Rishnak wanted to make sure that Ajur understood a general method for finding the shortest path from a source vertex to a destination vertex in any graph.
 
-Rishnak suggested the following method, similar to that of finding any spanning tree \ref{12a1}.
+Rishnak said, ``Remember how to find a spanning tree for a given graph?''
 
-\begin{figure} 
+Ajur said, ``Sure, yes.''
+
+Rishnak said, ``Good. We can come up with a similar algorithm for finding the shortest path from a source vertex to a destination vertex, but first, we need to define distance \textbf{dist} of a vertex~$y$ as the number of vertices we must visit to get from the source vertex to vertex~$y$. We also define parent~\textbf{p} of a vertex as the parent vertex\footnote{You can also think of this as the \textit{previous} vertex.} that led us to vertex~$y$. Given these definitions, here is the algorithm:
 \begin{enumerate}
-\item  Label of a vertex, $y$ gives the distance from the source vertex to the vertex $y$.  Let the label \textbf{distance} of the source vertex be 0. The distance from the source vertex to itself is 0. Set label of all the other vertices as unlabeled. Start from the source vertex. Include that vertex in a queue.\footnote{ In a queue, you can only insert in the rear and delete from the front.} 
-\item Remove the vertex from the front of the queue. Find all vertices $v$, (not yet labeled) that are adjacent to the removed vertex ($w$) in the queue. Let the label \textbf{distance} of all these vertices be one more than the label \textbf{distance} of $w$ . For each of the newly labeled vertices, set its parent vertex to be $w$ and insert all these vertices in the queue.
-\item Repeat the above step till the destination vertex gets labeled with a \textbf{distance} label. We can trace the shortest path starting from the destination vertex and its parent vertex, till we reach the source vertex.
+\item Set \textbf{dist} for the source vertex to~0 (since the distance from the source vertex to itself is zero) and set~\textbf{p} as being undefined.
+\item Set both \textbf{dist} and~\textbf{p} for all other vertices as being undefined.
+\item We start from the source vertex, so add that vertex to a queue.\footnote{In a queue, we can only add elements to the end and remove elements from the front, just like waiting in line at a grocery store. We can also inspect elements in the queue without changing their order.}
+\item Remove the vertex from the front of the queue, calling this vertex~$w$. Find all vertices with undefined \textbf{dist} values that are adjacent to~$w$. Set \textbf{dist} for all of these vertices to be one more than the \textbf{dist} value for~$w$; also set~\textbf{p} to be vertex~$w$. Finally, add all of these vertices to the queue.
+\item Repeat Step~4 until the destination vertex has its \textbf{dist} value changed, meaning our algorithm has reached the destination vertex. We can then trace the shortest path back to the source vertex by following the~\textbf{p} vertices until we reach the source vertex.''
 \end{enumerate}
-\caption{Finding a shortest Path from source vertex to a sink vertex.}\label{12a1}
-\end{figure}
 
-Following the example in Figure \ref{12g1}, let the \textbf{distance} of 1 be 0. Insert 1 in the queue. Delete 1 from the queue. Its (vertex 1) adjacent vertices are 2 and 5. Label the \textbf{distance} of 2 and 5 to be 2. Insert 2 and 5 in the queue. Parent of 2 and 5 are set  to 1. Delete 5 from the queue. Insert the only unlabeled vertex 4 in the queue. Let the label \textbf{dist} of vertex 4 be 2 and let the parent of 4 be 5. The first element in the queue is 2. Delete 2 from the queue. Insert the only unlabeled vertex 3 in the queue.  Let the label \textbf{distance} of vertex 3 be 2 (one more than the \textbf(distance) of 2) and the parent of 3 to be 2. The first element in the queue is 4. Delete 4 from the queue. Insert the only unlabeled vertex 6 in the queue. Let the label \textbf{distance} of 6 be 3 and the parent of 6 be 4. Since 6 is the destination vertex the algorithm stops. The distance from 1 to 6 is 3 and the path is 6, parent(6)=4, parent(4)=5, parent(5)=1 the source vertex.
+Ajur knew this was a lot to try to understand. He used the example graph in front of him [Figure~\ref{12g1}], tracing the algorithm from source vertex~1. He said, ``Okay, so we start by letting the distance \textbf{dist} of vertex~1 be~0, then we add vertex~1 to the queue. We remove vertex~1 from the queue. It has adjacent vertices~2 and~5, so the \textbf{dist} values of these vertices are both set to~2. And vertices~2 and~5 are added to the queue, say with vertex~2 at the end of the queue. Also, the parent~\textbf{p} vertices of vertices~2 and~5 are both set to vertex~1.''
+
+Rishnak said, ``Correct. Keep going.''
+
+Ajur went on, ``Next, we remove vertex~5 from the queue. The only adjacent vertex with an undefined \textbf{dist} value is vertex~4, so we add it to the end of the queue. And we set the \textbf{dist} of vertex~4 to be~2 and the parent~\textbf{p} of vertex~4 to be vertex~5.''
+
+Ajur thought for a moment, then said, ``The first element of the queue is now vertex~2, which we remove next. Next, we add the only adjacent vertex---vertex~3---to the queue. For vertex~3, we set \textbf{dist} to~2 (because it is one more than the \textbf(dist) value of vertex~2) and the parent \textbf{p} to vertex~2. Finally, we remove vertex~4 from the queue and therefore reach vertex~6, which we add to the queue. We set the \textbf{dist} of vertex~6 to be~3 and its parent \textbf{p} to vertex~4. And since vertex~6 is the destination vertex, we're done. The distance from vertex~1 to vertex~6 is~3, and we can work backwards to determine the path since \textbf{p}$(6)=4$, \textbf{p}$(4)=5$, and~\textbf{p}$(5)=1$, which is the source vertex.''
 
 Ajur marveled at the systematic procedure that could be applied to any graph. He also realized that this procedure could be used to find the shortest path from a single source to all other vertices in a graph and also shortest path between every pair of vertices. Rishnak added that there is a graph parameter called \textbf{diameter} which is the longest path of the shortest path between every pair of vertices. For the example graph shown in \ref{12g2}, the diameter is 3 (as the shortest paths are of lengths 1, 2 and 3). Finding Ajur's eyes glazed, Rishnak asked him to find the diameter for the following graph \ref{12g3}.  
 

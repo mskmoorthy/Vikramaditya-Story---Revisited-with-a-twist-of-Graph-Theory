@@ -1,9 +1,10 @@
 \chapter{Planar Graphs}
-Ajur was so enamored by Hamiltonian cycles, he was eager to meet Rishnak and hear more about them. Rishnak wanted to introduce a different concept: drawing graphs.
-A planar drawing of a graph is one in which no edges cross each other (except at
-the vertices). By definition, a \emph{planar graph} is a graph for which there exists at least one planar drawing.
-If a graph does not admit any planar drawings, we call it a \emph{non-planar graph}.
-For example here are two drawings of a complete graph on four vertices $K_4$. Since Figure \ref{9g2} has no edges crossing, we can call $K_4$ a planar graph.
+Ajur was so enamored by Hamiltonian cycles, he was eager to meet Rishnak and learn more about them, but Rishnak wanted to introduce a different concept: drawing graphs.
+
+Ajur said, ``I already know how to draw graphs.''
+
+Rishnak said, ``Wait, Ajur, there's much more to it. Listen. A planar drawing of a graph is one in which no edges cross each other (except at their endpoint vertices). By definition, a \textit{planar graph} is a graph for which there exists at least one planar drawing. And if a graph does not have any possible planar drawings, we call it a \textit{non-planar graph}.''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -17,9 +18,12 @@ For example here are two drawings of a complete graph on four vertices $K_4$. Si
   \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Drawing of $K_4$ in which edges cross}\label{9g1}
+\caption{A drawing of complete graph~$K_4$ in which two edges cross}\label{9g1}
 \end{center}
 \end{figure}
+
+In a dazzling flash of light, Rishnak waved his hands and two graphs appeared [Figure~\ref{9g1}] [Figure~\ref{9g2}]. He said, ``For example, here are two drawings of complete graph~$K_4$, the~4 in this case meaning we have four vertices. Notice that the second graph [Figure~\ref{9g2}] has no edges that cross, so we call~$K_4$ a planar graph. In other words, it displays nicely on a two-dimensional plane.''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -33,11 +37,11 @@ For example here are two drawings of a complete graph on four vertices $K_4$. Si
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Planar drawing of $K_4$}\label{9g2}
+\caption{A planar drawing of~$K_4$ in which no edges cross}\label{9g2}
 \end{center}
 \end{figure}
- Rishnak asked Ajur whether he could draw the graph in Figure \ref{9g3} with no edges crossing.
- \begin{figure}
+
+\begin{figure}
 \begin{center}
 \begin{tikzpicture}
   [scale=.3,auto=left,every node/.style={circle,fill=red!20}]
@@ -46,15 +50,18 @@ For example here are two drawings of a complete graph on four vertices $K_4$. Si
   \node (n3) at (1,2)  {3};
   \node (n4) at (5,2) {4};
   \node (n5) at (9,2)  {5};
- 
-  
+
    \foreach \from/\to in {n1/n3,n1/n4,n1/n5,n2/n3,n2/n4,n2/n5}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A bipartite graph with 5 vertices and 6 edges, denoted by $K_{2,3}$, where the edges cross}\label{9g3}
+\caption{Bipartite graph~$K_{2,3}$ with five vertices and six edges in which four edges cross}\label{9g3}
 \end{center}
 \end{figure}
-Ajur thought for a while and found it a bit challenging. Then he thought of moving the vertex 2 down, in which case no edges will cross. He drew the graph as shown in Figure \ref{9g4}
+
+Rishnak asked, ``So, Ajur, can you draw this graph''---he waved his hands and a new graph appeared [Figure~\ref{9g3}]---``as a planar graph, that is, with no edges that cross?''
+
+Ajur studied the graph and found the task to be a bit challenging. Then, he thought of moving vertex~2 down below vertex~4, thinking that would help separate the crossed edges. He picked up a stick and drew a graph in the dirt [Figure~\ref{9g4}], smiling as he realized he had solved the problem.
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -64,16 +71,19 @@ Ajur thought for a while and found it a bit challenging. Then he thought of movi
   \node (n3) at (1,2)  {3};
   \node (n4) at (5,2) {4};
   \node (n5) at (9,2)  {5};
- 
-  
+
    \foreach \from/\to in {n1/n3,n1/n4,n1/n5,n2/n3,n2/n4,n2/n5}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ Planar drawing of a bipartite graph $K_{2,3}$ with 5 vertices and 6 edges, with no edge crossings}\label{9g4}
+\caption{A planar drawing of bipartite graph~$K_{2,3}$ with five vertices and six edges}\label{9g4}
 \end{center}
 \end{figure}
 
-Impressed, Rishnak then asked Ajur whether the graph in Figure \ref{9g5} has a planar representation. Ajur struggled and tried to get a planar drawing - but ended up with one edge crossing, see Figure \ref{9g6}. 
+Impressed, Rishnak waved his hands and another new graph appeared [Figure~\ref{9g5}]. He asked Ajur whether this new graph had a planar representation or not.
+
+Ajur worked at this problem for some time, struggling to find a planar drawing.
+
+At length, he said, ``I can only come up with this graph''---he pointed to the graph he had drawn [Figure~\ref{9g6}]---``but there's one edge crossing I can't get rid of.''
 
 \begin{figure}
 \begin{center}
@@ -85,14 +95,14 @@ Impressed, Rishnak then asked Ajur whether the graph in Figure \ref{9g5} has a p
   \node (n4) at (1,2)  {4};
   \node (n5) at (5,2) {5};
   \node (n6) at (9,2)  {6};
- 
-  
+
    \foreach \from/\to in {n1/n6,n1/n4,n1/n5,n2/n6,n2/n4,n2/n5,n3/n4,n3/n5,n3/n6}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A bipartite graph with 6 vertices and 9 edges, denoted by $K_{3,3}$, where the edges cross}\label{9g5}
+\caption{Bipartite graph~$K_{3,3}$ with six vertices and nine edges in which seven of the edges cross}\label{9g5}
 \end{center}
 \end{figure}
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -103,53 +113,105 @@ Impressed, Rishnak then asked Ajur whether the graph in Figure \ref{9g5} has a p
   \node (n4) at (1,2)  {4};
   \node (n5) at (4,1) {5};
   \node (n6) at (11,3)  {6};
- 
-  
+
    \foreach \from/\to in {n1/n6,n1/n4,n1/n5,n2/n6,n2/n4,n2/n5,n3/n4,n3/n5,n3/n6}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A  drawing of a bipartite graph with 6 vertices and 9 edges, denoted by $K_{3,3}$, where just two edges edges cross}\label{9g6}
+\caption{A drawing of bipartite graph~$K_{3,3}$ in which just two edges edges cross}\label{9g6}
 \end{center}
 \end{figure}
-Rishnak then told Ajur that this graph does not have a planar representation. He added that there is a well-known related puzzle credited to Sam Loyd\footnote{Sam Loyd is a famous American recreational mathematician and puzzler.}. There are three houses (represented as circles) drawn on paper and below them three smaller circles representing gas, water, and electricity suppliers. The aim of the puzzle is to draw lines to get each utility into every house, without crossing over any line. Ajur reminded himself that he should read up on Loyd's puzzle books from his local library.
 
- Rishnak asked Ajur if two graphs $G$ and $H$ are isomorphic and if $G$ is planar, can you say $H$ is planar. Ajur said if $H$ is isomorphic to $G$, then each vertex corresponds to some vertex of $G$. By just relabeling the vertices of $G$ in its planar drawing, we get a planar drawing of $H$.
- 
- Ajur then excitedly told Rishnak that all trees have a planar representation\footnote{Ajur liked monkeys and monkeys liked trees. It follows by transitivity that Ajur liked trees.}. Rishnak answered that trees are indeed easy to embed in a plane as there are
- no cycles. He added that there are interesting space-filling planar representations of trees, for example in Figure \ref{9g7}.
+Rishnak told Ajur that bipartite graph~$K_{3,3}$ does not have a planar representation. He said, ``There is a well-known related puzzle credited to Sam Loyd, an American recreational mathematician and puzzler. Let's say there are three houses, which we can represent as vertices~1, 2, and~3 of~$K_{3,3}$, drawn on paper. Below them are three vertices~4, 5, and~6 representing gas, water, and electricity suppliers. The aim of the puzzle is to draw lines to get each utility into every house, but---''
+
+Ajur chimed in, ``But without crossing any of the lines.'' Ajur laughed at the puzzle, thinking that he should read up on Loyd's puzzle books the next time he visited his local library.
+
+Rishnak cleared his throat, not entirely happy that Ajur cut him off. He said, ``If two graphs~$G$ and~$H$ are isomorphic and if~$G$ is planar, can you say that~$H$ is also planar?''
+
+Ajur said, ``Yes, if~$H$ is isomorphic to~$G$, then each vertex of~$H$ corresponds to some vertex of~$G$. By just relabeling the vertices of~$G$ in its planar drawing, we can obtain a planar drawing of~$H$.''
+
+Rishnak nodded and asked, ``What can we say about trees?''
+
+Ajur thought for a moment, then said, ``That's easy. All trees have a planar representation\footnote{Ajur liked monkeys and monkeys liked trees. It follows by transitivity that Ajur liked trees.} because there are no cycles.''
+
+Rishnak said, ``Right, trees are indeed easy to embed in a plane as there are no cycles. There are some interesting space-filling planar representations of trees, for example this one''---he waved his hands and an intricate planar drawing appeared in front of Ajur [Figure~\ref{9g7}].
+
+Ajur marveled at the drawing.
+
+Rishnak continued, ``One way to get a planar drawing of a graph is to first embed the longest cycle in a plane, then try to place the rest of the vertices so that no edges cross one another. The longest cycle will divide the plane into two regions, an inner region (inside the cycle) and an outer region (outside the cycle).''
+
+Ajur said, ``So the edges have to go either inside or outside the longest cycle.''
+
+Rishnak said, ``Precisely. By trying out various possibilities, backtracking as necessary, you can eventually get a planar representation of a graph---if one exists. Of course, this process is easier said than done.''
+
+Ajur asked, ``Is there any easier way?''
+
+Rishnak said, ``There is in fact an efficient method of placing the edges, without any backtracking, but the details are rather complicated.'' %% maybe a footnote here describing how or where to look to read more?
+
 \begin{figure}
 \begin{center}    
 
  \begin{tikzpicture}[decoration=H-tree, very thick]
     \draw decorate { decorate { decorate { decorate { decorate { decorate { (0,0) -- (3,0) }}}}}};
   \end{tikzpicture}
-  \caption{ A planar drawing of a tree (which is self similar)}\label{9g7}
+  \caption{A planar drawing of a tree, which is self-similar}\label{9g7}
   \end{center}
 \end{figure}
 
-One way to get a planar drawing is to embed the longest cycle in a plane and then try to place the rest of the vertices so that no edges cross each other. This cycle will divide the plane into two regions - the inner region (inside the cycle) and the outer region (outside the cycle). So the edges have to go either inside or outside. By trying out the possibilities, you can get a planar representation of a graph (if one exists). Of course, this process is easier said than done. There is in fact an efficient method of placing the edges, without any backtracking, but Rishnak added that details are rather complicated. 
+After a few minutes of silence in which Ajur thought about how this might work, Rishnak said, ``Remember Euler?''
 
-Each region in a planar representation is also referred to as a face. Euler discovered a remarkable formula concerning the number of edges, $e$, the number of vertices, $n$, and the number of faces, $f$ of a planar graph:
+Ajur nodded.
+
+Rishnak waved his hands and a new graph appeared [Figure~\ref{fig:tetra}]. He said, ``Euler discovered a remarkable relationship between planar graphs and three-dimensional solids.  This planar graph represents a tetrahedron---a pyramid.''
+
+Ajur asked, ``How is that a pyramid? It's two-dimensional.''
+
+Rishnak chuckled and said, ``If you imagine stretching vertex~$a3$ out toward you, you end up with a three-dimensional solid with four sides, hence the name tetrahedron.''
+
+Ajur studied the graph and said, ``Oh, I see now.''
+
+Rishnak continued, ``Think of each region in a planar representation as the \textit{face} of such a three-dimensional solid. Then Euler's formula relating the number of edges~$e$, the number of vertices~$n$, and the number of faces~$f$ of a planar graph is simply this.''
+
+Rishnak waved his hands and Euler's equation appeared as follows:
 \begin{equation}
 \label{eqn:euler}
-  f-e+n=2 
+  f-e+n=2
 \end{equation}
 
- 
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+[scale=0.7]
+        \grTetrahedral
+    \end{tikzpicture}
+\caption{Planar graph representing a tetrahedron}
+\label{fig:tetra}
+\end{center}
+\end{figure}
 
-Rishnak proceeded to give an intuitive explanation of this formula \ref{eqn:euler}. Each region corresponds to a cycle and the external region (sometimes called an infinite region) also comes from a cycle. 
-There are $n-1$ edges in a tree, and the rest of the $e-(n-1)$ edges in a graph will form part of a cycle. We will discuss in chapter 11 about spanning trees in a connected graph and how to choose one.
+Rishnak said, ``Let me explain this a bit. Each region corresponds to a cycle in the graph that surrounds that region. It also defines the external region, which is sometimes also called the infinite region. We know there are~$n-1$ edges in a tree, so if we can find that tree in the given graph, then the rest of the~$e-(n-1)$ edges will form part of a cycle. This gets tricky and we will have to explore this at some point in the future.\footnote{Rishnak and Ajur end up discussing this in Chapter~11 when they talk about spanning trees in a connected graph and how to choose one.}
 %\textbf{You implicitly pick a spanning tree, which you have not yet discussed! Consider saying: it turns out, as we'll learn in Chapter ***, that there exists a ``maximal tree" of any graph.} 
-Each of these cycles correspond to an internal region or internal face and there is one external face. From this, Euler's equation \ref{eqn:euler} follows.
+Each of these cycles correspond to an internal region---in other words, an internal face---and one external face. From this, Euler's equation (\ref{eqn:euler}) follows.''
+
+As Rishnak spoke, he drew the following equations in the air:
 \begin{eqnarray}
     \label{eqn:cycles}
     \text{internal faces}&=&e-(n-1)\nonumber\\
-    \text{external face}&=&1 \nonumber \\
-    \text{total faces}&=& \text{internal faces}~+~\text{external face} \nonumber \\
+    \text{external faces}&=&1 \nonumber \\
+    \text{total faces}&=& \text{internal faces}~+~\text{external faces} \nonumber \\
     &=&e-n+2
 \end{eqnarray}
 
-Ajur said that he has constructed Platonic solids with Zometools\footnote{Zometool is a commercial kit to make general polyhedra.}. Rishnak then explained Euler's equation applied for the five platonic solids; the graph theory in Euler's formula can be used to relate vertices, edges, and faces of the platonic solids! See Table \ref{tab:platonic} where $n$ stands for the number of vertices, $e$ stands for the number of edges and $f$ stands for the number of faces. All Platonic solids have a planar representation as shown in Figures \ref{fig:tetra}, \ref{fig:octa}, \ref{fig:cube}, \ref{fig:dod}, and \ref{fig:ico}\footnote{The reason is that every solid embeds in a sphere and can be chosen such that no point or vertex passes the North pole. Then one may stereo graphically project the graph to the plane.}.
+Ajur studied the equations and understood, at least for a tetrahedron. He said, ``Okay, I've constructed Platonic solids with Zometool\footnote{Zometool is a commercial construction kit for making general polyhedra.}. Does this equation work for all of these?''
+
+Rishnak smiled and said, ``Ah yes, the Platonic solids, named after Plato, the ancient Greek philosopher. And yes, Euler's equation applies to the five Platonic solids. In other words, the graph theory behind Euler's formula can be used to relate vertices, edges, and faces of the Platonic solids.''
+
+Rishnak waved his hands and next to the graph corresponding to the tetrahedron [Figure~\ref{fig:tetra}], four more graphs appeared [Figure~\ref{fig:cube}] [Figure~\ref{fig:octa}] [Figure~\ref{fig:dod}] [Figure~\ref{fig:ico}]. He said, ``Ajur, can you write down the number of vertices~$n$, the number of edges~$e$, and the number of faces~$f$ for each of these?''
+
+Ajur looked at each graph in turn, then systematically wrote the values in the dirt to create his table [Table~\ref{tab:platonic}].
+
+Rishnak smiled and said, ``Good. All Platonic solids have a planar representation, as you can see in these graphs. The reason this works is that every solid fits within a sphere in such a way that no point or vertex passes through what would be the North pole. From this, one may stereographically project the graph onto the plane.''
+
+\vspace{0.2in}
 \begin{table}[ht]
     \centering
     \begin{tabular}{||c|c|c|c||}
@@ -158,72 +220,79 @@ Ajur said that he has constructed Platonic solids with Zometools\footnote{Zometo
  \hline\hline
  Tetrahedron& 4 & 6 & 4 \\ 
  \hline
- Octohedron & 6 & 12& 8 \\
- \hline
  Cube & 8 & 12 & 6 \\
+ \hline
+ Octohedron & 6 & 12& 8 \\
  \hline
  Dodecahedron & 20 & 30 & 12 \\
  \hline
  Icosahedron & 12 & 30 & 20 \\ [1ex] 
  \hline
  \end{tabular}
-    \caption{Euler Equation for Platonic Solids}
+    \caption{Parameters of Euler's equation for the Platonic solids}
     \label{tab:platonic}
 \end{table}
-\begin{figure}
 
-  
-\begin{tikzpicture}
-[scale=0.7]
-        \grTetrahedral
-    \end{tikzpicture}
-\caption{tetrahedron}
-\label{fig:tetra}
-\end{figure}
 \begin{figure}
+\begin{center}
     \begin{tikzpicture}
 
         \grOctahedral[RA=5,RB=1]
     \end{tikzpicture}
-\caption{Octahedron}\label{fig:octa}
+\caption{Planar graph representing a octahedron}\label{fig:octa}
+\end{center}
 \end{figure}
 \begin{figure}
+\begin{center}
     \begin{tikzpicture}
 
         \grCubicalGraph
     \end{tikzpicture}
-\caption{Cube}\label{fig:cube}
+\caption{Planar graph representing a cube}\label{fig:cube}
+\end{center}
 \end{figure}
 \begin{figure}
+\begin{center}
     \begin{tikzpicture}
     [scale=0.8]
 
         \grDodecahedral[form=2] 
     \end{tikzpicture}
-    \caption{Dodecahedron}\label{fig:dod}
+    \caption{Planar graph representing a dodecahedron}\label{fig:dod}
+\end{center}
 \end{figure}
 \begin{figure}
+\begin{center}
     \begin{tikzpicture}
 
         \grIcosahedral[form=2,RA=8]
     \end{tikzpicture}
-\caption{Icosahedron}\label{fig:ico}
+\caption{Planar graph representing a icosahedron}\label{fig:ico}
+\end{center}
 \end{figure}
 
-Rishnak said each edge appears in exactly two faces. If each face is a triangle (cycle of length 3), it is called a maximal planar graph. Hence we deduce $e=\frac{3 \times f}{2}$ or $f=\frac{2 \times e}{3}$ . Substituting for $f$ in Euler's equation \ref{eqn:euler}, we get
+Rishnak said, ``Notice that each edge appears in exactly two faces. If each face is a triangle---therefore a cycle of length~3---the graph is called a \textit{maximal planar graph}. From this, we can deduce~$e=\frac{3f}{2}$, or~$f=\frac{2e}{3}$. Substituting this for~$f$ in Euler's equation (\ref{eqn:euler})''---Rishnak waved his hands and equations floated in the air in front of Ajur---``we can solve for~$e$.''
 
 \begin{eqnarray}
   \label{eqn:maxplanar}  
-    \frac{2\times e}{3}&=&e-n+2\nonumber\\
+    \frac{2e}{3}&=&e-n+2\nonumber\\
     -\frac{e}{3} &=&-n+2\nonumber \\
     \frac{e}{3}&=&n-2 \nonumber \\
-    e&=& 3 \times n - 6
+    e&=& 3n - 6
 \end{eqnarray}
 
-Using Equation \ref{eqn:maxplanar}, it can be shown that the complete graph on 5 vertices, $K_5$ shown in Figure \ref{9g10}, is non-planar. That graph has $n$=5, $e$=10. If it were planar then the number of edges would have to be at most $9$. 
-Rishnak asked Ajur, "Can you use Euler's equation to show that $K_{3,3}$, a complete bipartite graph on 6 vertices (discussed in Figure \ref{9g5}), is non-planar? "
-Ajur was alert and he knew that the bipartite graph has only even cycle lengths. To have the maximum number of edges each face has to be of a cycle length 4. Hence $2\times e =4 \times f$ or $f=\frac{e}{2}$. Substituting for $f$ in Euler's equation \ref{eqn:euler}
-$f=e-n+2$, one gets $-\frac{e}{2}=n-2$ or $e=2\times n -4$. Substituting for $n=6$, we get $e=8$. That is the maximum number possible. However, $K_{3,3}$ has 9 edges which is more than 8. Hence Ajur had proven that $K_{3,3}$ is non-planar.
+Rishnak paused after showing this equation (\ref{eqn:maxplanar}), giving Ajur time to think about it, then said, ``By using this equation, we can show that complete graph~$K_5$''---he flashed his hands and a new graph appeared [Figure~\ref{9g10}]---``is non-planar. This graph has five vertices and 10 edges, so~$n=5$ and~$e=10$. But from the equation, if it were planar, then the number of edges would have to be at most~$9$.''
+
+Ajur raised his eyebrows and said, ``Aha, I see how that works. Nice!''
+
+Rishnak asked Ajur, ``Can you use Euler's equation to show that complete bipartite graph~$K_{3,3}$ [Figure~\ref{9g5}] with its six vertices is non-planar?''
+
+Ajur was alert and knew that a bipartite graph only has even cycle lengths. He said, ``To have the maximum number of edges, each face has to have a cycle length of~4. Therefore,~$2e=4f$ or~$f=\frac{e}{2}$.''
+
+Ajur scribbled down equations in the dirt and said, ``Substituting for~$f$ in Euler's equation~$f=e-n+2$ (\ref{eqn:euler}), we get~$-\frac{e}{2}=n-2$, which we can write as~$e=2n-4$.''
+
+Rishnak smiled as Ajur went on, ``Substituting~$n=6$, we get~$e=8$. That's the maximum number of edges possible, but~$K_{3,3}$ has nine edges, which is more than eight. Therefore, we have proven that~$K_{3,3}$ is non-planar!''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -238,12 +307,21 @@ $f=e-n+2$, one gets $-\frac{e}{2}=n-2$ or $e=2\times n -4$. Substituting for $n=
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Complete Graph, $K_5$ with 5 vertices and 10 edges }\label{9g10}
+\caption{Complete graph~$K_5$ with five vertices and 10 edges}\label{9g10}
 \end{center}
 \end{figure}
-Rishnak added another interesting fact (without adding any further details) that any planar graph has not only a plane representation but also a representation in which each edge is drawn as a straight line.
 
-Ajur responded that every sub-graph of a planar graph is also a planar graph. Pleased to note that Ajur was following the concepts, Rishnak added that the operation of dividing an edge, i.e., introducing vertices of degree 2 will not change the embedding. If a graph is planar and if we subdivide an edge, it is still planar. Similarly if a graph is non-planar, and if e subdivides any edge, the graph is still non-planar. An example of subdivision of an edge is shown in Figure \ref{9g9}. 
+Rishnak's smile broadened. He said, ``Good, Ajur. And here's one more interesting fact. It turns out that any planar graph has not only a planar representation that we can draw, but also a representation in which each edge can be drawn as a straight line. Something to think about after we depart for the night.''
+
+Ajur thought for a moment, then said, ``And every subgraph of a planar graph must also be a planar graph, right?''
+
+Rishnak said, ``Yes, Ajur. Also, the operation of dividing an edge by introducing a new vertex of degree~2 will not change whether it is planar or non-planar. We could also do this twice to essentially add a new edge and not change whether the graph is planar or non-planar.''
+
+Ajur frowned and said, ``I don't understand.''
+
+Rishnak said, ``Have a look at this graph''---he waved his hands and a new graph appeared [Figure~\ref{9g9}]---``from the original tetrahedron graph [Figure~\ref{9g2}], we can divide an edge by adding a vertex or, in this case, we can add two vertices with a new edge between them. In the end, we still have a planar graph.''
+
+Ajur studied the graph in front of him until he understood.
 
 \begin{figure}[h]
 \begin{center}
@@ -258,14 +336,22 @@ Ajur responded that every sub-graph of a planar graph is also a planar graph. Pl
  \foreach \from/\to in {n1/n2,n2/n3,n2/n4,n1/n4,n3/n4,n1/n5,n5/n6,n6/n3}
     \draw (\from) -- (\to);
 \end{tikzpicture}
-\caption{ Subdivision of edge (1,3) by adding two new vertices 5 and 6 in Figure \ref{9g2}}\label{9g9}
+\caption{A division of original edge~$(1,3)$ by adding two new vertices (5 and~6) to the planar graph shown in Figure~\ref{9g2}}\label{9g9}
 \end{center}
 \end{figure}
 
-\textbf{Question for the seventh day:} Show that in a planar graph, there exists at least one vertex of degree 5.
-\textbf{Answer:} Ajur remembered Euler equation \ref{eqn:euler}. He said that each edge occurs exactly in two faces. The smallest face could be a cycle of length 3. Hence, substituting for $f=\frac{2 \times e}{3}$ in  
-$\frac{2 \times e} {3} =e-n+2$, resulting in $\frac{e}{3}=n-2$ or $e=3\times n -6$. Thus $3 \times n-6$ is the maximum number of edges a planar graph can have (he derived Equation \ref{eqn:maxplanar} once again). Ajur reasoned that if all vertices have degree 6 or more, then $e~\ge~ 3 \times n$, contradicting that the graph is planar.
+\newpage
+\subsection*{Question for the seventh day}
+Rishnak stretched his arms out and said, ``We have covered a lot today. You should be ready to answer the question for the seventh day. Can you show that in a planar graph, there exists at least one vertex of degree~5?''
+
+\textit{Before you turn the page, try to come up with an answer of your own!}
+
+\newpage
+\subsection*{Answer for the seventh day}
+Ajur thought about this. He remembered Euler's equation (\ref{eqn:euler}) and said, ``Each edge occurs in exactly two faces. And the smallest face could be a cycle of length~3. Therefore, substituting~$f=\frac{2e}{3}$, we get~$\frac{2e}{3}=e-n+2$, which results in~$\frac{e}{3}=n-2$ or just~$e=3n-6$, so then\footnote{Ajur essentially derived Euler's equation (\ref{eqn:maxplanar}) once again}---''
+
+Ajur frowned, wondering where to go with this line of thinking. At length, he said, ``This tells us that~$3n-6$ is the maximum number of edges a planar graph can have, so if all vertices have degree~6 or more, then~$e\ge3n$, contradicting that the graph is planar.''
 
 Rishnak was happy with Ajur's answer.
-Now Jura appeared to be getting restless and Rishnak decided that they had had enough for that session, so they parted for the night.
-
+Jura appeared to be getting restless, so Rishnak decided that they had had enough for that session.
+They parted for the night.

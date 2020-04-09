@@ -1,12 +1,14 @@
 \chapter{Spanning Trees}
-Rishnak found Ajur and Jura walking along a stretch of road with trees on either side. Recalling his previous talks with Ajur about trees, Rishnak chose a specific kind of tree in a graph for his next session with Ajur.
-In a connected graph $G=(V,E)$ (connected means that there is a path between every pair of vertices in $G$), a tree (spanning all the vertices) is a sub-graph =$T(V,E_1)$ of G satisfying the two conditions:
+Rishnak found Ajur and Jura walking along a stretch of road with trees on either side. Recalling his previous talks with Ajur about trees, Rishnak chose a specific kind of tree that is found within a graph for his next session with Ajur.
+
+Rishnak said, ``A graph~$G$ is connected if there is a path between every pair of vertices in~$G$. So, in connected graph~$G=(V,E)$, a \textit{spanning tree} is tree~$T(V,E_1)$ that covers all vertices in~$V$ and is a subgraph of~$G$ that satisfies two conditions:
 \begin{enumerate}
-    \item The sub-graph, T,  is a tree. (i.e., contains no cycles and of course connected; i.e., there is only one path between every pair of vertices.)
-    \item Vertex set of $T$ is the same as the vertex set of $G$.
+    \item Subgraph~$T$ is a tree, meaning it contains no cycles and is connected.
+    \item Vertex set~$V$ of~$T$ is the same as that of~$G$.''
 \end{enumerate}
 
-Here is an example of graph Figure \ref{11g1} and a sub-graph of this graph, which is a spanning tree shown in Figure \ref{11g2} 
+Rishnak flashed his hands and formed two graphs in the air in front of Ajur [Figure~\ref{11g1}] [Figure~\ref{11g2}]. He said, ``Here is an example of a graph with a corresponding spanning tree.''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -22,9 +24,10 @@ Here is an example of graph Figure \ref{11g1} and a sub-graph of this graph, whi
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example graph with 6 vertices and 7 edges}\label{11g1}
+\caption{Example graph with six vertices and seven edges}\label{11g1}
 \end{center}
 \end{figure}
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -40,10 +43,16 @@ Here is an example of graph Figure \ref{11g1} and a sub-graph of this graph, whi
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Sub-graph of Figure \ref{11g1}, which is a spanning tree of \ref{11g1} - Spanning tree has 6 vertices and 5 edges}\label{11g2}
+\caption{A subgraph of the graph shown in Figure~\ref{11g1} that forms a spanning tree of the original graph}\label{11g2}
 \end{center}
 \end{figure}
-Rishnak asked Ajur if he could construct one more spanning tree for this graph \ref{11g1}. Ajur was eager to show off and drew the following graph \ref{11g3}.
+
+Ajur studied both graphs, recognizing that the second graph was a subgraph of the first.
+
+Rishnak asked Ajur if he could construct another spanning tree for the original graph [Figure~\ref{11g1}].
+
+Ajur was eager to show off and drew a subgraph in the dirt with a stick [Figure~\ref{11g3}].
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -59,13 +68,19 @@ Rishnak asked Ajur if he could construct one more spanning tree for this graph \
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Another spanning tree of the graph in Figure \ref{11g1}}\label{11g3}
+\caption{Another spanning tree of the graph shown in Figure~\ref{11g1}}\label{11g3}
 \end{center}
 \end{figure}
 
-Rishnak then asked Ajur how many distinct spanning trees (labelled non isomorphic) there are. Ajur had a quick answer this time too. There are two cycles in this graph, namely (2,3,4,5) and (1,5,2). One is of 
-length 4 and the other is of length 3. But they share a common edge (2,5). There are 4 possible spanning trees to choose from the cycle of length 4 and there are 3 possibilities to choose from the other cycle - giving rise to 12 possibilities. But one of them contains a cycle \{if (edge (5,2) omitted in the 4 cycle and in the 3 cycle\}; thus giving rise to 11  spanning trees. They are enumerated.   
-The edge (4,6) has to be present in every spanning tree. The eleven spanning tree edges are given below.
+Rishnak asked, ``How many distinct spanning trees are there?''
+
+Ajur thought about this for a moment. He said, ``Do you mean how many labeled non-isomorphic trees there are?''
+
+Rishnak said, ``Yes, exactly the question?''
+
+Ajur said, ``There are two cycles in this graph, namely~$(2,3,4,5)$ and~$(1,2,5)$, and they share common edge~$(2,5)$. The cycles are of length~4 and length~3, so there are four possible spanning trees to choose from out of the first cycle and three possible spanning trees to choose from out of the other cycle. Multiply these together and we have~12 possibilities, but one of them ends up being cycle~$(1,2,3,4,5)$ if edge~$(2,5)$ is omitted. Therefore, we have~11 spanning trees, each of which must also contain edge~$(4,6)$. Here they are.''
+
+Ajur painstakingly wrote out all~11 spanning trees in the dirt as follows:
 \begin{enumerate}
     \item \{(4,6),(4,5),(5,2),(2,3),(5,1)\}
     \item \{(4,6),(4,5),(5,2),(2,3),(2,1)\}
@@ -80,10 +95,15 @@ The edge (4,6) has to be present in every spanning tree. The eleven spanning tre
     \item \{(4,6),(4,3),(3,2),(2,1),(1,5)\}
 \end{enumerate}
 
-Ajur asked what the maximum number of labeled spanning trees is is n a graph with $n$ vertices. Ajur added that the maximum number of spanning trees will be present in a complete graph as it has the maximum number of edges in a $n$ vertex graph. Rishnak agreed that complete graphs have the largest number of spanning trees. We can find the number of spanning trees in a complete graph using Pr{\"u}fer code (which we talked about a couple of days ago) in Chapter 8. Ajur remembered it and interjected for a $n$ vertex tree, one needed only a Pr{\"u}fer code of length $n-2$. Rishnak agreed and said that the Pr{\"u}fer code is of length $n-2$ for a $n$ vertex graph. Each of the $n-2$ characters in a code to be any of the $n$ vertices. Hence the number of (labeled) spanning trees in a complete graph with $n$ vertices is $n^{n-2}$.
+Rishnak nodded and started to speak, but Ajur asked, ``What about the maximum number of labeled spanning trees in a graph with~$n$ vertices? For a complete graph, it must be the maximum number of edges in a graph with~$n$ vertices.''
 
-Since there are $n-1$ edges in a spanning tree, each of the remaining $e-n+1$ edges when taken with a spanning tree will create a cycle. Thus there will be $e-n+1$ cycles. These cycles are called Fundamental cycles. Each fundamental cycle has exactly one 
-non-spanning tree edge.\footnote{Euler's equation \ref{eqn:euler} in chapter 9 uses this fact.} Rishnak showed with an example Figure \ref{11g4}.
+Rishnak said, ``Correct. Complete graphs have the largest possible number of spanning trees. We can find the number of spanning trees in a complete graph using Pr{\"u}fer codes, which we talked about a few days ago.\footnote{See their discussion in Chapter~8}
+
+Ajur remembered Pr\"ufer codes and said, ``For a tree with~$n$ vertices, we need a Pr{\"u}fer code of length~$n-2$. Each of the~$n-2$ characters in the code could be any of the~$n$ vertices. Therefore, the number of labeled spanning trees in a complete graph with~$n$ vertices has to be~$n^{(n-2)}$.''
+
+Rishnak smiled, then said, ``In general, since there are~$n-1$ edges in a spanning tree, each of the remaining~$e-n+1$ edges, when added to the spanning tree will necessarily create a cycle. Therefore, we will have~$e-n+1$ cycles in the given graph. These cycles are called \textit{fundamental cycles} and, as I have just described, each fundamental cycle has exactly one non-spanning tree edge.\footnote{Euler's equation~(\ref{eqn:euler}) back in Chapter~9 uses this fact.} Let me show you.''
+
+Rishnak waved his hands and the original graph appeared with its edges glimmering in red and blue [Figure~\ref{11g4}]. Rishnak said, ``The blue edges are spanning tree edges, whereas the red edges are non-spanning tree edges that each form a fundamental cycle.''
 
 \begin{figure}
 \begin{center}
@@ -97,35 +117,44 @@ non-spanning tree edge.\footnote{Euler's equation \ref{eqn:euler} in chapter 9 u
   \node (n3) at (5,5)  {3};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n3/n4}
-    \draw [thick] (\from) -- (\to);
+    \draw [thick,color=blue] (\from) -- (\to);
   \foreach \from/\to in {n5/n2,n2/n3}
-   \draw [color=red] (\from) -- (\to);
+   \draw [thick,color=red] (\from) -- (\to);
 \end{tikzpicture}
-\caption{ Two fundamental cycles of \ref{11g1} with respect to a spanning tree of \ref{11g2} - Spanning tree edges are shown as thick lines and non-spanning tree edges are shown in red color. Fundamental Cycles are (1,2,5) and (4,5,1,2,3)}\label{11g4}
+\caption{Original graph from Figure~\ref{11g1} with respect to the spanning tree shown in Figure~\ref{11g2}; here, spanning tree edges are shown as thick blue lines while non-spanning tree edges are shown in red, the latter forming fundamental cycles~$(1,2,5)$ and~$(3,4,5,1,2)$}\label{11g4}
 \end{center}
 \end{figure}
 
-Ajur wanted to know from Rishnak how to find a spanning tree for a given graph. Rishnak said that the graph has to be connected.\footnote{Between every pair of vertices there is a path.} It can be done using the following steps.
-\begin{figure} 
+Ajur wanted to better understand how to find a spanning tree for a given graph, so he asked Rishnak about this.
+
+Rishnak smiled and said, ``First, the graph has to be connected. If that's the case, then it can be done using the following steps:
 \begin{enumerate}
-\item Start from any vertex. Include that vertex in a bag.
-\item From the vertices in a bag, find a vertex, $v$, (not in a bag) that is adjacent to one of the vertices, $w$, in the bag. Include that edge, $(v,w)$ in the spanning tree.
-\item Repeat the above step till all the vertices are in the bag.
+\item Start from any vertex. Add that vertex to empty set~$S$.
+\item From the vertices in~$S$, find a vertex~$v$ that is not in~$S$ that is adjacent to one of the vertices~$w$ in~$S$. Add that edge~$(v,w)$ to spanning tree~$T$.
+\item Repeat Step~2 until all vertices are in~$S$.''
 \end{enumerate}
-\caption{Finding a Spanning Tree Procedure}\label{11a1}
-\end{figure}
-Rishnak illustrated his procedure for the example in Figure \ref{11g1}.
-Put vertex labeled 1 in the bag. Its adjacent vertices are labeled 2 and 5. Choose vertex (the choice is arbitrary) labeled 5 and put in the bag. Edge (1,5) is included in the spanning tree. From vertices in the bag find a vertex that is adjacent (but not in the bag). Choices are either vertices labeled 2 or 4. Choose the vertex labeled 2 and include edge (1,2) in the spanning tree. (We could have also included (5,2) instead of (1,2) in the spanning tree.). Now the bag contains the vertices (1, 2, 5). Find a vertex that is adjacent to any of these vertices (that are not in the bag). They are namely vertices labeled 4 and 3. Choose (this choice is arbitrary) the vertex labeled 4 and include the edge (4,5) in the spanning tree. Now vertices (1,2,4,5) are in the bag. From these vertices find a vertex that is adjacent but not in the bag. They will be 6 and 3.  Choose the vertex labeled 3 and include the edge (4,3) in the spanning tree. The bag contains the vertices (1,2,3,4,5). The vertex that is adjacent to one
-of the vertices in the bag is labeled 6. Choose that vertex labeled 6 and include the edge (4,6) in the spanning tree. Now the bag contains all the vertices and we have the spanning tree edges (1,5), (1,2), (5,4), (4,3) and (4,6). This is the same spanning tree shown in Figure \ref{11g2}.
 
-If we had made different choices, we will get a different spanning tree as shown in Figure \ref{11g3}.
+Rishnak formed the original graph again in the air in front of Ajur [Figure~\ref{11g1}]. He said, ``Let me illustrate this. First, add vertex~1 to the set. It has adjacent vertices~2 and~5. Let's say we choose vertex~5 and add it to~$S$. Edge~$(1,5)$ is then the first edge of our spanning tree. From vertices in~$S$, we pick a vertex that is adjacent but not already in~$S$. Choices here are vertices~2 or~4. Let's say we choose vertex~2 and therefore include edge~$(1,2)$ in the spanning tree.''
 
-A graph is weighted if there are weights associated with an edge. The weight could represent the distance in miles or the cost of travel etc. Here is an example of a weighted graph with the weighted edges.
+Ajur said, ``We could have also included edge~$(5,2)$ instead of~$(1,2)$ in the spanning tree, right?''
+
+Rishnak said, ``Yes, the choice is arbitrary. Now, at this point, we have~$S=(1,2,5)$. So we find a vertex not in~$S$ that is adjacent to any of these three vertices. There are two vertices to choose from, namely vertices~3 and~4. Let's say we choose vertex~4 and therefore include edge~$(4,5)$ in the spanning tree.''
+
+Ajur chimed in, ``Now vertices~$(1,2,4,5)$ are in set~$S$. From these vertices, we find a vertex that is adjacent but not in~$S$, so we're looking at vertices~3 and~6. If we choose vertex~3, then we include edge~$(4,3)$ in the spanning tree. Repeating this one more time, we choose vertex~6 and include edge~$(4,6)$ in the spanning tree. And now we're done!''
+
+Rishnak nodded and said, ``Right, now set~$S$ contains all of the vertices, and we have spanning tree~$T$ with edges~$(1,5)$, $(1,2)$, $(5,4)$, $(4,3)$, and $(4,6)$.''---Rishnak waved his hands and the spanning tree from earlier appeared [Figure~\ref{11g2}]---``This is the same spanning tree we came up with earlier.''
+
+Ajur nodded eagerly. He said, ``Aha, and if we had made different choices along the way, we would have ended up with a different spanning tree, like this one.''---Ajur quickly drew another spanning tree in the dirt [Figure~\ref{11g3}].
+
+Rishnak smiled, happy to see that Ajur understood. He said, ``Here is another interesting problem related to spanning trees. As background, a graph is called a \textit{weighted graph} if there are numeric weights or costs associated with each edge. The weight could represent the distance in miles or the cost of travel, and so on.''
+
+Rishnak flashed his hands and the original graph [Figure~\ref{11g1}] appeared, this time with numeric values next to each edge [Figure~\ref{11g7}]. He said, ``Here is an example weighted graph. See each weighted edge?''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
   [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
-  \tikzstyle{weight} = [draw=blue!15,shape=rectangle]
+  \tikzstyle{weight} = [fill=none]
   \node (n6) at (1,10) {6};
   \node (n4) at (4,8)  {4};
   \node (n5) at (8,9)  {5};
@@ -137,28 +166,36 @@ A graph is weighted if there are weights associated with an edge. The weight cou
 \foreach \source /\dest /\weight in {1/3/1} place \weight above of=\path;
   
   \end{tikzpicture}
-\caption{ Example of a weighted graph with 6 vertices and 7 edges - weights are associated with edges}\label{11g7}
+\caption{The graph shown in Figure~\ref{11g1} with edge weights associated with each edge}\label{11g7}
 \end{center}
 \end{figure}
 
-Rishnak then told Ajur of an interesting problems - to find a minimum spanning tree in a weighted graph. In other words find a spanning tree where the sum of all the edge weights (in a spanning tree) is the smallest. Ajur responded saying one can enumerate all spanning trees and compute for each spanning tree the sum of weights and choose the spanning tree with the smallest sum of edge weights. Rishnak smiled on hearing about the  "Brute Force" method - a good strategy that can work for most problems. The problem is to find out if there are more efficient methods.\footnote{Informally a faster method that makes choices so that one does not have to consider at all spanning trees.} We can adapt/modify the procedure/method described in Figure \ref{11a1} as follows.
-\begin{figure} 
-\begin{enumerate}
-\item Start from any vertex. Include that vertex in a bag.
-\item From the vertices in a bag, find a vertex, $v$, (not in a bag) that is adjacent to one of the vertices, $w$, in the bag and with the smallest edge weight $(v,w)$. Include that edge in the minimum spanning tree.
-\item Repeat the above step till all the vertices are in the bag.
-\end{enumerate}
-\caption{Finding a  minimum spanning tree procedure}\label{11aa}
-\end{figure}
+Ajur said, ``Yes, but how does this change our spanning tree problem?''
 
-Ajur chose to work through the example shown in Figure \ref{11g7}. He choose vertex labeled 1 in the bag. Then the vertex labeled 2 is put in the bag as the edge weight (1,2) is the smallest from vertex labeled 1. Now vertices labeled 1 and 2 are in the bag. Edge (2,5) is the smallest edge weight and hence (2,5) is included in the minimum spanning tree and vertex labeled 5 is put in the bag. Among vertices in the bag, namely 1, 2 and 5, the edge (5,4) has the smallest weight. Now the bag contains vertices labeled 1,2,5 and 4. The edge (4,6) is the smallest weight. Hence vertex labeled 6 is included in the bag and edge (4,6) is added to the minimum spanning tree. Edge (4,7) is the smallest weight and hence edge (4,7) is  included in the minimum spanning tree. Now the bag contains all the vertices and hence Ajur exclaimed that he found the minimum spanning tree.
-Ajur drew the minimum spanning tree in the following Figure \ref{11g8}
+Rishnak saw Ajur's impatience. He said, ``We want to find a \textit{minimum spanning tree} in which the sum of all edge weights in the spanning tree is the smallest possible.''
+
+Ajur said, ``Aha, we can enumerate all spanning trees and for each such spanning tree, compute the sum of the edge weights, then choose the spanning tree with the smallest sum.''
+
+Rishnak smiled and said, ``That will work, though that is what we call a \textit{brute force} method. It can be a good strategy for many problems, but we can often find more efficient methods. In this case, we would like to find a faster method that makes certain choices such that we do not have to consider all possible spanning trees.''
+
+Ajur frowned and said, ``I see. If the graph was much larger, we'd have a lot of work to do if we used a brute force approach.''
+
+Rishnak said, ``Exactly. Do not despair, though. We can modify Step~2 of the procedure that I already described to better select each edge. Here is the modified approach:
+\begin{enumerate}
+\item Start from any vertex. Add that vertex to empty set~$S$.
+\item From the vertices in~$S$, find a vertex~$v$ that is not in~$S$ that is adjacent to one of the vertices~$w$ in~$S$---but make sure that edge~$(v,w)$ has the smallest possible edge weight at that decision point. Add that edge~$(v,w)$ to minimum spanning tree~$T$.
+\item Repeat Step~2 until all vertices are in~$S$.''
+\end{enumerate}
+
+Ajur decided to work through an example by using the graph that Rishnak had formed in front of him [Figure~\ref{11g7}]. He first drew the vertices of the graph in the dirt. Next, he chose vertex~1 and added it to set~$S$. From the two possible edges incident at vertex~1, he chose vertex~2 and added it to~$S$ since the edge weight for edge~$(1,2)$ was smaller than that of edge~$(1,5)$.
+
+Ajur said, ``Aha, I see! Now that vertices~1 and~2 are in~$S$, of the edges leaving~$S$, edge~$(2,5)$ has the smallest edge weight. Therefore, edge~$(2,5)$ is added to the minimum spanning tree and vertex~5 is added to~$S$. Then, from vertices in~$S$, namely~1, 2 and~5, edge~$(5,4)$ has the smallest edge weight. And this continues until we visit each vertex, which we know by adding each vertex in turn to set~$S$.''---Ajur drew each edge in the dirt as he followed the algorithm through to its end [Figure~\ref{11g8}]---``Set~$S$ contains all of the vertices, so here's the minimum spanning tree!''
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
   [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
-  \tikzstyle{weight} = [draw=blue!15,shape=rectangle]
+  \tikzstyle{weight} = [fill=none]
   \node (n6) at (1,10) {6};
   \node (n4) at (4,8)  {4};
   \node (n5) at (8,9)  {5};
@@ -170,39 +207,39 @@ Ajur drew the minimum spanning tree in the following Figure \ref{11g8}
 \foreach \source /\dest /\weight in {1/3/1} place \weight above of=\path;
   
   \end{tikzpicture}
-\caption{ Minimum spanning tree of the weighted Graph\ref{11g7}}\label{11g8}
+\caption{A minimum spanning tree with a total weight of~15 for the weighted graph given in Figure~\ref{11g7}}\label{11g8}
 \end{center}
 \end{figure}
 
-Ajur could not control his enthusiasm and exclaimed that he could use this procedure to minimally connect a given set of points in a plane. The distance between these points could be the length of straight lines joining them. Ajur showed his work Figure \ref{11g9}.
+Rishnak laughed as Ajur could barely control his enthusiasm. Ajur exclaimed, ``We could also use this algorithm to minimally connect a given set of points in a plane. Vertices would correspond to the points. And the distances between each of these points could simply be the length of the straight lines joining them.''
+
+Ajur showed his work in Figure~\ref{11g9}.
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
   [scale=1,auto=left,every node/.style={circle,fill=red!20}]
-  \tikzstyle{weight} = [draw=blue!5,shape=rectangle]
+  \tikzstyle{weight} = [fill=none]
   \node (n1) at (1,9)  {1};
-  \node (n2) at (5,9) {2};
+  \node (n2) at (5,9)  {2};
   \node (n3) at (5,5)  {3};
   \node (n4) at (1,5)  {4};
   \foreach \source /\dest /\weight in {n1/n2/4,n2/n3/4,n3/n4/4} 
    \draw[thick] (\source) --node[weight] {$\weight$}  (\dest);
 \foreach \source /\dest /\weight in {1/3/1} place \weight above of=\path;
-  \foreach \source /\dest /\weight in {n1/n4/4,n1/n3/5.6,n2/n4/5.6} 
-   \draw[color=blue,thick,dotted] (\source) --node[weight] {$\weight$}  (\dest);
+  \foreach \source /\dest /\weight in {n1/n4/4,n1/n3/5.66,n2/n4/5.66} 
+   \draw[color=black,thick,dashed] (\source) --node[weight] {$\weight$}  (\dest);
 \foreach \source /\dest /\weight in {1/3/1} place \weight below of=\path;
   \end{tikzpicture}
-\caption{ Minimum spanning tree of a set of four points- Non minimum spanning tree edges are drawn as dotted lines}\label{11g9}
+\caption{A minimum spanning tree representation with a total weight of~12 for a set of four points in the plane; here, edges not part of the minimum spanning tree are shown as dashed lines}\label{11g9}
 \end{center}
 \end{figure}
-
-Urpur, another ghost had been eavesdropping on all these conversations. Urpur wanted to show of that he is smarter than both Rishnak and Ajur, so started talking about the spanning tree called Steiner Tree, wherein one is allowed to add Steiner points/vertices that were not present in the original given set of vertices. With a clever addition of Steiner points, one can get a spanning tree, which is smaller than the one Ajur found in \ref{11g9}. Urpur then showed the following Figure \ref{11g10}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
   [scale=1,auto=left,every node/.style={circle,fill=red!20}]
-  \tikzstyle{weight} = [draw=blue!5,shape=rectangle]
+  \tikzstyle{weight} = [fill=none]
   \node (n1) at (1,9)  {1};
   \node (n2) at (5,9) {2};
   \node (n3) at (5,5)  {3};
@@ -214,25 +251,46 @@ Urpur, another ghost had been eavesdropping on all these conversations. Urpur wa
 \foreach \source /\dest /\weight in {1/3/1} place \weight below of=\path;
  
   \end{tikzpicture}
-\caption{ Minimum Steiner Tree of a set of four points. Steiner points/vertices are 5 and 6}\label{11g10}
+\caption{A minimum Steiner tree for the set of four points or vertices shown in Figure~\ref{11g9}; here, Steiner points are vertices~5 and~6}\label{11g10}
 \end{center}
 \end{figure}
 
-Rishnak was very impressed with Urpur's thinking. Sensing that Ajur was feeling jealous that Urpur was grabbing his attention,
+Another ghost named Urpur had been eavesdropping on Rishnak and Ajur. Urpur wanted to show that he was smarter than both Rishnak and Ajur, so he interrupted and said, ``I have an even smarter approach. There is a spanning tree called the Steiner tree\footnote{Named after the Swiss mathematician Jakob Steiner} wherein one is allowed to add Steiner points or vertices that were not present in the original problem. With a clever addition of Steiner points, I can find a spanning tree that is better than the one Ajur found.''
 
-\textbf{Question for the ninth day}
-Rishnak was very impressed with Urpur's thinking. Sensing that Ajur was feeling jealous that Urpur was grabbing his attention, Consider a complete graph with with 8 vertices and 28 edges. 14 of the edges have weight
-1 and 14 of the edges have weight 10. Which of the edges have what weights to answer the
-following  two questions: 
-\begin{enumerate}
-    \item Show how to assign weights to the edges so as to achieve the smallest possible weight minimum-weight-spanning tree. What is the smallest weight?
-\item Show how to assign weights to the edges so as to achieve the \textbf{largest} possible weight \textbf{minimum weight} spanning tree. What is the largest weight of the minimum-weight-spanning tree.
- 
-\end{enumerate}
+Urpur clapped his hands and a new graph appeared [Figure~\ref{11g10}]. Urpur said, ``You see?''
 
-\textbf{Answer:} Ajur could do the first part easily if there is a cycle of length 8, with edge weight being 1, the minimum spanning tree weight will be 7.
+Rishnak was impressed with Urpur's solution, but sensing that Ajur was feeling jealous of Urpur, Rishnak said, ``Not bad, Urpur. I am sure Ajur would have also come to this solution if I had asked him.''
 
-Ajur found the second problem a bit more challenging. To get the maximum weight, all edges incident on a vertex have to be of weight 10. That is possible with only two vertices. Hence the maximum weight the minimum spanning tree can have will be 25.
+Ajur nodded in agreement.
 
+%%\newpage
+\subsection*{Question for the ninth day}
+Rishnak said, ``It is time now for Ajur to try and answer the question for the ninth day. It has multiple parts.''
 
- Rishnak called it a night. Jura was happy now to get Ajur's attention and jumping with joy, left with Ajur.
+Ajur's eyes opened wide in excitement.
+
+Rishnak continued, ``Consider a complete graph with with eight vertices and 28~edges. Of these edges, 14 of them have a weight of~1, while the other 14~edges all have a weight of~10. First, how must you assign the weights so as to achieve the smallest possible minimum weight spanning tree? Second, how must you assign the weights so as to achieve the opposite, the largest possible minimum weight spanning tree?''
+
+\textit{Before you turn the page, try to come up with an answer of your own!}
+
+\newpage
+\subsection*{Answer for the ninth day}
+Ajur started with the first part. He said, ``If there is a cycle that visits all of the vertices---so a cycle of length~8---and each edge weight in the cycle is~1, then the minimum spanning tree has a weight of~7. We can't go smaller than that.''
+
+Rishnak smiled and said, ``Correct. And for the second part?''
+
+Before Ajur could answer, Urpur said, ``The second part is the real question. And the answer is---''
+
+Ajur jumped up and said, ``The answer is~25. The largest minimum spanning tree will have a total weight of~25.''
+
+Rishnak said, ``And how do you know that?''
+
+Ajur said, ``All of the edges incident at a vertex must be of weight~10 or else we would select an edge of length~1 instead.  Since there are eight vertices, the degree of each vertex must be~7, so two of the graph's vertices can entirely have incident edges of weight~10. That uses up the~14 edge weights of~10, and gives us a minimum spanning tree with a total weight of~$10+10+1+1+1+1+1$, which is~$25$.''
+
+Rishnak smiled.
+
+Urpur said, ``That's what I was going to say!''
+
+Rishnak laughed and decided to call it a night.
+
+Jura barked. He was happy now to get Ajur's attention and jumping with joy, left with Ajur.
