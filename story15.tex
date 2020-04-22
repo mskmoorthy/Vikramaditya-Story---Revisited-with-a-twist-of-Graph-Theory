@@ -1,23 +1,20 @@
-\chapter{Operations on Graphs}
+\chapter{Graph Operations}
 
-Rishnak caught up with Ajur, who was walking with Jura. Rishnak started the session, saying it was about various graph operations.
-Ajur asked whether they were similar to arithmetical operations (like addition, subtraction, multiplication) on numbers or set operations (such as union, intersection, complement). Rishnak said that there are a number of binary operations and since graphs are represented as sets, many of the operations were similar to set operations. Rishnak added that with graph operations one can generate more graphs and one can also see how graphs evolve.
+Rishnak found Ajur walking with Jura. Not wasting a moment, Rishnak started the session. He said, ``Today we will discuss various graph operations.''
 
-Rishnak listed the following binary graph operations:
+Eager to learn, Ajur asked, ``Are they similar to arithmetic operations like addition, subtraction, and multiplication that operate on numbers? Or set operations such as union, intersection, and complement?''
+
+Rishnak said, ``There are many binary operations\footnote{Here, binary means operating on two operands.} and since graphs are represented as sets, many of the operations are similar to set operations. Each graph operation typically generates another graph. We can also see how graphs evolve. Let us walk through a few of these operations.''
+
+Rishnak described the following binary graph operations, flashing his hands to form figures as he went on:
 \begin{enumerate}
-    \item Graph Union: Let graph $G_3=(V_3,E_3)$ denote the union of two graphs $G_1=(V_1,E_1)$ and $G_2=(V_2,E_2)$. Then $V_3= V_1 \cup V_2$ and
-    $E_3=E_1\cup E_2$. Naturally this graph $G_3$ is not connected.
-    \item Graph Complement: Complement of a Graph $H=(V_2,E_2)$ of $G=(V_1,E_1)$, where $V_2$ = $V_1$ and $E_2$=$\{e| e \notin E_1\}$ Please see Figures \ref{17g1} \ref{17g2}.
-    \item Vertex Addition: Vertex Addition to a graph $G_1=V_1,E_1)$ is a graph $G_2=(V_2,E_2)$  where $V_2=V_1 \cup \{x| \notin V_1\}$ and $E_2=E_1 \cup \{(x,y)  |$ for some  $y  \in Y \subset~ of~ V_1\}$ Please see Figure \ref{17g3} of adding a vertex to \ref{17g1}. Barabassi-Albert used a version of this to generate graphs.\footnote {In Barabassi-Albert model the new vertex adds an edge to an existing vertex with a probability related to the degree of that vertex to generate graphs.}
-    \item  The Cartesian product $G_1$ $ \square $  $G_2$ is a graph $G_3$ such that
-the vertex set of $G_3$  is the Cartesian product $V(G_1) × V(G_2)$; and
-two vertices $(u,u' )$ and $(v,v' )$ are adjacent in $G_3$ if and only if either
-$u = v$ and $u'$ is adjacent to $v'$ in $G_2$, or
-$u' = v'$ and $u$ is adjacent to $v$ in $G_1$. Please see Graphs in Figures \ref{17g4} \ref{17g5} and \ref{17g6}
-\item Given a graph $G$, the line graph  of $G$ denoted by $L(G)$ is a graph such that
-each vertex of $L(G)$ represents an edge of $G$; and
-two vertices in $L(G)$ are adjacent the corresponding edges share a common end vertex. Please see Figures \ref{17g7} and \ref{17g8}
+    \item \textit{Graph union:} Let graph~$G_3=(V_3,E_3)$ denote the union of two graphs~$G_1=(V_1,E_1)$ and~$G_2=(V_2,E_2)$. Then $V_3=V_1\cup V_2$ and~$E_3=E_1\cup E_2$. Naturally, graph~$G_3$ is not connected.
+    \item \textit{Graph complement:} The complement of graph~$G=(V_1,E_1)$ [Figure~\ref{17g1}] is Graph~$H=(V_2,E_2)$ [Figure~\ref{17g2}] if~$V_2=V_1$ and $E_2=\{e|e\notin E_1\}$.
+    \item \textit{Vertex addition:} Vertex addition applied to graph~$G_1=(V_1,E_1)$ [Figure~\ref{17g1}] produces graph~$G_2=(V_2,E_2)$ [Figure~\ref{17g3}], where $V_2=V_1\cup\{x|x\notin V_1\}$ and~$E_2=E_1\cup\{(x,y)|x\in V_2\ \text{and}\ y\in Y\subset V_1\}$.\footnote{Barabassi-Albert used a version of this to generate graphs. In the Barabassi-Albert model, the new vertex adds an edge to an existing vertex with a probability related to the degree of that vertex to generate graphs.}
+    \item  \textit{Cartesian product:} The Cartesian product~$G_1\square G_2$ is graph~$G_3$ such that the vertex set of $G_3$ is Cartesian product~$V(G_1)\times V(G_2)$ and two vertices~$(u,u')$ and $(v,v')$ are adjacent in~$G_3$ if and only if either~$u=v$ and~$u'$ is adjacent to~$v'$ in~$G_2$ or~$u'=v'$ and~$u$ is adjacent to~$v$ in~$G_1$. [Figure~\ref{17g4}] [Figure~\ref{17g5}] [Figure~\ref{17g6}]
+    \item \textit{Line graph:} Given graph~$G$, the line graph of~$G$, denoted by~$L(G)$, is a graph with each vertex of~$L(G)$ representing an edge of~$G$ and two vertices in~$L(G)$ being adjacent if the corresponding edges share a common end vertex. [Figure~\ref{17g7}] [Figure~\ref{17g8}]
 \end{enumerate}
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -31,9 +28,10 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example graph}\label{17g1}
+\caption{Example graph for which we wish to apply the union and complement operations, as well as vertex addition}\label{17g1}
 \end{center}
 \end{figure}
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -47,7 +45,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Complement of graph \ref{17g1}}\label{17g2}
+\caption{Complement of the graph shown in Figure~\ref{17g1}}\label{17g2}
 \end{center}
 \end{figure}
 \begin{figure}
@@ -63,7 +61,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Adding a vertex and adding edges from that vertex to some subset of vertices to the graph \ref{17g1}}\label{17g3}
+\caption{Adding a vertex and edges from that vertex to some subset of vertices in the graph shown in Figure~\ref{17g1}}\label{17g3}
 \end{center}
 \end{figure}
 
@@ -78,7 +76,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example of a  Graph $G_1$ for Cartesian Product}\label{17g4}
+\caption{Example graph~$G_1$ for which we wish to apply the Cartesian product}\label{17g4}
 \end{center}
 \end{figure}
 
@@ -93,7 +91,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Example of graph $G_2$ for Cartesian Product}\label{17g5}
+\caption{Example graph~$G_2$ for which we wish to apply the Cartesian product}\label{17g5}
 \end{center}
 \end{figure}
 
@@ -110,15 +108,16 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Cartesian Product $G_3$ of $G_1$ Figure \ref{17g4} and $G_2$ Figure \ref{17g5}}\label{17g6}
+\caption{The Cartesian product~$G_3$ of graphs~$G_1$ [Figure~\ref{17g4}] and~$G_2$ [Figure~\ref{17g5}]}\label{17g6}
 \end{center}
 \end{figure}
+
 \begin{figure}
 \begin{center}
 
 \begin{tikzpicture}
   [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
-  \tikzstyle{weight} = [draw=blue!5,shape=rectangle]
+  \tikzstyle{weight} = [fill=none]
   \node (n1) at (-1,5) {1};
   \node (n2) at (4,5)  {2};
   \node (n3) at (9,5)  {3};
@@ -128,7 +127,7 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
    \draw (\source) --node[weight] {$\weight$}  (\dest);
  
   \end{tikzpicture}
-\caption { Example of a graph for line graph example}\label {17g7}
+\caption{Example graph for which we wish to apply the line graph operation}\label {17g7}
 \end{center}
 \end{figure}
 
@@ -146,16 +145,10 @@ two vertices in $L(G)$ are adjacent the corresponding edges share a common end v
    \draw (\source) -- (\dest);
  
   \end{tikzpicture}
-\caption { A line graph for a graph in Figure \ref{17g7}}\label {17g8}
+\caption {A line graph for the graph shown in Figure~\ref{17g7}}\label {17g8}
 \end{center}
 \end{figure}
 
-Then Rishnak pointed out that Petersen Graph they had discussed earlier was the complement of the line graph of $K_5$. Ajur knew $K_5$ has 10 edges and Petersen graph has 10 edges and mentally verified that they matched. Ajur calculated that the line graph of $K_5$ is regular graph of degree 6 and hence its complement will be regular graph of degree 3 and that matched. But still he had to verify Rishnak's assertion. He decided to work on it later.
-
-Rishnak realising that it was getting late, spent a few minutes talking about Paul Erd\H{o}s and Renyi construction of a graph. In this method for a graph with $n$ vertices and $e$ edges, for every unordered pair of vertices  an edge is present with a probability of $\frac{e}{\frac{n \times (n-1)}{2}}$. 
-
-
-Rishnak showed a graph generated by Erd\H{o}s-Renyi model with 5 vertices 5 edges (so edge probability is 0.5  =$ \frac{5}{10}$) shown in Figure \ref {17g9} \footnote{Generated using Sage Math (CoCALC) \url{https://cocalc.com/}}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -169,13 +162,31 @@ Rishnak showed a graph generated by Erd\H{o}s-Renyi model with 5 vertices 5 edge
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Randomly Generated Graph using Erd\H{o}s-Renyi Model with 5 vertices and 5 edges (so edge probability is 0.5  =$ \frac{5}{10}$)  }\label{17g9}
+\caption{Randomly generated graph using the Erd\H{o}s--R\'enyi method with~$n=5$ vertices, $e=5$ edges, and edge probability~$0.5$}\label{17g9}
 \end{center}
 \end{figure}
 
-\textbf{Question for fifteenth day:} Draw the complement of the line graph of a complete graph with 5 vertices ($K_5$).
+Ajur listened intently at these graph operations, at times asking Rishnak to repeat the definition.
 
-\textbf{Answer:} Ajur reasoned that there would be 10 vertices in the line graph (as $K_5$ has 10 edges). The complement will also have 10 vertices and it will be a regular graph of degree 3 (as the line graph will be a regular graph of degree 6!). Ajur was able to draw the graph Figure \ref{15ga1}
+After some time, Rishnak said, ``The Petersen graph they we discussed before is actually the complement of the line graph of complete graph~$K_5$.''
+
+Ajur tried to keep up. He knew that graph~$K_5$ was a complete graph with~10 edges. He also knew that the Petersen graph had~10 edges. Did they match? Ajur calculated that the line graph of~$K_5$ was a regular graph of degree~6 and therefore its complement would be a regular graph of degree~3, so that much matched. But still, he had to verify Rishnak's assertion in full, so he decided to work on it later.
+
+Realizing that it was already getting late, Rishnak said, ``Let me also talk about graph construction. There is a method called the Erd\H{o}s--R\'enyi model\footnote{Named after mathematicians Paul Erd\H{o}s and Alfr\'ed R\'enyi.} for constructing graphs. In this method, for a graph with~$n$ vertices and~$e$ edges, for every unordered pair of vertices, an edge is present with the following probability:
+$$\frac{e}{\frac{1}{2}n(n-1)}$$
+
+Rishnak flashed his hands and a new graph appeared [Figure~\ref{17g9}]. He said, ``This graph is generated using the Erd\H{o}s--R\'enyi model with~$n=5$ and~$e=5$, so our edge probability is~$\frac{5}{10}=0.5$.\footnote{When Rishnak wrote this down later, he generated the graph using Sage Math (CoCALC) at \url{https://cocalc.com/}. You should try to generate a few graphs using this method.}
+
+\subsection*{Question for the fifteenth day}
+Rishnak said, ``For the question for the fifteenth day, can you draw the complement of the line graph of complete graph~$K_5$?''
+
+\textit{Before you turn the page, try to come up with an answer of your own!}
+
+\newpage
+\subsection*{Answer for the fifteenth day}
+Ajur remembered from earlier that he reasoned out that there would be~10 vertices in the line graph since~$K_5$ has~10 edges. He said, ``The complement will also have~10 vertices and will be a regular graph of degree~3 because the line graph will be a regular graph of degree~6.''
+
+Ajur drew his answer in the dirt [Figure~\ref{15ga1}].
 
 \begin{figure}
 \begin{center}
@@ -198,8 +209,8 @@ Rishnak showed a graph generated by Erd\H{o}s-Renyi model with 5 vertices 5 edge
 
 
 \end{tikzpicture}
-\caption{ Petersen graph - Complement of the line graph of $K_5$}\label{15ga1}
+\caption{The graph representing the complement of the line graph of complete graph~$K_5$; this graph is the Petersen graph}\label{15ga1}
 \end{center}
 \end{figure}
 
-Ajur needed time to digest all the material. So Ajur and Jura drifted away and Rishnak proceeded to meet his ghost friends.
+Ajur needed time to digest all of the new material from the day, so he and Jura drifted away as Rishnak proceeded to meet his other ghost friends.

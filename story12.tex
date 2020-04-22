@@ -1,9 +1,15 @@
-\chapter{Bridges, Cut Vertices, Cutsets}
+\chapter{Bridges, Cut Vertices, Cut Sets}
 
-Remembering that he had not told Ajur about some concepts related to connectivity of graphs and directed graphs, Rishnak went looking for Ajur and saw Ajur and Jura walking on a bridge over a small brook. Rishnak gently tapped Ajur and said that 
-he wanted to talk about connectivityy. Ajur replied saying he remembered the definition of being connected - which means that there is a path between every pair of vertices. Rishnak smiled and said that it is correct.
+Remembering that he had not told Ajur about many concepts related to graph connectivity for both undirected and directed graphs, Rishnak went looking for Ajur. He found Ajur and Jura walking across a bridge that spanned a small brook.
 
-A bridge is an edge in a connected graph that when that edge is deleted from that graph, it becomes disconnected. For the graph shown in Figure \ref{14g1}, every edge is bridge.
+Rishnak said, ``Today let us talk about graph connectivity.''
+
+Ajur said, ``Okay, but already did, and I remember that for a graph to be connected, there has to be a path between every pair of vertices.''
+
+Rishnak smiled and said that was correct. He continued, ``A \textit{bridge} is an edge in a connected graph that, when removed from that graph, causes the graph to become disconnected. Have a look at this graph''---Rishnak flashed his hands and a graph appeared in the air [Figure~\ref{14g1}]---``and you will find that every edge is bridge.''
+
+Ajur said, ``I see. Every edge is a bridge because that graph is a tree.''
+
 \begin{figure}
 \begin{center}
 
@@ -21,11 +27,11 @@ A bridge is an edge in a connected graph that when that edge is deleted from tha
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Every edge in this graph is a bridge. In a tree, every edge is bridge!}\label{14g1}
+\caption{In a tree, every edge is a bridge}\label{14g1}
 \end{center}
 \end{figure}
 
-In the graph shown in Figure \ref{14g2}, just one edge is a bridge.
+Rishnak flashed his hands again and a second graph appeared [Figure~\ref{14g2}]. He said, ``And in this familiar graph, only one edge is a bridge.''
 
 \begin{figure}
 \begin{center}
@@ -42,20 +48,28 @@ In the graph shown in Figure \ref{14g2}, just one edge is a bridge.
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{Edge (4,6) is the bridge}\label{14g2}
+\caption{A graph in which only one edge is a bridge, i.e.,~removing edge~$(4,6)$ would cause the graph to be disconnected}\label{14g2}
 \end{center}
 \end{figure}
 
-Bridge is an important edge in a graph. If the bridge is deleted (if it fails), the graph becomes disconnected. A graph may not contain any bridge. For example, in a complete graph  there are no
-bridges. If there are no bridges, there is less chance that a graph becomes disconnected when an edge is deleted.
+Rishnak said, ``A bridge is an important edge in a graph. As you have seen, if a bridge is removed---in other words, if that edge fails---then the graph becomes disconnected. It is certainly possible for a graph to not contain any bridges. For example, in a complete graph, there are no
+bridges.''
 
-Ajur asked Rishnak whether there is a vertex analog of a bridge. Rishnak answered in the affirmative. A cut-vertex is a vertex which when deleted \footnote{deleting a vertex means removing that vertex and removing all edges incident on that vertex.} makes the graph disconnected. In the graph shown in \ref{14g2}, vertex 4 is a cut vertex. If you consider the map of continental United States (with states as vertices and there is an edge between two vertices (states), if they share a common border), New Hampshire is a cut-vertex, if you delete New Hampshire, it is not possible to go from Maine to other states through United States. Similarly in India, West Bengal is  a cut vertex, as from north eastern state (like Assam), you cannot go to Kerala!
+Ajur asked Rishnak whether there was a concept similar to a bridge for vertices.
 
-In a tree, all vertices other than leaf vertices are cut vertices. In a complete graph, there are no cut vertices. If a graph or a network has a cut vertex, that network is vulnerable and may get disconnected if the cut vertex fails. 
+Rishnak said, ``Yes, a \textit{cut vertex} is a vertex that, when removed from a graph\footnote{Remember that removing a vertex means that all edges incident on that vertex are also removed from the graph.} causes the graph to be disconnected. In the second graph [Figure~\ref{14g2}], vertex~4 is a cut vertex.''
 
-A graph is $k$ connected if there is a set of $k$ vertices which when deleted from the graph becomes disconnected. Ajur realized that $k$ connected is a generalization of 1 connected (correspond to having a cut vertex.)
+Ajur studied the graph and said, ``I see.''
 
-A cutset is a set of edges which when deleted will make the graph disconnected. Rishnak asked Ajur how many vertices need to be deleted for the graph shown in Figure \ref{14g3} and what is a cutset for this graph.
+Rishnak continued, ``And if you consider the map of the continental United States with states represented as vertices and borders defined by edges, New Hampshire is a cut vertex. If you remove New Hampshire from the graph, it is no longer possible to go from Maine to the other states. Similarly, in India, West Bengal is a cut vertex since its removal from the graph would cause northeastern states such as Assam to be no longer accessible from Kerala!''
+
+Ajur thought for a moment, then said, ``In a tree, all vertices other than leaf vertices are cut vertices. And in a complete graph, there are no cut vertices. So if a graph has a cut vertex, that graph is vulnerable and may become disconnected if the cut vertex fails. Like a network with a single point of failure.''
+
+Rishnak said, ``Precisely. And further, a graph is~$k$-connected if there is a set of~$k$ vertices that, when removed from the graph, causes the graph to become disconnected.''
+
+Ajur realized that the concept of a graph being~$k$-connected was a generalization of a graph having a cut vertex since in that case,~$k=1$.
+
+Rishnak continued, ``And similarly, a cut set is a set of edges that, when removed from the graph, causes it to be disconnected. How many vertices need to be removed from this graph''---Rishnak flashed his hands and a new graph appeared [Figure~\ref{14g3}]---``for it to become disconnected? And what is a cut set for this graph?''
 
 \begin{figure}
 \begin{center}
@@ -78,18 +92,24 @@ A cutset is a set of edges which when deleted will make the graph disconnected. 
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{How many vertices should be deleted to make this graph disconnected? How many edges should be deleted to make this graph disconnected? }\label{14g3}
+\caption{The old village road map of Royt for which we wish to determine how many vertices should be removed to cause the graph to be disconnected and also how many edges should be removed to cause the graph to be disconnected}\label{14g3}
 \end{center}
 \end{figure}
 
-Ajur said in a hurry that by deleting vertices 1,3, 11, the graph in \ref{14g3} will be disconnected. He
-also gave a cutset consisting of edges (2,3),(2,11) and (1,2).
+Ajur studied the graph and said, ``Removing vertices~1, 3, and~11 would cause the graph to be disconnected since that would isolate vertex~2. And similarly, a cut set is edges~$(2,1)$, $(2,3)$, and~$(2,1)$.''
 
-\textbf{Question for twelfth day:}  What is the largest number of bridges one can have in a connected graph with $n$ vertices, Draw a graph with six vertices, having exactly two bridges.
+\subsection*{Question for the twelfth day}
+Rishnak said, ``Very good, Ajur.  Let us see now what the question is for the twelfth day. There are two parts to it. First, what is the largest number of bridges that a connected graph with~$n$ vertices, can have? And second, can you draw a graph with six vertices and exactly two bridges.?''
 
-\textbf{Answer:} Ajur said that a tree is a minimally connected graph. Since every edge is in some unique path, all the edges of the tree are bridges. Hence the maximum number of bridges in a connected graph can be $n-1$. If we have $n$ or more edges, then we will have a cycle. Hence we cannot have bridges $\ge~n$.
+\textit{Before you turn the page, try to come up with answers of your own!}
 
-Ajur drew the following graph Figure \ref{14ag1} which has exactly two bridges with six vertices.
+\newpage
+\subsection*{Answer for the twelfth day}
+Ajur thought again about a tree, remembering that a tree is a minimally connected graph. He said, ``Since every edge in a tree is in a unique path, all of the edges of a tree are bridges. Therefore, the maximum number of bridges in a connected graph is~$n-1$ since this would be a tree of~$n$ vertices. And if we instead had~$n$ or more edges, then we would have a cycle, which means we would not be able to have the number of bridges be greater than or equal to~$n$.''
+
+Rishnak nodded.
+
+Ajur then grabbed a stick and drew a graph in the dirt [Figure~\ref{14ag1}]. He said, ``This graph has exactly six vertices and two bridges.''
 
 \begin{figure}
 \begin{center}
@@ -106,9 +126,8 @@ Ajur drew the following graph Figure \ref{14ag1} which has exactly two bridges w
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{A graph with six vertices and two bridges (6,4) and (4,3)}\label{14ag1}
+\caption{A graph with six vertices and two bridges, i.e.,~edges~$(6,4)$ and~$(4,3)$}\label{14ag1}
 \end{center}
 \end{figure}
 
-
-Rishnak noticed that Ajur and Jura were getting impatient and called it a night.
+Rishnak smiled and said, ``Good work, Ajur.''

@@ -1,22 +1,40 @@
-\chapter{Brute Force Searches}
+\chapter{Brute Force Searching}
 
-Trying to locate Ajur in order to talk about different search techniques, Rishnak followed his own search methodology (depth first search - like the one used in Mazes). The search led Rishank to Ajur, who was sitting under a tree. Rishnak pointed out to Ajur that there are many different search methods and searching is a trillion dollar business. Ajur was aware of the fast search results from many search engines. Rishnak said that most search engines use some kind of a table lookup. Interesting issues to consider are how the tables are stored and how look up is done.  An index based look up and a hash based technique are two common techniques. Hashing involves finding a randomized location based on the keywords.  Binary search on a sorted list works if the size of the list is not prohibitively large. But these search techniques work for unstructured data (like numbers or one dimensional data). A graph is structured (i.e., two dimensional) so a different type of search technique is needed.
-Rishnak added that in the maze search, one conducts a depth first search. The following are the steps. It essentially divides the vertices into visited and non-visited. When you visit a vertex, you can do any
-operation associated with that vertex.
+Trying to locate Ajur to talk to him about different search techniques, Rishnak followed his own search method, an approach called depth first search, much like a strategy used in solving mazes. The search led Rishnak to Ajur, who was sitting under a tree.
+
+Rishnak said, ``There are many different search methods, and come to think of it, search is a trillion-dollar business.''
+
+Ajur laughed and said, ``Yes, fast search results from a search engine is a good business to be in.''
+
+Rishnak said that most search engines use some kind of a table lookup. He said, ``The more interesting issues to consider here are how the tables are stored and how each lookup is done.  An index-based lookup and a hash-based lookup are two common techniques.  Hashing involves finding a seemingly randomized location based on the given search keywords. And binary search on a sorted list works if the size of the list is not prohibitively large. All of these search techniques work well for unstructured data, but a graph is structured, so we need a different type of search technique.''
+
+Ajur did his best to keep up. As per usual, Rishnak was overflowing with different ideas that he wanted to share.
+
+Rishnak continued, ``When searching a maze, you can use what is called a \textit{depth first search}. This strategy essentially divides the vertices into sets of visited and non-visited vertices. When you visit a vertex, you can do any operation associated with that vertex. Here are the steps:
 
 \begin{enumerate}
-    \item Place a starting vertex on top of a stack.\footnote{A stack is like a list where we can access only the top element - like a stack of plates}
-     \item Remove the top vertex of the stack and mark the vertex visited.
-     \item Create a list of that vertex's adjacent vertices. Add the vertices which are not yet visited  to the top of the stack.
-     \item Repeat steps 2 and 3 until the stack is empty.
+    \item Place the start vertex on top of a \textit{stack}.\footnote{A stack is a list but we can only access the top element, much like a stack of plates.}
+     \item Remove the top vertex from the stack and mark the vertex as visited.
+     \item Create a list of that vertex's adjacent vertices. Add each of these adjacent vertices to the top of the stack as long as the vertex is marked non-visited.
+     \item Repeat Steps~2 and 3 until the stack is empty.''
 \end{enumerate}
 
-Here is a graph with vertices numbered in the order it gets visited. Please see Figures \ref{20g1}, \ref{20g2}, \ref{20g3}, \ref{20g4}, \ref{20g5} and \ref{20g6}. 
+Ajur said, ``I think I understand. So you go as far or as deep as you can before tracing your steps backward.''
+
+Rishnak said, ``Precisely. Let me take you through the depth first search algorithm with you for this graph.'' He flashed his hands and a familiar graph appeared [Figure~\ref{20g1}].
+
+Ajur followed each step as Rishnak visited subsequent vertices [Figure~\ref{20g2}] [Figure~\ref{20g3}] [Figure~\ref{20g4}] 
+ [Figure~\ref{20g5}] [Figure~\ref{20g6}]. Rishnak also labeled each edge that he traversed in red. 
+
+
+
+Rishnak said, ``At the end of this algorithm, we have what is called a \textit{depth first traversal}.''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -24,20 +42,20 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1};
+    (n6.north) node[above,fill=none] {1};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
 \end{tikzpicture}
-\caption{ Depth First Traversal -starting vertex is 6}\label{20g1}
+\caption{A depth first traversal---at start vertex~6}\label{20g1}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -45,23 +63,23 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4);
 \end{tikzpicture}
-\caption{ Depth First Traversal step 1}\label{20g2}
+\caption{A depth first traversal---at Step~1}\label{20g2}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -69,26 +87,26 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2}
-    (n2.south) node[below] {3};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2}
+    (n2.south) node[below,fill=none] {3};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n4) to (n2);
 \end{tikzpicture}
-\caption{ Depth First Traversal step 2}\label{20g3}
+\caption{A depth first traversal---at Step~2}\label{20g3}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -96,28 +114,28 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2}
-    (n2.south) node[below] {3}
-    (n1.north) node[above] {4};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2}
+    (n2.south) node[below,fill=none] {3}
+    (n1.north) node[above,fill=none] {4};
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n4) to (n2);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n2) to (n1);
 \end{tikzpicture}
-\caption{ Depth First Traversal step 3}\label{20g4}
+\caption{A depth first traversal---at Step~3}\label{20g4}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -125,30 +143,31 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2}
-    (n2.south) node[below] {3}
-    (n1.north) node[above] {4}
-    (n5.north) node[above]  {5};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2}
+    (n2.south) node[below,fill=none] {3}
+    (n1.north) node[above,fill=none] {4}
+    (n5.north) node[above,fill=none]  {5};
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n4) to (n2);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n2) to (n1);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n1) to (n5);
 \end{tikzpicture}
-\caption{ Depth First Traversal step 4}\label{20g5}
+\caption{A depth first traversal---at Step~4}\label{20g5}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
-  [scale=.4,auto=left]
+% [scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -156,44 +175,49 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2}
-    (n2.south) node[below] {3}
-    (n1.north) node[above] {4}
-    (n5.north) node[above]  {5}
-    (n3.south) node[below] {6};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2}
+    (n2.south) node[below,fill=none] {3}
+    (n1.north) node[above,fill=none] {4}
+    (n5.north) node[above,fill=none]  {5}
+    (n3.south) node[below,fill=none] {6};
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n4) to (n2);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n2) to (n1);
-  \draw[-,thick,red]
+  \draw[-,line width=2 pt,red]
   (n1) to (n5);
-   \draw[-,thick,red]
+   \draw[-,line width=2 pt,red]
   (n5) to (n3);
 \end{tikzpicture}
-\caption{ Depth First Traversal step 5}\label{20g6}
+\caption{A depth first traversal---at Step~5}\label{20g6}
 \end{center}
 \end{figure}
 
-There is another search called breadth first search and it too classifies the vertices as visited or not visited.
+Rishnak said, ``There is another search technique called \textit{breadth first search}. It also classifies vertices as either visited or non-visited. The algorithm is:
+
 \begin{enumerate}
-    \item Place a starting vertex at the front of a queue.
-    \item Remove the vertex from the front of the queue and mark it visited.
-    \item Create a list of that vertex's adjacent vertices. Add the vertices which are not yet in the visited list to the back of the queue.
-    \item Keep repeating steps 2 and 3 until the queue is empty.
+    \item Place a start vertex at the front of a queue.
+    \item Remove the vertex from the front of the queue and mark it as visited.
+    \item Create a list of that vertex's adjacent vertices. Add each vertex that is not yet visited to the end of the queue.
+    \item Repeat Steps~2 and~3 until the queue is empty.''
 \end{enumerate}
 
-Here is a graph with vertices numbered in the order it gets visited. Please see Figures \ref{20g7}, \ref{20g8}, \ref{20g9} and \ref{20g10}.
+Ajur noticed that by using a queue instead of a stack, the search would visit vertices in a different order than that of depth first search.
+
+Rishnak said, ``Here is our graph again, and''---he waved his hands and the original graph appeared [Figure~\ref{20g7}]---``I will number the vertices in the order in which we visit them.''
+
+Ajur watched as the graph changed from step to step [Figure~\ref{20g7}] [Figure~\ref{20g8}] [Figure~\ref{20g9}] [Figure~\ref{20g10}].
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -201,12 +225,12 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1};
+    (n6.north) node[above,fill=none] {1};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
 \end{tikzpicture}
-\caption{ Breadth First Traversal -starting vertex is 6}\label{20g7}
+\caption{A breadth first traversal---at start vertex~6}\label{20g7}
 \end{center}
 \end{figure}
 
@@ -214,8 +238,8 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -223,23 +247,23 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4);
 \end{tikzpicture}
-\caption{ Breadth First Traversal step 1}\label{20g8}
+\caption{A breadth first traversal---at Step~1}\label{20g8}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -247,28 +271,28 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2}
-    (n2.south) node[below] {3}
-    (n3.south) node[below] {4}
-    (n5.north) node[above] {5};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2}
+    (n2.south) node[below,fill=none] {3}
+    (n3.south) node[below,fill=none] {4}
+    (n5.north) node[above,fill=none] {5};
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4)
   (n4) to (n2)
   (n4) to (n3)
   (n4) to (n5);
 \end{tikzpicture}
-\caption{ Breadth First Traversal step 2}\label{20g9}
+\caption{A breadth first traversal---at Step~2}\label{20g9}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.4,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.4,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (1,10) node[mynode] (n6) {6}
     (4,8) node[mynode] (n4) {4}
@@ -276,40 +300,63 @@ Here is a graph with vertices numbered in the order it gets visited. Please see 
     (11,8) node[mynode] (n1) {1}
     (9,6) node[mynode] (n2) {2}
     (5,5) node[mynode] (n3) {3}
-    (n6.north) node[above] {1}
-    (n4.north) node[above] {2}
-    (n2.south) node[below] {3}
-    (n3.south) node[below] {4}
-    (n5.north) node[above] {5}
-    (n1.north) node[above] {6};
+    (n6.north) node[above,fill=none] {1}
+    (n4.north) node[above,fill=none] {2}
+    (n2.south) node[below,fill=none] {3}
+    (n3.south) node[below,fill=none] {4}
+    (n5.north) node[above,fill=none] {5}
+    (n1.north) node[above,fill=none] {6};
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n1/n2,n2/n5,n2/n3,n3/n4,n4/n2,n3/n5}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n6) to (n4)
   (n4) to (n2)
   (n4) to (n3)
   (n4) to (n5)
   (n2) to (n1);
 \end{tikzpicture}
-\caption{ Breadth First Traversal step 3}\label{20g10}
+\caption{A breadth first traversal---at Step~3}\label{20g10}
 \end{center}
 \end{figure}
 
-Both depth first search and breadth first search can also be used for searching the state space of all solutions. If we can enumerate all possible states (in the case of Hamiltonian cycle problem and in the case of isomorphism all possible permutations constitute all possible states), then how we visit all possible states could be done either by depth first search or breadth first search.
-There are different methods of generating permutations, combinations; more importantly generate a permutation, test and then go to the next permutation- There are efficient methods of generating the next permutation. Rishnak told Ajur that he would learn them during his college years.
-Generation of all permutations/combinations and testing is a brute force approach. Ajur confessed that this was how he solved the problem on Golomb rulers the previous day. Rishnak said that there is a more efficient technique, called back-tracking, which is an efficient way of searching the solution space. Rishnak again assured Ajur that he would learn it in college.
+Ajur smiled, wondering about how each different type of search could be useful. He asked, ``Do both search techniques always work?''
 
-Ajur realized that there is so much more to learn and he was very excited. Ajur asked Rishnak whether back-tracking could be used to solve Sudoku problem. Rishnak smiled and said that indeed one could use back-tracking to solve a Sudoku problem.\footnote{Sudoku can be thought of as fully coloring all the vertices of a graph given a partial coloring of the vertices.}
+Rishnak said, ``Yes, both depth first search and breadth first search can be used for searching the state space of all solutions. If we can enumerate all possible states---for the Hamiltonian cycle problem and the isomorphism problem, all possible permutations constitute all possible states---then how we visit all possible states could be done either using depth first search or breadth first search.''
 
-\textbf{Question for eighteenth day:} Draw a graph, for which depth first search and the breadth first search produce the same numbering or labelling.
+Ajur tried to understand. He asked, ``We don't need to figure out all permutations or combinations ahead of time, do we?''
 
-\textbf{Answer:}  Ajur drew the following graph Figure \ref{20ag1}
+Rishnak said, ``No, there are different methods for generating permutations and combinations. In general, we generate a permutation, test it out, then go on to the next permutation. And there are efficient methods for generating the next permutation. You will learn all of this during your college years.''
+
+Ajur understood. He said, ``The generation of all permutations or combinations is a brute force approach, right? This is how I solved the problem with the Golomb ruler yesterday.''
+
+Rishnak laughed and said, ``Yes, brute force approaches are typically slow and tedious. There are often more efficient techniques for solving a problem involving what is called \textit{backtracking}, which is a far more efficient means of searching the solution space.''
+
+Ajur smiled and said, ``And I'll learn this in college?''
+
+Rishnak laughed again and nodded.
+
+Ajur realized there was so much more to learn but he did not get discouraged. Instead, he felt invigorated. He said, ``Could we use backtracking to solve a Sudoku puzzle?''
+
+Rishnak smiled and said, ``Yes, that is one way to solve such puzzles. We can also think of solving a Sudoku puzzle as fully coloring all vertices of a graph given a partial coloring of the vertices.''
+
+Ajur thought about this and was going to ask another question, but Rishnak was too quick.
+
+\subsection*{Question for the eighteenth day}
+Rishnak said, ``Here is our question for the eighteenth day, Ajur.  Can you draw a connected graph containing six vertices for which depth first search and breadth first search both produce the same numbering or labeling of vertices?''
+
+\textit{Before you turn the page, try to come up with answers of your own!}
+
+\newpage
+\subsection*{Answer for the eighteenth day}
+Ajur quickly drew a graph in the dirt [Figure~\ref{20ag1}] and said, ``Start at vertex~1 in this graph and both depth first search and breadth first search produce the same numbering of vertices.''
+
+Rishnak smiled.
 
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
- [scale=.6,auto=left]
-  %[scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+ %[scale=.6,auto=left]
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
   \draw
     (-3,0) node[mynode] (n1) {1}
     (0,0) node[mynode] (n2) {2}
@@ -317,26 +364,23 @@ Ajur realized that there is so much more to learn and he was very excited. Ajur 
     (6,0) node[mynode] (n4) {4}
     (9,0) node[mynode] (n5) {5}
     (12,0) node[mynode] (n6) {6}
-    (n1.north) node[above] {1}
-    (n2.north) node[above] {2}
-    (n3.north) node[above] {3}
-    (n4.north) node[above] {4}
-    (n5.north) node[above] {5}
-    (n6.north) node[above] {6};
+    (n1.north) node[above,fill=none] {1}
+    (n2.north) node[above,fill=none] {2}
+    (n3.north) node[above,fill=none] {3}
+    (n4.north) node[above,fill=none] {4}
+    (n5.north) node[above,fill=none] {5}
+    (n6.north) node[above,fill=none] {6};
   \foreach \from/\to in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n6}
     \draw (\from) -- (\to);
-\draw[-,thick,red]
+\draw[-,line width=2 pt,red]
   (n1) to (n2)
   (n2) to (n3)
   (n3) to (n4)
   (n4) to (n5)
   (n5) to (n6);
 \end{tikzpicture}
-\caption{ Breadth First and Depth First search produces the same labelling - starting from vertex 1}\label{20ag1}
+\caption{A graph for which breadth first search and depth first search, starting from vertex~1, both produce the same vertex numbering}\label{20ag1}
 \end{center}
 \end{figure}
 
-
 After this interesting and exciting discussion, Ajur and Jura happily called it a day.
-
-

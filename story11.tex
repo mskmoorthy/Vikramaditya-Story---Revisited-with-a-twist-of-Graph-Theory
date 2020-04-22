@@ -1,7 +1,12 @@
-\chapter{Cliques, Independent Sets and Vertex Covering }
-Rishnak was eager to discuss other interesting problems with Ajur and  spotted Ajur and Jura walking along the shore of a pond. Rishnak asked Ajur about cliques in his school. Ajur readily shared his pet peeve with Rishank. Yes, students in his school belonged to distinct groups, essentially cliques. Then Rishnak told Ajur that a clique is also a graph theoretic term. A clique is a sub-graph of a graph which is complete. Rishnak added that normally we only consider maximal complete sub-graphs as cliques, that a maximal complete sub-graph of $G$, $H$, means that there is no complete sub-graph of $G$ that contains $H$ as a sub-graph.
+\chapter{Cliques, Independent Sets, Vertex Covers}
+Rishnak was eager to discuss other interesting problems with Ajur and spotted Ajur and Jura walking along the shore of a pond. Rishnak asked Ajur about cliques in his school.
 
-Rishnak drew the following graph in Figure \ref{13g1} and asked Ajur to list the cliques (maximal complete sub-graphs).
+Ajur readily shared his pet peeve with Rishnak. He said, ``Yes, students in my school belong to cliques, essentially groups of friends, but they don't always let others join.''
+
+Rishnak said, ``A clique is also a graph-theoretic term. Here, a \textit{clique} is a subgraph of a graph that is complete, which remember means that every pair of vertices is connected by an edge. Normally we only consider a maximal complete subgraph to be a clique, which is often called a \textit{maximal clique}. We will use that definition for clique, which means that if~$H$ is a maximal complete subgraph of graph~$G$, then there is no complete subgraph of~$G$ that also contains~$H$ as a subgraph.''
+
+As Ajur thought about that, Rishnak flashed his hands and a graph appeared in front of Ajur [Figure~\ref{13g1}]. Rishnak said, ``Can you list the cliques---maximal complete subgraphs---in this graph?''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -17,19 +22,19 @@ Rishnak drew the following graph in Figure \ref{13g1} and asked Ajur to list the
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ What are the maximal cliques (complete sub-graphs) in this graph}\label{13g1}
+\caption{A graph with six vertices and nine edges for which we wish to identify the cliques, i.e.,~maximal complete subgraphs (there are three)}\label{13g1}
 \end{center}
 \end{figure}
 
-Ajur was tentative in his answer - as he was struggling with all the definitions. He then stated that the three maximal cliques are: 
+Ajur was unsure of his answer, as he was struggling with all of the definitions. He said, ``If I understand correctly, there are three cliques:
 \begin{enumerate}
-    \item Induced sub-graph containing vertices 4 and 6
-    \item Induced sub-graph containing the vertices 2,3 4 and 5
-    \item Induced sub-graph containing the vertices 1, 2 and 5
+    \item The induced subgraph containing vertices~4 and~6.
+    \item The induced subgraph containing vertices~2, 3, 4, and~5.
+    \item The induced subgraph containing vertices~1, 2, and~5.
 \end{enumerate} 
 
-Rishnak was happy to note that Ajur understood the definition of maximal cliques. Still he wanted Ajur to find the
-maximal cliques on another graph shown in Figure \ref{13g21}.
+Rishnak smiled. He was happy that Ajur understood. He said, ``Good, now how about for this graph?'' He waved his hands and four edges were added to the original graph to form a new graph [Figure~\ref{13g21}].
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -45,18 +50,33 @@ maximal cliques on another graph shown in Figure \ref{13g21}.
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ What are the maximal cliques (complete sub-graphs) in this graph}\label{13g21}
+\caption{The graph shown in Figure~\ref{13g1} with four additional edges for which we again wish to identify the cliques (there are two)}\label{13g21}
 \end{center}
 \end{figure}
 
-Ajur stared at the figure \ref{13g21} for a few seconds, then answered, giving two maximal cliques. He listed them as: 
+Ajur studied the graph for a few seconds, then answered, ``I think there are two cliques:
 \begin{enumerate}
-    \item Induced sub-graph containing vertices 3, 4, 5 and 6.
-    \item Induced sub-graph containing the vertices 1, 2, 3, 4 and 5.
-\end{enumerate} 
-Seeing Ajur frustrated with vague definitions and examples, Rishnak admitted that it was his mistake. Graphs are usually used as models for physical or social processes. For example, when we consider the cliques in a school, one can model the students as vertices and two students belong to the same group as an edge between the associated vertices\footnote{We have a binary relation here.}. Clusters in data science are closely related to cliques.
+    \item The induced subgraph containing vertices~3, 4, 5, and~6.
+    \item The induced subgraph containing vertices~1, 2, 3, 4, and~5.''
+\end{enumerate}
 
-Rishnak then wanted Ajur to learn about independent set in a graph. An independent set in a graph is a set of vertices that are mutually nonadjacent i.e., a subset of vertices that does not include any adjacent vertices. Ajur immediately recognized that independent set and clique are related. Rishnak could not control his smile. Rishnak remembered that he had not told Ajur about complement of a graph. A complement of a graph $G=(V,E)$ is another graph $H=(V,E_1)$. Both of them have the same vertex set. But if two vertices are adjacent in G, they are not adjacent in H and if two vertices are not adjacent in G, then they are adjacent in H. Ajur drew the complement of the graph (shown in Figure \ref{13g21}) in Figure \ref{13g2}.
+Rishnak said, ``Exactly. Graphs are usually used as models for physical or social processes. For example, when we consider cliques in a school, we can model students as vertices and two students belong to the same group as an edge between the associated vertices, which also note forms a binary relation. Imagine a graph of everyone in your school, with a vertex for each student and an edge for each friendship.  Finding cliques or, as in the field of data science, finding clusters is an important task.''
+
+Ajur thought about this for a few moments, trying to imagine a graph that would include all of his classmates at school.
+
+Rishnak said, ``Let us move on to another related topic. An \textit{independent set} in a graph is a set of vertices that are mutually nonadjacent, which means that we have a subset of vertices that does not include any adjacent vertices. Can you see how an independent set is related to a clique?''
+
+Ajur frowned, frustrated with the lesson so far. At length, Ajur said, ``No, I don't understand.''
+
+Rishnak also frowned, thinking, ``Oh no, if Ajur does not understand and then does not answer my question, I will remain trapped as a ghost forever.''
+
+Rishnak said, ``Let me give you a hint. A \textit{complement} of a graph~$G=(V,E)$ is another graph~$H=(V,E_1)$. Both have the same vertex set, but if two vertices are adjacent in~$G$, they are not adjacent in~$H$---and if two vertices are not adjacent in~$G$, then they are adjacent in~$H$. Can you draw the complement of the original graph''---he waved his hands and the four added edges disappeared to form the original graph [Figure~\ref{13g1}]---``in front of you?''
+
+Ajur looked at the graph. He grabbed a stick and, after scratching his head a few times, drew a new graph in the dirt [Figure~\ref{13g2}]. He said, ``Here is the complement of your graph.''
+
+Rishnak said, ``Yes, and how many edges will be in edge set~$E_1$ if the original graph has~$n$ vertices and~$e$ edges?''
+
+Ajur said, ``The maximum number of edges a graph with~$n$ vertices can have is~$\frac{1}{2}n(n-1)$, so then the number of edges in the complement of the graph is simply~$\frac{1}{2}n(n-1)-e$.''
 
 \begin{figure}
 \begin{center}
@@ -73,14 +93,22 @@ Rishnak then wanted Ajur to learn about independent set in a graph. An independe
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Complement of graph in \ref{13g21}}\label{13g2}
+\caption{The complement of the graph shown in Figure~\ref{13g1}}\label{13g2}
 \end{center}
 \end{figure}
 
-Ajur further said that the number of edges in the complement of the graph will be $n\times\frac{n-1}{2}-e$ where original graph has $n$ 
-vertices and $e$ edges. Hence a maximal clique in a graph will be an independent set in the 
-complement of the graph. For the graph shown in Figure \ref{13g2}, the maximal independence sets are $\{2,3,4,5\}, \{1,2,5\}, \{4,6\}$ \footnote{Maximal here means that a super-set of it cannot be an independent set}. 
-These are also the maximal cliques in Figure \ref{13g1}. In a bipartite graph shown below Figure \ref{13g3}, the maximal independent sets are $\{1,2\}, \{3,4,5,6\}, \{2,6\}$.
+Rishnak said, ``Go on.''
+
+Ajur thought for a minute. What was he missing? How did all of these concepts relate to one another?
+
+Rishnak said, ``Well, Ajur, do you see it?''
+
+At last, Ajur said, ``I do, yes, I see! A clique in a graph~$G$ will be an independent set in the 
+complement of~$G$. In your original graph''---he pointed to the graph in the air in front of him [Figure~\ref{13g1}]---``the maximal independent sets are vertex sets~$\{2,3,4,5\}$, $\{1,2,5\}$, and~$\{4,6\}$. These are also the cliques!''
+
+Rishnak smiled. He flashed his hands and a new graph appeared in the air in front of Ajur [Figure~\ref{13g3}]. Rishnak said, ``Here is a bipartite graph, Ajur. Can you figure out what the maximal independent sets are in this graph?''
+
+Ajur studied the graph, then said, ``The maximal independent sets are vertex sets~$\{1,2\}$, $\{3,4,5,6\}$''---he hesitated, trying to find if there were any others--``and~$\{2,6\}$. I think that's all.''
 
 \begin{figure}
 \begin{center}
@@ -96,30 +124,65 @@ These are also the maximal cliques in Figure \ref{13g1}. In a bipartite graph sh
    \foreach \from/\to in {n1/n3,n1/n4,n1/n5,n2/n3,n2/n4,n2/n5,n1/n6}
     \draw (\from) -- (\to);
     \end{tikzpicture}
-\caption{ A Bipartite graph with 6 vertices and 7 edges}\label{13g3}
+\caption{A bipartite graph with six vertices and seven edges for which we wish to find all of the maximal independent sets (there are three)}\label{13g3}
 \end{center}
 \end{figure}
 
-Finding a maximal independent set is not hard, finding a maximum independent set is very hard - similar to finding a maximum clique. Maximum independent set refers to the maximal independent set which has the largest size. For the graph in Figure \ref{13g2}, the maximum independent set is $\{2,3,4,5\}$. For the graph in Figure \ref{13g3}, the maximum independent set is $\{3,4,5,6\}$.  Rishnak said that it is easy to find the maximum independent set in a tree. Ajur jumped up and down and said that he had a solution and described the following procedure. Ajur said that the input to his procedure is a rooted tree and the output is the maximum independent set.
+Rishnak nodded. He said, ``Finding a maximal independent set is not that hard, but finding a \textit{maximum independent set} is very hard, similar to finding a maximum clique. And what I mean here is this. A maximum independent set refers to the maximal independent set with the largest size. For the graph you still see in front of you [Figure~\ref{13g3}], the maximum independent set is~$\{3,4,5,6\}$. And for this other graph''---Rishnak waved his hands and the previous graph appeared [Figure~\ref{13g2}]---''the maximum independent set is~$\{2,3,4,5\}$.''
 
-Ajur also showed his procedure on the following example Figure \ref{13g4}.
+Ajur said, ``Can we simplify the problem by just looking at a tree?''
+
+Rishnak raised his eyebrows, pleased with Ajur's question.  He said, ``Yes, it is much easier to find the maximum independent set in a tree.  Can you come up with a procedure to do this?''
+
+Ajur jumped up and thought for a few moments. Before long, he had a solution in mind. He said, ``First, the input is rooted tree~$T$ and the output is maximum independent set~$X$. The algorithm is:
 \begin{enumerate}
-    \item Let maximum xndependent set, $X=\emptyset$
-    \item Add all the leaf vertices to a maximum independent set $X$.
-    \item Delete all the leaf vertices.\footnote {Deletion of a vertex means delete a vertex and delete all the edges incident on that vertex}
-    \item Delete all the newly created leaf vertices if there are any.
-    \item Go to step 2, if the tree is not empty.
-    \item $X$ is the maximum independent set of a tree.
+    \item Let~$X=\emptyset$.\footnote{Here,~$\emptyset$ is the symbol for an empty set, also written as~$\{\}$.}
+    \item Add all leaf vertices of~$T$ to set~$X$.
+    \item Delete all leaf vertices from~$T$, meaning we also delete all edges incident to each of these leaf vertices.
+    \item Next, delete all of the newly created leaf vertices, if any.
+    \item If tree~$T$ is not empty, go back to Step~2.
+    \item $X$ is the maximum independent set of tree~$T$.''
 \end{enumerate}
 
+Before Rishnak could say a word, Ajur excitedly drew a tree in the dirt [Figure~\ref{13g4}] and said, ``In this tree, the maximum independent set is vertex set~$\{4,5,6,7,1\}$.''
+
 \begin{figure}
 \begin{center}
 
 \begin{tikzpicture}
   [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
-  \node (n1) at (5.5,7) {1};
+  \tikzstyle{indset} = [draw=blue,line width=2pt]
+  \node[indset] (n1) at (5.5,7) {1};
   \node (n2) at (3,5)  {2};
   \node (n3) at (8,5)  {3};
+  \node[indset] (n4) at (2,3) {4};
+  \node[indset] (n5) at (4,3)  {5};
+  \node[indset] (n6) at (7,3)  {6};
+  \node[indset] (n7) at (9,3)  {7};
+
+  \foreach \from/\to in {n1/n2,n1/n3,n2/n4,n2/n5,n3/n6,n3/n7}
+    \draw (\from) -- (\to);
+
+\end{tikzpicture}
+\caption{A tree for which the maximum independent set is vertex set~$\{4,5,6,7,1\}$, shown as circled vertices}\label{13g4}
+\end{center}
+\end{figure}
+
+Rishnak said, ``A problem that is closely related to finding an independent set is finding what is called a \textit{vertex cover}. A vertex cover of a graph is a minimal subset of vertices that are incident to (or cover) all edges of the graph. In other words, if you delete all incident edges in a vertex cover, the remaining graph is always an empty graph, meaning a graph with no edges whatsoever.''
+
+Ajur nodded and said, ``How is that useful?''
+
+Rishnak said, ``Intuitively, if we place police officers at all vertices of the vertex cover, then they will be able to watch all of the edges, which may represent roadways in a city or corridors in a building. And since we want to employ as few police officers as possible, we want a minimal vertex cover, which here means that no subset of it is also a vertex cover.''
+
+\begin{figure}
+\begin{center}
+
+\begin{tikzpicture}
+  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
+  \tikzstyle{indset} = [draw=blue,line width=2pt]
+  \node (n1) at (5.5,7) {1};
+  \node[indset] (n2) at (3,5)  {2};
+  \node[indset] (n3) at (8,5)  {3};
   \node (n4) at (2,3) {4};
   \node (n5) at (4,3)  {5};
   \node (n6) at (7,3)  {6};
@@ -129,35 +192,18 @@ Ajur also showed his procedure on the following example Figure \ref{13g4}.
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ The maximum independent set is $\{4,5,6,7,1\}$}\label{13g4}
+\caption{The tree from Figure~\ref{13g4} for which the minimal vertex cover is vertex set~$\{2,3\}$ (shown as circled vertices), as all edges are incident on either vertex~2 or vertex~3}\label{13g5}
 \end{center}
 \end{figure}
 
-A closely related problem to finding an independent set is finding a vertex cover. A vertex cover of a graph is a minimal subset of vertices that cover all the edges of a graph. Alternatively, if you delete all the elements in a vertex cover, the remaining graph will be an empty graph (that is, a graph with no edges). Intuitively, if we place policewomen in all the vertices of the vertex cover, then the policewomen will be able to watch all the edges (may be roads or corridors). Since we wanted to employ as few policewomen as possible, we want a minimal vertex cover.\footnote{minimal vertex cover means that no subset of it is also a vertex cover}
-\begin{figure}
-\begin{center}
+Ajur said, ``Vertex cover and independent set seem to be related. Are they?''
 
-\begin{tikzpicture}
-  [scale=.6,auto=left,every node/.style={circle,fill=red!20}]
-  \node (n1) at (5.5,7) {1};
-  \node (n2) at (3,5)  {2};
-  \node (n3) at (8,5)  {3};
-  \node (n4) at (2,3) {4};
-  \node (n5) at (4,3)  {5};
-  \node (n6) at (7,3)  {6};
-  \node (n7) at (9,3)  {7};
+Rishnak smiled and replied, ``If~$X$ is a maximal independent set in a graph with~$V$ as its vertex set, then~$V-X$ is a minimal vertex cover. Similarly, if~$Y$ is a maximum independent set, then~$V-Y$ is a minimum vertex cover.''
 
-  \foreach \from/\to in {n1/n2,n1/n3,n2/n4,n2/n5,n3/n6,n3/n7}
-    \draw (\from) -- (\to);
+Ajur smiled, seeing the elegance and simplicity. He also was impressed at how all of these seemingly unrelated sets were actually related. Ajur was lost in thought for awhile, then said, ``Maximal independent set~$X$ contains no edges, as per its definition. And this implies that vertex set~$V-X$ covers all edges of the graph and that every edge is incident in some vertex of~$V-X$.''
 
-\end{tikzpicture}
-\caption{ The minimal vertex cover  is $\{2,3\}$ as all edges are incident on either 2 or 3}\label{13g5}
-\end{center}
-\end{figure}
+Rishnak said, ``In days long ago, parks were constructed at the junctions of roads in a village. Here is an old road map of Royt.'' Rishnak flashed his hands and a new graph appeared [Figure~\ref{13g6}]. He continued, ``What is the smallest number of parks that would need to be constructed in Royt such that there is at least a park at either end of each roadway or edge?''
 
-Ajur said that vertex cover and independent set seem to be related. Rishnak smiled and replied if $X$ is a maximal independent set in a graph with $V$ as vertex set, then $V-X$ is a minimal vertex cover. Similarly if $Y$ is a maximum independent set and $V-Y$ is a minimum vertex cover. Ajur was impressed how all these seemingly unrelated sets are actually related. Ajur thought for a while and he said he understood how maximal independent set and minimal vertex cover are related. Maximal independent set, $X$, contains no edges as per definition. This implies that vertex set  $V-X$ covers all edges of the graph or every edge is incident in some vertex of $V-X$.
-
-Rishnak wanted to test Ajur's understanding. He said that in olden days parks were constructed at the junctions of roads in a village. He asked Ajur, for the smallest number of parks that had to be constructed in the following Figure \ref{13g6} which shows the road map of Royt so that there is at least a park at either end of each edge.
 \begin{figure}
 \begin{center}
 
@@ -179,13 +225,27 @@ Rishnak wanted to test Ajur's understanding. He said that in olden days parks we
     \draw (\from) -- (\to);
 
 \end{tikzpicture}
-\caption{ Royt village road map}\label{13g6}
+\caption{An old village road map of Royt}\label{13g6}
 \end{center}
 \end{figure}
 
-Ajur was mesmerized by the beautiful layout of Royt village. It looked so symmetric. He was tentative in his answer and he said that he would construct just 5 parks in vertices 11, 3, 7, 8 and 1.   When asked how he found so quickly. Ajur responded saying that he tried to find a minimum vertex cover for the Figure \ref{13g6} and he knew that would satisfy the park requirements.
+Ajur was mesmerized by the almost ornate layout and symmetry of Royt. He studied the graph and said, ``I would construct five parks at vertices~1, 3, 7, 8, and~11.''
 
-\textbf{Question for eleventh day} What is the size of the maximum independent set in a complete binary tree of height 5 (This will have 32 leaf vertices)
+Rishnak raised his eyebrows and said, ``How did you come to that answer so quickly?''
 
-\textbf{Answer:} Ajur responded that the size of the maximum independent set will be 32+8+2 (vertices at alternate level) = 42 (as the minimum vertex cover size is 1+4+16=21).
-Rishnak was impressed. It was getting dark and both of them called it a night.
+Ajur said simply that he tried to find a minimum vertex cover to solve the problem.
+
+\subsection*{Question for the eleventh day}
+Rishnak smiled. He said, ``You are ready for the question for the eleventh day, Ajur. Here it is. What is the size of the maximum independent set in a complete binary tree of height~5?''
+
+\textit{Before you turn the page, try to come up with answers of your own!}
+
+\newpage
+\subsection*{Answer for the eleventh day}
+Ajur thought about the question, repeating it in his head. He said, ``Okay, a complete binary tree of height~5 will have 32~leaf vertices. From those leaf vertices, we go up the tree level by level, only counting vertices at alternating levels. So, the size of the maximum independent set will be~$32+8+2=42$.''
+
+Rishnak was impressed, but before he could say good night, Ajur said, ``And the minimum vertex cover size is~$1+4+16=21$.''
+
+Rishnak laughed.
+
+It was getting dark and both of them called it a night.

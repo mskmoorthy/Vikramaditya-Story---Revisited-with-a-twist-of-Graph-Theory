@@ -1,7 +1,14 @@
 \chapter{Instant Insanity Puzzle}
 
-Rishnak was examining the headstones of some graves and came across a headstone with a name Schossow\footnote{ Schossow got a patent for proposing this puzzle in 1899. \url{https://patents.google.com/patent/US646463A/en} }  on a grave. That brought him memories of the puzzle called the Great Tantalizer (also known as Instant Insanity). Schossow's puzzle had card suits (Hearts, Diamonds, Clubs and Spades) marked on each face. Frank Armbruster made a variation of this puzzle with colors instead of suits and that puzzle is called Instant Insanity Puzzle.
-Rishnak thought this puzzle with a graph theoretic solution would appeal to Ajur. Soon after, Rishnak spotted Ajur and Jura. Excitedly, Rishnak told Ajur that he wanted to talk about a puzzle, which has a short solution using graph theory or a long solution using a search technique. The puzzle consists of four cubes with each face colored as shown in Figure \ref{22p1}. 
+Rishnak was examining the headstones of some of the graves and came across a headstone with the name Schossow\footnote{Frederick Schossow received a patent in 1900 for proposing this puzzle in 1899, as described here: \url{https://patents.google.com/patent/US646463A/en}.} on a grave. Memories of this puzzle flooded Rishnak's senses. Schossow's puzzle had card suits (i.e.,~hearts, diamonds, clubs, and spades) marked on each face. In 1967, Frank Armbruster created a variation of this puzzle with colors instead of suits, which was published by Parker Brothers---that puzzle was called the ``instant insanity'' puzzle.
+
+Rishnak thought this puzzle, with its graph-theoretic solution, would certainly appeal to Ajur. It did not take long for Rishnak to find Ajur and Jura.
+
+Excitedly, Rishnak said, ``For our last day, we are going to talk about one of my favorite puzzles. This puzzle has a long solution that uses search techniques and a short solution that we can explore using some clever graph theory techniques.''
+
+Ajur, seeing Rishnak's enthusiasm, said, ``Sure, what's the puzzle?''
+
+Rishnak continued, ``The puzzle itself consists of four cubes numbered~$1,2,3,4$, with each face colored as shown in front of you.'' Rishnak waved his hands and a colorful display of cubes floated in front of Ajur [Figure~\ref{22p1}].
 
 \begin{newpage}
 \end{newpage}
@@ -38,11 +45,14 @@ Rishnak thought this puzzle with a graph theoretic solution would appeal to Ajur
 \fill [yellow] (9.5,-0.5) rectangle (10.0,0.0);
 \fill [blue] (9.5,0.5) rectangle (10.0,1.0);
 \end{tikzpicture}
-\caption{ Four Cubes}\label{22p1}
+\caption{The four cubes that make up the instant insanity puzzle}\label{22p1}
 \end{center}
 \end{figure}
 
-The problem is to stack the four cubes vertically (in a column) so that all the cubes in each side (left, right, front and back) have distinct colors.
+Rishnak said, ``The problem is to stack these four cubes vertically in a column such that all of the cubes on each side of the column (left, right, front, and back) have distinct colors. Here''---he flashed his hands and two cubes came together [Figure~\ref{22p2}]---``we have cube~4 sitting on top of cube~1. See that all faces have distinct colors?''
+
+Ajur nodded. He asked, ``We need to do that with all four cubes?''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -82,17 +92,21 @@ The problem is to stack the four cubes vertically (in a column) so that all the 
 %    \node at (\xy) {\xy};
 %}
 \end{tikzpicture}
-\caption{ Cube 4 on top of cube 1; all faces have distinct colors}\label{22p2}
+\caption{Cube~4 placed on top of cube~1 such that all faces have distinct colors}\label{22p2}
 \end{center}
 \end{figure}
 
-We have illustrated with two cubes, cube number 4 sitting on top of cube number 1 in Figure \ref{22p2}
+Rishnak nodded, unable to stop himself from smiling. He said, ``If we start with a brute force solution, also known as an exhaustive search technique, then for each cube, we have to choose which face should be at the bottom of the cube. There are six possibilities to choose from. And once we have decided on the color of the bottom face, there are four rotations for the sides of the cube. Therefore, we have~24 possibilities for each cube.''
 
-For a brute force solution (or exhaustive search technique), for each cube, we have to choose which face should be at the bottom of the cube. There are six possibilities to choose the bottom face. Once the bottom face is chosen, there are four rotations for the sides. Hence for each cube there are 24 possibilities. There are four cubes to be stacked, giving rise to $24 \times 24 \times 24 \times 24= 331776$ possibilities. By searching these possibilities, we will get a solution. Ajur interjected and said that for the bottom cube, we need not consider the four rotations. Rishnak was impressed  with Ajur and felt sorry  that he himself as he did not notice it earlier!
+Ajur caught on quickly. He said, ``And with four cubes to be stacked, that means we have~$24\times 24\times 24\times 24$ possibilities.''
 
-If we get one solution, then we also permute the cube positions without altering the constraints.
+Rishnak said, ``Correct, or~$24^4$, which equals~$331,776$ possibilities. By searching each of these~$331,776$ possibilities, we will find a solution and---''
 
-Rishnak said that we  could consider three opposite faces of each cube. There are four colors-- Red, Yellow, Green and Blue. They form the vertices. Two vertices (colors) are adjacent if they form the opposite sides of the same cube. For example the following graph represents the first cube Figure \ref{22g1}.  
+Ajur said, ``Wait, for the bottom cube, we don't need to consider the four rotations. Instead, we can fix that cube in place.''
+
+Rishnak smiled, impressed with Ajur's quickness. Rishnak continued, ``And if we find one solution, then we can also permute the cube positions without altering the constraints to find other solutions. We could consider three opposite faces of each cube. There are four colors---red, yellow, green, and blue---so these form the vertices. Two vertices (or colors) are adjacent if they form the opposite sides of the same cube.''
+
+Ajur was puzzled, so Rishnak waved his hands and showed an example graph [Figure~\ref{22g1}]. Rishnak said, ``This graph represents the first cube.'' He waved his hands again and again, forming three other graphs [Figure~\ref{22g2}] [Figure~\ref{22g3}] [Figure~\ref{22g4}], then said, ``Similarly, we can draw graphs for each of the other cubes.''
 
 \begin{figure}[h]
 \begin{center}
@@ -107,11 +121,9 @@ Rishnak said that we  could consider three opposite faces of each cube. There ar
   \draw[cyan,thick]
   (n3) to[out=210,in=330,looseness=4] (n3);
 \end{tikzpicture}
-\caption{ Graph for Cube 1}\label{22g1}
+\caption{The graph representing cube~1}\label{22g1}
 \end{center}
 \end{figure}
-
-Similarly we can draw the graphs for each of the cubes Figures \ref{22g2}, \ref{22g3} and \ref{22g4}.
 
 \begin{figure}[h]
 \begin{center}
@@ -125,7 +137,7 @@ Similarly we can draw the graphs for each of the cubes Figures \ref{22g2}, \ref{
  \foreach \from/\to in {n3/n1,n3/n4,n2/n4}
     \draw[orange,thick] (\from) -- (\to);
 \end{tikzpicture}
-\caption{ Graph for Cube 2}\label{22g2}
+\caption{The graph representing cube~2}\label{22g2}
 \end{center}
 \end{figure}
 
@@ -145,7 +157,7 @@ Similarly we can draw the graphs for each of the cubes Figures \ref{22g2}, \ref{
      \draw[black,thick]
   (n2) to[out=210,in=330,looseness=4] (n2);
 \end{tikzpicture}
-\caption{ Graph for Cube 3}\label{22g3}
+\caption{The graph representing cube~3}\label{22g3}
 \end{center}
 \end{figure}
 
@@ -163,11 +175,13 @@ Similarly we can draw the graphs for each of the cubes Figures \ref{22g2}, \ref{
 (n1) edge [bend right] (n4)
 (n2) edge [bend left] (n4);
 \end{tikzpicture}
-\caption{ Graph for Cube 4}\label{22g4}
+\caption{The graph representing cube~4}\label{22g4}
 \end{center}
 \end{figure}
 
-Now combining all these graphs in a single graph, we get a graph (looks complicated) Figure \ref{22g5}.
+Ajur was mesmerized by the graphs in front of him. He said, ``Now we need to combine these graphs, right?''
+
+Rishnak smiled broadly. He flashed his hands and the graphs came together to form one giant graph [Figure~\ref{22g5}].
 
 \begin{figure}[h]
 \begin{center}
@@ -192,22 +206,24 @@ Now combining all these graphs in a single graph, we get a graph (looks complica
 (n1) edge [bend right] (n4)
 (n2) edge [bend left] (n4);
 \end{tikzpicture}
-\caption{ Graph for all the cubes}\label{22g5}
+\caption{The graph representing all four of the cubes}\label{22g5}
 \end{center}
 \end{figure}
 
-From this graph, we need to get which faces of the cubes are chosen as sides. Essentially there are four sides-- front and back, left and right (For this problem, top and bottom faces are not relevant.) The graph shown in Figure \ref{22g5} has this information as a sub-graph. Let us try to get two sub-graphs with orientation, so that we know the order of the sides. The first sub-graph gives the front and back faces and the second sub-graph gives the left and right faces.
+Rishnak said, ``From this graph, we need to figure out which faces of the cubes are selected as sides of the column. Essentially, there are four sides---front, back, left, and right\footnote{For this problem, the top and bottom faces are not relevant.}---and the graph in front of you has this information as a subgraph. Let us try to obtain two subgraphs with orientation so that we know the order of the sides. The first subgraph will give us the front and back faces, while the second subgraph will give us the left and right faces.''
 
+Ajur scratched his head but continued to follow along.
 
-The constraints on the sub-graphs are:
+Rishnak continued, ``The constraints on the subgraphs are:
 \begin{enumerate}
-    \item The two sub-graphs should have no edge in common; as an edge represents front to back or left to right. We cannot use them for both.
-    \item Each sub-graph should contain an edge from each cube (so that we use all the four cubes). In the graph this means all the edges should be different colors.
-    \item The degree of each vertex should be two in the sub-graph - that is colors cannot be repeated as per the problem statement.
-    
+    \item The two subgraphs should have no edge in common since an edge represents front-to-back or left-to-right, and we cannot use them for both.
+    \item Each subgraph should contain an edge from each cube, which will make sure that we use all four of the cubes. In the graph, this means all of the edges should be different colors.
+    \item Each vertex should have a degree of~2 in the subgraph since the colors cannot repeat.''
 \end{enumerate}
 
-By examining the graph in Figure \ref{22g5}, we can get two sub-graphs as follows Figures \ref{22g6} and  \ref{22g7}.
+Ajur tried to keep up.
+
+Excitedly, Rishnak went on, waving his hands to form the two subgraphs [Figure~\ref{22g6}] [Figure~\ref{22g7}]. He said, ``From the original graph, we can extract these two subgraphs.''
 
 \begin{figure}[h]
 \begin{center}
@@ -227,7 +243,7 @@ By examining the graph in Figure \ref{22g5}, we can get two sub-graphs as follow
    \path [line width=0.35mm, purple] (n3) edge [->] (n2);
 ;
 \end{tikzpicture}
-\caption{ Sub-graph depicting front and back faces}\label{22g6}
+\caption{A subgraph depicting the front and back faces}\label{22g6}
 \end{center}
 \end{figure}
 
@@ -249,25 +265,29 @@ By examining the graph in Figure \ref{22g5}, we can get two sub-graphs as follow
    \path [line width=0.35mm, cyan] (n3) edge [->] (n2);
 ;
 \end{tikzpicture}
-\caption{ Sub-graph depicting left and right faces}\label{22g7}
+\caption{A subgraph depicting the left and right faces}\label{22g7}
 \end{center}
 \end{figure}
 
-From Figures \ref{22g6} and \ref{22g7}, we can find out what the four sides are. 
-The solution consists for each cube:
+Rishnak continued, ``From these two subgraphs, we can figure out what colors the four sides must be. Here is the solution for each cube.
 \begin{enumerate}
-    \item Cube 1: front is yellow, back is blue, left is red, right is green (edge color is cyan in the sub-graphs)
-    \item Cube 2: front is green, back is yellow, left is blue, right is red (edge color is orange in the sub-graphs)
-    \item Cube 3: front is blue, back is red, left is yellow, right is blue (edge color is black in the sub-graphs)
-    \item Cube 4: front is red m back is green, left is green, right is yellow (edge color is purple in the sub-grapgs)
-    
+    \item Cube 1: front is yellow, back is blue, left is red, right is green---and this corresponds to an edge color of cyan in the subgraphs.
+    \item Cube 2: front is green, back is yellow, left is blue, right is red---and this corresponds to an edge color of orange in the subgraphs.
+    \item Cube 3: front is blue, back is red, left is yellow, right is blue---and this corresponds to an edge color of black in the subgraphs.
+    \item Cube 4: front is red m back is green, left is green, right is yellow---and this corresponds to an edge color of purple in the subgraphs.''
 \end{enumerate}
 
-Ajur asked Rishnak how he would find the sub-graphs with the constraints he mentioned. Rishnak replied for the small case, one could do a visual inspection and get the decomposition. Otherwise, it is a hard problem.
+Ajur asked, ``How did you find the subgraphs with the constraints that you mentioned?''
 
-Ajur said, "suppose we have four cubes each cube colored in all faces with the same color. First cube is all red. Second cube is all yellow. Third cube is all blue and the fourth cube is all green. Then the two sub-graphs will be easy (and of course the solution is trivial)".
+Rishnak grinned and said, ``For a small case, we can do a visual inspection and obtain the decomposition, but in general, this is a very hard problem.''
 
-Graphs for all the four cubes is shown in Figure \ref{22g8}.
+Ajur said, ``Suppose we have four cubes, with each cube colored on all faces with the same color. So the first cube is all red, the second cube is all yellow, the third cube is all blue, and the fourth cube is all green. Then the two subgraphs will be easy to extract---and of course the solution is trivial.''
+
+Rishnak waved his hands and four new graphs appeared [Figure~\ref{22g8}].  He said, ``Yes, here are the original four graphs. And the decomposition into two subgraphs is shown here.''
+
+He flashed his hands again and two more figures appeared [Figure~\ref{22g9}] [Figure~\ref{22g10}].
+
+
 \tikzset{every loop/.style={min distance=10mm,looseness=10}}
 
 \begin{figure}[h]
@@ -297,11 +317,10 @@ Graphs for all the four cubes is shown in Figure \ref{22g8}.
    (n2) edge  [loop below] (n2); 
    
 \end{tikzpicture}
-\caption{ Graph for all Cubes}\label{22g8}
+\caption{A graph for all four of the cubes}\label{22g8}
 \end{center}
 \end{figure}
 
-The decomposition into two sub-graphs is shown in Figures \ref{22g9} and \ref{22g10}.
 \begin{figure}[h]
 \begin{center}
 \begin{tikzpicture}
@@ -325,7 +344,7 @@ The decomposition into two sub-graphs is shown in Figures \ref{22g9} and \ref{22
     
    
 \end{tikzpicture}
-\caption{ Sub-graph of front and back faces}\label{22g9}
+\caption{A subgraph for the graph shown in Figure~\ref{22g8} representing the front and back faces}\label{22g9}
 \end{center}
 \end{figure}
 \begin{figure}[h]
@@ -351,21 +370,30 @@ The decomposition into two sub-graphs is shown in Figures \ref{22g9} and \ref{22
     
    
 \end{tikzpicture}
-\caption{ Sub-graph of left and right faces}\label{22g10}
+\caption{A subgraph for the graph shown in Figure~\ref{22g8} representing the left and right faces}\label{22g10}
 \end{center}
 \end{figure}
 
-Ajur said that the solution is
+Before Rishnak could speak further, Ajur quickly said, ``Aha, the solution is then this.
 \begin{enumerate}
-    \item Cube 1: Front is red, back is red, left is red and right is red.
-    \item Cube 2: Front is yellow, back is yellow, left is yellow and right is yellow.
-    \item Cube 3: Front is blue, back is blue, left is blue and right is blue.
-    \item Cube 4: Front is green, back is green, left is green and right is green.
+    \item Cube 1: front is red, back is red, left is red, right is red.
+    \item Cube 2: front is yellow, back is yellow, left is yellow, right is yellow.
+    \item Cube 3: front is blue, back is blue, left is blue, right is blue.
+    \item Cube 4: front is green, back is green, left is green, right is green.''
 \end{enumerate}
 
-By this time, Ajur felt he had a clear understanding of all the concepts in graph theory. He thanked Rishnak for presenting him such interesting problems.
+By this time, from the past nineteen days, Ajur felt he had a very clear understanding of all of the concepts of graph theory they had covered, as well as a desire to keep learning more.
 
-\textbf{Question for the twentieth day:} Decompose the following graph for all new sets of cubes (just drew the color of one face of one of the cubes) Figure \ref{22gq1}
+He faced Rishnak and said, ``Rishnak, thank you for teaching me and helping me understand all of these wonderfully interesting problems.''
+
+Rishnak blushed (if that is possible for a ghost).
+
+\subsection*{Question for the twentieth day}
+After a few moments, Rishnak said, ``At long last, we have arrived at the twentieth day. I have one last question for you, Ajur. I hope you can answer it, as it will also set me free.''
+
+Ajur took a deep breath and said, ``I will do my best.''
+
+Rishnak said, ``Can you decompose this graph''---Rishnak flashed his hands and a final graph appeared [Figure~\ref{22gq1}]---``for all new sets of cubes by drawing the color of one face of one of the cubes?''
 
 \begin{figure}[h]
 \begin{center}
@@ -389,11 +417,18 @@ By this time, Ajur felt he had a clear understanding of all the concepts in grap
 (n1) edge [bend right] (n4)
 (n2) edge [bend left] (n4);
 \end{tikzpicture}
-\caption{ Graph for all the new cubes}\label{22gq1}
+\caption{A graph for all of the new cubes}\label{22gq1}
 \end{center}
 \end{figure}
 
-\textbf{Answer:} Ajur was able to decompose the graphs (same as before!) \ref{22ga2} and \ref{22ga3}
+\textit{Before you turn the page, try to come up with answers of your own!}
+
+\newpage
+\subsection*{Answer for the twentieth day}
+Ajur tried to decompose the graphs using the same approach as before.
+Before long, he drew two final subgraphs in the dirt [Figure~\ref{22ga2}] [Figure~\ref{22ga3}].
+He said, ``Here are the two subgraphs, Rishnak.''
+
 \begin{figure}[h]
 \begin{center}
 \begin{tikzpicture}
@@ -412,7 +447,7 @@ By this time, Ajur felt he had a clear understanding of all the concepts in grap
    \path [line width=0.35mm, purple] (n3) edge [->] (n2);
 ;
 \end{tikzpicture}
-\caption{ Sub-graph depicting front and back faces}\label{22ga2}
+\caption{The subgraph from the graph in Figure~\ref{22q1} depicting the front and back faces}\label{22ga2}
 \end{center}
 \end{figure}
 
@@ -434,7 +469,12 @@ By this time, Ajur felt he had a clear understanding of all the concepts in grap
    \path [line width=0.35mm, cyan] (n3) edge [->] (n2);
 ;
 \end{tikzpicture}
-\caption{ Sub-graph depicting left and right faces}\label{22ga3}
+\caption{The subgraph from the graph in Figure~\ref{22q1} depicting the left and right faces}\label{22ga3}
 \end{center}
 \end{figure}
-Ajur and Jura bade good bye to Rishnak.  Kinaja was watching them from a distance. She smiled to herself that Ajur not only understood the concepts but also had the decency to thank Rishnak!
+
+Rishnak smiled like he had never smiled before. He said, ``Correct.''
+
+Ajur smiled back and said, ``Thank you, Rishnak.''
+
+Ajur and Jura said their goodbyes to Rishnak. Not far away, Kinaja watched, smiling to herself that Ajur not only understood the concepts but also had the decency to thank Rishnak for all of his efforts.

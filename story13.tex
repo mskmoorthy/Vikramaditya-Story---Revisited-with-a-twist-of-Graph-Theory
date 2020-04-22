@@ -1,12 +1,15 @@
 \chapter{Strongly Connected Directed Graphs}
-Rishnak wanted to continue his discussion with Ajur on the topic of directed graphs and caught up with Ajur and Jura on their stroll. Rishnak started with asking Ajur if he remembered what relations are. Ajur replied that the relation could be symmetric like a facebook friend (that is if A is a friend of B, then B is also a friend of A - resulting in a friendship
-undirected graph.
-The relation can also be asymmetric - like a twitter follower (that is if X follows the twitter
-feed of Y, Y need not follow the twitter feed of X) - resulting in a twitter directed graph.
-Rishnak added that there are many relations which are asymmetric like less than or precedence relations or parent relation or winner relation. In each case, we get a directed graph representing the asymmetric relation.
-Similar to path and walk in an undirected graph, we can define path and walk in directed graph (which we discussed in Chapter 6).
+Rishnak wanted to continue his discussion with Ajur on the topic of directed graphs\footnote{Sometimes directed graphs are called \textit{digraphs}} and caught up with Ajur and Jura.
 
-An undirected graph is connected if there is a path between every pair of vertices. A directed graph is strongly connected, if there is directed path between every pair of vertices. Rishnak showed the following example Figure \ref{15g1}
+Rishnak asked Ajur if he remembered what relations were.
+
+Ajur said, ``I think so, yes. A relation describes how two things interact with one another, so a relation could be symmetric like a friendship---if person~A is a friend of person~B, then person~B is also a friend of person~A. This would be an undirected graph.''
+
+Rishnak nodded and said, ``Right, and a relation can also be asymmetric, like a follower on social media---if person~A follows the feed of person~B, it might not be the case that person~B follows person~A---and this would be a directed graph. There are many relations that are asymmetric, for example less than or precedence relations, as well as parent or winner relations. In each case, we can model the asymmetric relation as a directed graph.''
+
+Ajur nodded, understanding thus far.
+
+Rishnak continued, ``Similar to a path or a walk in an undirected graph, we can also define a path or a walk in directed graph. Remember an undirected graph is connected if there is a path between every pair of vertices. A directed graph is said to be \textit{strongly connected} if there is directed path between every pair of vertices. Here''---Rishnak flashed his hands and a graph appeared [Figure~\ref{15g1}]---``look at this graph.''
 
 \begin{figure}
 \begin{center}
@@ -24,11 +27,15 @@ An undirected graph is connected if there is a path between every pair of vertic
         (n4) edge  (n1);
 
 \end{tikzpicture}
-\caption{ Strongly connected directed graph (or di-graph) - there is a path between every pair of vertices}\label{15g1}
+\caption{Strongly connected directed graph for which there is a path between every pair of vertices}\label{15g1}
 \end{center}
 \end{figure}
 
-Ajur noted that the above directed graph remains strongly connected with fewer number of edges and  drew the graph in Figure \ref{15g2}
+Ajur said, ``From any vertex, we can follow one or more directed edges to get to any other vertex in the graph.''
+
+Rishnak said, ``Exactly. Can you construct a directed graph with four vertices that is strongly connected with a minimal number of edges?''
+
+Ajur thought for a moment, grabbed a stick, and drew a graph in the dirt [Figure~\ref{15g2}]. He said, ``Sure, this graph is strongly connected with only four edges.''
 
 \begin{figure}
 \begin{center}
@@ -45,11 +52,12 @@ Ajur noted that the above directed graph remains strongly connected with fewer n
         (n4) edge  (n1);
 
 \end{tikzpicture}
-\caption{ Strongly connected di-graph - there is a path between every pair of vertices and has the smallest number of edges}\label{15g2}
+\caption{Strongly connected directed graph with a minimal number of edges for which there is a path between every pair of vertices}\label{15g2}
 \end{center}
 \end{figure}
 
-Pleased, Rishnak added that a strongly connected directed graph should have at least $n$ edges. But a directed graph may not be strongly connected even with $\frac{n \times (n-1)}{2}$ edges - an example is shown in Figure \ref{15g3}
+Pleased, Rishnak said, ``Precisely. A strongly connected directed graph must have at least~$n$ edges, but we can have a directed graph that is not strongly connected even with~$\frac{1}{2}n(n-1)$ edges.''---Rishnak waved his hands and a new graph appeared [Figure~\ref{15g3}]---``How many edges do we need to add to this graph to make it strongly connected?''
+
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -67,19 +75,29 @@ Pleased, Rishnak added that a strongly connected directed graph should have at l
         (n1) edge  (n4);
 
 \end{tikzpicture}
-\caption{ Not a strongly connected di-graph}\label{15g3}
+\caption{A directed graph that is not strongly connected}\label{15g3}
 \end{center}
 \end{figure}
 
-Rishnak then asked Ajur how many edges one needed to add to Figure \ref{15g3} to make it strongly connected. Ajur thought a bit and said if an edge from vertex 4 to vertex 1 is added then the digraph would become strongly connected. Rishnak was impressed with Ajur's immediate response. Probing further, Rishnak asked Ajur how many edges should be removed from Figure \ref{15g1} to make it not strongly connected. Ajur was up to task and answered that if edge from vertex 1 to 2 is deleted then the directed graph is not strongly connected (as no vertex is reachable from vertex 1.) \footnote{Edge deletion problems relate to edge failures and they have been well studied.}
+Ajur thought for a minute, then said, ``Just one edge. If we add an edge from vertex~4 to vertex~1, then the directed graph would become strongly connected since we could get from any vertex to any other vertex.''
 
-Transitive closure of a directed graph $G=(V,E)$ is a directed graph $H=(V,E_1)$ that there is a directed edge between two vertices $x$ and $y$, if there is a directed path from vertex $x$ to vertex $y$ in $G$. Ajur could not contain his excitement and said that the transitive closure of a strongly connected graph will be a complete directed graph. Ajur gave the following reasons of his observation:
+Rishnak smiled. Probing further, he asked, ``In this first graph [Figure~\ref{15g1}], how many edges must we remove to make it not strongly connected?''
+
+Ajur quickly said, ``Again just one edge. If the edge from vertex~1 to vertex~2 was removed, then the directed graph would no longer be strongly connected since no vertex is reachable from vertex~1.''
+
+Rishnak's smile broadened. He said, ``Good. This is an important concept to master, since edge removal problems relate to edge failures in a wide variety of problems that we can model using graphs.''
+
+Rishnak paused for a moment, then said, ``The \textit{transitive closure} of directed graph~$G=(V,E)$ is directed graph~$H=(V,E_1)$ such that there is a directed edge in~$H$ between two vertices~$u$ and~$v$ if there is a directed path from vertex~$u$ to vertex~$v$ in~$G$.''
+
+Ajur could not contain his excitement as he said, ``I see. And the transitive closure of a strongly connected graph will always be a complete directed graph. Let me draw the graph.''---Ajur hurriedly drew a new graph in the dirt [Figure~\ref{15g4}]---``Here is the transitive closure of both of the graphs you have shown me.''
+
+Rishnak said, ``And how do you reason that?''
+
+Ajur said, ``Two key points:
 \begin{enumerate}
-    \item In the orginal directed graph there is a directed path between very pair of vertices as it is given to be strongly connected
-    \item In the transitive closure graph there is an edge between every pair of vertices as there is a path between every pair of vertices in the original graph.
+    \item In the original directed graph, there is a directed path between every pair of vertices. We know this because the graph is strongly connected.
+    \item In the transitive closure graph, there is an edge between every pair of vertices since there is a path between every pair of vertices in the original graph.''
 \end{enumerate}
-
-The transitive closure of directed graphs shown in Figures \ref{15g1} and \ref{15g2} is given in Figure \ref{15g4}
 
 \begin{figure}
 \begin{center}
@@ -104,35 +122,36 @@ The transitive closure of directed graphs shown in Figures \ref{15g1} and \ref{1
         (n4) edge  (n1);
 
 \end{tikzpicture}
-\caption{ Transitive closure of di-graphs in \ref{14g1} and \ref{14g2}}\label{15g4}
+\caption{The transitive closure of the directed graphs shown in Figure~\ref{15g1} and Figure~\ref{15g2}}\label{15g4}
 \end{center}
 \end{figure}
 
-For example, in a facebook page or a twitter feed, if some one posts a message, it will be visible to his friends. If his friends share that post or tweet, then that post will be visible to all the friends of that friend. That is how transitive closure works. If you post any message in a social media, it will be seen
-by almost every one!
+Rishnak nodded.
 
+Ajur continued, ``For example, on a social media page, if I post a message, it's visible to my friends. And if my friends share that post, then that post will become visible to all friends of that friend. That's how transitive closure works. If someone posts a message, it quickly will be seen
+by almost everyone!''
 
-Rishnak then told Ajur about the book Dudney 536 Puzzles and Curious Problems and that one particular problem in that book may be of interest to Ajur and relevant to this topic. Problem number 452 says that there are four teams Scotland, England, Wales and Ireland. The following table \ref {14t1} shows the result of their matches. Rishnak asked Ajur if he could draw a directed graph for this? 
+Rishnak smiled and said, ``Yes, exactly. Here is a similar problem, this one from one of my favorite books by Henry Ernest Dudeney.\footnote{The book is ``536 Puzzles and Curious Problems.''} Problem~452 states that we have four teams, Scotland, England, Wales, and Ireland. This table of data''---Rishnak flashed his hands and the data appeared in front of Ajur [Table~\ref{15t1}]---``shows the results of their football matches, well soccer I mean. Can you model this problem using a directed graph?''
+
 \begin{table}
 \begin{center}
 \begin{tabular}{ |p{3cm}||p{1.5cm}||p{1.5cm}||p{1.5cm}||p{1.5cm}||  }
  \hline
- \multicolumn{5}{|c|}{Result of Games} \\
+ \multicolumn{5}{|c|}{Game Results} \\
  \hline
- Country Name & Played &Won&Lost&Drawn\\
+ Country Name & Played & Won & Lost & Drawn \\
  \hline
- Scotland  & 3    &3&0&0\\
- England& 3& 1 &1&1\\
- Wales&3 &1&1&1\\
- Ireland    &3 &0&3&0\\
- 
- \hline
+ Scotland & 3 & 3 & 0 & 0 \\
+ England  & 3 & 1 & 1 & 1 \\
+ Wales    & 3 & 1 & 1 & 1 \\
+ Ireland  & 3 & 0 & 3 & 0 \\
+  \hline
 \end{tabular}
-\caption{Results of 6 Soccer Matches}\label{14t1}
+\caption{Results of six football (soccer) matches}\label{15t1}
 \end{center}
 \end{table}
 
-Ajur thought for a bit and he was able to draw the directed graph as Scotland won all matches and Ireland lost all matches and hence Wales and England must have drawn. His directed graph is shown in Figure \ref{15g33}.
+Ajur thought for a bit and was able to draw a directed graph corresponding to this table [Figure~\ref{15g33}]. He said, ``Scotland won all of its matches, while Ireland lost all of its matches. And therefore, Wales and England must have come to a draw.''
 
 \begin{figure}
 \begin{center}
@@ -152,35 +171,33 @@ Ajur thought for a bit and he was able to draw the directed graph as Scotland wo
         (n3) edge (n4);
 
 \end{tikzpicture}
-\caption{ A directed Graph for soccer matches, S represents Scotland, E represents England, W represents Wales and I represents Ireland}\label{15g33}
+\caption{A directed graph corresponding to the football (soccer) matches shown in Table~\ref{15t1}, with S representing Scotland, E representing England, W representing Wales, and I representing Ireland}\label{15g33}
 \end{center}
 \end{figure}
 
-Rishnak added that Scotland defeated England by 3-0 and the rest of the goals for and against were
-shown in Table \ref{14t2} Rishank asked Ajur whether he could get all the scores of the rest of the five games.
+Rishnak said, ``Scotland defeated England with a~3-0 record. The goals for and against are
+shown in this table''---Rishnak waved his hands and a new table of data appeared [Table~\ref{14t2}]---``Can you figure out all of the scores of the rest of the five games?''
+
 \begin{table}
 \begin{center}
 \begin{tabular}{ |p{3cm}||p{1.5cm}||p{1.5cm} || }
  \hline
  \multicolumn{3}{|c|}{Goals} \\
  \hline
- Country Name & For&Against\\
+ Country Name & For & Against \\
  \hline
- Scotland  & 7    &1\\
- England& 2&3\\
- Wales&3&3\\
- Ireland&1&6\\
+ Scotland & 7 & 1 \\
+ England  & 2 & 3 \\
+ Wales    & 3 & 3 \\
+ Ireland  & 1 & 6 \\
  
  \hline
 \end{tabular}
-\caption{Goals For and Against}\label{14t2}
+\caption{Goals for and against for each team}\label{14t2}
 \end{center}
 \end{table}
 
-Ajur was challenged. He could get the scores of England immediately, England defeated Ireland by a score of 2-0 and drew with Wales 0-0. Now he reasoned Scotland defeated Wales by a score of 2-1 and defeated Ireland by a score 2-0.\footnote{Ajur tried various combinations and failed and finally got this.} These
-satisfied the goals for and against Scotland and England. Finally Wales defeated Ireland by a score of 2-1
-and all things matched.
-Ajur drew the following table \ref{14t3}
+Ajur frowned. He could figure out the scores for England immediately, seeing that England defeated Ireland by a score of~2-0 and came to a~0-0 draw with Wales. He spent many long minutes trying various combinations until he finally found a solution. He said, ``Aha, Scotland defeated Wales by a score of~2-1 and defeated Ireland by a score of~2-0. These matched up with the goals for and against Scotland and England. So then Wales defeated Ireland by a score of~2-1. Here, let me write down the results.'' He drew the scores of the six games in the dirt [Table~\ref{14t3}].
 
 \begin{table}
 \begin{center}
@@ -190,20 +207,23 @@ Ajur drew the following table \ref{14t3}
  \hline
  Country Name & Country Name &Score\\
  \hline
- Scotland  & England    &3-0\\
- Scotland& Wales&2-1\\
- Scotland&Ireland&2-0\\
- England&Wales&0-0\\
- England&Ireland &2-0\\
- Wales&Ireland&2-1\\
- 
- 
- \hline
+ Scotland & England & 3-0 \\
+ Scotland & Wales   & 2-1 \\
+ Scotland & Ireland & 2-0 \\
+ England  & Wales   & 0-0 \\
+ England  & Ireland & 2-0 \\
+ Wales    & Ireland & 2-1 \\
+  \hline
 \end{tabular}
-\caption{Goal scores in six soccer games}\label{14t3}
+\caption{Scores of the six football (soccer) games}\label{14t3}
 \end{center}
 \end{table}
-A directed graph is acyclic (sometimes called as Directed Acyclic Graph or DAG), if there are no directed cycles in the graph. Ajur drew an example of a DAG in Fifure \ref{15g5}
+
+%%%%%%%%%%% maybe expand this to relate it to directed graphs and strongly connected components
+
+Rishnak said, ``Good, Ajur. And you should see if you can relate these data to a directed graph. For now, here is one more new concept. A directed graph is acyclic if there are no directed cycles in the graph. Such a graph is called a \textit{directed acyclic graph} or \textit{DAG} for short. Can you draw one?''
+
+Ajur drew a DAG in the dirt [Figure~\ref{15g5}].
 
 \begin{figure}
 \begin{center}
@@ -219,11 +239,14 @@ A directed graph is acyclic (sometimes called as Directed Acyclic Graph or DAG),
         (n3) edge (n4);
 
 \end{tikzpicture}
-\caption{ A directed acyclic graph (DAG)}\label{15g5}
+\caption{A directed acyclic graph with four vertices and three edges}\label{15g5}
 \end{center}
 \end{figure}
 
-Rishnak said that DAG may also contain an undirected cycle but not a directed cycle and hence it would still be called a DAG. Rishnak added a few more edge to Figure \ref{15g5} and still remained acyclic as shown in Figure \ref{15g6}
+Rishnak said, ``A DAG may contain what look like undirected cycles, but it remains a DAG as long as there are no directed cycles.''
+Rishnak waved his hands and the graph that Ajur drew appeared in the air. Rishnak said, ``I can add more directed edges''---Rishnak added three more edges [Figure~\ref{15g6}]---``and still this graph is a DAG since it is still acyclic.''
+
+%%Ajur said, ``I see.''
 
 \begin{figure}
 \begin{center}
@@ -242,12 +265,17 @@ Rishnak said that DAG may also contain an undirected cycle but not a directed cy
         (n2) edge (n4);
 
 \end{tikzpicture}
-\caption{ A directed acyclic graph - even though it contains undirected cycles }\label{15g6}
+\caption{Another directed acyclic graph}\label{15g6}
 \end{center}
 \end{figure}
 
-\textbf{Question for thirteenth day:} Make the directed graph in Figure \ref{15g5} strongly connected. 
+\subsection*{Question for the thirteenth day}
+Rishnak said, ``Let me now ask you the question for the thirteenth day. Can you add one edge to make the directed graph you drew in the dirt [Figure~\ref{15g5}] strongly connected?''
 
-\textbf{Answer:} Ajur responded immediately, saying  addition of a directed edge from vertex 4 to vertex 1 would make that directed graph strongly connected.
+\textit{Before you turn the page, try to come up with an answer of your own!}
 
-It was getting dark and Jura and Ajur wanted to continue on their stroll. Rishnak bade them good night.
+\newpage
+\subsection*{Answer for the thirteenth day}
+Ajur responded immediately, ``Sure, that's easy. We can just add a directed edge from vertex~4 to vertex~1 to make the directed graph strongly connected.''
+
+It was getting dark and Jura and Ajur wanted to finish their stroll. Rishnak bade them good night.
