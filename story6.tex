@@ -65,7 +65,7 @@ Rishnak waved his hands again and a third graph appeared [Figure~\ref{8g2}].  ``
 
 Ajur said ``I see the differences, but when are two graphs the same?''
 
-Rishnak smiled and said, ``Good question. Two graphs are called \textit{isomorphic}---meaning structurally the same---if they are equivalent under a vertex relabeling. For example, if in the third graph [Figure~\ref{8g2}], vertex~2 is relabeled as vertex~3 and similarly vertex~3 is relabeled as vertex~2, then the third graph becomes equivalent or isomorphic to the other two graphs.''
+Rishnak smiled and said, ``Good question. Two graphs are called \textit{isomorphic}---meaning structurally the same---if they are equivalent under a vertex relabeling \index{isomorphism}. For example, if in the third graph [Figure~\ref{8g2}], vertex~2 is relabeled as vertex~3 and similarly vertex~3 is relabeled as vertex~2, then the third graph becomes equivalent or isomorphic to the other two graphs.''
 
 Ajur studied the third graph again and said, ``Aha, I see.''
 
@@ -123,7 +123,7 @@ Rishnak smiled.
 
 Ajur thought for awhile, then said that partial solutions to the graph isomorphism problem would be very useful if you wanted to test whether a given graph is in a collection of graphs, a problem that comes up in chemistry.
 
-Rishnak was pleased that Ajur was thinking about some of the practical applications of graph theory. Rishnak said, ``There is an easier method to test for isomorphism between two rooted trees. Let's start with how we can encode a labeled tree. We'll use an approach called a Pr\"ufer code. The construction is iterative, and the Pr\"ufer code of a labeled tree with~$n$ vertices is a code of length~$n-2$. Here's the algorithm, but first, remember that a leaf of a tree is a vertex that is connected to only one other vertex.
+Rishnak was pleased that Ajur was thinking about some of the practical applications of graph theory. Rishnak said, ``There is an easier method to test for isomorphism between two rooted trees. Let's start with how we can encode a labeled tree. We'll use an approach called a Pr\"ufer code. \index{Pr\"ufer code} The construction is iterative, and the Pr\"ufer code of a labeled tree with~$n$ vertices is a code of length~$n-2$. Here's the algorithm, but first, remember that a leaf of a tree is a vertex that is connected to only one other vertex.
 
 \begin{enumerate}
 \item Let Pr{\"u}fer code~$P_c$ be an empty string.
@@ -193,7 +193,7 @@ Ajur chuckled at the bad joke.
 
 Rishnak continued, ``Instead of asking whether two graphs are structurally the same and therefore isomorphic, given two graphs~$G$ and~$H$, the \textit{subgraph isomorphism} problem is to determine whether there is a subgraph of~$G$ that is isomorphic to~$H$.''
 
-Ajur said, ``A subgraph of~$G$. I understand. This approach could be used to test whether graph~$G$ with~$n$ vertices has a Hamiltonian cycle by choosing graph~$H$ to be a cycle of length~$n$ and asking whether there is a subgraph of~$G$ isomorphic to~$H$.''
+Ajur said, ``A subgraph of~$G$. I understand. This approach could be used to test whether graph~$G$ with~$n$ vertices has a Hamiltonian cycle by choosing graph~$H$ to be a cycle of length~$n$ and asking whether there is a subgraph of~$G$ isomorphic to~$H$.'' \index{subgraph}
 
 Rishnak nodded and said, ``Yes, and that is the reason why the subgraph isomorphism problem is hard. On the other hand, if both~$G$ and~$H$ are labeled graphs, there are heuristics to test whether~$H$ occurs in~$G$ as a subgraph. This type of labeled subgraph isomorphism problem has many applications in medical imaging and chemical structure identification.''
 

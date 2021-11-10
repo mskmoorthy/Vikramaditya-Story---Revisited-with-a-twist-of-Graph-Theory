@@ -3,7 +3,7 @@ Ajur was so enamored by Hamiltonian cycles, he was eager to meet Rishnak and lea
 
 Ajur said, ``I already know how to draw graphs.''
 
-Rishnak said, ``Wait, Ajur, there's much more to it. Listen. A planar drawing of a graph is one in which no edges cross each other (except at their endpoint vertices). By definition, a \textit{planar graph} is a graph for which there exists at least one planar drawing. And if a graph does not have any possible planar drawings, we call it a \textit{non-planar graph}.''
+Rishnak said, ``Wait, Ajur, there's much more to it. Listen. A planar drawing of a graph is one in which no edges cross each other (except at their endpoint vertices). By definition, a \textit{planar graph} \index{planar graph} is a graph for which there exists at least one planar drawing. And if a graph does not have any possible planar drawings, we call it a \textit{non-planar graph}.''
 
 \begin{figure}
 \begin{center}
@@ -133,7 +133,7 @@ Rishnak nodded and asked, ``What can we say about trees?''
 
 Ajur thought for a moment, then said, ``That's easy. All trees have a planar representation\footnote{Ajur liked monkeys and monkeys liked trees. It follows by transitivity that Ajur liked trees.} because there are no cycles.''
 
-Rishnak said, ``Right, trees are indeed easy to embed in a plane as there are no cycles. There are some interesting space-filling planar representations of trees, for example this one''---he waved his hands and an intricate planar drawing appeared in front of Ajur [Figure~\ref{9g7}].
+Rishnak said, ``Right, trees are indeed easy to embed in a plane as there are no cycles. There are some interesting space-filling planar representations of trees, for example this one''---he waved his hands and an intricate planar drawing appeared in front of Ajur [Figure~\ref{9g7}]. \index{space filling tree}
 
 Ajur marveled at the drawing.
 
@@ -170,7 +170,7 @@ Rishnak chuckled and said, ``If you imagine stretching vertex~$a3$ out toward yo
 Ajur studied the graph and said, ``Oh, I see now.''
 
 Rishnak continued, ``Think of each region in a planar representation as the \textit{face} of such a three-dimensional solid. Then Euler's formula relating the number of edges~$e$, the number of vertices~$n$, and the number of faces~$f$ of a planar graph is simply this.''
-
+\index{Euler's formula}
 Rishnak waved his hands and Euler's equation appeared as follows:
 \begin{equation}
 \label{eqn:euler}
@@ -188,7 +188,7 @@ Rishnak waved his hands and Euler's equation appeared as follows:
 \end{center}
 \end{figure}
 
-Rishnak said, ``Let me explain this a bit. Each region corresponds to a cycle in the graph that surrounds that region. It also defines the external region, which is sometimes also called the infinite region. We know there are~$n-1$ edges in a tree, so if we can find that tree in the given graph, then the rest of the~$e-(n-1)$ edges will form part of a cycle. This gets tricky and we will have to explore this at some point in the future.\footnote{Rishnak and Ajur end up discussing this in Chapter~11 when they talk about spanning trees in a connected graph and how to choose one.}
+Rishnak said, ``Let me explain this a bit. Each region corresponds to a cycle in the graph that surrounds that region. It also defines the external region, which is sometimes also called the infinite region. We know there are~$n-1$ edges in a tree, so if we can find that tree in the given graph, then the rest of the~$e-(n-1)$ edges will form part of a cycle. This gets tricky and we will have to explore this at some point in the future.\footnote{Rishnak and Ajur end up discussing this in Chapter~12 when they talk about spanning trees in a connected graph and how to choose one.}
 %\textbf{You implicitly pick a spanning tree, which you have not yet discussed! Consider saying: it turns out, as we'll learn in Chapter ***, that there exists a ``maximal tree" of any graph.} 
 Each of these cycles correspond to an internal region---in other words, an internal face---and one external face. From this, Euler's equation (\ref{eqn:euler}) follows.''
 
@@ -271,7 +271,7 @@ Rishnak smiled and said, ``Good. All Platonic solids have a planar representatio
 \end{center}
 \end{figure}
 
-Rishnak said, ``Notice that each edge appears in exactly two faces. If each face is a triangle---therefore a cycle of length~3---the graph is called a \textit{maximal planar graph}. From this, we can deduce~$e=\frac{3f}{2}$, or~$f=\frac{2e}{3}$. Substituting this for~$f$ in Euler's equation (\ref{eqn:euler})''---Rishnak waved his hands and equations floated in the air in front of Ajur---``we can solve for~$e$.''
+Rishnak said, ``Notice that each edge appears in exactly two faces. If each face is a triangle---therefore a cycle of length~3---the graph is called a \textit{maximal planar graph}. From this, we can deduce~$e=\frac{3f}{2}$, or~$f=\frac{2e}{3}$. Substituting this for~$f$ in Euler's equation (\ref{eqn:euler})''---Rishnak waved his hands and equations floated in the air in front of Ajur---``we can solve for~$e$.'' \index{maximal planara graph}
 
 \begin{eqnarray}
   \label{eqn:maxplanar}  

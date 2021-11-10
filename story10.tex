@@ -3,7 +3,7 @@ Ajur had found a map of the cemetery. He used it to try to find the best way to 
 
 Rishnak overheard Ajur and realized that a good discussion of paths and shortest paths would be an ideal topic to pursue next.
 
-Rishnak said, ``Consider a graph\footnote{For spanning trees, we consider only undirected graphs; however, for shortest paths we can consider both undirected and directed graphs.} in which you wish to find the shortest path from a specified source vertex to a specified destination vertex. Let's look at this familiar graph.''---Rishnak waved his hands and an undirected graph appeared in front of Ajur [Figure~\ref{12g1}]---``What's the shortest path from vertex~1 to vertex~6?''
+Rishnak said, ``Consider a graph\footnote{For spanning trees, we consider only undirected graphs; however, for shortest paths we can consider both undirected and directed graphs.} in which you wish to find the shortest path from a specified source vertex to a specified destination vertex. Let's look at this familiar graph.''---Rishnak waved his hands and an undirected graph appeared in front of Ajur [Figure~\ref{12g1}]---``What's the shortest path from vertex~1 to vertex~6?'' \index{shortest path}
 
 \begin{figure}
 \begin{center}
@@ -72,7 +72,7 @@ Ajur thought for a moment, then said, ``The first element of the queue is now ve
 
 Ajur marveled at the systematic procedure that could be applied to any graph. He also realized that this procedure could be used to find the shortest path from a single source to all other vertices in a given graph. As he thought about this further, he said, ``And we could use this same algorithm to find the shortest paths between every pair of vertices in a graph.''
 
-Rishnak smiled and said, ``There is a graph parameter called the \textit{diameter} of a graph. The diameter is the longest path from among the shortest paths between every pair of vertices. For the example graph we have been using [Figure~\ref{12g1}], the diameter is~3 since the shortest paths between every pair of vertices are of lengths~1, 2, and~3.''
+Rishnak smiled and said, ``There is a graph parameter called the \textit{diameter} of a graph. The diameter is the longest path from among the shortest paths between every pair of vertices. For the example graph we have been using [Figure~\ref{12g1}], the diameter is~3 since the shortest paths between every pair of vertices are of lengths~1, 2, and~3.'' \index{diameter}
 
 Ajur nodded.
 
@@ -169,7 +169,7 @@ Rishnak said, ``Here is another interesting problem. Can we construct a regular 
 
 Ajur shrugged his shoulders and said, ``But how many vertices?''
 
-Rishnak smiled as he continued, ``Yes, Ajur, an answer here is a set of graphs called \textit{Moore} graphs. In addition to diameter~$k$, we define degree~$d$ for the graph, meaning that each vertex has degree~$d$. Then we can calculate the number of vertices in the graph using this formula.''
+Rishnak smiled as he continued, ``Yes, Ajur, an answer here is a set of graphs called \textit{Moore} graphs. In addition to diameter~$k$, we define degree~$d$ for the graph, meaning that each vertex has degree~$d$. Then we can calculate the number of vertices in the graph using this formula.'' \index{Moore graph}
 
 Rishnak flashed his hands and the following formula appeared in the air in front of Ajur:
 $$\text{number of vertices} = 1+\sum_{i=1}^{k-1} (d-1)^i$$

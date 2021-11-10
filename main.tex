@@ -8,6 +8,8 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{makeidx}
+\makeindex 
 \usepackage{tikz}
 \usepackage{xcolor}
 \usetikzlibrary{automata,positioning}
@@ -62,7 +64,7 @@
 %\listoftables
 %\end{newpage}
 
-
+\include{Acknowledgement}
 \include{story0}
 \include{story1}
 %%\chapter{Puzzle 2}
@@ -86,6 +88,7 @@
 \include{story19}
 \include{story20}
 \include{story21}
+\include{summary}
 %\chapter{Puzzle 5}
 %\chapter{Puzzle 6}
 %\chapter{Puzzle 7}
@@ -113,5 +116,5 @@
 % Once upon a time\ldots This document shows how you can get ePub-like formatting in \LaTeX{} with the \verb|memoir| document class. You can't yet export directly to ePub from writeLaTeX, but you can download the source and run it through a format conversion tool, such as \verb|htlatex| to get HTML, and then go from HTML to ePub with a tool like Sigil or Calibre. See \url{http://tex.stackexchange.com/questions/16569} for more advice. And they lived happily ever after.
 
 %\lipsum
-
+\printindex
 \end{document}

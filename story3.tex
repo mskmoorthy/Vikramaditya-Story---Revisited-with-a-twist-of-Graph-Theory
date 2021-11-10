@@ -3,7 +3,7 @@ Rishnak wandered the cemetery, looking for Ajur. As he searched, he saw a headst
 
 Before long, Ajur and Jura were strolling along the path when Rishnak startled Ajur (as ghosts tend to do).
 
-Rishnak asked Ajur what he knew about subgraphs. Ajur said that he was familiar with subsets. ``And since a graph has both a vertex set and an edge set, I think I can deduce what a subgraph is. Given some graph~$G=(V,E)$ with vertex set~$V$ and edge set~$E$, then take any subset~$X$ of~$V$ and consider all edges in~$E$ for which both end vertices are in~$X$.''
+Rishnak asked Ajur what he knew about subgraphs. Ajur said that he was familiar with subsets. ``And since a graph has both a vertex set and an edge set, I think I can deduce what a subgraph \index{subgraph} is. Given some graph~$G=(V,E)$ with vertex set~$V$ and edge set~$E$, then take any subset~$X$ of~$V$ and consider all edges in~$E$ for which both end vertices are in~$X$.''
 
 Ajur picked up a stick and drew a graph in the dirt [Figure~\ref{3g}].
 
@@ -49,7 +49,7 @@ He drew a second graph [Figure~\ref{3g1}].
 \end{center}
 \end{figure}
 
-Rishnak laughed and said that the subgraph Ajur drew was called an \textit{induced subgraph}. He said, ``It is called that because all of the edges are included in the vertex subset. You do have the flexibility of choosing only a subset of these edges, but there is one condition: for each edge in the chosen subset of edges, the end vertices must be in the chosen vertex subset. Let me show you.''
+Rishnak laughed and said that the subgraph Ajur drew was called an \textit{induced subgraph} \index{induced subgraph}. He said, ``It is called that because all of the edges are included in the vertex subset. You do have the flexibility of choosing only a subset of these edges, but there is one condition: for each edge in the chosen subset of edges, the end vertices must be in the chosen vertex subset. Let me show you.''
 
 Rishnak drew a graph in the air in a dazzling light display [Figure~\ref{3g2}]. ``Here is a subgraph of your original graph. And note that a subgraph with no vertices and no edges is also an induced subgraph (and subgraph) of any graph.''
 
@@ -78,7 +78,7 @@ Rishnak drew a graph in the air in a dazzling light display [Figure~\ref{3g2}]. 
 Ajur nodded his head and yawned.
 Rishnak scowled and said, ``Time to learn something new, Ajur, then see if you can still answer my questions.''
 
-Ajur straightened as Rishnak continued. ``A walk from a vertex~$i$ to a vertex~$j$ is an alternating sequence of vertices and edges. Every edge in that walk is incident between vertices preceding and succeeding that edge. For example, in that graph that you drew''---he pointed down to the dirt [Figure~\ref{3g}]---``a walk from vertex~6 to vertex~1 could be $6-(6,4)-4-(4,3)-3-(3,2)-2-(2,1)-1$. The edges are represented as a vertex pair. And if those edges have names as labels, we could use that label instead. Another walk from vertex~6 to vertex~1 could be $6-(6,4)-4-(4,5)-5-(5,1)-1$.''
+Ajur straightened as Rishnak continued. ``A walk \index{walk} from a vertex~$i$ to a vertex~$j$ is an alternating sequence of vertices and edges. Every edge in that walk is incident between vertices preceding and succeeding that edge. For example, in that graph that you drew''---he pointed down to the dirt [Figure~\ref{3g}]---``a walk from vertex~6 to vertex~1 could be $6-(6,4)-4-(4,3)-3-(3,2)-2-(2,1)-1$. The edges are represented as a vertex pair. And if those edges have names as labels, we could use that label instead. Another walk from vertex~6 to vertex~1 could be $6-(6,4)-4-(4,5)-5-(5,1)-1$.''
 
 Ajur listened intently, then asked, ``Can a walk use the same edge more than once?''
 
@@ -107,7 +107,7 @@ Ajur tried to pay attention but was naturally getting bored. He interjected, ``I
 \end{center}
 \end{figure}
 
-Rishnak smiled and nodded. ``And if the starting and ending vertices in a walk are the same, it is known as a closed walk. If all of the edges in a closed walk are distinct, then it is known as a cycle.''
+Rishnak smiled and nodded. ``And if the starting and ending vertices in a walk are the same, it is known as a closed walk. If all of the edges in a closed walk are distinct, then it is known as a cycle.'' \index{cycle}
 
 Ajur remembered the idea of a cycle from yesterday's discussion of trees.
 
@@ -115,7 +115,7 @@ Rishnak asked Ajur to list two cycles from the graph that sparkled in front of h
 
 Ajur had no trouble at all in listing two cycles as $1-(1,2)-2-(2,8)-8-(8,1)-1$ and $2-(2,4)-4-(4,6)-6-(6,8)-8-(8,2)-2$. Rishnak taught Ajur that often the edges are omitted when describing a walk, so the cycles could be written simply as $(1,2,8,1)$ and $(2,4,6,8,2)$. And even simpler, we can state that a walk is a cycle and omit the repetitive last vertex, so we have cycles $(1,2,8)$ and $(2,4,6,8)$.
 
-Rishnak beamed as he went on.  ``Of course a cycle and a walk are examples of subgraphs with some added conditions. These added conditions make the study of subgraphs very interesting. If in a cycle, all the vertices of the original graph are present, then that cycle is known as a Hamiltonian Cycle. For example, in this graph''---he again referred to the graph that shone in front of him [Figure~\ref{3g3}]---``the cycle $(1,2,3,4,5,6,7,8,1)$ is a Hamiltonian Cycle of this other graph''---he whisked his hands through the air to produce another graph [Figure~\ref{3g4}]---``And if all the edges in a walk are distinct then it is known as a path.''
+Rishnak beamed as he went on.  ``Of course a cycle and a walk are examples of subgraphs with some added conditions. These added conditions make the study of subgraphs very interesting. If in a cycle, all the vertices of the original graph are present, then that cycle is known as a Hamiltonian Cycle \index{Hamiltonian Cycle}. For example, in this graph''---he again referred to the graph that shone in front of him [Figure~\ref{3g3}]---``the cycle $(1,2,3,4,5,6,7,8,1)$ is a Hamiltonian Cycle of this other graph''---he whisked his hands through the air to produce another graph [Figure~\ref{3g4}]---``And if all the edges in a walk are distinct then it is known as a path.''
 
 \begin{figure}
 \begin{center}
@@ -139,7 +139,7 @@ Rishnak beamed as he went on.  ``Of course a cycle and a walk are examples of su
 \end{figure}
 
 
-Ajur tried to keep up.  ``Okay, so in that first graph''---he pointed to the graph [Figure~\ref{3g3}]---``an example path is $1-(1,2)-2-(2,3)-3$ or simply $(1,2,3)$. Let me draw this path.'' He drew the path in the dirt [Figure~\ref{3g5}].
+Ajur tried to keep up.  ``Okay, so in that first graph''---he pointed to the graph [Figure~\ref{3g3}]---``an example path is $1-(1,2)-2-(2,3)-3$ or simply $(1,2,3)$. Let me draw this path.'' He drew the path\index{path} in the dirt [Figure~\ref{3g5}].
 
 \begin{figure}
 \begin{center}
@@ -157,7 +157,7 @@ Ajur tried to keep up.  ``Okay, so in that first graph''---he pointed to the gra
 \end{center}
 \end{figure}
 
-Rishnak nodded, then continued, ``If there is a path between every pair of vertices in a subgraph, then the subgraph is said to be connected. If a subgraph contains no cycles and is connected, the subgraph is a tree. And if such a tree contains all of the vertices then it is known as a spanning tree since it spans all vertices. Watch closely, here's a spanning tree.''
+Rishnak nodded, then continued, ``If there is a path between every pair of vertices in a subgraph, then the subgraph is said to be connected \index{connected}. If a subgraph contains no cycles and is connected, the subgraph is a tree. And if such a tree contains all of the vertices then it is known as a spanning tree since it spans all vertices. Watch closely, here's a spanning tree.'' \index{spanning tree}
 
 Rishnak transformed the original graph [Figure~\ref{3g3}] into a new one with fewer edges [Figure~\ref{3g6}].
 
@@ -182,9 +182,9 @@ Rishnak transformed the original graph [Figure~\ref{3g3}] into a new one with fe
 \end{center}
 \end{figure}
 
-Rishnak continued, ``A subgraph in which the degree of every vertex is~1 is said to be a matching. An example of a subgraph that is a matching for this original graph''---he again showed the original graph [Figure~\ref{3g3}]---``is this other graph that contains pairs of vertices.'' Rishnak moved his hands and the graph reduced to one with only three edges [Figure~\ref{3g7}].
+Rishnak continued, ``A subgraph in which the degree of every vertex is~1 is said to be a matching. An example of a subgraph that is a matching \index{matching} for this original graph''---he again showed the original graph [Figure~\ref{3g3}]---``is this other graph that contains pairs of vertices.'' Rishnak moved his hands and the graph reduced to one with only three edges [Figure~\ref{3g7}].
 
-``If the subgraph contains all vertices and the degree of every vertex is~1, then it is called a perfect matching. Here's an example of a subgraph that is a perfect matching.'' A new graph appeared, this time with all of the original vertices but only four edges [Figure~\ref{3g8}].
+``If the subgraph contains all vertices and the degree of every vertex is~1, then it is called a perfect matching \index{perfect matching}. Here's an example of a subgraph that is a perfect matching.'' A new graph appeared, this time with all of the original vertices but only four edges [Figure~\ref{3g8}].
 
 Rishnak asked Ajur how many perfect matchings there were in the original graph [Figure~\ref{3g3}].
 
@@ -232,7 +232,7 @@ Ajur thought for a bit, his brain catching up with everything Rishnak was showin
 \end{center}
 \end{figure}
 
-Rishnak had more to teach Ajur.  He said, ``A graph is connected if there is a path between every pair of vertices in that graph. Otherwise the graph is disconnected. Watch closely as here are two graphs, the first being a connected graph [Figure~\ref{3g9}], the second a graph that is not connected [Figure~\ref{3g10}].''
+Rishnak had more to teach Ajur.  He said, ``A graph is connected \index{connected graph} if there is a path between every pair of vertices in that graph. Otherwise the graph is disconnected \index{disconnected graph}. Watch closely as here are two graphs, the first being a connected graph [Figure~\ref{3g9}], the second a graph that is not connected [Figure~\ref{3g10}].''
 
 \begin{figure}
 \begin{center}

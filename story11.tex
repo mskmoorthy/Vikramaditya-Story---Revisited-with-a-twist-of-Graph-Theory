@@ -1,9 +1,9 @@
-\chapter{Cliques, Independent Sets, Vertex Covers}
+\chapter{Cliques, Independent Sets, \\ Vertex Covers}
 Rishnak was eager to discuss other interesting problems with Ajur and spotted Ajur and Jura walking along the shore of a pond. Rishnak asked Ajur about cliques in his school.
 
 Ajur readily shared his pet peeve with Rishnak. He said, ``Yes, students in my school belong to cliques, essentially groups of friends, but they don't always let others join.''
 
-Rishnak said, ``A clique is also a graph-theoretic term. Here, a \textit{clique} is a subgraph of a graph that is complete, which remember means that every pair of vertices is connected by an edge. Normally we only consider a maximal complete subgraph to be a clique, which is often called a \textit{maximal clique}. We will use that definition for clique, which means that if~$H$ is a maximal complete subgraph of graph~$G$, then there is no complete subgraph of~$G$ that also contains~$H$ as a subgraph.''
+Rishnak said, ``A clique is also a graph-theoretic term. Here, a \textit{clique} is a subgraph of a graph that is complete, which remember means that every pair of vertices is connected by an edge. Normally we only consider a maximal complete subgraph to be a clique, which is often called a \textit{maximal clique}. We will use that definition for clique, which means that if~$H$ is a maximal complete subgraph of graph~$G$, then there is no complete subgraph of~$G$ that also contains~$H$ as a subgraph.'' \index{vlique}
 
 As Ajur thought about that, Rishnak flashed his hands and a graph appeared in front of Ajur [Figure~\ref{13g1}]. Rishnak said, ``Can you list the cliques---maximal complete subgraphs---in this graph?''
 
@@ -60,17 +60,17 @@ Ajur studied the graph for a few seconds, then answered, ``I think there are two
     \item The induced subgraph containing vertices~1, 2, 3, 4, and~5.''
 \end{enumerate}
 
-Rishnak said, ``Exactly. Graphs are usually used as models for physical or social processes. For example, when we consider cliques in a school, we can model students as vertices and two students belong to the same group as an edge between the associated vertices, which also note forms a binary relation. Imagine a graph of everyone in your school, with a vertex for each student and an edge for each friendship.  Finding cliques or, as in the field of data science, finding clusters is an important task.''
+Rishnak said, ``Exactly. Graphs are usually used as models for physical or social processes. For example, when we consider cliques in a school, we can model students as vertices and two students belong to the same group as an edge between the associated vertices, which also note forms a binary relation. Imagine a graph of everyone in your school, with a vertex for each student and an edge for each friendship.  Finding cliques or, as in the field of data science, finding clusters is an important task.'' \index{cluster}
 
 Ajur thought about this for a few moments, trying to imagine a graph that would include all of his classmates at school.
 
-Rishnak said, ``Let us move on to another related topic. An \textit{independent set} in a graph is a set of vertices that are mutually nonadjacent, which means that we have a subset of vertices that does not include any adjacent vertices. Can you see how an independent set is related to a clique?''
+Rishnak said, ``Let us move on to another related topic. An \textit{independent set} in a graph is a set of vertices that are mutually nonadjacent, which means that we have a subset of vertices that does not include any adjacent vertices. Can you see how an independent set is related to a clique?'' \index{independent set}
 
 Ajur frowned, frustrated with the lesson so far. At length, Ajur said, ``No, I don't understand.''
 
 Rishnak also frowned, thinking, ``Oh no, if Ajur does not understand and then does not answer my question, I will remain trapped as a ghost forever.''
 
-Rishnak said, ``Let me give you a hint. A \textit{complement} of a graph~$G=(V,E)$ is another graph~$H=(V,E_1)$. Both have the same vertex set, but if two vertices are adjacent in~$G$, they are not adjacent in~$H$---and if two vertices are not adjacent in~$G$, then they are adjacent in~$H$. Can you draw the complement of the original graph''---he waved his hands and the four added edges disappeared to form the original graph [Figure~\ref{13g1}]---``in front of you?''
+Rishnak said, ``Let me give you a hint. A \textit{complement} of a graph~$G=(V,E)$ is another graph~$H=(V,E_1)$. Both have the same vertex set, but if two vertices are adjacent in~$G$, they are not adjacent in~$H$---and if two vertices are not adjacent in~$G$, then they are adjacent in~$H$. Can you draw the complement of the original graph''---he waved his hands and the four added edges disappeared to form the original graph [Figure~\ref{13g1}]---``in front of you?'' \index{complement}
 
 Ajur looked at the graph. He grabbed a stick and, after scratching his head a few times, drew a new graph in the dirt [Figure~\ref{13g2}]. He said, ``Here is the complement of your graph.''
 
@@ -106,7 +106,7 @@ Rishnak said, ``Well, Ajur, do you see it?''
 At last, Ajur said, ``I do, yes, I see! A clique in a graph~$G$ will be an independent set in the 
 complement of~$G$. In your original graph''---he pointed to the graph in the air in front of him [Figure~\ref{13g1}]---``the maximal independent sets are vertex sets~$\{2,3,4,5\}$, $\{1,2,5\}$, and~$\{4,6\}$. These are also the cliques!''
 
-Rishnak smiled. He flashed his hands and a new graph appeared in the air in front of Ajur [Figure~\ref{13g3}]. Rishnak said, ``Here is a bipartite graph, Ajur. Can you figure out what the maximal independent sets are in this graph?''
+Rishnak smiled. He flashed his hands and a new graph appeared in the air in front of Ajur [Figure~\ref{13g3}]. Rishnak said, ``Here is a bipartite graph, Ajur. Can you figure out what the maximal independent sets are in this graph?'' \index{maximal independent set}
 
 Ajur studied the graph, then said, ``The maximal independent sets are vertex sets~$\{1,2\}$, $\{3,4,5,6\}$''---he hesitated, trying to find if there were any others--``and~$\{2,6\}$. I think that's all.''
 
@@ -128,7 +128,7 @@ Ajur studied the graph, then said, ``The maximal independent sets are vertex set
 \end{center}
 \end{figure}
 
-Rishnak nodded. He said, ``Finding a maximal independent set is not that hard, but finding a \textit{maximum independent set} is very hard, similar to finding a maximum clique. And what I mean here is this. A maximum independent set refers to the maximal independent set with the largest size. For the graph you still see in front of you [Figure~\ref{13g3}], the maximum independent set is~$\{3,4,5,6\}$. And for this other graph''---Rishnak waved his hands and the previous graph appeared [Figure~\ref{13g2}]---''the maximum independent set is~$\{2,3,4,5\}$.''
+Rishnak nodded. He said, ``Finding a maximal independent set is not that hard, but finding a \textit{maximum independent set} is very hard, similar to finding a maximum clique. And what I mean here is this. A maximum independent set refers to the maximal independent set with the largest size. For the graph you still see in front of you [Figure~\ref{13g3}], the maximum independent set is~$\{3,4,5,6\}$. And for this other graph''---Rishnak waved his hands and the previous graph appeared [Figure~\ref{13g2}]---''the maximum independent set is~$\{2,3,4,5\}$.''  \index{maximum independent set}
 
 Ajur said, ``Can we simplify the problem by just looking at a tree?''
 
@@ -168,7 +168,7 @@ Before Rishnak could say a word, Ajur excitedly drew a tree in the dirt [Figure~
 \end{center}
 \end{figure}
 
-Rishnak said, ``A problem that is closely related to finding an independent set is finding what is called a \textit{vertex cover}. A vertex cover of a graph is a minimal subset of vertices that are incident to (or cover) all edges of the graph. In other words, if you delete all incident edges in a vertex cover, the remaining graph is always an empty graph, meaning a graph with no edges whatsoever.''
+Rishnak said, ``A problem that is closely related to finding an independent set is finding what is called a \textit{vertex cover}. A vertex cover of a graph is a minimal subset of vertices that are incident to (or cover) all edges of the graph. In other words, if you delete all incident edges in a vertex cover, the remaining graph is always an empty graph, meaning a graph with no edges whatsoever.'' \index{vertex cover}
 
 Ajur nodded and said, ``How is that useful?''
 
@@ -198,7 +198,7 @@ Rishnak said, ``Intuitively, if we place police officers at all vertices of the 
 
 Ajur said, ``Vertex cover and independent set seem to be related. Are they?''
 
-Rishnak smiled and replied, ``If~$X$ is a maximal independent set in a graph with~$V$ as its vertex set, then~$V-X$ is a minimal vertex cover. Similarly, if~$Y$ is a maximum independent set, then~$V-Y$ is a minimum vertex cover.''
+Rishnak smiled and replied, ``If~$X$ is a maximal independent set in a graph with~$V$ as its vertex set, then~$V-X$ is a minimal vertex cover. Similarly, if~$Y$ is a maximum independent set, then~$V-Y$ is a minimum vertex cover.'' \index{minimum vertex cover}
 
 Ajur smiled, seeing the elegance and simplicity. He also was impressed at how all of these seemingly unrelated sets were actually related. Ajur was lost in thought for awhile, then said, ``Maximal independent set~$X$ contains no edges, as per its definition. And this implies that vertex set~$V-X$ covers all edges of the graph and that every edge is incident in some vertex of~$V-X$.''
 

@@ -1,7 +1,7 @@
 \chapter{Spanning Trees}
 Rishnak found Ajur and Jura walking along a stretch of road with trees on either side. Recalling his previous talks with Ajur about trees, Rishnak chose a specific kind of tree that is found within a graph for his next session with Ajur.
 
-Rishnak said, ``A graph~$G$ is connected if there is a path between every pair of vertices in~$G$. So, in connected graph~$G=(V,E)$, a \textit{spanning tree} is tree~$T(V,E_1)$ that covers all vertices in~$V$ and is a subgraph of~$G$ that satisfies two conditions:
+Rishnak said, ``A graph~$G$ is connected if there is a path between every pair of vertices in~$G$. So, in connected graph~$G=(V,E)$, a \textit{spanning tree} \index{spanning tree} is tree~$T(V,E_1)$ that covers all vertices in~$V$ and is a subgraph of~$G$ that satisfies two conditions:
 \begin{enumerate}
     \item Subgraph~$T$ is a tree, meaning it contains no cycles and is connected.
     \item Vertex set~$V$ of~$T$ is the same as that of~$G$.''
@@ -97,14 +97,14 @@ Ajur painstakingly wrote out all~11 spanning trees in the dirt as follows:
 
 Rishnak nodded and started to speak, but Ajur asked, ``What about the maximum number of labeled spanning trees in a graph with~$n$ vertices? For a complete graph, it must be the maximum number of edges in a graph with~$n$ vertices.''
 
-Rishnak said, ``Correct. Complete graphs have the largest possible number of spanning trees. We can find the number of spanning trees in a complete graph using Pr{\"u}fer codes, which we talked about a few days ago.\footnote{See their discussion in Chapter~8}
+Rishnak said, ``Correct. Complete graphs have the largest possible number of spanning trees. We can find the number of spanning trees in a complete graph using Pr{\"u}fer codes, which we talked about a few days ago.\footnote{See their discussion in Chapter~9}
 
 Ajur remembered Pr\"ufer codes and said, ``For a tree with~$n$ vertices, we need a Pr{\"u}fer code of length~$n-2$. Each of the~$n-2$ characters in the code could be any of the~$n$ vertices. Therefore, the number of labeled spanning trees in a complete graph with~$n$ vertices has to be~$n^{(n-2)}$.''
 
-Rishnak smiled, then said, ``In general, since there are~$n-1$ edges in a spanning tree, each of the remaining~$e-n+1$ edges, when added to the spanning tree will necessarily create a cycle. Therefore, we will have~$e-n+1$ cycles in the given graph. These cycles are called \textit{fundamental cycles} and, as I have just described, each fundamental cycle has exactly one non-spanning tree edge.\footnote{Euler's equation~(\ref{eqn:euler}) back in Chapter~9 uses this fact.} Let me show you.''
+Rishnak smiled, then said, ``In general, since there are~$n-1$ edges in a spanning tree, each of the remaining~$e-n+1$ edges, when added to the spanning tree will necessarily create a cycle. Therefore, we will have~$e-n+1$ cycles in the given graph. These cycles are called \textit{fundamental cycles} and, as I have just described, each fundamental cycle has exactly one non-spanning tree edge.\footnote{Euler's equation~(\ref{eqn:euler}) back in Chapter~10 uses this fact.} Let me show you.''
 
 Rishnak waved his hands and the original graph appeared with its edges glimmering in red and blue [Figure~\ref{11g4}]. Rishnak said, ``The blue edges are spanning tree edges, whereas the red edges are non-spanning tree edges that each form a fundamental cycle.''
-
+\index{fundamental cycle}
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}
@@ -146,7 +146,7 @@ Rishnak nodded and said, ``Right, now set~$S$ contains all of the vertices, and 
 
 Ajur nodded eagerly. He said, ``Aha, and if we had made different choices along the way, we would have ended up with a different spanning tree, like this one.''---Ajur quickly drew another spanning tree in the dirt [Figure~\ref{11g3}].
 
-Rishnak smiled, happy to see that Ajur understood. He said, ``Here is another interesting problem related to spanning trees. As background, a graph is called a \textit{weighted graph} if there are numeric weights or costs associated with each edge. The weight could represent the distance in miles or the cost of travel, and so on.''
+Rishnak smiled, happy to see that Ajur understood. He said, ``Here is another interesting problem related to spanning trees. As background, a graph is called a \textit{weighted graph} if there are numeric weights or costs associated with each edge. The weight could represent the distance in miles or the cost of travel, and so on.''\index{weighted graph}
 
 Rishnak flashed his hands and the original graph [Figure~\ref{11g1}] appeared, this time with numeric values next to each edge [Figure~\ref{11g7}]. He said, ``Here is an example weighted graph. See each weighted edge?''
 
@@ -172,7 +172,7 @@ Rishnak flashed his hands and the original graph [Figure~\ref{11g1}] appeared, t
 
 Ajur said, ``Yes, but how does this change our spanning tree problem?''
 
-Rishnak saw Ajur's impatience. He said, ``We want to find a \textit{minimum spanning tree} in which the sum of all edge weights in the spanning tree is the smallest possible.''
+Rishnak saw Ajur's impatience. He said, ``We want to find a \textit{minimum spanning tree} in which the sum of all edge weights in the spanning tree is the smallest possible.'' \index{minimum spanning tree}
 
 Ajur said, ``Aha, we can enumerate all spanning trees and for each such spanning tree, compute the sum of the edge weights, then choose the spanning tree with the smallest sum.''
 
@@ -255,7 +255,7 @@ Ajur showed his work in Figure~\ref{11g9}.
 \end{center}
 \end{figure}
 
-Another ghost named Urpur had been eavesdropping on Rishnak and Ajur. Urpur wanted to show that he was smarter than both Rishnak and Ajur, so he interrupted and said, ``I have an even smarter approach. There is a spanning tree called the Steiner tree\footnote{Named after the Swiss mathematician Jakob Steiner} wherein one is allowed to add Steiner points or vertices that were not present in the original problem. With a clever addition of Steiner points, I can find a spanning tree that is better than the one Ajur found.''
+Another ghost named Urpur had been eavesdropping on Rishnak and Ajur. Urpur wanted to show that he was smarter than both Rishnak and Ajur, so he interrupted and said, ``I have an even smarter approach. There is a spanning tree called the Steiner tree\footnote{Named after the Swiss mathematician Jakob Steiner} wherein one is allowed to add Steiner points or vertices that were not present in the original problem. With a clever addition of Steiner points, I can find a spanning tree that is better than the one Ajur found.'' \index{Steiner tree}
 
 Urpur clapped his hands and a new graph appeared [Figure~\ref{11g10}]. Urpur said, ``You see?''
 
